@@ -28,7 +28,7 @@ switch-to-workspace-right=['<Control><Alt>Right']
 switch-to-workspace-down=['<Control><Alt>Down']
 
 [org/compiz/profiles/Default]
-plugins-with-set-keys=['core', 'composite', 'opengl', 'resize', 'place', 'move', 'staticswitcher', 'animation', 'wall', 'commands', 'thumbnail', 'gnomecompat', 'rotate', 'put', 'extrawm', 'vpswitch', 'fade', 'expo', 'imgjpeg', 'wallpaper', 'switcher', 'shift', 'shelf', 'ring', 'grid', 'decor','winrules']
+plugins-with-set-keys=['core', 'composite', 'opengl', 'resize', 'place', 'move', 'staticswitcher', 'animation', 'wall', 'commands', 'thumbnail', 'gnomecompat', 'rotate', 'put', 'extrawm', 'vpswitch', 'fade', 'expo', 'imgjpeg','workarounds', 'wallpaper', 'switcher', 'shift', 'shelf', 'ring', 'grid', 'decor','winrules']
 
 [org/compiz/profiles/Default/plugins/wall]
 miniscreen=true
@@ -74,7 +74,7 @@ focus-on-switch=true
 highlight-mode=2
 
 [org/compiz/profiles/Default/plugins/core]
-active-plugins=['core', 'composite', 'opengl','decor', 'imgjpeg', 'resize', 'compiztoolbox', 'imgpng', 'regex', 'move', 'place', 'commands', 'wallpaper', 'animation', 'wall', 'staticswitcher', 'expo']
+active-plugins=['core', 'composite', 'opengl','decor', 'imgjpeg', 'resize', 'compiztoolbox', 'imgpng', 'regex','workarounds', 'move', 'place', 'commands', 'wallpaper', 'animation', 'wall', 'staticswitcher', 'expo']
 
 [org/compiz/profiles/Default/plugins/commands]
 run-command18-key='<Super>space'
@@ -132,3 +132,6 @@ run-command-8=['<Shift><Control><Super>k']
 
 [org/compiz/profiles/Default/plugins/decor]
 command='emerald --replace'
+
+[org/compiz/profiles/Default/plugins/workarounds]
+keep-minimized-windows=true

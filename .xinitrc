@@ -16,5 +16,8 @@ udisksctl mount -b /dev/sdc2
 #加个panel显示indicator,以及防止mpv最大化闪烁
 xfce4-panel&
 
+#显示通知
+dunst &
+
 exec compiz  
 #exec fusion-icon
