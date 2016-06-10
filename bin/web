@@ -1,0 +1,12 @@
+#!/bin/bash
+firefox "$@" 
+#简单关掉
+#chromium-browser "$@" 
+
+
+#vi "+W3m http://$1" \
+#vi "+W3mLocal ~/.w3m/index.html" \
+#    "+map h h" \
+#    "+map q <Esc>:qa!<CR>"\
+#    "+map <C-o> :call w3m#Back()<CR>"\
+#    "+map <C-i> :call w3m#Forward()<CR>"

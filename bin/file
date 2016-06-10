@@ -1,0 +1,10 @@
+#!/bin/bash
+#nautilus 
+
+if [ $# -eq 0 ]
+  then
+    ~/bin/term -e "ranger "
+  else
+    ~/bin/term -e "ranger \"$@\""
+fi
+

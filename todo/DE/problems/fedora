@@ -1,0 +1,5 @@
+
+Tue 31 May 2016 06:58:43 PM NZST
+fedora简单安装了一下,结果没法编译qmltermwidget, 按照说明安装了相关package也不行,dnf找不到qmake,直接搜索得到了一些mingw64 windows相关的qt包,不明所以.这可实在不是开发友好啊.
+所以qml显示效果就无法测试了,那就作废吧
+

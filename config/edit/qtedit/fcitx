@@ -1,0 +1,34 @@
+
+
+
+    ubuntu 14.04从Qt官网下载的最新版qt，安装过程很顺利，但却发现没办法输入中文（我用的是 fcitx), 即使下载了fcitx-frontend-qt5和fcitx-frontend-qt4也还是没用。
+
+    想必是qt版本的原因吧。
+
+    后来，试着将从源中安装的fcitx-frontend-qt5复制到Qt安装目录下，竟然可以了。
+
+    方法如下（fcitx输入法）：
+
+    1.安装fcitx-frontend-qt5
+
+    2.将安装后的fcitx-frontend-qt5复制到qt安装目录
+
+    通常，fcitx-frontend-qt5在下面的目录路径中（可用命令dpkg -L 包名看文件安装路径)：
+
+    /usr/lib/x86_64-linux-gnu/qt5/plugins/platforminputcontexts/libfcitxplatforminputcontextplugin.so
+
+    将该文件复制到
+
+    qt安装目录//Tools/QtCreator/bin/plugins/platforminputcontexts
+
+    和
+
+    qt安装目录/5.3/gcc_64/plugins/platforminputcontexts
+
+    中
+
+    重新打开 QtCreator,终于可以输入中文了。
+
+    ibus的操作方法与这类似
+
+    后记：后来，我发现很多qt编写的程序无法输入中文，将fcitx-frontend-qt5复制到该程序相应的目录下，就可以正常了，如wps和linux 下的代码阅读软件 understand，用这种方法都解决了输入法无法输入中文的问题

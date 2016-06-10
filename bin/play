@@ -1,0 +1,38 @@
+#!/bin/bash
+source ~/bin/GLOBAL
+#记录到rofi
+echo 1 ./bin/play \"$1\" >> "$ROFI_HISTORY"
+
+#vlc
+#preferences/interface/main interfaces: remote control interface
+#preferences/interface/main interfaces/rc: "fake tty"  "unix socket command input=/dev/shm/.vlc.sock"
+#echo -n "random off" | nc -U   /dev/shm/vlc
+#echo -n "clear" | nc -U   /dev/shm/vlc
+#vlc --qt-minimal-view "$1"
+
+#smplayer "$@"
+
+#mpv
+pkill mpv
+mpv \
+    --script-opts=osc-layout=bottombar \
+    --no-border \
+    --slang=chi,chn,zh,eng,en \
+    --alang=jpn,jp,eng,en \
+    --volume=40 \
+    "$@" \
+#    --video-rotate=270 \
+    #--no-osc \
+    #--osd-bar \
+
+# keybind 
+# 播放next          '>'  
+# 播放previous      '<'
+# 文件名            'I'
+
+
+#if pidof mpv
+#then echo "mpv already running"
+#else mpv "$@"
+#fi
+#echo $1

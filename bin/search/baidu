@@ -1,0 +1,3 @@
+#!/bin/bash
+~/bin/web "http://www.baidu.com/s?wd=$@"
+

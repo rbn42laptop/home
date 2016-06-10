@@ -1,0 +1,33 @@
+
+
+ 
+DNS服务器设置（Ubuntu10.04）  
+1、两个免费好用的DNS服务器
+ 
+　　　　googleDNS: 　　8.8.8.8;            8.8.8.4
+　　　　openDNS     :　　 208.67.220.220;    208.67.222.222
+2、查看及修改本机DNS服务器
+ 
+　　　　查看DNS server：nslookup;        server
+　　　　修改DNS server: sudo gedit /etc/resolv.conf, 修改 nameserver
+ 
+　　NDS服务器的修改是即时生效的，但这种修改方法在重启电脑后ubuntu系统会自动重写/etc/resolv.conf文件，恢复默认的DNS
+3、永久修改DNS
+ 
+　　　　sudo gedit /etc/dhcp3/dhclient.conf
+ 
+　　　　里面有一行注释掉的：#prepend domain-name-servers x.x.x.x;
+ 
+　　　　将改行的注释去掉或者直接在文件中加上一行（后面加上想用的DNS）：
+　　　　prepend domain-name-servers 8.8.8.8,8.8.8.4;
+ 
+ 
+在rc.local里加入这个重启网络配置的命令：
+ sudo /etc/init.d/networking restart
+ 
+ 
+ 
+sudo /etc/init.d/dns-clean start
+ 
+ DNS 缓存清空
+

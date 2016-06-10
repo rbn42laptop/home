@@ -1,0 +1,4 @@
+[custom0]
+binding='<Super>d'
+command='./bin/rofi.sh'
+name='rofi'

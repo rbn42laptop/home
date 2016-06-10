@@ -1,0 +1,3 @@
+#!/bin/bash
+~/bin/web "https://scholar.google.ca/scholar?q=$@"
+

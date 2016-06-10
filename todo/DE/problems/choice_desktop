@@ -1,0 +1,670 @@
+appmenu
+shortcut
+theme
+development
+
+unity 没有blur,没有白色系theme,menubar白色化会影响其他部分,包括tab和switch,launcher,这些组件原本是白字黑底系的,调成白色背景后都会受影响,因此只能接受黑色系,而且不只是menubar,现有的主题(只有ambiance等比较完善,fan做的有很多问题)连titlebar menu也是设定为黑色的,而且css中似乎title和menu的字体颜色是联动的.想要独立把这些部分改为白色似乎不怎么现实
+xfce 没有appmenu,没有workspace,有compton
+i3 没有appmenu,窗口叠加不便,支持不完善,比如gnome的字体 
+gnome 没有appmenu
+kde 没有appmenu
+mate 似乎已有appmenu,但是好像还不完全.
+以上皆有一定的稳定性和性能问题,unity因为厂商支持算式比较好的吧.i3结构简单,但是因为有点怪异有些问题会出现,比如字体
+osx 键盘,deveplopment环境因素不确定,如果是黑苹果,那么安全无法认可
+
+blur效果自然是osx最好,compton略有瑕疵但是的确可以做到类似的效果.menu,menubar,都没问题,未来的compositor或许也会有这些功能.kde下的kwin或许已经可以做到了.
+
+unity独有优势,alt menu 快捷键,workspace
+
+mate有topmenu,但是维护是个人,compton的维护也是个人,似乎是大学以下,真难想象,一般de不做blur只是不愿那么设计吗?
+
+必要的色彩也很重要,这和人的注意力机制有关,单纯做纯色(蓝白)的话,或许整体形象不错,但是缺少了细节上的注意力吸引点,所以需要osx的三色按钮.带来些微的色彩.另一方面,当然色彩太多也是不好的,所以icon我们使用纯白也是可行的,而尤其是statebar中的icon,因为size太小,反而必须要是纯白,便于识别,非纯色的小size图片是很难识别的,所以docky中用非纯色的问题就没那么大了吧.这其中的所有原理都和注意力机制有关.
+i3就是一个做的太纯的例子吧.大量的透明使用,导致注意力完全散开了,没有吸引点.因此tile对于i3是比要的,至少细节上缺乏吸引点,那么整体造型至少要有一些特点.否则就完全没有特点了.
+
+blur效果在statebar/dock和terminal处的差异,
+前两者的特性是区域很小,并且拥挤,其上存在显著的图标,后者则是相当的平滑.
+这里的区别是,对于前者,需要模糊背景突出前景,但是对于后者,因为区域广大,如果连背景也模糊了,反而就缺乏了注意凝聚了,这是一种平衡吗?
+单纯的blur的terminal,就像一片空无一物的玻璃,而dock则是在者玻璃上摆放了特定的事物.
+
+另外只有白色系blur会比较像玻璃,黑色系则不是.
+
+Thu 31 Mar 2016 12:16:29 NZDT
+mate 的topmenu好像挺不错,而且有ubuntu在背后支持.但是还没有整合titlebar,所以最大化的时候会有问题吧.
+compton和mate的整合也没什么问题.
+二维的workspace也是支持的.
+或许compton配合radiance主题会很不错?
+
+xfce需要的改动,
+compton,这个现在比较熟练了
+topmenu,大致看了下问题也不大,但是透明度不确定.
+max titlebar,听说有方案,不过看来是和topmenu拆分开的.这样就去缺了关闭按钮了.不过好像没有方案,因为之前也找过吧
+titlebar,单纯改透明或许效果比纯色还差,或者改白色纯色?不管怎样现有的theme不够纯,需要改动.
+theme,radiance flat,毕竟这边的优势是可以调整panel为白色系,那么肯定是选白色系主题了.现成的主题太钝了,需要调节下边框什么的,
+icon,awoken就行
+workspace,有二维的,不过快捷键用着有点怪,不顺手.
+gtk2,看了下mate下的程序,pluma,caja,太土气了,不过xfce或许好点,要不然还是要换gnome系吧.
+
+panel的确是感觉白色系比较好,不过unity7怎么都搞不过来,或许8可以?不过连带着theme什么都要变了,
+黑色系感觉也不是太坏,就是好像有点硬.不过全白色系,可能会太飘了?
+而且改白色系,icon也要变了.
+
+还有是锐利度,现在的ambiance flat挺好,如果换mate系,就很难说了.
+
+Fri 01 Apr 2016 03:19:43 NZDT
+不过topmenu实在还是不成熟,不只是gtk,qt,firefox,还有很多其他程序的menu需要处理,这些程序不是一开始就打算做成gmenu的,和mac不同
+
+Fri 01 Apr 2016 05:54:53 NZDT
+xfce没有的
+1.alt menu搜索
+2.透明topmenu?或者整合titlebar?
+3.主题需要大幅调整?
+
+Sat 02 Apr 2016 04:27:45 NZDT
+不过i3倒是可以和xfce的topmenu配合的,自己装的还不行,还的是ubuntu-mate版本的topmenu
+试装了一下,只有在arch上装成功了,arch的aur很方便,给了不少帮助,但是arch缺乏大量的默认配置,因此multiload indicator很难装,中文字体什么也很成问题,还要配置xinit之类的,当然配好了可能会很轻便稳定吧?不知道啊,至少multiload这一项就带了不确定的因素了.
+另外就是,topmenu不是透明的要配主题很难呢.
+已知的是xubuntu下上i3,terminal倒是没问题,不过topmenu却弄个不了.实际上xubuntu就是搞不了,而mate虽然自带没问题,但是很难调整到i3,
+所以,至少topmenu,一要能有transparency,二要能更见到的安装到xubuntu,
+不过,关于terminal字体,已确认的是mate,不是xubuntu,或许新安装一个发行版,都可以处理好i3字体问题吧.
+
+
+Wed 06 Apr 2016 21:55:02 NZST
+笔记本安装xubuntu 和mate, 使用compton和urxvt效果很差.
+原因不知道是因为intel显卡还是因为gtk2.0,比这里的i3wm还差,到底是因为xubuntu,mate distr 的问题,还是因为硬件?只有试下ubuntu看下了
+Wed 06 Apr 2016 22:08:32 NZST
+结果连ubuntu16上的软渲染的urxvt效果也很差.真难推测哪里出了问题.因为urxvt照理说和硬件无关的.可能哪里的计算出现了小数点格式误差导致intel显卡的输出出了问题吗?
+Thu 07 Apr 2016 07:03:33 NZST
+sabayon live也实验过了,同样的urxvt blur效果很差.
+Thu 07 Apr 2016 07:36:06 NZST
+在n卡上,urxvt和compton,如果透明度低于50%且是白色调,有可能出现色块
+
+
+Thu 07 Apr 2016 11:09:38 NZST
+osx的优势是,系统组件全部是内部研发,包括文件管理,temrinal,图片查看,
+linux下,这些则是共享的,gnome和kde各掌握了一大部分,留在其范围内,或许可以保持一定的一致性.
+类似osx的透明化设计,一是跨环境的时候,或许会出现问题,所以基本上没人干吧
+但是osx显然不会让内部组件透明,比如,为多workspace配置不同的背景,并且随机变换
+这个功能,太简单的de做不了,因为没有跨桌面组件,太复杂的又不会开放api,无法用脚本控制,真是不上不下.
+cinnamon似乎有这个功能,gnome3看来也算有,但是两者都没有独立pic,因为似乎这个功能是compiz的,因此mate倒是可以,但是workspace overview:这个功能的特效要求比较大,所以简单如i3和xfce就无法提供了吧
+work work work,linux系真是完全不关注这些装饰功能,unity7做了,但是其他de并不在乎,现在unity8转向新风格了,那么还有哪个de能继承这个功能呢?
+
+16.04还有五年支持,或许unity7还能进入18.04,所以至少还有七年时间,倒是还用不用ubuntu都说不定了. 
+
+Thu 07 Apr 2016 15:10:47 NZST
+关于terminal blur,试过之后才会发现,其实或许没有比较好,因为比如现在,字体比较大的时候,没有blur,才会保留wallpaper上的细节.有blur的话,墙纸的细节就消失了.osx使用blur也只是在细节处,为了透明的同时强调前景.terminal的话,如果blur的话,是整个墙纸的模糊化,和osx那样局部的模糊化的效果是不同的(感觉更差)
+
+Mon 11 Apr 2016 15:25:51 NZST
+关于白色系unity,
+需要调整的包括,window title,主色,背景,透明,与terminal一致,阴影,消除border
+window panel部分的主题
+unity panel,这部分透明后,是黑色调,如果调整,会影响到包括launcer,switcher
+除非我们用rofi替换这些功能,但是这两个都很好用,所以替换掉不现实.因此panel必然是黑色调.纯黑主题其实很一致,就是看久了会有点无聊,当然如果不考虑透明的话,也可以尝试白色系主题,就是需要改图标色系了,因为前景色需要变为黑色.这点略微麻烦,包括各种action icon,都会因为panel变为白色而受影响.谁让我们选了白色系icon呢.
+不过,其实要是选择黑色系icon的话,panel到的确是可以考虑换成白色.launcher,switcher也是,略成问题的一点是,ubuntu还是偏向黑色系,所以黑色系的一致性更高,白色系switch依旧是黑色系和白色系前景,如果换掉这个背景色,那么,前景的白色就不配了,我是指focus的下划线
+
+由于这样的一致性问题,unity7看来只能是黑色系了.
+linux下白色系需要有匹配的icon,awoken始终是纯白或者纯黑的,
+但是白色系主题在必要的部分需要黑色系的图片用在白色背景上
+
+Mon 11 Apr 2016 15:41:43 NZST
+另一个问题是关于透明化黑色系,title 和panel都可以做,但是window panel部分会比较麻烦,会变得和title不一致.
+有一个github 主题 arc theme可以在gnome3中实现透明sidebar,但是unity中不行,因为unity7中似乎存在一个背景挡住了渲染
+所以要转gnome3吗?但是现在讨论太早了,毕竟unity8还没出来呢,谁知道unity8是不是支持workspace view呢
+所以,总的来说,unity7无法透明化,无法维持一致性
+但是为了,launcer快捷键,topmenu,workspace view,还有menu hud也是非常便利的,我们也无法换其他de,
+把习惯转向rofi是比较好的,至少减少了未来转换de的兼容问题,还有vim和tmux
+如果依赖unity的话,只有期待unity8转向好的方向
+最近很少用file manager,最好的当然是windows,而dolphin则明显强于nautilus,但是dolphin快捷键较怪异
+
+Mon 11 Apr 2016 20:07:19 NZST
+不过很多时候,workspace是很没有必要的,把应用分配到不同的workspace,要用的时候,还要一个个找回来.
+有用的时候是,打开了多个窗口,为了同一个目的,这个时候需要为了其他目的打开窗够的时候,希望不要打乱原来的东西,所以就需要一个新的workspace了.
+
+关于i3,不适合窗口叠加,还有float窗口的resize和drag,都很丑.
+tile wm,是完全为了用矩形划分显示屏的,但是按照我们的习惯,不少应用是需要互相叠加了打开的.少数可以划分的情况,还是交给tmux来处理好了,所以i3其实是个和你没什么交集的程序.
+
+关于workspace,其实绝大多数时候你应该只使用一个workspace,这样子的效率是不会很低的.
+只有你的窗口真的数目很多的时候,才有用workspace划分的价值.
+主要来说,就是编程的时候,而日常使用不应该开workspace
+这还真是减少了一个我们坚持unity的理由.当然,i3也不是一个可选项.
+但是unity在各种细节上来说还是更优的,xfce是存在很多细节(快捷键之类的?比如说xfce-terminal右键后不能直接开启新窗口)
+unity有很多无法替代的优点,比如说通过menu hud,可以很快从nemo开启terminal吧.
+真是很优秀的de,但是却似乎很少人注意到这些优点?
+
+Mon 11 Apr 2016 20:20:26 NZST
+所以我们大概会已知用unity了,就是操作习惯上要稍微修正下,减少workspace,因为虽然很漂亮,但是的确没什么用处.
+launcher应该药要隐藏,减少注意力干扰.当然也不需要dock,
+桌面icon倒是不错,不过因为和wallpaper plugin冲突,所以隐去了.
+不过因为有rofi在,键盘操作方面就不成问题了.鼠标方面问题也不大,rofi,要是可以加入到panel就好了
+
+不过tmux有些情况不如i3好用,比如关闭一个terminal就不像i3那么便利.
+但是另一方面好用的是,tile布局更多自由,可以保存session,可以方便remote
+
+Tue 19 Apr 2016 20:46:14 NZST
+关于字体阴影。先用的程序基本没有
+unity8 qml，qt，有一套开放的terminal组件，或许可以自己写一个
+
+Sun 24 Apr 2016 21:22:54 NZST
+关于terminal的选择:
+1.gnome-terminal,wmctrl resize的时候很不精确
+2.urxvt 缺乏各种现代term的功能比如复制粘贴,索然它有着独有的功能.
+3.sakura, 相当接近gnome-termianl而且resize精确,不过不能单独调颜色,也没有右键功能,还有标题和vim不配合.
+4.tilda,无边框很漂亮,但是没有阴影.最麻烦的是,它的drop down功能,不会共享配置.如果没有tiling,或许用tilda很方便.但是有了tiling,drop down基本就没必要了.
+5.qmltermwidget,定制性很强,但是暂且没有透明功能,是否未来会有呢?
+
+重点是,我希望有字体阴影,这样,就再也不用担心背景色了.
+当然对于很多ascii画出来的东西,比如vim下的箭头目录,阴影是不协调的.
+但是反正我不用那些.
+
+Tue 26 Apr 2016 23:15:14 NZST
+https://www.youtube.com/watch?v=_w_ksgcNnYc
+kde有一个desktop grid插件,wallpaper配置应该也不会有大问题.
+如果unity8太糟糕的话,也算有个可以转投的方向
+这个功能大概自从kde4就有了,所以也算传统了
+dconf的kde替代品:kwriteconfig,或许是
+unity的话配ubuntu,要用kde的话,可能要装opensuse
+
+
+Wed 27 Apr 2016 19:18:33 NZST
+shell选择
+bash和fish
+fish有更好的补完,但是和旧有的脚本不太兼容.
+powerline,独立的status,但是不支持fish,
+airline,vim独有,不过构图上来说会占据vim的底部,从开放感来说,不应该装.其提供的信息,多少有点用处.不过和omf不一样,不能显示git状态,其实应该能做到,没实现吧.
+omf,fish的类powerline组件
+能显示目录的git状态这一点是有用处的
+
+Wed 27 Apr 2016 20:05:08 NZST
+从powerline出发,有tmux zsh vim i3,所以这些geek文化/风格是相通的,做到极致就能成为一种风格,不过日常用的话,友好度感觉太低了.只是炫而已
+
+Thu 28 Apr 2016 12:31:26 NZST
+ubuntu menu hud的替代品是krunner
+https://www.archlinux.org/packages/extra/i686/krunner/
+
+
+Thu 28 Apr 2016 15:20:33 NZST
+arch+kde+wayland尝试
+首先,wayland+kde有bug,还没准备好,
+然后退回xorg,然后teardown现象严重.
+
+Thu 28 Apr 2016 16:42:52 NZST
+使用一些用户很少的东西是很危险的,不管是硬件,手机什么的,还是软件,因为出了问题就是你独有的,没有其他人会一起费心处理.
+1.firefox的搜索栏,使用的人就不多,一般用户或许很少使用同一个搜索引擎右键做大量搜索.所以他们才改了一个并不好用的新版.
+2.firefox的中键滚动,同样的不会有很多人知道吧.所以也改掉了吧.
+3.unity7,同样的没有死忠,因此ubuntu可以放弃它
+
+因此,要么你对于一个软件有控制权,比如自己写的脚本,要么其用户量之大,开发者不敢随意变动,
+或者即使变动,也会因为用户量之大而有人站出来解决问题.
+
+更加底层的,比如vim,sh之类的,天生的放出更多的控制权给用户,而且通过严禁的协议规范了其api的变动,因此可以几十年不变的维持稳定的api
+
+但是现在不是放弃firefox的时候,firefox 的搜索引擎用起来实在是太方便了.
+而且选择早期的esr addon也会不支持.
+
+Thu 28 Apr 2016 17:21:14 NZST
+总的来说,要改桌面,现在的环境下好像挺麻烦的,可能的是风气的原因,虽然现在的技术比以前好,但是市场比以前更拥挤,所以为了'创新',新的桌面环境总会弄出一些原来不存在的问题.
+
+我们能不能直接使用weston呢?需要改动的包括
+主题,
+有rofi作为开始菜单,
+stiler需要为wayland调整,
+要是weston可以配置blur,就更好了.
+但是主题是个较大的问题,自配主题是很麻烦的事情,有太多细节要考虑.
+所以我们才要选择有个github专人维护的主题.
+weston倒是自带workspace,不过不是matrix类型的,matrix类型的因为是依靠view point做到得,所以应该不算是标准类型吧
+
+Fri 29 Apr 2016 00:45:52 NZST
+迁移kde需要的成本.
+重配按键
+确认wmctrl有效,
+寻找新主题,
+调整appmenu,
+找出menu hud (krunner)
+matrix workspace
+找出wallpaper设置api
+确认qmlterm的编译
+编译rofi
+有些东西可以慢慢做,但是stiler,rofi,按键配置,这些是必要的.
+
+Fri 29 Apr 2016 05:26:16 NZST
+已知的是xorg的kde和stiler相容性很好,性能明显很优秀,不知道是不是arch优化好.
+然后qmlterm因为是qt,自然和kde相性好.
+kde的白色主题和透明窗口也很配,明显的更柔和,压迫更小.
+
+剩下的问题是,实际上好像没有workspace view,而且按键方面也不是照顾matrix的,比如窗口移动,
+但是或许我们可以自己些脚本来实现,当然这需要时间.
+krunner和hud的对比还没有尝试. wallpaper功能也没有尝试,没有尝试 api写入kde配置.
+总的来说,功能性上有不确定因素,但是,就外观来说,kde因为色调是白色(当然黑色也可以,kde的自由度比unity高),所以很棒.
+
+kde大概没有使用workspace的view point,所以通过stiler跨桌面移动的功能没有起效果.
+
+另外还有一些字体配置之类的小问题,这大概是因为我们用了纯arch,细节没弄好的原因,要是能装opensuse就好了
+ 
+还有一点是,ubuntu下总是崩溃的firefox,在arch下似乎稳定多了?至少我没撞到crash,这个应该和内核有关.
+
+Fri 29 Apr 2016 06:45:56 NZST
+kde的一些奇怪功能,可以zoom桌面,其实是类似放大镜的功能.
+具有focus up/down的功能,这个实现不难,而且逻辑清晰,但是和tile wm还是有差别.
+还有简单的类似unity的tile up/down功能.
+
+关于workspace,当前,他们希望往activities迁移,丢弃了kde4的不同桌面不同壁纸的功能.
+幸运的是,很多用户喜欢那个功能.所以开发者打算把它捡回来.
+https://bugs.kde.org/show_bug.cgi?id=343246
+https://bugs.kde.org/show_bug.cgi?id=341143#c167
+不幸的是,它还比unity差一点,虽然似乎是打算做成二维,但是窗口移动方面,没有实现二维.
+同样的unity compiz有这么好的功能,但是并不算做unity官方的,所以unity8丢弃这功能也没人能指责吧.
+
+ctrl + f8,类似unity的 workspace view.
+
+alt tab/ meta tab kde做的都很漂亮.
+
+总的来说,kde的多壁纸还在等待实现中,二维和大视图kde都有了,还缺的主要就是workspace之间快速移动窗口的快捷键.
+
+还有一点,kde不是gtk,所以multiload-indicator可能会用不了?,因为这个是gtk3组件
+
+还有,自己装的arch在theme的细节上实在有问题,比如看不见滚动条,看不见 select区域
+
+还有是字体问题,utf8符号没能正常显示出来.
+还有qmlterm在vim的时候,能够正常给出标题,但这妨碍了我们需要的从标题提取path
+
+Fri 29 Apr 2016 16:10:13 NZST
+arch+kde5折腾中文显示+输入太费事了
+但是他们的firefox很稳定
+但是考虑到桌面切换的灵活度,(虽然kde的stiler好像挺灵活的,可能是因为动画流畅吧.)
+还是unity好用,kde甚至没有快捷键可以直接搬动窗口到制定workspace
+此外,kde的主题装饰感觉有点多,看关了kde主题切换回unity后,感觉好清爽.
+kde唯一的优势大概是白色主题,还有title blur效果,unity则是锁死了黑色了.
+当然可能我在桌面放了太多插件也是问题之一.也就是kde没有结合appmenu收缩 状态栏的原因
+
+总的来说,arch的程序大概比ubuntu稳定,然后,kde的白色化主题可以更纯粹.
+但是细节上,kde缺乏太多了,wallpaper我们要改,workspace功能也不齐全
+
+Fri 29 Apr 2016 17:37:46 NZST
+所以总的来说,还是unity顺手.就是主题色不够纯粹这点不太满意.但是为了配合白色图标,状态栏的确只能用黑色
+
+Fri 29 Apr 2016 18:00:02 NZST
+还有arch没有现成的vim-gnome,aur上面的很怪异,连退格键都有问题,所以我们还要自己找出编译方法,
+这个问题不解决的话,arch是没法用的
+不过或许我们应该装vim-gtk?
+
+Fri 29 Apr 2016 18:41:49 NZST
+还有一些小问题,比如说qmlterm的title在kde下更准确,但是因而无法准确传递给new terminal
+还有wifi连接还没安装
+不对,确切的说是,arch下fish用的参数不对,要得到路径形式的title并不难.所以维持这个title不变的话,不改api也没问题
+
+Sat 30 Apr 2016 03:43:21 NZST
+不对,kde5中的情况实际上是qmlterm session的title不再取自fish,而是从vim获得了,
+不知道原因为何,但是既然来自我的repo,那么代码是没有变的.
+
+Sat 30 Apr 2016 23:02:29 NZST
+tile divide.py写的有问题
+arch下安装gvim就可以好好用了.
+
+Sat 30 Apr 2016 23:20:58 NZST
+kde虽然很华丽,动画也不错,但是果然实用性还是unity好,workspace也好,alt+space按键,和kd_tree_tile的匹配度,
+
+Sun 01 May 2016 15:11:33 NZST
+compiz wallpaper似乎沒有維護，當然這是可以理解的。
+所以在ubuntu1604，它不起效果了。
+还有ibus和fcitx一样，对于qt5 qml的浮动定位有问题。
+
+Mon 02 May 2016 01:02:39 NZST
+按照compiz plugins extra的源码，应该是可以xrender渲染墙纸的，
+但是显然这些功能在wayland和mir之后就没用了吧。
+更甚的问题是vp，unity8，kde5，gnome3，会实现vp吗？
+kde5，当然已经预定要实现wallpaper了，就是操作感觉用起来不太顺，
+性能倒是还不错
+
+Mon 02 May 2016 01:10:06 NZST
+但是最大的问题，可能在于unity workspace view的绘图方式可能它直接绘制了所有的桌面，作为一个超大的范围。
+顺便说下，刚才按下super+s的时候，产生了一次崩溃，我想这说明崩溃来自于尝试全局性的绘制。
+就全局绘制这一点来说，或许其他桌面都不曾如此尝试？
+因为全局绘制带来的一个问题是每一个桌面都太小了，一定意义的失去了参考性，
+所以现在好像倾向于重排每个窗口后，再绘制所有桌面，
+当前来说，kde的全局桌面就是这么做的。
+
+实际上我们最后的去向或许就是kde，它的视图已经完备了，配合类似wmctrl的api工具，剩余的功能性问题我们应该是可以处理的，就是麻烦了点
+
+Mon 02 May 2016 03:39:48 NZST
+kde最大化菜单的快捷键是alt+f3
+名字叫做 windows operation menu
+
+Mon 02 May 2016 18:31:41 NZST
+既然不满意系统theme的title要不要自制 title部分呢？
+自制title的问题：最大化的时候，不能和unity融合，其他桌面倒是没问题
+拖动性能略差
+最大的问题是，不知道怎么在qml中检测window focus事件。
+因为frameless最大的问题或许就是无法给予系统相应来标定哪一个window是当前focus的。
+找出focus机制是很麻烦的，所以就算了
+
+Tue 03 May 2016 02:28:56 NZST
+试了下阴影渲染的边框，感觉做的很不工整，还是unity尖锐的阴影看起来更舒服，要和win7一样做出柔和的样式并不简单，kde显然就是因此显得臃肿
+windows确切的来说，是把窗口做成一整片悬浮的玻璃。
+也就是说做一个窗口，需要确保它成为一个局部的整体。
+显然我们做的窗口并不及这个标准，因为边界模糊，而做的太松散了。
+这是一件很微妙的事情，因为为了不掩盖背景，我们有意的降低了窗口的存在感，但是如此的化，边界就不可以做过头，否则会失去平衡感。
+对比来说，win7窗口的平衡感就很不错。但是并非全透明，因此，背景就模糊了。
+
+而像unity7这样的边界，就很淡，和全透明比较匹配。
+其实我们要的就是这个效果，就是title部分不太和我心意。
+
+qml虽然似乎有边界阴影展示，但是实际上还不完善，尤其是对透明化支持不好，所以还是要依靠wm的效果
+
+Wed 04 May 2016 18:58:39 NZST
+kde似乎和tile脚本的兼容真的有问题，它们的x结构和gtk不一样吧？
+所以真要迁移kde似乎是件很麻烦的事情
+已知的是，konsole在grow width的时候，会不自然的扩大height，
+对于kde来说，大概需要用kwin script来代替xprop，
+
+Wed 04 May 2016 19:01:13 NZST
+留在u14的问题，包括，软件老旧，有性能问题。
+但是unity的环境真的很清爽，所以编程难度很低
+
+Wed 04 May 2016 19:06:23 NZST
+但是arch的确很方便，cuda，theano都是现成的
+
+要不然就是用xfce，但是不爽xfce是gtk2
+mate倒是一个选择，支持compiz，
+wallpaper其实我们可以自制framelessapp在所有桌面展示吗？很麻烦
+
+要不然自制wm？openbox?
+VP问题倒是可以解决，就是少了unity7的全局展示
+
+Wed 04 May 2016 19:32:31 NZST
+我们的脚本，最大的优势是通过逆向kd tree来容纳各种de，而不会锁死窗口，
+有的人不在乎窗口锁死，但是我觉得很不舒服。
+这个优势，其实主要是通过和DE的融合体现出来的，因此维持不锁死窗口是很必要的。
+
+有问题的地方是,和de的融合是很费力的，各种兼容问题，当前在unity7下算是搞定了，估计进入mate和xfce问题也不大。但是转移wayland和mir就会成问题。而现在来看，kde也不是那么简单能进去的。
+不过kde感觉实在太臃肿，窗口修饰那么多，1920的分辨率下，容下4个窗口实在已经很拥挤了，用kde似乎的话，似乎几乎没有用tiling的余地。要用tiling，果然还是要配合非常细小的窗口修饰才行，分辨率要高。或许高分辨率下，kde也可以用？
+所以实际上，低分辨率并不是你的目标用户，兼容他们几乎没有意义，而我自己的分辨率也不够，所以也无法做高分辨率测试。
+kde真是感到臃肿，那么庞大的按钮，这种设计实际上接近平板，而gnome3和unity8大概也是这个走向。但是对于键盘桌面来说，那么庞大实在浪费，所以才会有wm出现的余地吧。
+就这个意义来说，要让wm和普通de环境兼容还真难，其实我不爽wm的主要原因可能就是分辨率太低，所以我需要全屏的firefox和vlc，而低分辨率下的wn的firefox和vlc表现怪异，所以很不爽。所以我希望firefox和vlc可以独立到wm之外，所以才用普通de+脚本。
+其实就算是高分屏，果然还是希望firefox和vlc可以全屏，可以作为背景来看。少数时候会希望firefox可以融入wm因为可能挡住了部分的文字
+
+就此来说，用script还是有意义的。剩下的问题是，和什么de搭配最好？
+unity7真是很不错，可惜要结束了，不过还有5年。但是wallpaper已经没有了。除非自己写？好歹unity7提供了VP和全局视图,但是即使u14还有3年维护，但是用不了新软件了。
+有什么必要的新软件呢？比如python吧，自己编译和系统的是不太匹配的，不过python用旧的问题也不大。
+啊，不过conky倒是用不了
+
+arch除了软件新以外还自带驱动，这也是优势，不过ubuntu安装驱动并不麻烦。而arch及时带了驱动可能也要自己改配置，可能并不简单
+
+Wed 04 May 2016 20:02:20 NZST
+总的来说，其实是kde让我不爽。
+表面来看，kde各方面都很优秀，
+但是深入其中，kde实在太复杂，太扭曲。
+德国的哲学传统？
+
+Wed 04 May 2016 21:55:23 NZST
+简单尝试了一下，要做个xlib程序好麻烦，太多参数要处理了。
+
+Thu 05 May 2016 05:08:17 NZST
+实际上wallpaper plugin在16.04还是正常的，不过dconf出了问题需要调整，所以至少还有两年可用。至少在unity8出来之前。
+不过升级的确是很麻烦的事情，很多地方都要改，而不升级的话，某些东西有问题，不过如果没有问题的话，稳定用两年时间也算很长了。相比来说，我们其实平时装系统太频繁了。
+至于arch什么的，虽然系统不错，但是，实在DE中还是unity7比较好。
+
+
+Thu 05 May 2016 05:34:52 NZST
+unity7不可替代的部分：
+其实主要是VP桌面和 compiz wallpaper，前者其实是编程问题，后者则似乎没有更好的替代。
+另外一点是global menu，但这个可以忍。
+至于开始菜单，就不是问题了，还有点讨厌。rofi够用了。
+
+另外当前的一些问题：
+搜狗的高占用率
+firefox的崩溃问题
+这两个问题似乎在arch上没怎么感觉到。
+还有个小问题是wallpaper compiz有崩溃倾向，不过频率不高。应该说是搜狗的并发症，搜狗占据了cpu，如果这个时候workspace比较多，就会导致wallpaper崩溃
+
+Thu 05 May 2016 16:58:30 NZST
+ubuntu16.04 compiz wallpaper結果在logout後再進入就正常運行了，原本14.04是自動崩潰logout，這裏要手動做一次。
+
+Thu 05 May 2016 22:03:48 NZST
+真是糟糕，u1604的vlc在改變窗口大小或者旋轉屏幕的時候會黑掉。
+小問題，繼續忍,現在就看unity8會怎麼樣了，不過那是明年的事情了。
+
+Fri 06 May 2016 01:51:08 NZST
+剛才用qml的時候盡然整個卡死了。ubuntu的核心部分真是有問題，比得上windows藍屏了。不過這是重度使用的時候的問題。
+
+Fri 06 May 2016 02:22:42 NZST
+可惜ubuntu16的cuda沒法用，雖然網上有辦法hack，但是果然不行。 
+
+Fri 06 May 2016 02:44:46 NZST
+怎麼辦呢？ubuntu下的vlc出問題了，而且cuda也不能用了，
+爲了用cuda，且是最新版本，那麼opensuse什麼的其實也用不了了。可選項，只有gentoo arch這樣的了。
+gentoo是很穩定的，arch則不是。不過manjaro似乎比arch穩定。
+
+那麼kde，xfce，mate，怎麼選？其實我們用了qml，所以kde是最好的吧？
+
+Fri 06 May 2016 02:50:18 NZST
+太折騰了，暫時用u16吧，反正要用cuda的話，我們手上還有u14，或者可能nvidia發佈新版本了。
+
+Fri 06 May 2016 03:32:35 NZST
+另外一點，當時的確覺得在arch kde下，qml很流暢，似乎的確有差別
+
+Fri 06 May 2016 17:57:45 NZST
+就目前的情況來看，似乎是compiz wm在負責作出VP workspace，以及包括 workspace switch。證據是
+在mate metaciy下，調用wmctrl是4個workspace，換成compiz後，就變成一個了
+所以，雖然是compiz負責的，但是在mate下卻沒有起效果。可能是被當作了和compton一樣的compositor用了。
+另外，簡單的wm比如openbox，並不支持VP，似乎除了compiz以外就沒有這樣的wm了？我們可以試下gnome3
+
+Fri 06 May 2016 18:03:56 NZST
+u16 mate的switcher設計真不錯，簡潔清晰如unity，信息又足夠多，動畫也流暢。
+我去，結果這功能是compiz提供的，
+compiz這麼優秀，卻沒有主流支持，這是政治問題嗎？
+還真是compiz裏面的switcher
+unity下也可以用，不過mate的包裝明顯更漂亮
+
+Fri 06 May 2016 18:54:06 NZST
+gnome3也不是VP，但是雖然它沒有二維workspace，但是可以上下移動窗口，這個很重要。至於不是vp，說明我們不得不改tile腳本。
+gnome3有桌面視圖，聽說gnome3可以用nitrogen來做wallpaper，可是我沒做到。
+
+Fri 06 May 2016 19:27:22 NZST
+cinnamon也不是vp workspace，也就是窗口不能被workspace分享。
+然後lxqt是用openbox做wm的，所以和openbox一樣不是vp，
+Fri 06 May 2016 19:31:17 NZST
+據說Enlightenment 14用的是vp
+Fri 06 May 2016 19:37:41 NZST
+這裏或許有一篇2014年的文章關於viewports
+按照這裏來說viewports最初出現於gnome/enlightenment,2003年被拋棄,的確是有政治性的問題，不顧作者也不喜歡compiz的複雜性。
+http://www.circuitousroot.com/artifice/programming/useful/fvwm/
+結論是fvwm提供viewports，
+
+Fri 06 May 2016 22:12:53 NZST
+之前u16上，旋轉屏幕的時候。vlc會黑掉，這次倒是沒有，是不是因爲我們多裝了什麼驅動還是軟件？因爲嘗試要編譯vlc，的確多裝了不少東西。然後還要包含重啓在內的原因什麼的
+
+Fri 06 May 2016 23:45:34 NZST
+雖然conky做出來還算不錯，但是果然還是unity panel更簡潔清晰，這麼一個panel是必要的，雖然conky也可以做成panel，加一些黑色背景，弄到右上角？右下角？
+
+Sat 07 May 2016 07:54:37 NZST
+這是很麻煩的事情，viewport是屬於compiz 的，但是workspace view很有可能是unity的。
+但是現在情況還不定。
+1.unity8到底如何？現有的情形是太接近觸摸屏了。
+2.fvwm是否可以支持workspace view？
+3.kde如何？雖然kwin不支持viewport，kde論壇承諾要加入wallpaper功能，到底要怎麼做呢？
+4.viewport功能在wayland和mir上會有嗎？因爲沒有wmctrl了。
+5.在mate，xfce上使用compiz會如何？用arch配合compiz直接運作會如何？有問題的一點是，compiz曾經被這些repo拋棄過，現在呢？
+6.unity7還可以用5年，所以這些事情5年後再考慮
+
+還有一點，我們現在的輕度使用來說，說不上能超出workspace的處理能力,編程的窗口不過那麼幾個，雖然桌面小也是原因，但是tile的窗口都不會超出5個
+
+Sun 08 May 2016 03:26:17 NZST
+又出現vlc旋轉黑屏的問題了，看來不是驅動裝少了那麼簡單。
+順便，旋轉的時候，conky的位置也沒有調整正確
+順便說起來，想要嘗試fvwm，也沒安裝成功
+
+Sun 08 May 2016 09:27:51 PM NZST
+原來arch 的gcc太新了，根本編譯不了cuda啊
+白弄了
+Sun 08 May 2016 10:00:29 PM NZST
+fvwm無法設置不同wallpaper，或者很難，果然還是只有compiz有這個功能,
+似乎kde4也可以
+
+Tue 10 May 2016 03:01:14 NZST
+****************************************
+已經確認，ubuntu下的workspace view的準確名字是Compiz Expo，所以如果其他DE用compiz的話，或許也能提供這個功能，比如mate。mate的情況很詭異，他的配置界面是compiz的，但是默認DE卻不是compiz.
+
+Tue 10 May 2016 09:03:11 NZST
+或許我們現在的工具有諸多問題，崩潰，重啓什麼的，但是爲了尋找下一個工具浪費的時間，大概比忍受這些問題花的時間更多。
+
+Wed 11 May 2016 00:47:18 NZST
+compiz+arch倒是可以實現絕大部分unity7的功能。就是細節處理還要花去很多時間吧。
+
+Wed 11 May 2016 04:06:49 NZST
+gentoo系有一個,可以擴充到compiz0.9，arch系則是aur
+gentoo系更保守，gcc才到4.9，
+或許gentoo也更穩定
+麻煩的是，gentoo的配置明顯比arch複雜，這是多版本兼容性帶來的複雜性。
+
+用gentoo麻煩的地方是USE flags，大概是因爲gentoo是本地編譯，所以就帶來編譯中常見的模塊選擇問題，因此gentoo的配置很明顯的很麻煩很費時間，顯然配置arch是很快的，gentoo就很慢了。
+
+Thu 12 May 2016 20:28:56 NZST
+關於在compiz中使用tile的一個問題，
+我們用了xkeybind，這東西方便的地方是跨平臺。但是它的效率的確是問題，而且會導致focus跳躍，所以不得不關閉動畫。
+所以實際上用它似乎不是一個好的選擇
+
+Fri 13 May 2016 06:57:54 NZST
+真想試試看fedora+compiz
+
+Fri 13 May 2016 07:18:49 NZST
+fedora+compiz+mate的問題：
+livecd中檢測不到usb網卡。
+compiz無法啓動，顯示錯誤 core dump
+
+Tue 17 May 2016 01:35:33 PM NZST
+***************************************************************
+理想的桌面。
+第一必要是wallpaper+expo，这个感觉是不可或缺的了。
+当前来说只有compiz有，而且其他de没有做这个的意向（因为似乎要求底层有viewports支持）
+第二第三是 blur以及appmenu，没法排选哪个更重要。因为terminal有shadow了，所以blur的用处已经主要是用于top panel之类的了，至于filemanager panel，应该是指望不了blur的吧，除非你自己写？或者我们用ranger? 可惜的是，ranger的鼠标操作之包括点选而已，也没有右键支持,
+要是ranger可以配置的话，加几个特殊按钮，就可以用鼠标操作了吧
+不过要让ranger能和rofi什么的整合，我们还需要给qmlterm设置启动执行命令什么的，这是未来可以考虑的，唯有的透明file manager的选项吧。
+至于firefox什么的透明完全不可能吧。而qmlterm虽然显示图片或许可能，但是排版完全偏离terminal了。
+然后appmenu这点，如果用的是terminal的时候，一般也不太会注意到.
+
+
+Tue 17 May 2016 06:02:54 PM NZST
+关于 top panel的配色，如果没有阴影的话，top panel需要配合白色wallpaper，很有限制性。
+要么我们用raw compiz，去除掉top panel，那么也就不用考虑配色了。
+要么想办法给top panel加上字体阴影？
+
+Wed 18 May 2016 11:05:58 AM NZST
+https://help.ubuntu.com/community/CompizStandalone#Gnome-panel_and_Nautilus
+使用compiz可以用的一些配置
+关于compiz的blur功能,出现在compiz0.8,听说那个版本比0.9稳定?
+效果图在这里:
+https://www.reddit.com/r/unixporn/comments/4jqi8z/xfce_compiz_blur/
+真巧,是9小时前的reddit
+compiz-boxmenu
+
+Fri 20 May 2016 01:56:35 AM NZST
+和xfce比起来， tint2的依赖应该算是很小的吧。配置也似乎很简单。不过在unity7下无法调出透明效果。
+xfce4panel其实安装依赖也不是那么大，就是配置似乎弄得比较繁琐，然后整合度似乎明显高于tint2，但是自身配置，比如说无法隐去title什么的。
+
+lxpanel和tint2一样无法整合untiy7的透明效果。
+竟然有个叫pypanel的东西2001-2005，好老
+
+不过，关键的点是，要么有shadow，要么有blur，不然transparent会比较麻烦的。
+这点，要是我们用qml的话，就可以做到，但是需要处理的两个问题是，如何与x/wayland对接，让其识别一个panel，固定位置，并且不要被覆盖,第二个，如何获取window title，time之类的信息？
+
+Fri 20 May 2016 02:30:58 AM NZST
+所有这些讨论都是关于迁移unity7到compiz的，但是，虽然expo很重要，但是unity7的menu和hud就被放弃了。
+hud是很不错的东西，虽然平时用terminal为主，所以很少用到menu
+multiload也和unity7很配，放弃真是很难。
+但是ubuntu的编译总觉的有问题，不然firefox怎么会总是崩溃呢。
+
+而且我们很难跟进unity8，虽然有menu，但是expo很大可能会被放弃的。
+
+Fri 20 May 2016 03:03:45 AM NZST
+compiz的expo很棒，但是开发人员却在乎于他的代码很乱，而支持compiz 的却是为了扭动窗口或者是为了cube。
+显然喜欢expo的极少。
+你无法改变网络上他人的想法，你没有这个能力.
+compiz的维护至少眼下还在做,但是这大概是为了支持unity7?如果ubuntu放手了,compiz到底会如何发展呢?
+unity还有7.5,因为8不会出现在下一个版本.那么未来呢?到底unity7能有多久的支持呢?ubuntu似乎说过不会强制要人进入unity8?
+
+不过unity8倒是有一个优势,它用qml,你也用过qml了,知道用它开发是很方便的
+
+Fri 20 May 2016 12:16:37 PM NZST
+和conky比起来，multiload清爽整洁多了
+
+Thu 26 May 2016 09:18:13 AM NZST
+迁移非unity环境除了topmenu的问题以外是,title不会和statusbar合并,所以要么去除statusbar?
+或者title靠左,statusbar做成conky靠右,但是要确保最大化的title是透明的,不然就遮住了statusbar
+
+选择
+x/compiz    unity7/xfce/mate/topmenu
+x/compton   mate/xfce/topmenu
+mir         unity8
+wayland     custom
+
+server      wm/compositor   DE          menu        panel       workspace   viewports   kernal
+X           compiz          unity7      globalmenu  unity7      expo        y           ubuntu
+X           copmiz          mate/xfce   topmenu                 expo        y           free
+X           compiz                      topmenu     xfce4+maxi  expo        y           free
+X           compton                     topmenu     xfce4+maxi  n           n           free    
+wayland     custom qml                  topmenu?    xfce4?      custom      y           free
+mir                         unity8      globalmenu  unity8                              ubuntu
+X/wayland   kwin            kde         appmenu     kde?        kde?        n?          free
+
+在X上转换基本没意义.虽然X还会活很久,不过应该只是维护了,情况基本和compiz一样
+所以要考虑未来的话,只有wayland和mir
+wayland有一些类似xfce的轻量级项目
+
+Thu 26 May 2016 02:06:34 PM NZST
+出了点奇怪的问题,compiz cpu占用到卡死了,然后tty无法重启 lightdm,倒是可以kill compiz
+kill之后好像又能重回桌面了,compiz似乎也自己重启了
+占用多是因为我用qmlscene用多了吗?
+
+这种时候就让人很有冲动去试试arch
+但是可能问题在compiz本身而不一定是ubuntu,没法确定.不过ubuntu连firefox都有问题,所以说不清楚
+
+Sat 28 May 2016 06:05:48 PM NZST
+mutt不能用,因为要处理gmail+waikato的混合帐号很麻烦
+
+Mon 30 May 2016 09:24:43 AM NZST
+fedora的mate compiz 似乎是一个主要spin,支持优先级会比较高吧?不知道会支持多久.
+但问题是fedora livecd不支持usb网卡，arch是没问题的,看来fedora的硬件支持是有问题的.
+
+Tue 31 May 2016 08:31:32 AM NZST
+arch的aur真是什么软件都有,维护社群真大.
+不过arch丢弃了compiz,虽然aur中有
+不过aur中也有一个活跃的compiz0.8的upstream,5天前github还有活动
+但是有评论说0.9的架构(c++)好于0.8(c)
+
+Tue 31 May 2016 09:05:05 AM NZST
+好像xfce4默认wm支持不同的workspace不同wallpaper
+不过xfce4好老啊,上次发布是201502,但是至少用xfce可以摆脱ubuntu
+mate也有这个功能,但是是依赖于compiz的,但是compiz将来没有维护就是我们担心的,所以不想转compiz+arch
+
+不过xfce没有expo,仔细想想,果然不能没有expo,因为这样就无法快速选择桌面了.
+如果不强求viewports,但是要确保expo+wallpaper的话,当前似乎只有kde4和compiz,而未来可能有kde5(进展缓慢)
+
+最麻烦的是,为什么ubuntu的firefox老是崩溃呢?而且好像不止firefox,还有python,还有尝试编译gentoo的时候.
+这一点让人非常想转arch
+
+如果说,现在桌面上有什么ubuntu的必要组件的话,其实就是multiload-indicator了,相比之下conky太难看了,而且不够compact.
+这又是一个upstream在ubuntu的软件,但是应该是社区维护,arch也有,但是流行度只有0.01,也就是万分之一吧?
+
+multiload-indicator远不及conky感觉也是geek思维作祟,喜欢一堆数字在桌面上跳,
+很显然multiload提供了足够的编程必要的信息,也很compact不会干扰思维,而conky或许对于网络管理员会有用?的那是对于网络编程无关的人来说是过份了吧.
+
+Tue 31 May 2016 10:17:59 AM NZST
+其实很多人不喜欢ubuntu,或许是一种开源政治吧,并不是ubuntu的软件不够好(ui部分很不错,但是内核部分似乎有问题),而是不喜欢ubuntu的开发管理方式,这是开发者的立场吧,而arch应该是一个开发者集群吧.
+
+看ubuntu launchpad的情况,的确感觉不像是github那么自由的样子,有一点接近商业运作的感觉?但是整体ui的设计调整,或许开源是做不了的? 
+
+虽然compton对intel的支持不及nvidia,但是反正也不打算用compton
+
+Tue 31 May 2016 12:24:27 PM NZST
+转移arch xfce的一些问题
+1.qml的阴影效果和ubuntu不同，特别浓，需要调整，不过虽然美观上有点影响，但是或许对于阅读更便利?另外动画也不流畅,这个明显是有问题的吧?
+2.xfce无端崩溃了,x server也启动不了.
+3.tile的细节调整也有问题.
+后两个问题,如果换到compiz alone,或许会好一点
+
+我们不应该再为了这些DE写代码了,反正之后也会被抛弃的.还是等wayland之类的出来吧.
+不过,另一方面,要是自己写一个特化的DE,再为其调整tile脚本的话,那几乎相当于是自己做了一个i3,唯有的区别是,i3之类的严格限制死了窗体布局,这点让人很不舒服,不自由
+
+
+Sat 04 Jun 2016 08:50:20 PM NZST
+虽然top panel很有用处,不过扔掉top panel之后用似乎也挺畅快的,就是看不到时间,load
+相对来说,workspace对我们的用处大多了

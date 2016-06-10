@@ -1,0 +1,2 @@
+gnome-session-quit
+gnome-session-quit --power-off
