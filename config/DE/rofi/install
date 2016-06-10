@@ -1,0 +1,22 @@
+cd /dev/shm
+#git clone https://github.com/DaveDavenport/rofi.git
+wget https://github.com/DaveDavenport/rofi/releases/download/0.15.12/rofi-0.15.12.tar.gz
+tar xf rofi
+cd rofi
+sudo apt install make autoconf automake pkg-config  -y
+sudo apt install libxinerama-dev -y
+sudo apt install libglib2.0-dev -y
+sudo apt install libpango1.0-dev  -y
+sudo apt install libstartup-notification0-dev -y
+
+vim source/history.c
+#define HISTORY_MAX_ENTRIES    256
+#
+
+./configure
+make
+sudo make install
+#
+#常用快捷键
+#ctrl+enter,直接执行,没有补全
+#shift+enter,在terminal执行

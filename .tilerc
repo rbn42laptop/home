@@ -1,0 +1,34 @@
+#!/usr/bin/python
+WinBorder = 2
+LeftPadding = 15
+BottomPadding = 15
+TopPadding = BottomPadding
+RightPadding = BottomPadding
+NavigateAcrossWorkspaces = False #True  # availabe in viewports desktops
+TempFile = "/tmp/kd_tree_tile"
+LockFile = "/tmp/kd_tree_tile_lock"
+
+
+# This is the congiguration that works for unity7. If you are using a
+# different Desktop Environment, close all windows and execute "wmctrl
+# -lG" to find out all the applications need to exclude.
+
+EXCLUDE_APPLICATIONS = ['<unknown>', 'x-nautilus-desktop', 'unity-launcher',
+                        'unity-panel', 'Hud', 'unity-dash', 'Desktop',
+                        'Docky', 'conky', 'Conky'
+                        'screenkey', 'XdndCollectionWindowImp']
+# An alternative method to exclude applications.
+EXCLUDE_WM_CLASS = [ 'conky', 'Conky','tint2','xfce4-panel','mpv'] #,'wesnoth-1.12','vlc','mpv']
+
+UNRESIZABLE_APPLICATIONS = ['Screenkey']
+RESIZE_STEP = 50
+MOVE_STEP = 50
+MIN_WINDOW_WIDTH = 50
+MIN_WINDOW_HEIGHT = 50
+
+# NOFRAME_WMCLASS = ['Wine']
+
+# In i3-wm's window tree, only one child of a node is allowed to split.
+# MAX_KD_TREE_BRANCH = 1
+MAX_KD_TREE_BRANCH = 2
+

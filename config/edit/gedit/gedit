@@ -1,0 +1,2 @@
+
+gsettings set org.gnome.gedit.preferences.ui notebook-show-tabs-mode 'never'

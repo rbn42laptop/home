@@ -1,0 +1,23 @@
+127.0.0.1	localhost
+127.0.0.1	interface.dmzj.com
+127.0.0.1	g.e-hentai.org
+127.0.0.1	exhentai.org
+127.0.0.1	larzm42.github.io
+127.0.0.1	tieba.baidu.com
+127.0.1.1	H81M-D2
+
+127.0.0.1	cnbeta.com
+127.0.0.1	www.cnbeta.com
+127.0.0.1	comment8.mydrivers.com
+
+127.0.0.1	163.com
+127.0.0.1	comment.news.163.com
+127.0.0.1	news.163.com
+127.0.0.1	news.mydrivers.com
+
+# The following lines are desirable for IPv6 capable hosts
+::1     ip6-localhost ip6-loopback
+fe00::0 ip6-localnet
+ff00::0 ip6-mcastprefix
+ff02::1 ip6-allnodes
+ff02::2 ip6-allrouters

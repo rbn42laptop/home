@@ -1,0 +1,11 @@
+#!/bin/bash 
+source ~/bin/GLOBAL
+#记录到rofi
+#echo 1 ./bin/manga \"$1\" >> "$ROFI_HISTORY"
+#mange 没有记录的意义,因为大多是一次性的,比起记录执行次数,按最新执行排序反而更有价值.
+
+LANGUAGE=zh_CN.UTF-8
+LC_ALL=zh_CN.UTF-8
+LANG=zh_CN.UTF-8
+export winepath=`winepath -w "$1"`
+wine ~/win7/HAP_MangaMeeya740/MangaMeeya.exe "$winepath" 

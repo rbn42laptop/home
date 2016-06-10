@@ -1,0 +1,9 @@
+https://github.com/jorgen/yat
+以yat为例,分析qml terminal
+yat build完之后,可以在 imports/Yat/目录找到Screen.qml和Text.qml,前者调用了后者,作为一个terminal端口
+后者引用了Yat独有的MonoText组件,而不是我们用过的TextArea组件
+
+TextArea组件能够透明,MonoText组件不行.
+
+
+qterminal似乎可以透明,不过依赖qtermwidget,懒得测试了.

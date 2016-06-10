@@ -1,0 +1,3 @@
+#!/bin/bash
+~/bin/web "http://en.wikipedia.org/w/index.php?search=$@"
+

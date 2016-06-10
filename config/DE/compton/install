@@ -1,0 +1,14 @@
+
+sudo apt install libx11 libxcomposite libxdamage libxfixes libXext libxrender libXrandr libXinerama pkg-config make xproto sh xprop xwininfo libpcre libconfig libdrm libGL libdbus asciidoclibx11-dev libxcomposite-dev libxdamage-dev libxfixes-dev libXext-dev libxrender-dev libXrandr-dev libXinerama-dev pkg-config-dev make-dev xproto-dev sh-dev xprop-dev xwininfo-dev libpcre-dev libconfig-dev libdrm-dev libGL-dev libdbus-dev asciidoc-dev -y
+
+git clone https://github.com/chjj/compton.git
+
+#compton.c line 5066
+#限制了 kernal matrix /  blur kernal 的大小为16,所以做不出更大的blur效果来
+#  if (wid > 64 || hei > 64) {
+#      printf_errf("(): Matrix width/height too large.");
+#          goto parse_matrix_err;
+cd compton
+make 
+sudo make install
+

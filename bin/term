@@ -1,0 +1,4 @@
+#!/bin/bash
+#gnome-terminal
+#tilda -f "SetoFont 23" -b white  -a -t 10 
+bash ~/git/qmlterm/run.sh "$@"

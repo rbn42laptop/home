@@ -39,9 +39,10 @@ Plugin 'peterhoeg/vim-qml'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 
+"Plugin 'ivanov/vim-ipython'
 
 "Plugin 'tpope/vim-pathogen'            "另一个包管理
-Plugin 'yuratomo/w3m.vim'              "w3m插件
+"Plugin 'yuratomo/w3m.vim'              "w3m插件
 
 
 "Plugin 'glsl.vim'
@@ -58,8 +59,6 @@ Plugin 'yuratomo/w3m.vim'              "w3m插件
 
 "Plugin 'JuliaLang/julia-vim'
 "Plugin 'mattn/emmet-vim'
-"Plugin 'ivanov/vim-ipython'
-"Plugin 'ivanov/vim-ipython'
 "#Plugin 'Valloric/YouCompleteMe'
 " plugin from http://vim-scripts.org/vim/scripts.html
 "Plugin 'L9'
@@ -151,6 +150,7 @@ let NERDTreeQuitOnOpen=0
 map <F3> :NERDTreeToggle<CR>
 
 noremap <F4> :Autoformat<CR><CR>
+"暂时关掉，改其他人的项目的时候，开着不方便
 autocmd BufWritePre *.py :Autoformat
 
 "let g:formatprg_glsl = "astyle"
@@ -297,8 +297,14 @@ set mouse=a
 map <ScrollWheelUp> kkk
 map <ScrollWheelDown> jjj
 
-map q :qa<CR>
-
+"save and quit
+map q :quit<CR>
+nnoremap s :w<CR>
+"nnoremap <C-S> :w<CR>
+"inoremap <C-S> <ESC>:w<CR>
+"map <C-S> 
+"nnoremap <C-S-S> :w<CR>
+"inoremap <C-S-S> <ESC>:w<CR>
 
 "Wed 27 Apr 2016 15:51:45 NZST
 "#hi StatusLine ctermbg=Black ctermfg=None
@@ -317,3 +323,73 @@ set t_Co=256
 "set laststatus=2
 "set t_Co=256
 
+
+"Thu 26 May 2016 05:05:48 AM NZST
+"""""""""""""""""eclim
+"选择field后，调用JavaGet JavaSet JavaGetSet JavaConstructor
+"Java 执行 可以map到F2
+autocmd FileType java nnoremap <silent> <buffer> <F2> :Java<cr>
+"JavaCorrect错误补全 这个需要map,很常用
+"JavaFormat 格式化 没有F4好用
+"JavaSearch 查询定义的方法,类 map到<C-]>
+autocmd FileType java nnoremap <silent> <buffer> <cr> :JavaSearchContext<cr>
+"JavaRename abc 重命名 会用到 
+"JavaMove abc
+"JavaDocComment生成注释 会用到
+"JavaDocSearch 查找doc,jdk的部分会打开浏览器 JavaDocPreview
+"JavaCallHierarchy 查询调用的位置 挺有用
+"JavaImport 引用补全 JavaImportOrganize 很常用
+"以上命令限定java文件可用
+"VimSettings配置eclim
+"WorkspaceSettings配置eclimd
+"只能用于project中
+autocmd FileType python nnoremap <silent> <buffer> <cr> :PythonSearchContext<cr>
+
+
+"Thu 26 May 2016 05:05:53 AM NZST
+"vim fold
+"z+a "z+c z+o
+"""""""""""""""""""
+
+"Thu 26 May 2016 06:36:41 AM NZST
+"反正这个功能不完善,只能写简单的东西的时候用,其他时候主要还是要靠独立的run.sh
+"中级的能力或许可以靠vim-ipython实现,不过感觉还是run.sh的结构清晰,所以更方便
+fun! CallInterpreter()
+    if match( getline(1) , '^\#!') == 0 
+        "这里欠缺的问题:最好是有一个独立的window
+        "tag,专门用来输出结果,可以简单关闭,没有reload提示,modified提示
+        exec("w")
+        exec ("!".getline(1)[2:]." % ")
+        "exec("split")
+        "exec("wincmd j")
+        "exec ("silent !".getline(1)[2:]." % > /tmp/vimexec")
+        "exec("edit  /tmp/vimexec")
+        "exec("resize 4")
+        "exec("r  /tmp/vimexec")
+        "exec("new")
+        "exec("map q :q!<CR>")
+    endif
+endfun
+
+autocmd FileType python nnoremap <buffer> <F2> :call CallInterpreter()<CR>
+"autocmd FileType bash nnoremap <buffer> <F2> :call CallInterpreter()<CR>
+"
+"ycm与multiple cursor的兼容问题
+" Experimentally integrate YouCompleteMe with vim-multiple-cursors, otherwise    
+" the numerous Cursor events cause great slowness                                
+" (https://github.com/kristijanhusak/vim-multiple-cursors/issues/4)
+
+"multiple cursors相关
+function Multiple_cursors_before()                                               
+  let s:old_ycm_whitelist = g:ycm_filetype_whitelist                           
+  let g:ycm_filetype_whitelist = {}                                            
+endfunction                                                                      
+                                                                                 
+function Multiple_cursors_after()                                                
+  let g:ycm_filetype_whitelist = s:old_ycm_whitelist                           
+endfunction       
+
+"默认的<C-n>一次之选择一个,不过感觉一般都是需要一次全部选中,
+"需要先按*截取关键词
+nnoremap <C-j> :MultipleCursorsFind <C-R>/<CR>
+vnoremap <C-j> :MultipleCursorsFind <C-R>/<CR>

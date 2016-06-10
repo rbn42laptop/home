@@ -1,0 +1,202 @@
+[org/gnome/settings-daemon/plugins/media-keys]
+custom-keybindings=['/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/']
+logout=''
+screensaver=''
+volume-up=''
+volume-down=''
+terminal='<Control><Alt>t'
+
+[org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1]
+binding='<Shift><Super>space'
+command='python ./git/kd_tree_tile/main.py layout prev'
+name='super shift space'
+
+[org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0]
+binding='<Super>Return'
+command='./bin/rofi.sh'
+name='rofi'
+
+[org/gnome/desktop/interface]
+cursor-size=24
+font-name='Lucida G 12'
+icon-theme='AwOkenDark'
+gtk-theme='Radiance-Flat-Teal'
+
+[org/gnome/desktop/lockdown]
+disable-lock-screen=true
+
+[org/gnome/desktop/wm/preferences]
+theme='Radiance-Flat-Teal'
+titlebar-font='Lucida Gr 12'
+
+[org/gnome/desktop/wm/keybindings]
+panel-main-menu=['<Super>s']
+move-to-workspace-right=['<Shift><Control><Alt>Right']
+move-to-workspace-up=['<Shift><Control><Alt>Up']
+move-to-workspace-left=['<Shift><Control><Alt>Left']
+move-to-workspace-down=['<Shift><Control><Alt>Down']
+raise=['disabled']
+maximize=['<Control><Super>Up']
+maximize-horizontally=['disabled']
+activate-window-menu=['<Alt>space']
+switch-input-source=['disabled']
+switch-input-source-backward=['disabled']
+toggle-fullscreen=['disabled']
+lower=['disabled']
+maximize-vertically=['disabled']
+close=['<Shift><Super>q']
+switch-to-workspace-up=['<Control><Alt>Up']
+switch-to-workspace-down=['<Control><Alt>Down']
+switch-to-workspace-right=['<Control><Alt>Right']
+switch-to-workspace-left=['<Control><Alt>Left']
+
+[org/compiz]
+existing-profiles=['Default', 'unity']
+current-profile='unity'
+
+[org/compiz/profiles/unity]
+plugins-with-set-keys=['unityshell', 'gnomecompat', 'expo', 'workarounds', 'fade', 'wall', 'opengl', 'composite', 'vpswitch', 'core', 'ezoom', 'move', 'session', 'commands', 'scale', 'decor', 'grid', 'snap', 'animation', 'place', 'resize', 'mousepoll', 'unitymtgrabhandles', 'imgjpeg', 'wallpaper', 'thumbnail', 'rotate', 'put', 'staticswitcher', 'extrawm', 'workspacenames', 'firepaint', 'splash', 'showrepaint', 'scaleaddon', 'annotate', 'switcher', 'maximumize', 'addhelper', 'opacify', 'trailfocus', 'ring', 'crashhandler', 'showdesktop', 'cubeaddon', 'resizeinfo', 'neg', 'wizard', 'bench', 'mblur', 'freewins', 'wobbly', 'kdecompat', 'td', 'scalefilter', 'winrules', 'widget', 'cube', 'screenshot', 'shelf', 'clone', 'water', 'titleinfo', 'mag', 'showmouse', 'fadedesktop', 'shift', 'notification', 'obs']
+
+[org/compiz/profiles/unity/plugins/wall]
+thumb-highlight-gradient-shadow-color='#dfdfdfff'
+arrow-base-color='#e6e6e6d9'
+arrow-shadow-color='#dcdcdcd9'
+
+[org/compiz/profiles/unity/plugins/resizeinfo]
+gradient-1='#cccce6cc'
+gradient-2='#f3f3f3cc'
+gradient-3='#d9d9d9cc'
+outline-color='#e6e6e6ff'
+
+[org/compiz/profiles/unity/plugins/ezoom]
+zoom-box-fill-color='#2f2f2f4f'
+zoom-box-outline-color='#2f2f4f9f'
+
+[org/compiz/profiles/unity/plugins/cubeaddon]
+ground-color1='#b3b3b3cc'
+ground-color2='#b3b3b300'
+
+[org/compiz/profiles/unity/plugins/unityshell]
+show-launcher='Disabled'
+icon-size=16
+launcher-opacity=0.0
+panel-opacity=0.69999998807907104
+lock-screen='Disabled'
+disable-show-desktop=true
+dash-blur-experimental=2
+inactive-shadow-color='#000000a5'
+autohide-animation=0
+panel-opacity-maximized-toggle=false
+shortcut-overlay=false
+background-color='#00000002'
+launcher-hide-mode=1
+
+[org/compiz/profiles/unity/plugins/thumbnail]
+thumb-color='#0000007f'
+font-background-color='#0000007f'
+
+[org/compiz/profiles/unity/plugins/opengl]
+texture-filter=2
+
+[org/compiz/profiles/unity/plugins/freewins]
+cross-line-color='#1800ffff'
+circle-color='#54befb80'
+line-color='#1800ffff'
+
+[org/compiz/profiles/unity/plugins/grid]
+fill-color='#1cb39f4f'
+outline-color='#1cb39fff'
+
+[org/compiz/profiles/unity/plugins/decor]
+active-shadow-color='#00000080'
+inactive-shadow-color='#000000ff'
+
+[org/compiz/profiles/unity/plugins/expo]
+deform=1
+ground-color1='#b3b3b3cc'
+ground-color2='#b3b3b300'
+vp-brightness=80.0
+reflection=true
+vp-saturation=80.0
+selected-color='#1cb39fff'
+x-offset=32
+
+[org/compiz/profiles/unity/plugins/gnomecompat]
+main-menu-key='Disabled'
+run-key='Disabled'
+
+[org/compiz/profiles/unity/plugins/staticswitcher]
+background-color='#333333d9'
+
+[org/compiz/profiles/unity/plugins/firepaint]
+fire-color='#ff3305ff'
+
+[org/compiz/profiles/unity/plugins/screenshot]
+selection-outline-color='#2f2f4f9f'
+selection-fill-color='#2f2f4f4f'
+
+[org/compiz/profiles/unity/plugins/core]
+focus-desktop=false
+active-plugins=['core', 'composite', 'opengl', 'regex', 'vpswitch', 'move', 'imgjpeg', 'commands', 'grid', 'snap', 'animation', 'place', 'resize', 'mousepoll', 'imgpng', 'copytex', 'workarounds', 'wallpaper', 'wall', 'compiztoolbox', 'session', 'unitymtgrabhandles', 'expo', 'fade', 'ezoom', 'scale', 'unityshell']
+
+[org/compiz/profiles/unity/plugins/wallpaper]
+cycle-wallpapers=false
+
+[org/compiz/profiles/unity/plugins/commands]
+command12='python ./git/kd_tree_tile/main.py focus right'
+command13='python ./git/kd_tree_tile/main.py move right'
+command14='./git/kd_tree_tile/main.py swap right'
+command15='./git/kd_tree_tile/main.py grow width'
+command16='./bin/rofi.sh'
+command17='./bin/fcitx.py'
+command18='python ./git/kd_tree_tile/main.py layout next'
+command19='bash ./bin/vol_inc.sh         '
+command20='bash ./bin/vol_dec.sh'
+run-command14-key='<Shift><Super>l'
+run-command12-key='<Super>l'
+run-command18-key='<Super>space'
+run-command20-key='<Super>Next'
+run-command13-key='<Control><Super>l'
+run-command15-key='<Shift><Control><Super>l'
+run-command17-key='<Control>space'
+run-command19-key='<Super>Prior'
+run-command16-key='<Super>d'
+
+[org/compiz/profiles/unity/plugins/shift]
+ground-color1='#b3b3b3cc'
+ground-color2='#b3b3b300'
+
+[org/compiz/profiles/unity/plugins/resize]
+border-color='#1cb39fff'
+fill-color='#1cb39f4f'
+
+[org/compiz/profiles/unity/plugins/showmouse]
+color='#ffdf3fff'
+
+[org/compiz/integrated]
+show-hud=['<Alt>']
+command-10='python ./git/kd_tree_tile/main.py move left'
+command-11='./git/kd_tree_tile/main.py swap left'
+command-3='./git/kd_tree_tile/main.py swap down'
+command-4='./git/kd_tree_tile/main.py grow height'
+command-5='python ./git/kd_tree_tile/main.py focus up'
+command-12='./git/kd_tree_tile/main.py shrink width'
+command-1='python ./git/kd_tree_tile/main.py focus down'
+command-2='python ./git/kd_tree_tile/main.py move down'
+command-6='python ./git/kd_tree_tile/main.py move up'
+command-7='./git/kd_tree_tile/main.py swap up'
+command-8='./git/kd_tree_tile/main.py  shrink height'
+command-9='python ./git/kd_tree_tile/main.py focus left'
+run-command-3=['<Shift><Super>j']
+run-command-4=['<Shift><Control><Super>j']
+run-command-9=['<Super>h']
+run-command-1=['<Super>j']
+run-command-10=['<Control><Super>h']
+run-command-5=['<Super>k']
+run-command-6=['<Control><Super>k']
+run-command-2=['<Control><Super>j']
+run-command-11=['<Shift><Super>h']
+run-command-12=['<Shift><Control><Super>h']
+run-command-7=['<Shift><Super>k']
+run-command-8=['<Shift><Control><Super>k']
+

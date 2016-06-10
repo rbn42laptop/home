@@ -1,0 +1,5 @@
+xrandr
+xrandr --output "eDP1" --rotate normal
+xrandr --output "eDP1" --rotate left
+xrandr --output "eDP1" --rotate right
+xrandr --output "eDP1" --rotate inverted

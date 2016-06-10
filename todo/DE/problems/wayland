@@ -1,0 +1,141 @@
+Fri 20 May 2016 02:45:34 PM NZST
+wayland 的简易wm库
+https://github.com/michaelforney/swc
+用wayland做的3d桌面,这种渲染效果,显然就是cube和expo所需要的
+https://www.youtube.com/watch?v=_FjuPn7MXMs
+https://www.youtube.com/watch?v=Dgtba_GpG-U
+这些视频看起来比expo复杂多了,不过实用性上来说很难确认.如果真的有实用化的3d方案的话,应该早就有大公司着手了吧?果然桌面还是只能二维吧,毕竟这是人的视界局限
+
+Fri 20 May 2016 02:32:38 PM NZST
+首先gnome3是没法用的，当前设计的gnome3实在太差。
+
+然后是我们需要的功能：
+1.theme，不知道这个wayland是否提供。按照x 的情况来说theme应该是独立于wm的，这个里面的兼容性问题是比较严重的，所以如果没有第三方可以帮忙处理的话，我们大概没法着手的。
+2.然后compositor blur，这个基本确定应该是独立于wm的
+3.然后是topmenu，这个东西很多人尝试过，似乎都不能处理得很好，除了ubuntu，因为兼容性很成问题。所以这个我们大概是处理不了的。
+4.最后是expo，这个我觉得是最关键的了，从功能性来说，毕竟blur，theme，topmenu，影响的主要还是视觉方面的。不过expo也很难说，毕竟平时切换桌面的时候用的不多，不过偶尔会需要用到看下全局。
+但是二维这点还是比较重要的，其实这些xfce也能做到，就是和tiling 脚本暂时还不够匹配而已。再者是没有wallpaper，而这点未来kde似乎会做到。
+5.然后是key map，xkeybind真的很差，不过如果可以接触wayland api的话，或许这个处理起来不是那么复杂的。还有是hud，这也不是我们能做到的，平时也几乎没怎么用，主要是用菜单的情况太少，但是也是很好的设计。
+6.然后是multiload，虽然想要用conky来替代，不过界面设计来说在这个方面multiload比conky好多了,快捷键什么的也很方便。不过unity8应该会接纳这些indicator组件，其实xfce4也可以接纳的。
+7.然后是panel，应该有很多现成的，除了blur和topmenu以外，应该不会比unity7差.
+8.rofi,这个应该几乎不是问题,不过少了开始菜单可能要多学几个命令了.
+
+但是总的来说其实wayland是很不成熟的吧.估计fcitx什么的都会很成问题,所以现在迁移其实太早了吧.
+
+Fri 20 May 2016 02:53:10 PM NZST
+到底是怎样的情况呢?ubuntu bug多似乎的确是个事实.或许不用n卡还会好些.不过当前来说firefox总是在崩溃.
+迁移出去的话,就是wayland和x了,wayland自身似乎是个很精简的东西,但是还需要各种软件去配合它吧?
+wayland上面已经成熟的大概只有gnome3,可是gnome3真的很糟糕.也是geek式样的纯黑设计.老实说我觉得用黑色设计其实是因为黑色可以掩盖设计上的不足.
+此外有lxqt,似乎很多人喜欢,但是新品上市肯定是不稳定的,而kde其实本身的问题就是稳定性,虽然这大概是设计缺陷.
+然后是xfce4,mate,mate还在发展中,xfce4同样算是终结了吧.所有这些DE都不得不往新技术迁移,我想你现在根本不知道哪个DE可以安然过渡而不会出太多问题.(这种问题上似乎苹果倒是很可靠,windows跨度大,所以出问题的可能性也比较大.)
+此外就是i3 openbox了,i3当然是不考虑的,那种操作方式太不自由,太压抑.
+openbox倒是个选择,当初放弃,主要还是因为没有expo
+不过openbox同样在迁移.
+你不知道哪个DE能安然迁移,这个时候就会想果然还是自己写最可靠了.
+
+果然我们还是用compiz算了?因为你看,所有的DE都处在技术迁移中,包括unity8,你不知道投资哪一个是比较可靠的.
+另一方面很多软件或许还没有迁移到wayland或者mir
+
+或许如果wayland很可靠的话,我们或许可以自制一个wm,但是这个前提条件暂时还没法确认吧.
+
+然后如果选择x的话,那么有哪个比compiz更好吗?似乎并没有.
+而选择compiz的话,搭配unity7自然是最好的.就是不知道unity7可以活多久,从现在往后至少还有2,3年吧.
+当然,问题是,ubuntu bug多,而unity7绑定了ubuntu
+或许我们该用debian?但是debian库中也没有compiz了,现在compiz的upstream就是launchpad,也就是ubuntu开发.arch aur倒是在紧跟这个源头.因此情况多少有点像是,如果要用compiz,那么只有跟进ubuntu,当然从arch aur也可以编译,不过arch的滚动更新很让人不放心,aur停止维护的就会滚坏了吧?
+
+Fri 20 May 2016 03:19:28 PM NZST
+因此就是这样的情况,ubuntu有bug,所以用着不省心,那么我们就想要从ubuntu向外迁移.但是expo现在是compiz独有的,而compiz则几乎是ubuntu主导兼独有.
+所以这个结论几乎就是表明expo当前是unity7主导的.当然,arch还能编译,但是你不知道这些能支持多久.
+最放心的办法,自然是自己控制这些.
+而wayland是个很好的选择,它的接口应该会比x更友好吧.mir大概只能放弃,毕竟又是ubuntu独有的.
+
+Sat 21 May 2016 02:34:17 AM NZST
+wayland的支持度的确是个问题,fcitx当前还在针对wayland开发中.
+
+那么我们假设,如果wayland开发完成的话,在wayland上能做到吗?
+expo所需要的,其实应该是和3d效果差不多的渲染技术.剩下就是开放viewports,这个是否有相应的标准呢?还是我想怎么弄就怎么弄呢?
+
+Sat 21 May 2016 03:06:07 AM NZST
+wayland 的渲染方案是,让client自行渲染,然后共享渲染buffer给server.
+那么workspace或者viewports的情况下,大概看不到的client就不要渲染buffer了吧.
+也就是说server,要找出需要渲染的client,然后渲染获取buffer,然后组合这些buffer成为界面,也就是compositor的工作
+
+另外,就是osx的多级blur了.啊,但是这个是api,需要client和server双方配合,我们单方面去做也没有意义.不过倒是可以为不同的程序分配不同的blur方案
+不过,这是你想多了,blur用于小组件还行,但是用于terminal,就有点难说了,如果说terminal背后是wallpaper,那么绝对不需要,如果terminal背后是firefox呢?有的时候,似乎会有点用处?但是我觉得shadow就好象足够了.
+至于,如果要多级blur的话,我觉得,应该由client告诉server,哪些区域(方形?一般不会用圆形吧?但是圆角倒是会用到的?圆角blur的确是win7所用的,而且明显的,我觉得这个界面比win10和osx亲切多了)需要进行背景blur计算.
+
+其实比起我们自己实现,找个现成的然后改出我们想要的功能才是最方便的,这样话,字体,主题这些问题都会有人帮我们处理好了
+
+Sat 21 May 2016 03:24:22 AM NZST
+自制compositor+wm的话,title部分的效果倒是可以我们自己控制了,不管是blur还是shadow
+
+Sat 21 May 2016 03:39:58 AM NZST
+这里似乎有一个和lxde一样轻巧的开发中的DE
+https://github.com/raspberrypi/maynard
+和名字一样,是raspberrypi在负责
+我想会是一个很好的参考案例,它是作为weston的插件写的,就好象unity7对于comopiz,或者是gnome3对于mutter
+很显然,viewports会收到weston限制,如果weston不支持,那么就用不了吧.不过就像expo独立于unity7,我们要重现expo的话,可以主要通过改动weston来解决吧.
+
+还有一个wayland de
+Hawaii (desktop environment)
+这个是基于qtquick的
+这个似乎是它用的compositor
+https://github.com/greenisland/greenisland
+后者来自于QtWaylandCompositor,是来自qt的
+不知道是不是我理解错了,这东西竟然可以用qml开发compositor
+https://doc-snapshots.qt.io/qt5-dev/qtwaylandcompositor-pure-qml-example.html
+当然即使可以,渲染分配这种复杂的事情大概是做不到的吧.
+另外,原来sddm是基于qml的,而且看来是这个hawaii group在负责
+
+虽然我觉得raspberrypi可能更可靠写,不过qml对于开发来说真的很友好啊.
+
+
+Sat 21 May 2016 04:55:59 AM NZST
+https://doc-snapshots.qt.io/qt5-dev/qtwaylandcompositor-pure-qml-example.html
+这个范例的确很有趣,我们来解析一下
+xdgchrome里面是动画,分别在focus和close事件下触发
+chrome里面也是一个destroy事件触发的动画.
+keyboard里面,似乎放了一个虚拟键盘
+screen里面,似乎是屏幕分辨率,背景图,鼠标追踪? meta+f全屏快捷键,ctrl alt backspace退出.
+main中调用了  Screen Chrom XdgChrom WaylandSurface WindowManager WlShell XdgShell TextInputManager
+Chrome调用了WlShellSurfaceItem
+Keyboard调用了InputPanel
+Screen调用了WaylandOutput
+XdgChrome调用了XdgSurfaceItem
+
+所以,包括WaylandSurface WindowManager WlShell XdgShell TextInputManager WlShellSurfaceItem InputPanel WaylandOutput XdgSurfaceItem都是属于Qt的
+
+Sat 21 May 2016 05:46:35 AM NZST
+参考expo的情况,expo中的桌面渲染和主桌面渲染不是一回事情,它是会区分application选择哪些application布局在什么位置的,所以panel launcher可以排除,但是docky和conky却保留了
+
+这个qtcompositor,没有在qml范例中涉及opengl,这是不对的,但是cpp的范例中有涉及.
+opengl很重要,因为只有通过它,你才能操控expo
+
+Sat 21 May 2016 05:51:49 AM NZST
+不管怎么说,这是件很复杂的事情,或许我们应该等待kde成熟,然后修改tiling脚本适应workspace模式?反正迁移wayland多少都是要改脚本的
+或者即使要自己做expo,我觉得,你至少会需要参考下kde的expo模式中的gl代码吧.这比自己想办法省事多了吧.
+
+我们会需要提取窗口的buffer,然后按照viewports的形式排布窗口,然后还要在适当的位置加上背景,其实compiz大概是把wallpaper看作独立程序去渲染的,画背景不是compiz自己处理的吧.
+哪种比较好呢？总觉的分开是不是把事情弄复杂了呢？还是降低了耦合呢？　
+compiz到底是让wallpaper画了一个超大的图呢，还是说告诉它所在的位置，根据不同的位置画了不同的图呢？然后expo渲染的时候再次告诉wallpaper它的所在位置？类似的来说，docky就和一般程序不同，会出现在所有的viewports中,wallpaper似乎需要在这基础上，还要辨认到底是在哪个viewports中
+
+总结来说的话，似乎没有理由说kde不好，当然不及unity，因为没有topmenu hud multiload
+这点来说,其他任何de有expo+wallpaper的话,对我来说也就够了,不过似乎只有kde有意实现.
+然后就是wayland成熟度,现在是临界点,没有哪个DE保证能很好过渡.
+另外,其实gtk系的应该多少是可以支持multiload的,其实我们只要找一个这样的panel的话,是不是可以和kwin配合呢?最后topmenu,不知道什么时候迁移wayland呢?现在主要用于xfce4和mate,都是还会长久停留x的吧.
+
+结尾:
+wayland不成熟,mir绑定ubuntu(当然也未发布),所以无法选择向上迁移
+
+但是,为了topmenu和multiload,是不是可以考虑unity8呢?前提是firefox的bug问题可以解决的话.
+
+
+Mon 30 May 2016 07:51:52 AM NZST
+一些expo相近特效,不过基本没有提到wallpaper方面的情况
+https://www.youtube.com/watch?v=F6PFjoYuml0
+enlightenment的scale window效果.
+https://wiki.archlinux.org/index.php/enlightenment
+cinnamon 也有expo,算作是applet,但是或许它调用了内置的特别功能
+
+Mon 30 May 2016 09:16:40 AM NZST
+实际上现在wayland好像并不成熟,(gnome以外),几个DE基本都是开发状态,远没到可以集成进distro的状态

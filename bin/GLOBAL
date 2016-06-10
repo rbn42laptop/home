@@ -1,0 +1,5 @@
+#!/bin/bash
+#因为rofi升级中好像会改这个文件名,所以抽取出来作为config
+#rofi 1.01
+export ROFI_HISTORY=~/.cache/rofi-3.runcache
+export ROFI_LOCK=/dev/shm/.rofi_lock

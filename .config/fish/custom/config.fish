@@ -7,11 +7,12 @@ source ~/.config/fish/custom/fish_title.fish
 
 set LS_ARGUMENTS ' '
 
-alias l='ls -CF  --hide="*.pyc"'
+alias l='ls -CF  --hide="*.pyc" --hide="__pycache__"'
 alias ll='ls -aF '
 alias lll='ls -alF'
 alias rm='echo this is trash-cli;trash'
 alias rm='trash'
+alias e='exit'
 
 set PATH /usr/local/cuda-7.5/bin $PATH
 set LD_LIBRARY_PATH /usr/local/cuda-7.5/lib64 $LD_LIBRARY_PATH
@@ -28,7 +29,6 @@ set fish_color_operator 66F1FF
 #新命令复制的颜色
 set fish_color_normal FFFFFF
 
-#.xprofile .xsessionrc裏面放了都沒效果，只好放這裏了
-#不過好像還是有間歇性的問題，恩，在切換rime輸入法的時候，會出現問題
+#.xprofile .xsessionrc裏面放了都沒效果,只好放這裏了
+#不過好像還是有間歇性的問題,恩,在切換rime輸入法的時候,會出現問題
 setxkbmap -option "caps:swapescape"
-

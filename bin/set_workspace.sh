@@ -1,3 +1,4 @@
+#!/bin/bash
 #dconf read  /org/compiz/profiles/unity/plugins/core/hsize 
 #dconf read  /org/compiz/profiles/unity/plugins/core/vsize 
 

@@ -1,0 +1,5 @@
+Fri 27 May 2016 08:05:52 AM NZST
+好像mangameeya在linux下传参数有问题，命令行下没法准确传参数，除了mangameeya自身目录的。
+主要是其他目录都会被转换成mangameeya自己的目录
+
+似乎可以用winepath解决

@@ -22,6 +22,7 @@ default_graph_width=80,
 show_graph_scale=false,
 show_graph_range=false,
 
+maximum_width=220,
 
 -------------------------------------
 --  Window Specifications
@@ -68,7 +69,9 @@ template9=""
 conky.text = [[
 \
 ${#FFFFFF}\
-${voffset 0}${font SetoFont :size=22}${alignc}\
+${voffset 0}\
+${font SetoFont :size=22}\
+${alignc}\
 ${time %H:%M}
 ${voffset 0}${font SetoFont :size=20}${alignc}\
 ${execi 300  LC_TIME=${template9} date +"%A, %B %-d"}\
@@ -88,7 +91,21 @@ ${voffset   0           }${upspeedgraph wlxc4e984114a8c     26,45  AAAAAA AFAF0F
 #${alignc}
 ${voffset -16  }${diskiograph_read                          26,45  AAAAAA 0FAFAF -t }\
 ${voffset   0           }${diskiograph_write                26,45  AAAAAA AFAF0F -t }\
-
+\
+#这东西暂且没什么用处，因为cue加载的问题，大部分title都失踪了，所以显示不了
+#${if_mpd_playing}\
+#${#FFFFFF}\
+#${font SetoFont :size=12}\
+#${execi 1 ~/.conky/conky-mpd/cover.sh}${image /tmp/conkyCover.png -p 10}
+#${scroll 50 6 $mpd_file} 这个有问题，对于utf8，会出现闪烁
+#$mpd_file
+#${mpd_bar 3,180}
+#$mpd_title
+#$mpd_artist
+#$mpd_album
+#$mpd_track
+#${endif}\
+\
 #${alignc}${voffset -18}${cpugraph                       26,110  AAAAAA AF000F -t }\
 #${voffset   0}${memgraph                                26,110  AAAAAA AF000F -t }
 #${alignc}${voffset -18}${downspeedgraph wlxc4e984114a8c 26,110  AAAAAA 0FAFAF -t }\

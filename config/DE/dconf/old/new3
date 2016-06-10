@@ -1,0 +1,287 @@
+[org/gnome/settings-daemon/plugins/media-keys]
+custom-keybindings=['/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom2/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom3/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom4/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom5/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom6/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom7/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom9/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom10/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom11/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom8/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom12/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom13/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom14/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom15/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom16/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom17/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom18/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom19/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom21/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom22/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom20/']
+logout=''
+screensaver=''
+volume-up=''
+volume-down=''
+
+[org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0]
+binding='<Super>Return'
+command='./bin/rofi.sh'
+name='rofi'
+
+[org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1]
+binding='<Super>d'
+command='./bin/rofi.sh'
+name='rofi2'
+
+[org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom2]
+binding='<Super>j'
+command=' python ./git/kd_tree_tile/main.py focus down'
+name='superj'
+
+[org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom3]
+binding='<Super>k'
+command='python ./git/kd_tree_tile/main.py focus up'
+name='superk'
+
+[org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom4]
+binding='<Primary><Super>j'
+command='python ./git/kd_tree_tile/main.py move down'
+name='super ctrl j'
+
+[org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom5]
+binding='<Primary><Super>k'
+command='python ./git/kd_tree_tile/main.py move up'
+name='super ctrl k'
+
+[org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom10]
+binding='<Super>l'
+command=' python ./git/kd_tree_tile/main.py focus right'
+name='superl'
+
+[org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom6]
+binding='<Super>space'
+command='python ./git/kd_tree_tile/main.py layout next'
+name='super space'
+
+[org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom11]
+binding='<Shift><Super>space'
+command='python ./git/kd_tree_tile/main.py layout prev'
+name='super shift space'
+
+[org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom7]
+binding='<Primary><Super>h'
+command='python ./git/kd_tree_tile/main.py move left'
+name='super ctrl h'
+
+[org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom12]
+binding='<Primary><Shift><Super>h'
+command='./git/kd_tree_tile/main.py shrink width'
+name='ctrl super H'
+
+[org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom20]
+binding='<Primary>space'
+command='./bin/fcitx.py'
+name='switch_cn'
+
+[org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom13]
+binding='<Primary><Shift><Super>j'
+command='./git/kd_tree_tile/main.py grow height'
+name='ctrl super J'
+
+[org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom21]
+binding='<Super>Page_Up'
+command='bash ./bin/vol_inc.sh         '
+name='vol_up'
+
+[org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom14]
+binding='<Primary><Shift><Super>k'
+command='./git/kd_tree_tile/main.py  shrink height'
+name='ctrl super K'
+
+[org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom22]
+binding='<Super>Page_Down'
+command='bash ./bin/vol_dec.sh'
+name='vol_down'
+
+[org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom15]
+binding='<Primary><Shift><Super>l'
+command='./git/kd_tree_tile/main.py grow width'
+name='ctrl super L'
+
+[org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom8]
+binding='<Primary><Super>l'
+command='python ./git/kd_tree_tile/main.py move right'
+name='super ctrl l'
+
+[org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom16]
+binding='<Shift><Super>h'
+command='./git/kd_tree_tile/main.py swap left'
+name='superH'
+
+[org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom9]
+binding='<Super>h'
+command=' python ./git/kd_tree_tile/main.py focus left'
+name='superh'
+
+[org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom17]
+binding='<Shift><Super>j'
+command='./git/kd_tree_tile/main.py swap down'
+name='super J'
+
+[org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom18]
+binding='<Shift><Super>k'
+command='./git/kd_tree_tile/main.py swap up'
+name='super K'
+
+[org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom19]
+binding='<Shift><Super>l'
+command='./git/kd_tree_tile/main.py swap right'
+name='super L'
+
+[org/gnome/desktop/interface]
+cursor-size=24
+font-name='Lucida G 12'
+icon-theme='AwOkenDark'
+gtk-theme='Radiance-Flat-Teal'
+
+[org/gnome/desktop/lockdown]
+disable-lock-screen=true
+
+[org/gnome/desktop/wm/preferences]
+theme='Radiance-Flat-Teal'
+titlebar-font='Lucida Gr 12'
+
+[org/gnome/desktop/wm/keybindings]
+minimize=['<Control><Alt>KP_0']
+move-to-workspace-9=['disabled']
+unmaximize=['<Control><Super>Down']
+panel-main-menu=['<Super>s']
+switch-to-workspace-down=['<Control><Alt>Down']
+move-to-corner-ne=['<Control><Alt>KP_Prior']
+move-to-side-e=['<Control><Alt>KP_Right']
+move-to-workspace-right=['<Shift><Control><Alt>Right']
+move-to-workspace-up=['<Shift><Control><Alt>Up']
+raise=['disabled']
+maximize=['<Control><Super>Up']
+move-to-side-n=['<Control><Alt>KP_Up']
+move-to-side-s=['<Control><Alt>KP_Down']
+maximize-horizontally=['disabled']
+move-to-side-w=['<Control><Alt>KP_Left']
+move-to-corner-nw=['<Control><Alt>KP_Home']
+switch-windows=['disabled']
+begin-move=['<Alt>F7']
+switch-windows-backward=['disabled']
+move-to-workspace-left=['<Shift><Control><Alt>Left']
+move-to-corner-se=['<Control><Alt>KP_Next']
+activate-window-menu=['<Alt>space']
+switch-input-source=['disabled']
+switch-input-source-backward=['disabled']
+toggle-fullscreen=['disabled']
+lower=['disabled']
+toggle-on-all-workspaces=['disabled']
+move-to-corner-sw=['<Control><Alt>KP_End']
+toggle-shaded=['<Control><Alt>s']
+show-desktop=['<Control><Super>d']
+maximize-vertically=['disabled']
+switch-to-workspace-left=['<Control><Alt>Left']
+toggle-maximized=['<Control><Alt>KP_5']
+move-to-workspace-down=['<Shift><Control><Alt>Down']
+begin-resize=['<Alt>F8']
+close=['<Shift><Super>q']
+switch-to-workspace-up=['<Control><Alt>Up']
+switch-to-workspace-right=['<Control><Alt>Right']
+
+[org/compiz]
+existing-profiles=['Default', 'unity']
+current-profile='unity'
+
+[org/compiz/profiles/Default/plugins/core]
+hsize=1
+vsize=3
+active-plugins=['core', 'composite', 'opengl', 'compiztoolbox', 'decor', 'vpswitch', 'snap', 'mousepoll', 'resize', 'place', 'move', 'wall', 'grid', 'regex', 'imgpng', 'session', 'gnomecompat', 'animation', 'fade', 'workarounds', 'scale', 'expo', 'ezoom']
+
+[org/compiz/profiles/unity]
+plugins-with-set-keys=['unityshell', 'gnomecompat', 'expo', 'workarounds', 'fade', 'wall', 'opengl', 'composite', 'vpswitch', 'core', 'ezoom', 'move', 'session', 'commands', 'scale', 'decor', 'grid', 'snap', 'animation', 'place', 'resize', 'mousepoll', 'unitymtgrabhandles', 'imgjpeg', 'wallpaper', 'thumbnail', 'rotate', 'put', 'staticswitcher', 'extrawm', 'workspacenames', 'firepaint', 'splash', 'showrepaint', 'scaleaddon', 'annotate', 'switcher', 'maximumize', 'addhelper', 'opacify', 'trailfocus', 'ring', 'crashhandler', 'showdesktop', 'cubeaddon', 'resizeinfo', 'neg', 'wizard', 'bench', 'mblur', 'freewins', 'wobbly', 'kdecompat', 'td', 'scalefilter', 'winrules', 'widget', 'cube', 'screenshot', 'shelf', 'clone', 'water', 'titleinfo', 'mag', 'showmouse', 'fadedesktop', 'shift', 'notification', 'obs']
+
+[org/compiz/profiles/unity/plugins/resizeinfo]
+gradient-1='#cccce6cc'
+gradient-2='#f3f3f3cc'
+gradient-3='#d9d9d9cc'
+outline-color='#e6e6e6ff'
+
+[org/compiz/profiles/unity/plugins/ezoom]
+zoom-box-fill-color='#2f2f2f4f'
+zoom-box-outline-color='#2f2f4f9f'
+
+[org/compiz/profiles/unity/plugins/cubeaddon]
+ground-color1='#b3b3b3cc'
+ground-color2='#b3b3b300'
+
+[org/compiz/profiles/unity/plugins/unityshell]
+show-launcher='Disabled'
+icon-size=16
+launcher-opacity=0.0
+panel-opacity=0.69999998807907104
+lock-screen='Disabled'
+disable-show-desktop=true
+dash-blur-experimental=2
+inactive-shadow-color='#000000a5'
+autohide-animation=0
+panel-opacity-maximized-toggle=false
+shortcut-overlay=false
+background-color='#00000002'
+launcher-hide-mode=1
+
+[org/compiz/profiles/unity/plugins/thumbnail]
+thumb-color='#0000007f'
+font-background-color='#0000007f'
+
+[org/compiz/profiles/unity/plugins/freewins]
+cross-line-color='#1800ffff'
+circle-color='#54befb80'
+line-color='#1800ffff'
+
+[org/compiz/profiles/unity/plugins/grid]
+fill-color='#1cb39f4f'
+outline-color='#1cb39fff'
+
+[org/compiz/profiles/unity/plugins/decor]
+active-shadow-color='#00000080'
+inactive-shadow-color='#000000ff'
+
+[org/compiz/profiles/unity/plugins/expo]
+deform=1
+ground-color1='#b3b3b3cc'
+ground-color2='#b3b3b300'
+vp-brightness=80.0
+reflection=true
+vp-saturation=80.0
+selected-color='#1cb39fff'
+x-offset=32
+
+[org/compiz/profiles/unity/plugins/gnomecompat]
+main-menu-key='Disabled'
+run-key='Disabled'
+
+[org/compiz/profiles/unity/plugins/staticswitcher]
+background-color='#333333d9'
+
+[org/compiz/profiles/unity/plugins/firepaint]
+fire-color='#ff3305ff'
+
+[org/compiz/profiles/unity/plugins/screenshot]
+selection-outline-color='#2f2f4f9f'
+selection-fill-color='#2f2f4f4f'
+
+[org/compiz/profiles/unity/plugins/core]
+focus-desktop=false
+active-plugins=['core', 'composite', 'opengl', 'regex', 'vpswitch', 'move', 'imgjpeg', 'commands', 'grid', 'snap', 'animation', 'place', 'resize', 'mousepoll', 'imgpng', 'copytex', 'workarounds', 'wallpaper', 'wall', 'compiztoolbox', 'session', 'unitymtgrabhandles', 'expo', 'fade', 'ezoom', 'scale', 'unityshell']
+
+[org/compiz/profiles/unity/plugins/wallpaper]
+cycle-wallpapers=false
+bg-color1=['#000000ff', '#000000ff', '#000000ff']
+bg-color2=['#000000ff', '#000000ff', '#000000ff']
+bg-fill-type=[0, 0, 0]
+bg-image-pos=[0, 0, 0]
+
+[org/compiz/profiles/unity/plugins/wall]
+thumb-highlight-gradient-shadow-color='#dfdfdfff'
+arrow-base-color='#e6e6e6d9'
+arrow-shadow-color='#dcdcdcd9'
+
+[org/compiz/profiles/unity/plugins/shift]
+ground-color1='#b3b3b3cc'
+ground-color2='#b3b3b300'
+
+[org/compiz/profiles/unity/plugins/resize]
+border-color='#1cb39fff'
+fill-color='#1cb39f4f'
+
+[org/compiz/profiles/unity/plugins/showmouse]
+color='#ffdf3fff'
+
+[org/compiz/integrated]
+show-hud=['<Alt>']
+

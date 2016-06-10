@@ -1,0 +1,7 @@
+Tue 17 May 2016 03:02:09 AM NZST
+等宽的支持unicode特殊字符的字体：everson mono,不过可惜字体太细了，不适合字体很小的时候使用。
+也不适合加阴影
+但是可以辅助monaco用，就可以补全不足的特殊字符了。不过好像会影响powerline
+
+
+支持最全的可能是unifont （GNU），不过是带锯齿的

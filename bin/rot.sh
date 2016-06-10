@@ -8,3 +8,4 @@ xrandr --output "DVI-I-1" --rotate  $1
 #feh --recursive --bg-fill --randomize --no-fehbg ~/.wallpaper/*
 
 #bash ~/apps/reset_compiz_alone.sh
+#setxkbmap -option "caps:swapescape"

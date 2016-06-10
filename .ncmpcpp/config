@@ -1,43 +1,14 @@
-####################################################
-## this is example configuration file, copy it to ##
-## ~/.ncmpcpp/config and set up your preferences  ##
-####################################################
-#
-##### directories ######
-##
-## Directory for storing ncmpcpp related files.
-## Changing it is useful if you want to store
-## everything somewhere else and provide command
-## line setting for alternative location to config
-## file which defines that while launching ncmpcpp.
-##
-#
-#ncmpcpp_directory = "~/.ncmpcpp"
-#
-##
-## Directory for storing downloaded lyrics. It
-## defaults to ~/.lyrics since other MPD clients
-## (eg. ncmpc) also use that location.
-##
-#
-lyrics_directory = "~/.lyrics"
-#
-##### connection settings #####
-#
-## set it in order to make tag editor and renaming files work properly
-#
-#mpd_host = "localhost"
-#
-#mpd_port = "6600"
-#
-#mpd_music_dir = ""
-#
-#mpd_connection_timeout = "5"
-#
-#mpd_crossfade_time = "5"
-#
-#mpd_communication_mode = "notifications" (polling/notifications)
-#
+playlist_display_mode = "columns" (classic/columns)
+browser_display_mode = "columns" (classic/columns)
+search_engine_display_mode = "columns" (classic/columns)
+playlist_editor_display_mode = "columns" (classic/columns)
+use_console_editor = "yes" (set to yes, if your editor is console app)
+user_interface = "alternative" (classic/alternative)
+clock_display_seconds = "yes"
+display_bitrate = "yes"
+
+startup_screen = "playlist"
+
 ##### music visualizer #####
 ##
 ## Note: In order to make music visualizer work you'll
@@ -107,16 +78,6 @@ lyrics_directory = "~/.lyrics"
 ##
 #
 #system_encoding = ""
-#
-##### delays #####
-#
-## delay after playlist highlighting will be disabled (0 = don't disable)
-#
-#playlist_disable_highlight_delay = "5"
-#
-## defines how long various messages are supposed to be visible
-#
-#message_delay_time = "4"
 #
 ##### song format #####
 ##
@@ -273,14 +234,6 @@ lyrics_directory = "~/.lyrics"
 #
 #playlist_separate_albums = "no"
 #
-playlist_display_mode = "columns" (classic/columns)
-#
-browser_display_mode = "columns" (classic/columns)
-#
-search_engine_display_mode = "columns" (classic/columns)
-#
-playlist_editor_display_mode = "columns" (classic/columns)
-#
 #discard_colors_if_item_is_selected = "yes"
 #
 #incremental_seeking = "yes"
@@ -299,7 +252,6 @@ playlist_editor_display_mode = "columns" (classic/columns)
 #
 #default_place_to_search_in = "database" (database/playlist)
 #
-user_interface = "alternative" (classic/alternative)
 #
 #media_library_left_column = "a" (possible values: a,y,g,c,p, legend above)
 #
@@ -384,17 +336,14 @@ user_interface = "alternative" (classic/alternative)
 ## Note: You can define startup screen for ncmpcpp
 ## by choosing screen number from the list above.
 ##
-#startup_screen = "2"
 #
 #jump_to_now_playing_song_at_start = "yes"
 #
 # ask_before_clearing_main_playlist = "yes"
 #
-clock_display_seconds = "yes"
 #
 #display_volume_level = "yes"
 #
-display_bitrate = "yes"
 #
 #display_remaining_time = "no"
 #
@@ -451,7 +400,6 @@ display_bitrate = "yes"
 #
 #external_editor = ""
 #
-use_console_editor = "yes" (set to yes, if your editor is console app)
 #
 ##### colors definitions #####
 #
