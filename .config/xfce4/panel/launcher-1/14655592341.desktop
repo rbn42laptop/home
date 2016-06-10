@@ -1,0 +1,10 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=RE
+Comment=帮忙compiz恢复focus
+Exec=./bin/term -e exit
+Icon=
+Path=
+Terminal=false
+StartupNotify=false

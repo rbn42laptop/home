@@ -1,0 +1,5 @@
+Thu 09 Jun 2016 09:31:19 PM NZST
+mpv的一个问题,在切换workspace 的时候,mpv会闪烁.
+
+Fri 10 Jun 2016 10:57:06 PM NZST
+不过,在上面叠加任何东西,比如term,或者一个透明的xfce4 panel之后,闪烁就消失了

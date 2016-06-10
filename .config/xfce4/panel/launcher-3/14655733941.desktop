@@ -1,0 +1,10 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=RO
+Comment=
+Exec=./bin/rofi.sh
+Icon=
+Path=
+Terminal=false
+StartupNotify=false

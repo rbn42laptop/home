@@ -19,13 +19,21 @@ git add --all ~/.icons/install-ubuntu.sh
 git add --all ~/.i3
 git add --all ~/.xsessionrc
 git add --all ~/.conkyrc
+git add --all ~/.conky_lua_scripts.lua
 git add --all ~/.xprofile
+git add --all ~/.xinitrc
 git add --all ~/.tilerc
+git add --all ~/.qmltermrc
+git add --all ~/.config/compiz-1/compizconfig/config
+git add --all ~/.gtkrc-2.0
+git add --all ~/.config/gtk-3.0/settings.ini
+git add --all ~/.emerald/settings.ini
+git add --all ~/.config/xfce4/xfconf/xfce-perchannel-xml/xfce4-panel.xml
 #git add --all ~/.xbindkeysrc
-#git add --all ~/.config/compiz-1/compizconfig/config
 #git add --all ~/.config/autostart/startup.desktop
 #git add --all ~/.local/share/applications/mimeapps.list
 #git add --all ~/.Xresources
+
 
 #Media
 git add --all ~/.ncmpcpp/config

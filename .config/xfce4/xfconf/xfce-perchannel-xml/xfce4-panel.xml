@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<channel name="xfce4-panel" version="1.0">
+  <property name="configver" type="int" value="2"/>
+  <property name="panels" type="array">
+    <value type="int" value="1"/>
+    <property name="panel-1" type="empty">
+      <property name="position" type="string" value="p=6;x=51;y=15"/>
+      <property name="plugin-ids" type="array">
+        <value type="int" value="1"/>
+        <value type="int" value="3"/>
+        <value type="int" value="2"/>
+      </property>
+      <property name="autohide-behavior" type="uint" value="0"/>
+      <property name="size" type="uint" value="28"/>
+      <property name="length" type="uint" value="1"/>
+      <property name="position-locked" type="bool" value="true"/>
+      <property name="background-alpha" type="uint" value="0"/>
+      <property name="background-style" type="uint" value="1"/>
+      <property name="background-color" type="array">
+        <value type="uint" value="0"/>
+        <value type="uint" value="0"/>
+        <value type="uint" value="0"/>
+        <value type="uint" value="65535"/>
+      </property>
+      <property name="disable-struts" type="bool" value="true"/>
+    </property>
+  </property>
+  <property name="plugins" type="empty">
+    <property name="plugin-2" type="string" value="systray">
+      <property name="names-visible" type="array">
+        <value type="string" value="indicator-window-cycle.py"/>
+        <value type="string" value="indicator-multiload"/>
+      </property>
+      <property name="show-frame" type="bool" value="false"/>
+      <property name="size-max" type="uint" value="64"/>
+    </property>
+    <property name="plugin-1" type="string" value="launcher">
+      <property name="items" type="array">
+        <value type="string" value="14655592341.desktop"/>
+      </property>
+      <property name="disable-tooltips" type="bool" value="false"/>
+      <property name="show-label" type="bool" value="true"/>
+    </property>
+    <property name="plugin-3" type="string" value="launcher">
+      <property name="items" type="array">
+        <value type="string" value="14655733941.desktop"/>
+      </property>
+      <property name="show-label" type="bool" value="true"/>
+    </property>
+  </property>
+</channel>

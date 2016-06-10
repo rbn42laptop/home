@@ -1,2 +1,5 @@
 #!/bin/bash
-sudo vim /etc/hosts
+#sudo vim /etc/hosts
+
+export EDITOR=vim
+sudoedit /etc/hosts

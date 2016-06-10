@@ -1,0 +1,134 @@
+[org/gnome/desktop/wm/keybindings]
+minimize=['disabled']
+panel-main-menu=['disabled']
+move-to-corner-ne=['disabled']
+move-to-side-e=['disabled']
+move-to-workspace-down=['<Shift><Control><Alt>Down']
+move-to-workspace-right=['<Shift><Control><Alt>Right']
+move-to-workspace-up=['<Shift><Control><Alt>Up']
+move-to-workspace-left=['<Shift><Control><Alt>Left']
+raise=['disabled']
+maximize-horizontally=['disabled']
+switch-windows=['<Alt>Tab']
+switch-windows-backward=['<Shift><Alt>Tab']
+activate-window-menu=['<Alt>space']
+switch-input-source=['disabled']
+switch-input-source-backward=['disabled']
+toggle-fullscreen=['disabled']
+lower=['disabled']
+toggle-on-all-workspaces=['disabled']
+move-to-corner-sw=['disabled']
+toggle-shaded=['disabled']
+show-desktop=['disabled']
+maximize-vertically=['disabled']
+close=['<Shift><Super>q']
+switch-to-workspace-left=['<Control><Alt>Left']
+switch-to-workspace-up=['<Control><Alt>Up']
+switch-to-workspace-right=['<Control><Alt>Right']
+switch-to-workspace-down=['<Control><Alt>Down']
+
+[org/compiz/profiles/Default]
+plugins-with-set-keys=['core', 'composite', 'opengl', 'resize', 'place', 'move', 'staticswitcher', 'animation', 'wall', 'commands', 'thumbnail', 'gnomecompat', 'rotate', 'put', 'extrawm', 'vpswitch', 'fade', 'expo', 'imgjpeg', 'wallpaper', 'switcher', 'shift', 'shelf', 'ring', 'grid', 'decor','winrules']
+
+[org/compiz/profiles/Default/plugins/wall]
+miniscreen=true
+border-width=1
+preview-scale=150
+edge-radius=0
+
+[org/compiz/profiles/Default/plugins/freewins]
+cross-line-color='#1800ffff'
+circle-color='#54befb80'
+line-color='#1800ffff'
+
+[org/compiz/profiles/Default/plugins/expo]
+deform=1
+vp-saturation=80.0
+reflection=true
+vp-brightness=80.0
+expo-key='<Super>s'
+expo-edge=''
+selected-color='#1cb39fff'
+x-offset=32
+
+[org/compiz/profiles/Default/plugins/gnomecompat]
+main-menu-key='Disabled'
+run-key='Disabled'
+
+[org/compiz/profiles/Default/plugins/firepaint]
+fire-color='#ff3305ff'
+
+[org/compiz/profiles/Default/plugins/wallpaper]
+cycle-wallpapers=false
+
+[org/compiz/profiles/Default/plugins/staticswitcher]
+highlight-rect-hidden=2
+brightness=100
+saturation=100
+highlight-color='#1cb39fff'
+highlight-border-inlay-color='#1cb39fff'
+highlight-border-color='#1cb39fff'
+mouse-select=true
+use-background-color=true
+focus-on-switch=true
+highlight-mode=2
+
+[org/compiz/profiles/Default/plugins/core]
+active-plugins=['core', 'composite', 'opengl','decor', 'imgjpeg', 'resize', 'compiztoolbox', 'imgpng', 'regex', 'move', 'place', 'commands', 'wallpaper', 'animation', 'wall', 'staticswitcher', 'expo']
+
+[org/compiz/profiles/Default/plugins/commands]
+run-command18-key='<Super>space'
+run-command20-key='<Super>Next'
+run-command16-button='<BottomLeftEdge>Button2'
+run-command13-key='<Control><Super>l'
+run-command15-key='<Shift><Control><Super>l'
+run-command17-key='<Control>space'
+run-command19-key='<Super>Prior'
+command12='python ./git/kd_tree_tile/main.py focus right'
+command13='python ./git/kd_tree_tile/main.py move right'
+command14='./git/kd_tree_tile/main.py swap right'
+command15='./git/kd_tree_tile/main.py grow width'
+command16='./bin/rofi.sh'
+command17='./bin/fcitx.py'
+command18='python ./git/kd_tree_tile/main.py layout next'
+command19='bash ./bin/vol_inc.sh         '
+run-command14-key='<Shift><Super>l'
+run-command12-key='<Super>l'
+command20='bash ./bin/vol_dec.sh'
+run-command16-key='<Super>d'
+
+[org/compiz/profiles/Default/plugins/resize]
+border-color='#1cb39fff'
+fill-color='#1cb39f4f'
+
+[org/compiz/profiles/Default/plugins/showmouse]
+color='#ffdf3fff'
+
+[org/compiz/integrated]
+run-command-3=['<Shift><Super>j']
+run-command-4=['<Shift><Control><Super>j']
+run-command-9=['<Super>h']
+run-command-1=['<Super>j']
+run-command-10=['<Control><Super>h']
+command-10='python ./git/kd_tree_tile/main.py move left'
+command-11='./git/kd_tree_tile/main.py swap left'
+command-3='./git/kd_tree_tile/main.py swap down'
+command-4='./git/kd_tree_tile/main.py grow height'
+command-5='python ./git/kd_tree_tile/main.py focus up'
+command-12='./git/kd_tree_tile/main.py shrink width'
+command-1='python ./git/kd_tree_tile/main.py focus down'
+command-2='python ./git/kd_tree_tile/main.py move down'
+command-6='python ./git/kd_tree_tile/main.py move up'
+command-7='./git/kd_tree_tile/main.py swap up'
+command-8='./git/kd_tree_tile/main.py  shrink height'
+command-9='python ./git/kd_tree_tile/main.py focus left'
+run-command-5=['<Super>k']
+run-command-6=['<Control><Super>k']
+run-command-2=['<Control><Super>j']
+run-command-11=['<Shift><Super>h']
+run-command-12=['<Shift><Control><Super>h']
+run-command-7=['<Shift><Super>k']
+run-command-8=['<Shift><Control><Super>k']
+
+[org/compiz/profiles/Default/plugins/decor]
+command='emerald --replace'

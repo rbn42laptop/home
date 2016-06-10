@@ -1,0 +1,4 @@
+#!/bin/bash
+#关掉自动format,改其他人的项目的时候不便用autoformat
+vim "$@"  \
+    "+nnoremap s :noautocmd w<CR>"

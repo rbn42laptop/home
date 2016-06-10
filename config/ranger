@@ -39,7 +39,7 @@ Wed 08 Jun 2016 03:40:14 PM NZST
 cd /usr/local/lib/python2.7/dist-packages/ranger/gui/widgets/
 sudo vim titlebar.py     
 line 92     def _get_left_part(self, bar):
-uncomment
+comment
 #        bar.add(self.fm.username, 'hostname', clr, fixed=True)
 #        bar.add('0', 'hostname', clr, fixed=True)
 #        bar.add(self.fm.hostname, 'hostname', clr, fixed=True)

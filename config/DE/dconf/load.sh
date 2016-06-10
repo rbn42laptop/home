@@ -1,1 +1,1 @@
-dconf load / < unity7 
+dconf load / < ./archcompiz

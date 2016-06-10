@@ -1,8 +1,8 @@
 conky.config = {
-
 -------------------------------------
 --  Generic Settings
 -------------------------------------
+lua_load="~/.conky_lua_scripts.lua",
 background=true,
 update_interval=1,
 double_buffer=true,
@@ -76,6 +76,10 @@ ${time %H:%M}
 ${voffset 0}${font SetoFont :size=20}${alignc}\
 ${execi 300  LC_TIME=${template9} date +"%A, %B %-d"}\
 
+${font SetoFont :size=15}\
+ ${lua_parse pad ${cpu}}%\
+   ${lua_parse pad ${memperc}}%\
+     ${downspeed wlp0s20u9}\
 \
 \
 ${#A0A0A0}\
@@ -85,8 +89,8 @@ ${voffset   10}\
 #${alignc}
 ${voffset -18  }${cpugraph                                  26,45  AAAAAA AF000F -t }\
 ${voffset   0           }${memgraph                         26,45  AAAAAA AF000F -t }\
-${voffset   0           }${downspeedgraph wlxc4e984114a8c   26,45  AAAAAA 0FAFAF -t }\
-${voffset   0           }${upspeedgraph wlxc4e984114a8c     26,45  AAAAAA AFAF0F -t }\
+${voffset   0           }${downspeedgraph wlp0s20u9 26,45  AAAAAA 0FAFAF -t }\
+${voffset   0           }${upspeedgraph wlp0s20u9 26,45  AAAAAA AFAF0F -t }\
 
 #${alignc}
 ${voffset -16  }${diskiograph_read                          26,45  AAAAAA 0FAFAF -t }\
