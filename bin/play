@@ -3,6 +3,12 @@ source ~/bin/GLOBAL
 #记录到rofi
 echo 1 ./bin/play \"$1\" >> "$ROFI_HISTORY"
 
+if [ ! -f ~/Pictures/compiz/mark_rotate_normal ]; then
+    export MPV_ROTATION="--video-rotate=270"
+else
+    export MPV_ROTATION="--video-rotate=0"
+fi
+
 #vlc
 #preferences/interface/main interfaces: remote control interface
 #preferences/interface/main interfaces/rc: "fake tty"  "unix socket command input=/dev/shm/.vlc.sock"
@@ -20,8 +26,9 @@ mpv \
     --slang=chi,chn,zh,eng,en \
     --alang=jpn,jp,eng,en \
     --volume=40 \
+    $MPV_ROTATION \
     "$@" \
-#    --video-rotate=270 \
+#     \
     #--no-osc \
     #--osd-bar \
 
