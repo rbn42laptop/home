@@ -1,0 +1,8 @@
+#bash /windows/wine/foobar2000/run.sh /playpause
+#bash /windows/wine/foobar2000/run.sh /stop
+#bash /windows/wine/foobar2000/run.sh  /prev
+#bash /windows/wine/foobar2000/run.sh  /next
+
+
+gsettings set org.cinnamon.keybindings.custom-keybindings.custom0 name "asdf"
+

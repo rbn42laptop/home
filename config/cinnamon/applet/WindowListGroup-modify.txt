@@ -1,0 +1,91 @@
+gedit /home/u/.local/share/cinnamon/applets/WindowListGroup@jake.phy@gmail.com/applet.js
+-------------------------------------------------------------------------
+add 
+    
+            this._appButton.actor.connect('scroll-event', Lang.bind(this, this._onScrollEvent)); 
+after
+        this._appButton.actor.connect('button-release-event', Lang.bind(this, this._onAppButtonRelease));
+_---------------------------------------------
+before    
+    _onAppButtonRelease: function (actor, event) { 
+add
+
+    _onScrollEvent:(function(){
+        windowsindex=[];
+        return  function (actor, event) { 
+            let wins = this.app.get_windows().filter(function (win) {  
+             //   let workspaces = [global.screen.get_workspace_by_index(i) for each(i in range(global.screen.n_workspaces))];
+                let workspaces = global.screen.get_active_workspace();
+                if (win.get_workspace() == workspaces )
+                    return workspaces ; 
+                return false;
+            })
+            if(wins.length<1)
+                return;
+                
+            if(windowsindex.length>0 && windowsindex[0]==wins[0]){ 
+                 let direction = event.get_scroll_direction();  
+                 if (direction == Clutter.ScrollDirection.DOWN) { 
+                        w=windowsindex.shift();
+                        windowsindex.push(w); 
+                 }else{
+                        w=windowsindex.pop();
+                        windowsindex.unshift(w); 
+                 }
+            }else{
+                windowsindex=[];
+                for (let i = 0; i < wins.length; i++)  
+                    windowsindex.push(wins[i]); 
+            }
+         //   global.screen.toggle_desktop(global.get_current_time());
+            windowsindex[0].activate(global.get_current_time());  
+        };
+    })(),
+    
+     
+    
+/////////////////////////////////////////////    
+gedit /home/u/.local/share/cinnamon/applets/WindowListGroup@jake.phy@gmail.com/specialMenus.js
+-------------------
+after
+        this.itemCloseWindow = new PopupMenu.PopupMenuItem(_("Close"));
+add        
+        this.itemCloseAllWindow = new PopupMenu.PopupMenuItem(_("Close All"));
+-----------------------------------------------*2        
+after 
+            this.addMenuItem(this.itemCloseWindow);
+add        
+            this.addMenuItem(this.itemCloseAllWindow);
+-----------------------------------------        
+gedit /home/u/.local/share/cinnamon/applets/WindowListGroup@jake.phy@gmail.com/applet.js        
+----------------------------------------------------------------
+after
+        this.rightClickMenu = new SpecialMenus.AppMenuButtonRightClickMenu(this, this._appButton.actor);
+add        
+        this.rightClickMenu.itemCloseAllWindow.connect('activate', Lang.bind(this, this._onCloseAllWindow));
+--------------------------------------------------
+before
+    _onScrollEvent: function (actor, event) {
+add  
+    _onCloseAllWindow: function (actor, event) {
+         //   global.logError("win scroll");  
+        let wins = this.app.get_windows().filter(function (win) {
+         //   let workspaces = [global.screen.get_workspace_by_index(i) for each(i in range(global.screen.n_workspaces))];
+            let workspaces = global.screen.get_active_workspace();
+            if (win.get_workspace() == workspaces )
+                return workspaces ; 
+            return false;
+        })
+        for (let i = 0; i < wins.length; i++) {
+            this.metaWindow.delete(global.get_current_time());
+        }
+    },
+-----------------------------------
+comment these lines *2
+
+           // this.addMenuItem(this.itemMoveToLeftWorkspace);
+          //  this.addMenuItem(this.itemMoveToRightWorkspace);
+          //  this.addMenuItem(this.itemOnAllWorkspaces);
+            //this.addMenuItem(this.itemMaximizeWindow);
+         //   this.addMenuItem(this.itemMinimizeWindow);
+        

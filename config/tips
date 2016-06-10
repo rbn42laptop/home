@@ -1,0 +1,4 @@
+Fri 06 May 2016 02:29:38 NZST
+大的iso文件，cp後，shasum有可能變動，用dd if= of= 命令則不會。
+Tue 10 May 2016 01:48:42 NZST
+shift pgup/pgdown

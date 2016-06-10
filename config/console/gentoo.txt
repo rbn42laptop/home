@@ -1,0 +1,25 @@
+http://kev009.com/wp/2009/12/getting-beautiful-fonts-in-gentoo-linux/
+
+
+emerge app-admin/eselect-fontconfig
+emerge media-fonts/corefonts
+emerge media-fonts/dejavu
+emerge media-fonts/font-bh-ttf
+emerge media-fonts/font-bh-type1
+emerge media-fonts/freefonts
+emerge media-fonts/ttf-bitstream-vera
+emerge media-fonts/unifont
+emerge media-fonts/artwiz-aleczapka-en
+
+
+eselect fontconfig enable 10-autohint.conf
+eselect fontconfig enable 10-sub-pixel-rgb.conf
+eselect fontconfig enable 20-unhint-small-dejavu-sans-mono.conf
+eselect fontconfig enable 20-unhint-small-dejavu-sans.conf
+eselect fontconfig enable 20-unhint-small-dejavu-serif.conf
+eselect fontconfig enable 25-unhint-nonlatin.conf
+eselect fontconfig enable 57-dejavu-sans-mono.conf
+eselect fontconfig enable 57-dejavu-sans.conf
+eselect fontconfig enable 57-dejavu-serif.conf
+
+

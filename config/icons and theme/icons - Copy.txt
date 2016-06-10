@@ -1,0 +1,36 @@
+http://www.icoconverter.com/
+https://launchpad.net/~noobslab/+archive/ubuntu/icons
+https://launchpad.net/~noobslab/+archive/ubuntu/icons/+packages
+
+cd /usr/share/icons
+tar xvf 
+
+icon AwOkenWhite
+control Mbuntu-Zukimac
+borders Mbuntu-Zukimac
+cursor Adwaita
+
+https://launchpad.net/~alecive/+archive/ubuntu/antigone/+packages
+
+/usr/share/icons/AwOkenWhite/clear/128x128/start-here/start-here-awoken1.png
+
+
+******************************************************************************************
+/home/u/.themes/Tyr himinn/cinnamon/cinnamon.css
+/* ===================================================================
+* Panel (panel.js)
+* ===================================================================*/
+#panel {
+background-color: rgba(0,0,0,0.0);
+color: #fff;
+text-shadow: 0px 2px 3px #000;
+
+******************************************************************************************
+
+docky
+
+
+reinstall icon 
+ dpkg -S /usr/share/icons/  > 1.txt
+gedit 1.txt
+bash 1.txt

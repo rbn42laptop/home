@@ -1,0 +1,52 @@
+https://www.reddit.com/r/unixporn/comments/3vi0j2/i3wmhow_do_i_get_this_blur_effect_working_with/
+https://bbs.archlinux.org/viewtopic.php?id=183527
+https://i3wm.org/docs/refcard.html
+
+
+https://faq.i3wm.org/question/6/how-can-i-set-a-desktop-background-image-in-i3.1.html
+
+
+sudo apt install feh -y
+sudo apt install scrot -y
+sudo apt install compton -y
+sudo apt install xcb -y
+sudo apt install conky -y
+
+vimbind
+
+# change focus
+bindsym $mod+h focus left
+bindsym $mod+j focus down
+bindsym $mod+k focus up
+bindsym $mod+l focus right
+
+
+# move focused window
+bindsym $mod+Shift+h move left
+bindsym $mod+Shift+j move down
+bindsym $mod+Shift+k move up
+bindsym $mod+Shift+l move right
+
+#wallpaper
+#$HOME/.fehbg
+# feh   --recursive  --bg-max --randomize --no-fehbg ~/.wallpaper/* 
+feh --recursive --bg-fill --randomize --no-fehbg ~/Wallpapers/white_high/fix/*
+
+
+#i3block
+git clone git://github.com/vivien/i3blocks
+cd i3blocks
+make install
+bar {
+  status_command i3blocks
+}
+#themes
+sudo apt-get install lxappearance gtk-chtheme qt4-qtconfig
+lxappearance 
+gtk-chtheme 
+qtconfig
+#Start with lxappearance and choose a theme; then choose it in gtk-chtheme. In qt4-config, there is a dropdown menu setting to make qt take the GTK+ settings. That seems to work best for me. (It makes VLC and KeepassX look good.)
+
+#cron
+crontab -e
+*/10 * * * *  DISPLAY=:0.0 feh --bg-fill "$(find ~/.wallpaper/|shuf -n1)"

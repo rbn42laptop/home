@@ -1,0 +1,12 @@
+使用5.6,会出现fcitx无法使用的问题,大概要有欧诺个16.04才可以.
+
+使用14.04的qt5,utf8字体无法加载.
+
+使用5.6,setofont的utf8字体不全的部分,没有替代字体出现
+fontconfig
+smart font substitions
+
+
+Mon 25 Apr 2016 02:44:24 NZST
+qmltermwidget和opacity相关代码在 lib/TerminalDisplay.cpp中 drawBackground
+这段代码显然是fake transparency,因为这段代码直接做了blend,而不是留给compositor

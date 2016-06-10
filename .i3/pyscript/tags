@@ -1,0 +1,18 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+_cmd	setpaperforworkspace.py	/^_cmd='feh --recursive --bg-fill --randomize --no-fehbg ~\/.wallpaper\/%s*'%w$/;"	v
+cmd	movewindowto.py	/^cmd='move container to workspace "%s"\\\\;workspace "%s"\\\\;'%(w,w)$/;"	v
+cmd	moveworkspace.py	/^cmd='workspace "%s"\\\\;'%w$/;"	v
+cmd	sortworkspace.py	/^cmd=''.join(cmds*9)$/;"	v
+cmds	sortworkspace.py	/^cmds=['rename workspace "%s" to "%s"\\\\;'%(ws[i+1],ws[i]) for i in range(9)]$/;"	v
+current	workspaces.py	/^def current():$/;"	f
+w	movewindowto.py	/^w=workspaces[int(sys.argv[1])-1]$/;"	v
+w	moveworkspace.py	/^w=workspaces[int(sys.argv[1])-1]$/;"	v
+w	setpaperforworkspace.py	/^w=workspaces.get$/;"	v
+workspaces	workspaces.py	/^workspaces=['%d'%i for i in range(10)]$/;"	v
+ws	setpaperforworkspace.py	/^ws=workspaces.workspaces$/;"	v
+ws	sortworkspace.py	/^ws=workspaces.workspaces$/;"	v

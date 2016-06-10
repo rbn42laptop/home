@@ -1,0 +1,10 @@
+#!/usr/bin/env xdg-open
+
+[Desktop Entry]
+Encoding=UTF-8
+Version=1.0
+Type=Application
+Name=rofi
+Icon=gnome-panel-launcher
+Exec=bash ./apps/startup.sh
+Name[en_NZ]=rofi

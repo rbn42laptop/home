@@ -1,0 +1,1 @@
+tmux -f ~/.tmux.config

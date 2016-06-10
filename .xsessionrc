@@ -1,0 +1,6 @@
+#indicator放这里启动不了，大概是太早了，还是要放在startup里面
+#cd ~/apps
+#python ./indicator-rofi.py&
+#python ./indicator-window-layout.py&
+#python ./indicator-window-cycle.py&
+setxkbmap -option "caps:swapescape"

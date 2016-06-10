@@ -1,0 +1,26 @@
+#!/usr/bin/env xdg-open
+
+[Desktop Entry]
+Encoding=UTF-8
+Version=1.0
+Type=Application
+Name=[foobar2000 v1.3.5]
+Icon=muine
+Exec=./win7/foobar2000/run.sh /playpause
+StartupNotify=false
+StartupWMClass=foobar2000.exe
+OnlyShowIn=Unity;
+X-UnityGenerated=true
+Actions=Next;PlayPause;
+
+Name[en_NZ]=foobar
+
+[Desktop Action Next]
+Name=next
+Exec=wine ~/win7/foobar2000/foobar2000.exe /next
+OnlyShowIn=Unity;
+
+[Desktop Action PlayPause]
+Name=playpause
+Exec=wine ~/win7/foobar2000/foobar2000.exe /playpause
+OnlyShowIn=Unity;

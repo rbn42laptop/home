@@ -1,0 +1,17 @@
+#!/usr/bin/env xdg-open
+
+[Desktop Entry]
+#LANG=zh_CN.UTF-8
+Encoding=UTF-8
+Version=1.0
+Type=Application
+Name=[i3-kill]
+Icon=go-last 
+Exec=i3-msg move container to workspace 10
+StartupNotify=false
+StartupWMClass=mangameeya.exe
+OnlyShowIn=Unity;
+X-UnityGenerated=true
+
+Name[en_NZ]=mangameeya
+

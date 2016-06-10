@@ -1,0 +1,7 @@
+[user]
+	email = bl100@students.waikato.ac.nz
+	name = rbn42
+[credential]
+	helper = cache --timeout=3600000
+[push]
+	default = simple

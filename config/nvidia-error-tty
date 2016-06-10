@@ -1,0 +1,4 @@
+No TTY after installing NVIDIA Driver
+Open up a terminal in the GUI, and sudo nano /etc/default/grub.
+Add either of the following to the GRUB_CMDLINE_LINUX_DEFAULT line:
+nomodeset

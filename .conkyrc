@@ -1,0 +1,133 @@
+conky.config = {
+
+-------------------------------------
+--  Generic Settings
+-------------------------------------
+background=true,
+update_interval=1,
+double_buffer=true,
+no_buffers=true,
+imlib_cache_size=10,
+
+draw_shades=false,
+draw_outline=false,
+draw_borders=false,
+draw_graph_borders=true, 
+draw_shades=true,
+default_shade_color="000000",
+draw_outline=true,
+default_outline_color="000000",
+default_graph_height=26,
+default_graph_width=80,
+show_graph_scale=false,
+show_graph_range=false,
+
+
+-------------------------------------
+--  Window Specifications
+-------------------------------------
+alignment="bottom_left",
+gap_x=100,
+gap_y=30,
+own_window=true,
+own_window_type="normal",
+own_window_transparent=true,
+own_window_hints="undecorated,below,sticky,skip_taskbar,skip_pager",
+border_inner_margin=0,
+border_outer_margin=0,
+own_window_argb_visual=true,
+own_window_argb_value=0,
+
+
+-------------------------------------
+--  Text Settings
+-------------------------------------
+use_xft=true,
+xftalpha=1,
+font="Droid Sans:size=8",
+text_buffer_size=256,
+override_utf8_locale=true,
+
+short_units=true,
+short_units=true,
+pad_percents=2,
+top_name_width=7,
+
+
+-------------------------------------
+--  Color Scheme
+-------------------------------------
+template9=""
+}
+
+
+---------------------------------------------------
+---------------------------------------------------
+
+
+conky.text = [[
+\
+${#FFFFFF}\
+${voffset 0}${font SetoFont :size=22}${alignc}\
+${time %H:%M}
+${voffset 0}${font SetoFont :size=20}${alignc}\
+${execi 300  LC_TIME=${template9} date +"%A, %B %-d"}\
+
+\
+\
+${#A0A0A0}\
+${font SetoFont :size=13}\
+${voffset   10}\
+
+#${alignc}
+${voffset -18  }${cpugraph                                  26,45  AAAAAA AF000F -t }\
+${voffset   0           }${memgraph                         26,45  AAAAAA AF000F -t }\
+${voffset   0           }${downspeedgraph wlxc4e984114a8c   26,45  AAAAAA 0FAFAF -t }\
+${voffset   0           }${upspeedgraph wlxc4e984114a8c     26,45  AAAAAA AFAF0F -t }\
+
+#${alignc}
+${voffset -16  }${diskiograph_read                          26,45  AAAAAA 0FAFAF -t }\
+${voffset   0           }${diskiograph_write                26,45  AAAAAA AFAF0F -t }\
+
+#${alignc}${voffset -18}${cpugraph                       26,110  AAAAAA AF000F -t }\
+#${voffset   0}${memgraph                                26,110  AAAAAA AF000F -t }
+#${alignc}${voffset -18}${downspeedgraph wlxc4e984114a8c 26,110  AAAAAA 0FAFAF -t }\
+#${voffset   0}${upspeedgraph wlxc4e984114a8c            26,110  AAAAAA AFAF0F -t }
+#${alignc}${voffset -18}${diskiograph_read               26,110  AAAAAA 0FAFAF -t }\
+#${voffset   0}${diskiograph_write                       26,110  AAAAAA AFAF0F -t }
+#\
+#${#FFFFFF}\
+#${font SetoFont :size=13}\
+#${voffset  -83}\
+#${voffset   0}${alignc}\
+#Cpu      Mem\
+#
+#${voffset   8}${alignc}\
+# Read    Write\
+#
+#${voffset   8}${alignc}\
+#Down      Up \
+#
+#${voffset  80}\
+ 
+\
+#${voffset -11} Cpu   ${voffset -7}${cpugraph 26,60 FFFFFF FFFFFF -l}\
+#${voffset   7} Mem   ${voffset -7}${memgraph 26,60 FFFFFF FFFFFF -l}
+#${voffset -11} Read  ${voffset -7}${diskiograph_read 26,60 FFFFFF FFFFFF -l}\
+#${voffset   7} Write ${voffset -7}${diskiograph_write 26,60 FFFFFF FFFFFF -l}
+#${voffset -11} Down  ${voffset -7}${downspeedgraph wlxc4e984114a8c 26,60 FFFFFF FFFFFF -l}\
+#${voffset   7} Up    ${voffset -7}${upspeedgraph wlxc4e984114a8c 26,60 FFFFFF FFFFFF -l}
+#\
+#${voffset   2}Cpu   ${voffset -7}${cpugraph 26,110 FFFFFF FFFFFF -l}
+#${voffset -14}Mem   ${voffset -7}${memgraph 26,110 FFFFFF FFFFFF -l}
+##${voffset -14}Load ${voffset -7}${loadgraph 26,110 FFFFFF FFFFFF -l}
+##${voffset -14}Disk ${voffset -7}${diskiograph 26,110 FFFFFF FFFFFF -l}
+#${voffset -14}Write ${voffset -7}${diskiograph_write 26,110 FFFFFF FFFFFF -l}
+#${voffset -14}Read  ${voffset -7}${diskiograph_read 26,110 FFFFFF FFFFFF -l}
+#${voffset -14}Down  ${voffset -7}${downspeedgraph wlxc4e984114a8c 26,110 FFFFFF FFFFFF -l}
+#${voffset -14}Up    ${voffset -7}${upspeedgraph wlxc4e984114a8c 26,110 FFFFFF FFFFFF -l}
+\
+]]
+--------------
+--TODO 
+---------------

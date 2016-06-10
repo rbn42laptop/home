@@ -1,0 +1,2 @@
+#!/bin/bash
+comiccrawler gui

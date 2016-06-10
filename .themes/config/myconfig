@@ -1,0 +1,33 @@
+添加下面配置到apps/unity.css,一是去除边框,二是不知为何,title崩溃消失了,但是残留的空间依旧可以drag
+UnityDecoration {
+    /* Border properties (top, right, bottom, left) */
+    -UnityDecoration-extents: 20px 0px 0px 0px; /* the size of the decorations  */
+    -UnityDecoration-input-extents: 10px; /* the extra size of the input areas */
+
+    /* Shadows settings */
+    -UnityDecoration-shadow-offset-x: 1px; /* Size property, the shadow x offset */
+    -UnityDecoration-shadow-offset-y: 1px; /* Size property, the shadow y offset */
+    -UnityDecoration-active-shadow-color: rgba (0, 0, 0, 0.647); /* Color property, active window shadow color */
+    -UnityDecoration-active-shadow-radius: 0px; /* Size property, active window shadow radius */
+    -UnityDecoration-inactive-shadow-color: rgba (0, 0, 0, 0.647); /* Color property, inactive windows shadow color */
+    -UnityDecoration-inactive-shadow-radius: 0px; /* Size property, inactive windows shadow radius */
+
+    /* Glow applied to the selected scaled window */
+    -UnityDecoration-glow-size: 10px; /* Size property, size of glow */
+    -UnityDecoration-glow-color: rgb (221, 72, 20); /* Color property of the glow */
+
+    /* Title settings */
+    -UnityDecoration-title-indent: 10px; /* Size property, left indent of the title */
+    -UnityDecoration-title-fade: 35px; /* Size property, space of the title that can be faded */
+    -UnityDecoration-title-alignment: 0.0; /* Float from 0.0 to 1.0, to align the title */
+}
+
+
+
+Fri 13 Nov 2015 15:18:56 NZDT
+ambiance flat 修改绿色滚动条
+gtk-3.0目录
+1.复制orig中gtk-widgets-borders.css到teal
+2.修改gtk-widgets.css /*scrollbar */部分， 用orig中对应部分替换
+3.修改gtk-main.css  添加@define-color backdrop_filling_bg #b0b0b0; 到line 37
+

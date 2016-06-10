@@ -1,0 +1,9 @@
+#! /USR/Bin/perl
+#/usr/lib/urxvt/perl/clipboard
+#sudo apt install xsel
+sub on_sel_grab {
+    my $query = quotemeta $_[0]->selection;
+    $query =~ s/\n/\\n/g;
+    $query =~ s/\r/\\r/g;
+    system( "echo -en " . $query . " | xsel -ibp" );
+}
