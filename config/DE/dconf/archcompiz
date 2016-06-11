@@ -14,8 +14,8 @@ toggle-on-all-workspaces=['disabled']
 toggle-shaded=['disabled']
 show-desktop=['disabled']
 maximize-vertically=['disabled']
-switch-windows=['<Alt>Tab']
-switch-windows-backward=['<Shift><Alt>Tab']
+switch-windows=['disabled']
+switch-windows-backward=['disabled']
 activate-window-menu=['<Alt>space']
 close=['<Shift><Super>q']
 switch-to-workspace-left=['<Control><Alt>Left']
@@ -62,16 +62,27 @@ cycle-wallpapers=false
 highlight-rect-hidden=2
 brightness=100
 saturation=100
+highlight-mode=2
 highlight-color='#1cb39fff'
 highlight-border-inlay-color='#1cb39fff'
 highlight-border-color='#1cb39fff'
 mouse-select=true
+focus-on-switch=true
+background-color='#ffffffd2'
+use-background-color=true
+
+[org/compiz/profiles/Default/plugins/switcher]
+prev-all-key='Disabled'
+next-all-key='Disabled'
+brightness=100
+opacity=100
+zoom=0.0
 use-background-color=true
 focus-on-switch=true
-highlight-mode=2
+background-color='#ffffffcd'
 
 [org/compiz/profiles/Default/plugins/core]
-active-plugins=['core', 'composite', 'opengl','decor', 'imgjpeg', 'resize', 'compiztoolbox', 'imgpng', 'regex','workarounds', 'move', 'place', 'commands', 'wallpaper', 'animation', 'wall', 'staticswitcher', 'expo']
+active-plugins=['core', 'composite', 'opengl','decor', 'imgjpeg', 'resize', 'compiztoolbox', 'imgpng', 'regex','workarounds', 'move', 'place', 'commands', 'wallpaper', 'animation', 'wall', 'staticswitcher','switcher', 'expo']
 
 [org/compiz/profiles/Default/plugins/commands]
 run-command18-key='<Super>space'

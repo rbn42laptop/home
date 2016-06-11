@@ -20,6 +20,8 @@ mpv \
     $MPV_ROTATION \
     "$@" \
 
+    #--geometry=100%x100%+0+0 \
+    #--autofit=100% \
 #     \
     #--no-osc \
     #--osd-bar \
