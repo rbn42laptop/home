@@ -60,3 +60,15 @@ Sat 11 Jun 2016 12:56:28 AM NZST
 
 我想最有可能有问题的可能是wifi驱动.
 不过似乎arch的网络连接还是感觉比ubuntu稳定些.
+
+Sat 11 Jun 2016 03:33:11 PM NZST
+我估计firefox崩溃和网络连接有关,arch下wifi比ubuntu稳定,所以崩溃概率就小很多了.
+最容易崩溃的是tieba,估计用了很多长连接的原因.
+
+Sat 11 Jun 2016 03:48:02 PM NZST
+当前arch安装cuda的方案,主要是gcc6的问题
+https://www.reddit.com/r/archlinux/comments/4jmhju/cuda_75_and_gcc6/?
+
+Sat 11 Jun 2016 04:03:53 PM NZST
+aur上的compiz的各种特效相当流畅,甚至感觉比上游的ubuntu还要流畅.
+大概喜欢compiz 的人还是很多的吧,所以维护的还挺不错的?

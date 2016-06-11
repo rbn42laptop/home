@@ -18,6 +18,7 @@ git add --all ~/.icons/install-ubuntu.sh
 #Desktop
 git add --all ~/.conky_lua_scripts.lua
 git add --all ~/.xinitrc
+git add --all ~/.bash_profile
 git add --all ~/.tilerc
 git add --all ~/.qmltermrc
 git add --all ~/.config/compiz-1/compizconfig/config
