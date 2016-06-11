@@ -1,3 +1,33 @@
 #!/bin/bash
-sudo wifi-menu
-~/bin/fixdns.sh
+#arch用
+#package
+~/bin/install netctl dialog ppp dhcpcd wpa_supplicant wpa_actiond
+#生成profile
+sudo wifi-menu -o
+
+cd /etc/netctl/
+export PROFILE=`ls *Mas*`
+echo $PROFILE
+sudo netctl start $PROFILE
+sudo netctl enable $PROFILE
+sudo netctl reenable $PROFILE
+
+#sudo wifi-menu
+#~/bin/fixdns.sh
+
+#connman
+#~/bin/install connman
+#~/bin/install wpa_supplicant
+#sudo systemctl stop connman
+#sudo systemctl disable connman
+#sudo systemctl enable connman
+#sudo systemctl start connman
+#connmanctl enable wifi 
+#connmanctl scan wifi 
+#connmanctl services
+#connmanctl state
+#connmanctl 
+#agent on
+#connect wifi_c4e984114a8c_4d617374657273_managed_psk
+#quit
+#connmanctl state
