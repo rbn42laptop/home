@@ -14,6 +14,9 @@ sudo netctl start $PROFILE
 sudo netctl enable $PROFILE
 sudo netctl reenable $PROFILE
 
+#这种办法下netctl会阻塞boot,估计要20多秒.
+#但是我想我们必须要把netctl注册为服务,因为这样在wifi断线后就会自动重连了吧.
+
 #sudo wifi-menu
 #~/bin/fixdns.sh
 

@@ -393,3 +393,9 @@ endfunction
 "需要先按*截取关键词
 nnoremap <C-j> :MultipleCursorsFind <C-R>/<CR>
 vnoremap <C-j> :MultipleCursorsFind <C-R>/<CR>
+
+"自动关闭fcitx zh
+function! Fcitx2en()
+  let l:a = system("fcitx-remote -c")
+endfunction
+autocmd InsertLeave * call Fcitx2en()
