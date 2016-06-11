@@ -28,6 +28,7 @@ mpv \
     --volume=40 \
     $MPV_ROTATION \
     "$@" \
+
 #     \
     #--no-osc \
     #--osd-bar \
