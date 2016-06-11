@@ -7,7 +7,7 @@ export QT_IM_MODULE=fcitx
 export XMODIFIERS=@im=fcitx
 fcitx-autostart
 
-conky
+conky -c ~/config/rc/conky
 
 
 udisksctl mount -b /dev/sdb2
@@ -17,7 +17,7 @@ udisksctl mount -b /dev/sdc2
 xfce4-panel&
 
 #显示通知,可以接收notify-send,不过好像接收不到wesnoth
-dunst &
+dunst -config ~/config/rc/dunst -print >> /dev/shm/notification_log &
 
 exec compiz  
 #exec fusion-icon

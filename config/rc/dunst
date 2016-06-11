@@ -1,0 +1,4 @@
+[global]
+    font="setofont,WenQuanYi Micro Hei 25"
+    geometry="0x0-5+5" 
+    transparency=20
