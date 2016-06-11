@@ -9,16 +9,7 @@ else
     export MPV_ROTATION="--video-rotate=0"
 fi
 
-#vlc
-#preferences/interface/main interfaces: remote control interface
-#preferences/interface/main interfaces/rc: "fake tty"  "unix socket command input=/dev/shm/.vlc.sock"
-#echo -n "random off" | nc -U   /dev/shm/vlc
-#echo -n "clear" | nc -U   /dev/shm/vlc
-#vlc --qt-minimal-view "$1"
-
-#smplayer "$@"
-
-#mpv
+#################################mpv
 pkill mpv
 mpv \
     --script-opts=osc-layout=bottombar \
@@ -39,8 +30,12 @@ mpv \
 # 文件名            'I'
 
 
-#if pidof mpv
-#then echo "mpv already running"
-#else mpv "$@"
-#fi
-#echo $1
+############################vlc
+#preferences/interface/main interfaces: remote control interface
+#preferences/interface/main interfaces/rc: "fake tty"  "unix socket command input=/dev/shm/.vlc.sock"
+#echo -n "random off" | nc -U   /dev/shm/vlc
+#echo -n "clear" | nc -U   /dev/shm/vlc
+#vlc --qt-minimal-view "$1"
+
+#smplayer "$@"
+

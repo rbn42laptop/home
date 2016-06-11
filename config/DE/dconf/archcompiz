@@ -27,6 +27,7 @@ switch-to-workspace-down=['<Control><Alt>Down']
 plugins-with-set-keys=['core', 'composite', 'opengl', 'resize', 'place', 'move', 'staticswitcher', 'animation', 'wall', 'commands', 'thumbnail', 'gnomecompat', 'rotate', 'put', 'extrawm', 'vpswitch', 'fade', 'expo', 'imgjpeg','workarounds', 'wallpaper', 'switcher', 'shift', 'shelf', 'ring', 'grid', 'decor','winrules']
 
 [org/compiz/profiles/Default/plugins/wall]
+edgeflip-move=false
 miniscreen=true
 border-width=1
 preview-scale=150
