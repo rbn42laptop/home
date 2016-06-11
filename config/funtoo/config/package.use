@@ -1,9 +1,0 @@
-sys-kernel/debian-sources binary 
-# required by sys-devel/prelink-20130503
-# required by app-emulation/wine-1.7.28[prelink]
-# required by wine (argument)
->=dev-libs/elfutils-0.160 static-libs
-# required by x11-wm/awesome-3.5.5-r1
-# required by @selected
-# required by @world (argument)
->=x11-libs/cairo-1.12.16-r3 xcb

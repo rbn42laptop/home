@@ -1,5 +1,0 @@
-sudo dpkg-reconfigure console-setup
-
-emerge terminus-font
-cd /usr/share/consolefonts
-setfont ter-v32b.psf.gz

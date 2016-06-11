@@ -68,7 +68,7 @@ git add --all ~/.mspider/config.sh
 ~/bin/gitencrypt.sh
 
 git add --all ~/bin
-git add --all ~/apps/
+#git add --all ~/apps/
 git add --all ~/config
 git add --all ~/todo
 git add --all ~/codebase

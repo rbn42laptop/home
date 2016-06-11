@@ -1,5 +1,0 @@
-[preferences]
-default-folder-viewer='list-view'
-
-[list-view]
-use-tree-view=true

@@ -1,1 +1,0 @@
-sudo emerge gvfs

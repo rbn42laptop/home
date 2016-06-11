@@ -1,9 +1,11 @@
 #!/bin/bash
 #arch用
-#package
-~/bin/install netctl dialog ppp dhcpcd wpa_supplicant wpa_actiond
+#netctl似乎比connman简单
+
 #生成profile
 sudo wifi-menu -o
+#package
+~/bin/install netctl dialog ppp dhcpcd wpa_supplicant wpa_actiond
 
 cd /etc/netctl/
 export PROFILE=`ls *Mas*`
