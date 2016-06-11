@@ -1,0 +1,6 @@
+Sat 11 Jun 2016 10:23:51 PM NZST
+上游qmltermwidget没有merge lxde.
+但是这个我们没法自己处理.
+merge需要作出选择,出现conflict的时候要怎么处理.
+既然当前没有什么bug存在(没法drag).
+那么只能暂且如此了.
