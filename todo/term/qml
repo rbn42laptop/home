@@ -4,3 +4,9 @@ Sat 11 Jun 2016 10:23:51 PM NZST
 merge需要作出选择,出现conflict的时候要怎么处理.
 既然当前没有什么bug存在(没法drag).
 那么只能暂且如此了.
+
+Sun 12 Jun 2016 11:45:05 PM NZST
+有空可以看看怎么把qmlterm弄上aur
+tile也可以试试。
+qmlterm的问题是，不支持一般term的接口，难以和系统整合。
+tile的问题是，需要有按键配置，还有跨DE的问题

@@ -17,6 +17,7 @@ sudo apt install libxcb-xinerama0-dev -y
 sudo apt install libxcb-ewmh-dev -y
 sudo apt install libxcb-icccm4-dev -y
 
+#no need to install packages under archlinux
 
 cd ~/git
 git clone https://github.com/DaveDavenport/rofi.git
