@@ -1,0 +1,7 @@
+
+gtk-window-decorator --replace
+gsettings set org.gnome.desktop.wm.preferences button-layout "'menu:minimize,maximize,close'"
+gsettings set org.gnome.metacity theme Arc
+
+#早期的emerald没有处理好窗口resize的问题
+emerald --replace

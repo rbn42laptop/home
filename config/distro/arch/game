@@ -1,0 +1,36 @@
+#http://osgameclones.com/
+yaourt -S vcmi #英雄无敌3
+#active playable
+
+yaourt -S jumpman
+#halted
+
+yaourt -S zelda-classic
+
+#Escape Velocity
+yaourt -S endless-sky-git 
+#active
+sudo pacman -S naev
+#active
+
+yaourt -S pioneer 
+#A game of lonely space adventure
+#active
+#http://pioneerwiki.com/wiki/Manual
+
+#yaourt -S briquolo # breakout
+#halted
+
+#https://github.com/CallumDev/Librelancer
+#freelancer
+
+#Minecraft
+yaourt -S   minecraft #demo only
+yaourt -S terasology
+#第一视角实在玩不来,太头晕了.
+#稳定性略差,但是渲染用了很多特殊技术,光照,模糊.
+#active
+
+#Total Annihilation 
+pacman -S spring-1944
+#active

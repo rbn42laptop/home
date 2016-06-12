@@ -5,14 +5,15 @@
   <property name="panels" type="array">
     <value type="int" value="1"/>
     <property name="panel-1" type="empty">
-      <property name="position" type="string" value="p=6;x=51;y=15"/>
+      <property name="position" type="string" value="p=6;x=84;y=11"/>
       <property name="plugin-ids" type="array">
         <value type="int" value="1"/>
         <value type="int" value="3"/>
         <value type="int" value="2"/>
+        <value type="int" value="4"/>
       </property>
       <property name="autohide-behavior" type="uint" value="0"/>
-      <property name="size" type="uint" value="28"/>
+      <property name="size" type="uint" value="21"/>
       <property name="length" type="uint" value="1"/>
       <property name="position-locked" type="bool" value="true"/>
       <property name="background-alpha" type="uint" value="0"/>
@@ -24,13 +25,17 @@
         <value type="uint" value="65535"/>
       </property>
       <property name="disable-struts" type="bool" value="true"/>
+      <property name="leave-opacity" type="uint" value="100"/>
+      <property name="enter-opacity" type="uint" value="100"/>
     </property>
   </property>
   <property name="plugins" type="empty">
     <property name="plugin-2" type="string" value="systray">
       <property name="names-visible" type="array">
+        <value type="string" value="vlc"/>
         <value type="string" value="indicator-window-cycle.py"/>
         <value type="string" value="indicator-multiload"/>
+        <value type="string" value="docky"/>
       </property>
       <property name="show-frame" type="bool" value="false"/>
       <property name="size-max" type="uint" value="64"/>
@@ -47,6 +52,12 @@
         <value type="string" value="14655733941.desktop"/>
       </property>
       <property name="show-label" type="bool" value="true"/>
+    </property>
+    <property name="plugin-4" type="string" value="mixer">
+      <property name="sound-card" type="string" value="HDAIntelPCHAlsamixer"/>
+      <property name="track" type="string" value="Master"/>
+      <property name="command" type="string" value="xfce4-mixer"/>
+      <property name="enable-keyboard-shortcuts" type="bool" value="true"/>
     </property>
   </property>
 </channel>
