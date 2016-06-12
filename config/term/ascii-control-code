@@ -1,0 +1,15 @@
+Mon 13 Jun 2016 03:55:57 AM NZST
+term
+这些功能似乎属于ascii-control-code
+ctrl+a home                     rofi有效
+ctrl+e end 也可以补全fish       rofi有效
+ctrl+h backspace        vim有效 rofi有效
+ctrl+d 相当于delete             rofi有效
+ctrl+I tab              vim有效
+ctrl+M enter            vim有效 rofi有效 firefox无效[替换成了静音]
+ctrl+B 方向键左                 rofi有效
+alt+f 相当于vim的w      vim无效 rofi有效
+ctrl+u 删除至行首       vim有效 rofi改为删除一行
+ctrl+l clean
+ctrl+k 删光后面的东西
+ctrl+C 删光一行
