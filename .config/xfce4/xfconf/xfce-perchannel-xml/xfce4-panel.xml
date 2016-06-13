@@ -8,6 +8,7 @@
       <property name="position" type="string" value="p=6;x=84;y=11"/>
       <property name="plugin-ids" type="array">
         <value type="int" value="1"/>
+        <value type="int" value="5"/>
         <value type="int" value="3"/>
         <value type="int" value="2"/>
         <value type="int" value="4"/>
@@ -59,6 +60,12 @@
       <property name="track" type="string" value="Master"/>
       <property name="command" type="string" value="xfce4-mixer"/>
       <property name="enable-keyboard-shortcuts" type="bool" value="true"/>
+    </property>
+    <property name="plugin-5" type="string" value="launcher">
+      <property name="items" type="array">
+        <value type="string" value="14657926991.desktop"/>
+      </property>
+      <property name="show-label" type="bool" value="true"/>
     </property>
   </property>
 </channel>

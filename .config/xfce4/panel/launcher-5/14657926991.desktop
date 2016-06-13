@@ -1,9 +1,9 @@
 [Desktop Entry]
 Version=1.0
 Type=Application
-Name=RO
-Comment=rofi
-Exec=./bin/rofi.sh
+Name=EX
+Comment=expo
+Exec=./bin/expo.sh
 Icon=
 Path=
 Terminal=false
