@@ -7,17 +7,21 @@
     <property name="panel-1" type="empty">
       <property name="position" type="string" value="p=6;x=74;y=11"/>
       <property name="plugin-ids" type="array">
-        <value type="int" value="3"/>
-        <value type="int" value="5"/>
+        <value type="int" value="9"/>
+        <value type="int" value="7"/>
+        <value type="int" value="6"/>
         <value type="int" value="1"/>
+        <value type="int" value="5"/>
+        <value type="int" value="3"/>
         <value type="int" value="4"/>
         <value type="int" value="2"/>
+        <value type="int" value="8"/>
       </property>
       <property name="autohide-behavior" type="uint" value="0"/>
       <property name="size" type="uint" value="21"/>
       <property name="length" type="uint" value="18"/>
       <property name="position-locked" type="bool" value="true"/>
-      <property name="background-alpha" type="uint" value="0"/>
+      <property name="background-alpha" type="uint" value="51"/>
       <property name="background-style" type="uint" value="1"/>
       <property name="background-color" type="array">
         <value type="uint" value="65535"/>
@@ -67,5 +71,14 @@
       </property>
       <property name="show-label" type="bool" value="true"/>
     </property>
+    <property name="plugin-6" type="string" value="separator">
+      <property name="expand" type="bool" value="true"/>
+      <property name="style" type="uint" value="0"/>
+    </property>
+    <property name="plugin-7" type="string" value="windowck-plugin"/>
+    <property name="plugin-8" type="string" value="applicationsmenu">
+      <property name="button-title" type="string" value=""/>
+    </property>
+    <property name="plugin-9" type="string" value="wckbuttons"/>
   </property>
 </channel>

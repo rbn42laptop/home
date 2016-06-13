@@ -26,6 +26,8 @@ MOVE_STEP = 50
 MIN_WINDOW_WIDTH = 50
 MIN_WINDOW_HEIGHT = 50
 
+COMPIZ0_8=True
+
 # NOFRAME_WMCLASS = ['Wine']
 
 # In i3-wm's window tree, only one child of a node is allowed to split.

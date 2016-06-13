@@ -20,7 +20,10 @@ git add --all ~/.xinitrc
 git add --all ~/.bash_profile
 git add --all ~/.tilerc
 git add --all ~/.qmltermrc
-git add --all ~/.config/compiz-1/compizconfig/config
+#compiz0.9
+#git add --all ~/.config/compiz-1/compizconfig/config
+#compiz0.8
+git add --all ~/.config/compiz/compizconfig/Default.ini
 git add --all ~/.gtkrc-2.0
 git add --all ~/.config/gtk-3.0/settings.ini
 git add --all ~/.emerald/settings.ini

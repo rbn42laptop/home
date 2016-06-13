@@ -1,0 +1,29 @@
+Mon 13 Jun 2016 09:44:35 PM NZST
+关于blur
+全透明的状态下，blur是无效的.
+
+Mon 13 Jun 2016 11:06:46 PM NZST
+或许我们该用compiz0.8，因为,comipz0.8没有丢失focus的问题,暂且也感觉不到稳定性的问题.
+不过dconf接口就不能用了,而是要自己用python读写配置文件,这个会比较麻烦.而且不知道compiz会不会即时载入wallpaper
+
+shortcut command支持数目也更多
+
+不过感觉对xprop的支持有问题导致得到的tile得到的信息不准确
+
+现在看起来，wmctrl给出的数据大约是实际数据的两倍.
+但是输出layout的时候,似乎还是准确的.
+而且,不准确的仅仅是位置,高宽依旧没变
+简单的把wmctrl -lG的xy信息除以2之后似乎就把问题解决了
+
+Tue 14 Jun 2016 12:26:08 AM NZST
+expo 不支持分辨拖动和点击,所以不得不分开点击进入workspace和拖动窗口,因此,拖动只能分配为鼠标右键了,
+
+Tue 14 Jun 2016 02:17:45 AM NZST
+一个问题是wallpaper字段太长会被缩略，所以5×5的桌面就是极限了，更大的桌面难以塞入路径，除非我们想办法收缩路径
+可以用shortcut
+
+Tue 14 Jun 2016 02:20:59 AM NZST
+mpv启动自动最大化，没有黑边了
+
+Tue 14 Jun 2016 03:12:29 AM NZST
+而且compiz0.9有无法switch到minimalize窗口的问题

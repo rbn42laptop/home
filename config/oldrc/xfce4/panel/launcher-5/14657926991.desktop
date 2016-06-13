@@ -1,0 +1,10 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=EX
+Comment=expo
+Exec=./bin/expo.sh
+Icon=
+Path=
+Terminal=false
+StartupNotify=false
