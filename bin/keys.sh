@@ -1,4 +1,5 @@
 #!/bin/bash
+setxkbmap -option 
 #setxkbmap -option "caps:swapescape"
 setxkbmap -option "caps:escape"
 #setxkbmap -option "ctrl:swapcaps"

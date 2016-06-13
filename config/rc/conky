@@ -2,7 +2,7 @@ conky.config = {
 -------------------------------------
 --  Generic Settings
 -------------------------------------
-lua_load="~/.conky_lua_scripts.lua",
+lua_load="~/config/rc/conky_lua_scripts.lua",
 background=true,
 update_interval=1,
 double_buffer=true,
