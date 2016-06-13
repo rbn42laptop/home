@@ -13,3 +13,10 @@ ctrl+u 删除至行首       vim有效 rofi改为删除一行
 ctrl+l clean
 ctrl+k 删光后面的东西
 ctrl+C 删光一行
+
+term中有用的
+a e h d i m b u k c
+vim中有用的
+h i m 
+rofi 有用
+a e h d m b u

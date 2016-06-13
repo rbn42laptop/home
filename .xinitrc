@@ -1,6 +1,7 @@
 
 #!/bin/bash
-setxkbmap -option "caps:swapescape"
+~/bin/keys.sh
+
 export GTK_IM_MODULE=fcitx
 export GTK_IM_MODULE=fcitx
 export QT_IM_MODULE=fcitx
@@ -8,7 +9,6 @@ export XMODIFIERS=@im=fcitx
 fcitx-autostart
 
 conky -c ~/config/rc/conky
-
 
 udisksctl mount -b /dev/sdb2
 udisksctl mount -b /dev/sdc2
