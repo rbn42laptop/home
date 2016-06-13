@@ -1,0 +1,14 @@
+Mon 13 Jun 2016 03:17:59 PM NZST
+gnome3的布局虽然不喜欢，但是gnome3的app还挺不错的。
+不过问题是,这些app在compiz下和tile整合不好,因为似乎为了预留resize的边框,这些app在compiz下用了padding,也就是说在窗口布局的范围内还留出了视觉空隙,
+
+Mon 13 Jun 2016 03:19:58 PM NZST
+nautilus    文件管理
+evince      pdf
+baobab      磁盘空间
+eog         图片,不怎么用
+totem       视频,不怎么用
+gedit
+这些不带gnome前缀的大概都是精心设计过的.
+标题栏都被消除了.
+但是gimp的标题栏还在那里,看来不属于gnome核心

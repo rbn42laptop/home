@@ -36,6 +36,7 @@
         <value type="string" value="indicator-window-cycle.py"/>
         <value type="string" value="indicator-multiload"/>
         <value type="string" value="docky"/>
+        <value type="string" value="empathy"/>
       </property>
       <property name="show-frame" type="bool" value="false"/>
       <property name="size-max" type="uint" value="64"/>
