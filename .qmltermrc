@@ -8,7 +8,10 @@ Item{
 
     property var display_ratio:1.2
 
-    property var title_font:'setofont,WenQuanYi Micro Hei'
+    property var title_font:"setofont,WenQuanYi Micro Hei" 
+    //这个排位无效,有些汉字在setofont中没有,
+    //但是qml依旧选择了空缺这个汉字位,而没有使用wqy中的字符.
+
     property var focused_color:'#8ff'
     property var unfocused_color:'#eee'
 
