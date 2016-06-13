@@ -24,6 +24,7 @@ git add --all ~/.config/compiz-1/compizconfig/config
 git add --all ~/.gtkrc-2.0
 git add --all ~/.config/gtk-3.0/settings.ini
 git add --all ~/.emerald/settings.ini
+git add --all ~/.emerald/themes/th
 git add --all ~/.config/xfce4/xfconf/xfce-perchannel-xml/xfce4-panel.xml
 git add --all ~/.config/fontconfig/fonts.conf
 #git add --all ~/.i3
