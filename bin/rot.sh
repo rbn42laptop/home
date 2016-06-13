@@ -1,4 +1,6 @@
 #!/bin/bash
+#compiz0.8必须要前置xrandr
+xrandr --output "DVI-I-1" --rotate  $1
 
 #feh --recursive --bg-fill --randomize --no-fehbg ~/.wallpaper/*
 
@@ -24,4 +26,3 @@ cd ~/Pictures/compiz/
 bash bin/compiz.sh
 
 
-xrandr --output "DVI-I-1" --rotate  $1
