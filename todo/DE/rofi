@@ -37,3 +37,6 @@ spotlight,作为原版,搜索域更大,还包括file和msg,doc,contact
 Tue 07 Jun 2016 07:28:43 PM NZST
 rofi 没法用fcitx,ibus没有试.所以没法把web搜索引擎加入到rofi.
 不过另一方面,firefox的右键关键词搜索也是整合浏览器的功能,没有办法向外移植的.
+
+Tue 14 Jun 2016 01:10:44 PM NZST
+其实rofi提供i3和dmenu接口,说明是有办法换一个ui整合rofi的.

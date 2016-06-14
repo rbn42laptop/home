@@ -15,7 +15,7 @@
       </property>
       <property name="autohide-behavior" type="uint" value="0"/>
       <property name="size" type="uint" value="21"/>
-      <property name="length" type="uint" value="18"/>
+      <property name="length" type="uint" value="1"/>
       <property name="position-locked" type="bool" value="true"/>
       <property name="background-alpha" type="uint" value="0"/>
       <property name="background-style" type="uint" value="1"/>
