@@ -1,4 +1,6 @@
 #!/usr/bin/python
+#这是compiz0.8的配置, 
+#compiz0.9 standalone应该也没有问题下,在unity下面外围padding要设到5以上才能正常运作.具体我不记得了,是8,10,还是15来着
 WinBorder = 2
 LeftPadding = 1
 BottomPadding = 1
@@ -26,6 +28,7 @@ MOVE_STEP = 50
 MIN_WINDOW_WIDTH = 50
 MIN_WINDOW_HEIGHT = 50
 
+#compiz0.8 wmctrl -lG给出的x,y不准确,恰好是实际数值的两倍,不知道哪来的这个倍率,所以必须要修正
 COMPIZ0_8=True
 
 # NOFRAME_WMCLASS = ['Wine']
