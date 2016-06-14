@@ -1,4 +1,6 @@
 #!/bin/bash
+
+#capswap
 ~/bin/keys.sh
 
 #0.8开机需要这个,因为路径放在了/dev/shm里面了
