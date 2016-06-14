@@ -54,3 +54,19 @@ compton的blur效果是固定的,0.8却是依据上层的alpha变动的.
 光线追踪呢?似乎也是点对点映射的领域
 不过有个比较流行的技术,远景blur,这个的确是blur技术,
 unity 中的名字是DepthOfFieldFunction,似乎是通过depth map做的处理
+
+Wed 15 Jun 2016 12:39:21 AM NZST
+0.8用的这个策略,虽然说概念上不够严谨,但是功能上来说却是挺不错的,全局性的blur效果其实并不好,纯透明的terminal是必要的,compton无法区分透明和blur,就无法共用这两者了.
+
+所以如果我们想用wayland重现的话,应该要考虑一个贴近0.8的模型而不是wayland的模型,
+不过,其实compton对于仅仅区分透明和blur是可以做到的,只要在compton窗口过滤器中标志下哪些window需要blur就可以了.
+确切的说compton模型的缺点在应对docky的时候才会发生,因为docky在一个窗口内,需要区分blur的区域和透明的区域来画出特定的形状,compton结合docky的时候,似乎会把docky占据的区域整个绘制为blur.
+我记得不是很清楚了,因为好像没有结合compton和docky共用的印象.
+
+
+Wed 15 Jun 2016 12:48:13 AM NZST
+有一点感觉挺不错的.
+在我之前配合qmlterm和其他窗口共用的时候,用tile转移focus感觉效率不对劲.
+而在qmlterm内部转移则没问题.
+
+这个问题在0.8中似乎感觉不到存在,focus转移很流畅

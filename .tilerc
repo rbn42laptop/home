@@ -1,7 +1,7 @@
 #!/usr/bin/python
 WinBorder = 2
-LeftPadding = 5
-BottomPadding = 5
+LeftPadding = 1
+BottomPadding = 1
 TopPadding = BottomPadding
 RightPadding = BottomPadding
 NavigateAcrossWorkspaces = False #True  # availabe in viewports desktops
