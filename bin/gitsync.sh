@@ -58,7 +58,8 @@ git add --all ~/.config/ranger/rc.conf
 #Shell
 git add --all ~/.config/fish/custom
 #git add --all ~/.config/tilda/
-#git add --all ~/.config/sakura/
+#以防万一 qmlterm出问题,最近一次出问题似乎是pacman升级后,opengl不工作,必须要reboot,依赖gl的qml就没法启动了
+git add --all ~/.config/sakura/
 #git add --all ~/.bashrc
 #git add --all ~/.bashrc_my
 #git add --all ~/.tmux.config
