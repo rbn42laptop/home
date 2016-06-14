@@ -27,4 +27,7 @@ Item{
     property var title_shadow_spread:0.6
 
     property var maximized_state:'MAXIMIZED'
+
+    property var background_color:'white' // 'transparent'
+    property var background_opacitiy:0.3 // 0
 }

@@ -11,7 +11,7 @@ python3 ~/bin/reset_rofi_history.py "$ROFI_HISTORY"
 rofi -show run \
     -font "SetoFont,WenQuanYi Micro Hei 15" \
     -bw "0" \
-    -opacity "50" \
+    -opacity "70" \
     -color-window "#ffffff,#0ff,#f0f" \
     -color-normal "#ffffff,#000,#ffffff,#000,#ffffff" \
     -separator-style "none" \
