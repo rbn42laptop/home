@@ -70,3 +70,21 @@ Wed 15 Jun 2016 12:48:13 AM NZST
 而在qmlterm内部转移则没问题.
 
 这个问题在0.8中似乎感觉不到存在,focus转移很流畅
+
+Wed 15 Jun 2016 01:24:58 AM NZST
+可以感觉到0.8的新更能较弱，比如expo，换wallpaper的cpu占用会比较高,速度比较慢
+但是0.8似乎比0.9少了很多烦人的小bug
+不过反正这台电脑本身就比较弱，将来有更好的电脑的时候，应该不会是问题
+
+Wed 15 Jun 2016 01:27:44 AM NZST
+一个问题,开机的时候emerald会崩溃一次,原因似乎和switcher有关,swithcher有着似乎不同一般窗口的decro,启动emerald的时候你才能看到
+这是0.8的问题,switcher的title在switcher底部造成的吧,0.9是在顶部,而且缺了文字,所以0.8的behavior才是正常的,但是这样的化,开机后,用了swicher之后emerald就会崩溃,就只能手动重启一次了.
+或许,如果我们关闭compiz的decro,自己来启动emerald呢?但是emrald必须要在compiz之后启动吧?那么我们用谁来卡startx线程呢?
+我想emerald必须要在compiz中配置的原因是因为它对compiz有依赖吧?我们来试试看能不能独立用emerald?
+启动倒是没有问题，就是看不到效果
+
+解决办法是，把emerald做成循环线程,看样子,switcher的确让emerald崩溃了,不过循环的话,就会自动启动了.
+不过循环其实不太好.
+既然崩溃次数是有限,做成二次/三次执行比较好.
+
+compiz decro除了emerald 还要管理窗口阴影,所以有必要开着.
