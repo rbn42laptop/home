@@ -43,3 +43,14 @@ Tue 14 Jun 2016 12:01:04 PM NZST
 
 Tue 14 Jun 2016 01:36:27 PM NZST
 和0.9比起来,在用tile调整窗口的效率方面,0.8明显弱很多,cpu占用能到99%并且挤占其他进程资源,比如音频出现卡顿.
+
+Tue 14 Jun 2016 04:59:00 PM NZST
+0.8实现blur的手法和compton不同,
+compton的blur效果是固定的,0.8却是依据上层的alpha变动的.
+这给予了上层窗口控制blur效果的余地,但是也把blur和alpha的概念混淆在了一起.
+或许实际上,要表现blur效果,alpha通道之外就有必要加入一个blur通道?
+3D引擎中现在是如何处理blur的呢?
+我知道的有曲面折射和曲面反射,漫反射,前面两者都是属于点对点的映射.
+光线追踪呢?似乎也是点对点映射的领域
+不过有个比较流行的技术,远景blur,这个的确是blur技术,
+unity 中的名字是DepthOfFieldFunction,似乎是通过depth map做的处理
