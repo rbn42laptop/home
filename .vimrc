@@ -46,6 +46,8 @@ Plugin 'vim-airline/vim-airline-themes'
 
 
 "Plugin 'glsl.vim'
+"Plugin 'dcbaker/vim-arb_assembly'
+
 "Plugin 'davidhalter/jedi-vim'
 " The following are examples of different formats supported.
 " Keep Plugin commands between vundle#begin/end.
@@ -300,6 +302,7 @@ map <ScrollWheelDown> jjj
 "save and quit
 map q :quit<CR>
 nnoremap s :w<CR>
+nnoremap S :w<CR>
 "nnoremap <C-S> :w<CR>
 "inoremap <C-S> <ESC>:w<CR>
 "map <C-S> 
