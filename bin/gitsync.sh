@@ -34,7 +34,8 @@ git add --all ~/.qmltermrc
 #compiz0.8
 git add --all ~/.config/compiz/compizconfig/Default.ini
 #compiz standalone需要以下配置来确保gtk theme,unity7不受这些影响.
-git add --all ~/.gtkrc-2.0
+#git add --all ~/.gtkrc-2.0 #不要同步，会泄漏。
+git add --all ~/.gtkrc-2.0.mine
 git add --all ~/.config/gtk-3.0/settings.ini
 git add --all ~/.emerald/settings.ini
 git add --all ~/.emerald/themes/th
