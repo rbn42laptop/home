@@ -16,6 +16,7 @@ alias e='exit'
 alias q='exit'
 alias v='vim'
 alias vi='vim'
+alias screenfetch='screenfetch -o "USER=rbn42;HOSTNAME=home;"'
 
 #set PATH /usr/local/cuda-7.5/bin $PATH
 set PATH /opt/cuda/bin $PATH
