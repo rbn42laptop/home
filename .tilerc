@@ -3,7 +3,9 @@
 #compiz0.9 standalone应该也没有问题下,在unity下面外围padding要设到5以上才能正常运作.具体我不记得了,是8,10,还是15来着
 WinBorder = 2
 LeftPadding = 1
-BottomPadding = 1
+LeftPadding = 0
+WinBorder = 0
+BottomPadding = LeftPadding 
 TopPadding = BottomPadding
 RightPadding = BottomPadding
 NavigateAcrossWorkspaces = False #True  # availabe in viewports desktops
