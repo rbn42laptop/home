@@ -22,4 +22,4 @@ python -c "$TOUCH_FOLDER" "$2"
 openssl enc -aes-256-cbc -nosalt -in "$1" -out "$2" -kfile $KEYFILE
 
 #加密反转,uncomment下面的命令后执行  ~/bin/gitencrypt.sh
-#openssl enc -aes-256-cbc -d -in "$2" -out "$1" -kfile $KEYFILE
+#openssl enc -aes-256-cbc -nosalt -d -in "$2" -out "$1" -kfile $KEYFILE
