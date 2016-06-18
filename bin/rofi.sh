@@ -17,10 +17,10 @@ rofi -show run \
     -separator-style "none" \
     -hide-scrollbar \
     -padding 0 \
+    -location 1 \
     -line-margin 0 \
     -scroll-method 1
 
-    #-location 1 \
     #-opacity "90" \
     #-color-normal "#fff,#000,#eee,#000,#fff" \
     #-eh 2 \
