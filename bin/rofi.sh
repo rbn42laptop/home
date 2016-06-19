@@ -18,8 +18,9 @@ rofi -show run \
     -hide-scrollbar \
     -padding 0 \
     -line-margin 0 \
-    -scroll-method 1
+    -scroll-method 1 \
 
+    #-sidebar-mode \
     #-location 1 \
     #-opacity "90" \
     #-color-normal "#fff,#000,#eee,#000,#fff" \
@@ -29,7 +30,6 @@ rofi -show run \
     #-columns 2
     #-terminal xterm
     #scrollbar 太长了,所以完全没有用处 \
-    #-sidebar-mode \
 
 #rofi -show run \
 #    -font "SetoFont 15" \

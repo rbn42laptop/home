@@ -1,5 +1,5 @@
 #!/bin/bash
-#firefox "$@" 
+firefox "$@" 
 #简单关掉
 #chromium-browser "$@" 
 

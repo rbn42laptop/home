@@ -22,7 +22,7 @@ sudo apt install libxcb-icccm4-dev -y
 cd ~/git
 git clone https://github.com/DaveDavenport/rofi.git
 cd rofi
-git checkout 1.0.1 
+git checkout 1.1.0 
 vim source/history.c 
 #define HISTORY_MAX_ENTRIES    2048
 git submodule update --init
