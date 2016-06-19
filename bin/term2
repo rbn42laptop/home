@@ -5,5 +5,7 @@
 cd /dev/shm
 git clone https://github.com/rbn42/qmlterm.git
 #bash /dev/shm/qmlterm/run.sh "$@" 
-cd ~/codebase/qt/qmlterm
-bash run.sh
+cd ~
+#cd ~/codebase/qt/qmlterm
+#bash run.sh
+./codebase/qt/qmlterm/run.sh "$@"
