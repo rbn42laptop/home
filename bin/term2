@@ -4,6 +4,9 @@
 #bash ~/git/qmlterm/run.sh "$@"
 cd /dev/shm
 git clone https://github.com/rbn42/qmlterm.git
+cd qmlterm
+git checkout master
+cp ~/.qmltermrc /dev/shm/qmlterm/Configuration.qml
 #bash /dev/shm/qmlterm/run.sh "$@" 
 cd ~
 #cd ~/codebase/qt/qmlterm
