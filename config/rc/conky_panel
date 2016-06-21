@@ -67,6 +67,7 @@ ${voffset   0          } \
   ${lua_parse pad ${cpu}}%\
      ${lua_parse pad ${memperc}}%\
     ${downspeed wlp0s20u9}\
+    ${upspeed wlp0s20u9}\
 
 ${voffset   -28         }${cpugraph                         22,45  AAAAAA AF000F -t }\
 ${voffset   0           }${memgraph                         22,45  AAAAAA AF000F -t }\

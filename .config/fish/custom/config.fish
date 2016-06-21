@@ -17,6 +17,7 @@ alias q='exit'
 alias v='vim'
 alias vi='vim'
 alias screenfetch='screenfetch -o "USER=rbn42;HOSTNAME=home;"'
+alias comment='git commit -m '
 #alias screenfetch='screenfetch -o "USER=rbn42;HOSTNAME=home;" -A "Mac OS X"' # -D "Mac OS X" '
 
 #set EDITOR vim
