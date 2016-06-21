@@ -1,4 +1,4 @@
-cd ~
+cd ~/git
 rm caffe -fr
 git clone https://github.com/BVLC/caffe.git
 cd caffe 

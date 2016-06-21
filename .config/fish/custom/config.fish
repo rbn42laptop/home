@@ -19,6 +19,8 @@ alias vi='vim'
 alias screenfetch='screenfetch -o "USER=rbn42;HOSTNAME=home;"'
 #alias screenfetch='screenfetch -o "USER=rbn42;HOSTNAME=home;" -A "Mac OS X"' # -D "Mac OS X" '
 
+#set EDITOR vim
+
 #set PATH /usr/local/cuda-7.5/bin $PATH
 set PATH /opt/cuda/bin $PATH
 #set LD_LIBRARY_PATH /usr/local/cuda-7.5/lib64 $LD_LIBRARY_PATH

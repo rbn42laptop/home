@@ -42,3 +42,5 @@ git checkout development
 #cd ~/git/ranger
 #ranger似乎有办法默认显示mtime,但是还不清楚具体怎么弄,只好暂时这么处理了
 #git checkout mtime-in-column
+
+#git clone https://github.com/NVIDIA/nvidia-docker.git

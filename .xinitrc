@@ -12,6 +12,8 @@ export QT_IM_MODULE=fcitx
 export XMODIFIERS=@im=fcitx
 fcitx-autostart 
 
+~/bin/mpd.sh
+
 #时间,load,
 #虽然没有multiload好用,有总比没有好
 #conky -c ~/config/rc/conky
