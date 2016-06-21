@@ -100,7 +100,7 @@ git add --all ~/config
 #随记用
 git add --all ~/todo
 #测试用小代码
-git add --all ~/codebase
+#git add --all ~/codebase
 git add --all ~/.theanorc
 #下载的paper之类的
 git add --all ~/Documents
