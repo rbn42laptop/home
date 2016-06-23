@@ -429,3 +429,7 @@ https://developer.ubuntu.com/en/snappy/build-apps/your-first-snap/
 Tue 03 May 2016 13:31:33 NZST
 git 使用的时候，好像有3个状态比较方便？
 因为改了一个文件就可以add，而不用马上commit
+
+Thu 23 Jun 2016 11:10:04 PM NZST
+似乎wmutils的热点很高,如果将来把底层转换到wmutils的话,或许可以同时支持wayland和x了.
+但是wayland还没有expo,所以支持wayland暂时对我没什么用处.
