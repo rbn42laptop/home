@@ -1,3 +1,3 @@
 #!/bin/bash
 #gedit
-~/bin/term -e "vim \"$@\""
+~/bin/term_blur -e "vim \"$@\""

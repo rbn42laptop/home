@@ -6,7 +6,7 @@ cd /dev/shm
 git clone https://github.com/rbn42/qmlterm.git
 cd qmlterm
 git checkout master
-cp ~/git/codebase/qt/qmlterm/qmltermrc /dev/shm/qmlterm/Configuration.qml
+cp ~/config/term/qmlterm/qmltermrc_blur  /dev/shm/qmlterm/Configuration.qml
 #bash /dev/shm/qmlterm/run.sh "$@" 
 cd ~
 #cd ~/codebase/qt/qmlterm
