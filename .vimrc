@@ -42,7 +42,7 @@ Plugin 'vim-airline/vim-airline-themes'
 "Plugin 'ivanov/vim-ipython'
 
 "Plugin 'tpope/vim-pathogen'            "另一个包管理
-"Plugin 'yuratomo/w3m.vim'              "w3m插件
+Plugin 'yuratomo/w3m.vim'              "w3m插件
 
 
 "Plugin 'glsl.vim'
