@@ -62,18 +62,18 @@ template9=""
 ---------------------------------------------------
 
 
-conky.text = [[
-${voffset   0          } \
-  ${lua_parse pad ${cpu}}%\
-     ${lua_parse pad ${memperc}}%\
-    ${downspeed wlp0s20u9}\
-    ${upspeed wlp0s20u9}\
-
-${voffset   -28         }${cpugraph                         22,45  AAAAAA AF000F -t }\
+conky.text = [[\
+${voffset    -7        }${cpugraph                         22,45  AAAAAA AF000F -t }\
 ${voffset   0           }${memgraph                         22,45  AAAAAA AF000F -t }\
 ${voffset   0           }${downspeedgraph wlp0s20u9         22,45  AAAAAA 0FAFAF -t }\
 ${voffset   0           }${upspeedgraph wlp0s20u9           22,45  AAAAAA AFAF0F -t }\
 ${voffset   0           }${diskiograph_read                 22,45  AAAAAA 0FAFAF -t }\
 ${voffset   0           }${diskiograph_write                22,45  AAAAAA AFAF0F -t }\
+
+${voffset   -15          } \
+  ${lua_parse pad ${cpu}}%\
+     ${lua_parse pad ${memperc}}%\
+    ${downspeed wlp0s20u9}\
+   ${upspeed wlp0s20u9}\
 
 ]]
