@@ -3,22 +3,26 @@ conky.config = {
 --  Generic Settings
 -------------------------------------
 lua_load="~/config/rc/conky_lua_scripts.lua",
-background=true,
-update_interval=1,
-double_buffer=true,
-no_buffers=true,
+
+update_interval=0.1,
 imlib_cache_size=10,
 
-draw_shades=false,
-draw_outline=false,
+background=false,
 draw_borders=false,
-draw_graph_borders=true, 
+
+double_buffer=true,
+no_buffers=false,
+
+draw_shades=false,
 draw_shades=false, 
 default_shade_color="000000",
-draw_outline=true,
+
 default_outline_color="000000",
+draw_outline=true,
+
 show_graph_scale=false,
 show_graph_range=false,
+draw_graph_borders=true, 
 
 -------------------------------------
 --  Window Specifications
@@ -70,10 +74,34 @@ ${voffset   0           }${upspeedgraph wlp0s20u9           22,45  AAAAAA AFAF0F
 ${voffset   0           }${diskiograph_read                 22,45  AAAAAA 0FAFAF -t }\
 ${voffset   0           }${diskiograph_write                22,45  AAAAAA AFAF0F -t }\
 
-${voffset   -15          } \
-  ${lua_parse pad ${cpu}}%\
-     ${lua_parse pad ${memperc}}%\
-    ${downspeed wlp0s20u9}\
-   ${upspeed wlp0s20u9}\
+${voffset   -16          } \
+${alignr 225}\
+${color #FFcccc}\
+${lua_parse pad ${cpu}}%\
+
+${voffset -20} \
+${alignr 180}\
+${color #FFcccc}\
+${lua_parse pad ${memperc}}%\
+
+${voffset -20} \
+${alignr 135}\
+${color #ccffff}\
+${downspeed wlp0s20u9}\
+
+${voffset   -20          } \
+${alignr 90}\
+${color #ffffcc}\
+${upspeed wlp0s20u9}\
+
+${voffset -20} \
+${alignr 45}\
+${color #ccffff}\
+${diskio_read}\
+
+${voffset -20} \
+${alignr}\
+${color #ffffcc}\
+${diskio_write}\
 
 ]]
