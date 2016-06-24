@@ -17,7 +17,7 @@ fcitx-autostart
 #时间,load,
 #虽然没有multiload好用,有总比没有好
 #conky -c ~/config/rc/conky
-conky -c ~/config/rc/conky_panel
+#conky -c ~/config/rc/conky_panel
 
 
 #wifi 很耗时，所以放这里开启

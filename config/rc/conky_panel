@@ -4,7 +4,7 @@ conky.config = {
 -------------------------------------
 lua_load="~/config/rc/conky_lua_scripts.lua",
 
-update_interval=0.1,
+update_interval=1,
 imlib_cache_size=10,
 
 background=false,
@@ -28,7 +28,7 @@ draw_graph_borders=true,
 --  Window Specifications
 -------------------------------------
 alignment="top_right",
-gap_x=190,
+gap_x=0,
 gap_y=0,
 own_window=true,
 own_window_type="normal",
