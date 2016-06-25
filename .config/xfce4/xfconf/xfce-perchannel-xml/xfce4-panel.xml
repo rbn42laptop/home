@@ -36,6 +36,7 @@
         <value type="string" value="vlc"/>
         <value type="string" value="indicator-window-cycle.py"/>
         <value type="string" value="indicator-multiload"/>
+        <value type="string" value="nautilus"/>
         <value type="string" value="docky"/>
         <value type="string" value="empathy"/>
       </property>

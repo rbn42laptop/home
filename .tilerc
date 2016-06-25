@@ -24,7 +24,10 @@ EXCLUDE_APPLICATIONS = ['<unknown>', 'x-nautilus-desktop', 'unity-launcher',
                         'Docky', 'conky', 'Conky'
                         'screenkey', 'XdndCollectionWindowImp']
 # An alternative method to exclude applications.
-EXCLUDE_WM_CLASS = [ 'conky', 'Conky','tint2','xfce4-panel','mpv'] #,'wesnoth-1.12','vlc','mpv']
+EXCLUDE_WM_CLASS = [ 'conky', 'Conky','tint2','xfce4-panel',
+#        'projectM-pulseaudio',
+        'mpv',]
+#        ] #,'wesnoth-1.12','vlc','mpv']
 
 UNRESIZABLE_APPLICATIONS = ['Screenkey']
 RESIZE_STEP = 50

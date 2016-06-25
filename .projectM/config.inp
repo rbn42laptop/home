@@ -1,0 +1,28 @@
+Aspect Correction = 1
+Easter Egg Parameter = 0
+FPS = 35
+Fullscreen = false
+Hard Cut Sensitivity = 10
+Menu Font = /usr/share/projectM/fonts/VeraMono.ttf
+Mesh X = 32
+Mesh Y = 24
+Preset Duration = 30
+Preset Path = ~/config/rc/projectM/presets
+Shuffle Enabled = 1
+Smooth Preset Duration = 5
+Smooth Transition Duration = 5
+Soft Cut Ratings Enabled = 0
+Texture Size = 1024
+Title Font = /usr/share/projectM/fonts/Vera.ttf
+Window Height = 1024
+Window Width = 1024
+dth = 512
+ seconds
+Easter Egg Parameter = 1
+
+Hard Cut Sensitivity = 10       # Lower to make hard cuts more frequent
+Aspect Correction = true	# Custom Shape Aspect Correction
+
+Preset Path = /usr/share/projectM/presets # preset location
+Title Font = /usr/share/projectM/fonts/Vera.ttf
+Menu Font = /usr/share/projectM/fonts/VeraMono.ttf
