@@ -12,10 +12,10 @@ Shuffle Enabled = 1
 Smooth Preset Duration = 5
 Smooth Transition Duration = 5
 Soft Cut Ratings Enabled = 0
-Texture Size = 1024
+Texture Size = 2048
 Title Font = /usr/share/projectM/fonts/Vera.ttf
-Window Height = 1024
-Window Width = 1024
+Window Height = 512
+Window Width = 512
 dth = 512
  seconds
 Easter Egg Parameter = 1
