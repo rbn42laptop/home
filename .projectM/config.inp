@@ -14,8 +14,8 @@ Smooth Transition Duration = 5
 Soft Cut Ratings Enabled = 0
 Texture Size = 2048
 Title Font = /usr/share/projectM/fonts/Vera.ttf
-Window Height = 2048
-Window Width = 2048
+Window Height = 1024    
+Window Width = 1024
 dth = 2048
  seconds
 Easter Egg Parameter = 1
