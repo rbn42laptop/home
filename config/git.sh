@@ -4,6 +4,7 @@ cd ~/git
 git clone https://github.com/rbn42/qmlterm.git
 git clone https://github.com/rbn42/kd_tree_tile.git
 git clone https://github.com/rbn42/compiz_wallpaper_manager.git
+git clone https://github.com/rbn42/compiz_config.git
 #rofi安装见~/config/rofi
 #git clone https://github.com/rbn42/rofi.git
 
