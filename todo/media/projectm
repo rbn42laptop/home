@@ -8,3 +8,26 @@ Sun 26 Jun 2016 03:12:50 AM NZST
 Sun 26 Jun 2016 04:16:18 AM NZST
 如果我们想要尝试编写的话,第一步应该是做一个波形结构来掌握节奏.
 要点包括,能跟随歌曲的节拍跃动,在音乐消去的时候,要留下跃动之后的残像.
+
+用接近物理能量耗散的方式来编写应该会很有真实感。
+
+Sun 26 Jun 2016 08:39:23 PM NZST
+http://www.getwinamp.net/mirror/website/WIKI_WINAMP_C/WIKI/MILKDROP_PRESET_AUTHORING.HTM
+
+Sun 26 Jun 2016 09:02:02 PM NZST
+一些关键的变量。
+
+   time           NO     >0     retrieves the current time, in seconds, since MilkDrop started running
+   fps            NO     >0     retrieves the current framerate, in frames per second.
+   frame          NO            retrieves the number of frames of animation elapsed since the program started
+   progress       NO     0..1   progress through the current preset; if preset was just loaded, this is closer to 0; if preset is about to end, this is closer to 1.
+                                  -note that if Scroll Lock is on, 'progress' will freeze!
+                  
+   bass           NO     >0     retrieves the current amount of bass.  1 is normal; below ~0.7 is quiet; above ~1.3 is loud bass
+   mid            NO     >0       -same, but for mids (middle frequencies)
+   treb           NO     >0       -same, but for treble (high) frequencies
+   bass_att       NO     >0     retrieves an attenuated reading on the bass, meaning that it is damped in time and doesn't change so rapidly.
+   mid_att        NO     >0       -same, but for mids (middle frequencies)
+   treb_att       NO     >0       -same, but for treble (high) frequencies
+
+
