@@ -12,12 +12,17 @@ export QT_IM_MODULE=fcitx
 export XMODIFIERS=@im=fcitx
 fcitx-autostart 
 
-~/bin/mpd.sh
+bash ~/bin/mpd.sh
 
 #时间,load,
 #虽然没有multiload好用,有总比没有好
 #conky -c ~/config/rc/conky
 #conky -c ~/config/rc/conky_panel &
+
+#键盘操作的时候隐藏鼠标.
+#原版的unclutter实现似乎不太好,容易出问题.
+#测试下如果的确如此,那么需要换成aur版本的.
+unclutter &
 
 
 #wifi 很耗时，所以放这里开启

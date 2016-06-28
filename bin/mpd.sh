@@ -5,4 +5,4 @@ mpc repeat on
 mpc random on
 mpc single off
 mpc consume off
-mpc pause
+#mpc pause
