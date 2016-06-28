@@ -26,6 +26,7 @@ git add --all ~/.vimrc
 git add --all ~/.xinitrc
 #设定开机在tty1 startx
 git add --all ~/.bash_profile
+git add --all ~/.xbindkeysrc
 
 git add --all ~/.tilerc
 git add --all ~/.qmltermrc
@@ -51,7 +52,6 @@ git add --all ~/.config/xfce4/xfconf/xfce-perchannel-xml/xfce4-panel.xml
 #git add --all ~/.xsessionrc
 #git add --all ~/.conkyrc
 #git add --all ~/.xprofile
-#git add --all ~/.xbindkeysrc
 #git add --all ~/.config/autostart/startup.desktop
 #git add --all ~/.local/share/applications/mimeapps.list
 #git add --all ~/.Xresources

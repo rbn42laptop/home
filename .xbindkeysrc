@@ -1,0 +1,95 @@
+# For the benefit of emacs users: -*- shell-script -*-
+###########################
+# xbindkeys configuration #
+###########################
+#跨平臺很方便，但是儘量不要用它，因爲有focus變動問題，而且性能不怎麼樣
+# Version: 1.8.6
+#
+#xbindkeys -k
+#xmodmap -pm
+#"bash ~/bin/rofi.sh"
+#  Mod4 + Return
+#"bash ~/bin/rofi.sh"
+#  Mod4 + d
+#"bash ~/bin/vol_dec.sh"
+#  Mod4 + Prior
+#"bash ~/bin/vol_dec.sh"
+#  Mod4 + Next 
+
+"mpc next"
+  Mod4 + n
+"bash ~/git/mpd-script/dislike.sh"
+  Mod4 + m
+
+#"python ~/git/kd_tree_tile/main.py layout next"
+#  Mod4 + space
+#"python ~/git/kd_tree_tile/main.py layout prev"
+#  Mod4 + shift + space
+##settings  set org.gnome.desktop.wm.keybindings minimize []
+#"python ~/git/kd_tree_tile/main.py focus left"
+#  Mod4 + h 
+#"python ~/git/kd_tree_tile/main.py focus down"
+#  Mod4 + j 
+#"python ~/git/kd_tree_tile/main.py focus up  "
+#  Mod4 + k 
+#"python ~/git/kd_tree_tile/main.py focus right"
+#  Mod4 + l 
+#"python ~/git/kd_tree_tile/main.py swap left"
+#  Mod4 + shift + h 
+#"python ~/git/kd_tree_tile/main.py swap down"
+#  Mod4 + shift + j 
+#"python ~/git/kd_tree_tile/main.py swap up  "
+#  Mod4 + shift + k 
+#"python ~/git/kd_tree_tile/main.py swap right"
+#  Mod4 + shift + l 
+#"python ~/git/kd_tree_tile/main.py shrink width"
+#  Mod4 + shift + control + h 
+#"python ~/git/kd_tree_tile/main.py grow height"
+#  Mod4 + shift + control + j 
+#"python ~/git/kd_tree_tile/main.py shrink height"
+#  Mod4 + shift + control + k 
+#"python ~/git/kd_tree_tile/main.py grow width"
+#  Mod4 + shift + control + l 
+#"python ~/git/kd_tree_tile/main.py move left"
+#  Mod4 + control + h 
+#"python ~/git/kd_tree_tile/main.py move down"
+#  Mod4 + control + j 
+#"python ~/git/kd_tree_tile/main.py move up  "
+#  Mod4 + control + k 
+#"python ~/git/kd_tree_tile/main.py move right"
+#  Mod4 + control + l 
+## set directly keycode (here control + f with my keyboard)
+#
+## specify a mouse button
+#
+##"xterm -geom 50x20+20+20"
+##   Shift+Mod2+alt + s
+##
+## set directly keycode (here control+alt+mod2 + f with my keyboard)
+#"xterm"
+#  alt + c:0x29 + m:4 + mod2
+#
+## Control+Shift+a  release event starts rxvt
+#"rxvt"
+#  release+control+shift + a
+#
+## Control + mouse button 2 release event starts rxvt
+#"rxvt"
+#  Control + b:2 + Release
+
+##################################
+# End of xbindkeys configuration #
+##################################
+
+
+
+
+
+
+
+
+
+
+
+
+
