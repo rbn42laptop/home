@@ -12,6 +12,10 @@ export QT_IM_MODULE=fcitx
 export XMODIFIERS=@im=fcitx
 fcitx-autostart 
 
+#虽然xbindkey和tile的相性,但即使compiz0.8也只有24的按键组合.虽然我不知道我是否真的需要更多的.
+#不过xbindkey是提供了超出24以后的扩展余地.
+#实际上tile中除了focus以外的应该配合xbindkey使用也没有太大问题.
+
 bash ~/bin/mpd.sh
 
 #时间,load,
@@ -20,7 +24,7 @@ bash ~/bin/mpd.sh
 #conky -c ~/config/rc/conky_panel &
 
 #键盘操作的时候隐藏鼠标.
-#原版的unclutter实现似乎不太好,容易出问题.
+#原版的unclutter实现似乎不太好,容易出问题.据说和i3冲突.
 #测试下如果的确如此,那么需要换成aur版本的.
 unclutter &
 
