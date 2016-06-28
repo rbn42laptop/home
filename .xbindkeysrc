@@ -19,7 +19,7 @@
 "mpc next"
   Mod4 + n
 "bash ~/git/mpd-script/dislike.sh"
-  Mod4 + m
+  Mod4 + shift + control + d
 
 #"python ~/git/kd_tree_tile/main.py layout next"
 #  Mod4 + space
