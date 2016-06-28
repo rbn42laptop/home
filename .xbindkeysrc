@@ -18,6 +18,10 @@
 
 "mpc next"
   Mod4 + n
+"~/bin/mpd_pause"
+  Mod4 + p
+"~/bin/vol_mute"
+  Mod4 + m
 "bash ~/git/mpd-script/dislike.sh"
   Mod4 + shift + control + d
 
