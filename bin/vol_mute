@@ -3,10 +3,13 @@
 #amixer -D pulse set Master 1%+ unmute
 #pamixer -u
 #pamixer -i 1
-export MUTE=`pamixer --get-mute`
-if [ "false" == $MUTE ];
-then
-    pamixer -m
-else
-    pamixer -u
-fi
+
+#export MUTE=`pamixer --get-mute`
+#if [ "false" == $MUTE ];
+#then
+#    pamixer -m
+#else
+#    pamixer -u
+#fi
+
+pamixer -t

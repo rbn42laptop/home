@@ -12,11 +12,20 @@
 #xbindkeys -k
 #xmodmap -pm
 
-"bash ~/bin/rofi.sh"
-  Mod4 + Return
+#养成了不太好的依赖习惯,禁用一段时间.
+#"bash ~/bin/rofi.sh"
+"echo 1"
+  Mod4 + d
 #分散开rofi的两个触发,所以如果一个不可用了,至少还有一个备用.
 #"bash ~/bin/rofi.sh"
-#  Mod4 + d
+#  Mod4 + Return
+
+#捕捉映射掉cap键,让它无效化.
+#测试结果:这个办法无效,虽然xbindkeys会捕捉到,但是不会彻底拦截.
+#对比来说
+#super+n的情况下,如果不捕捉的话,vim会作为n处理掉,但是捕捉的话,vim就不会拦截了.
+#"echo 1"
+#  Caps_Lock
 
 #加入这里的原因是fcitx自身切换的时候似乎会影响到capswap,
 #但是现在(compiz0.8)似乎没有影响,所以禁用一段时间试试.

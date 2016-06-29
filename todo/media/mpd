@@ -115,3 +115,7 @@ ranger似乎可以维持link路径,但是我觉得这是不可靠的,因为我�
 library限定和mpd的设计有关,因为是对外开放的,所以不可以任意性的泄漏此外的路径.其实用foobar的时候我们也是library为主.
 现在的问题就是少量特殊的情况下,用非mpd client的话,会走出library路径以外,这个就没法处理了
 所以要做独立的mpd脚本的话,不太好办,就是因为这样的路径问题
+
+Thu 30 Jun 2016 12:56:43 AM NZST
+一个有趣的东西
+https://github.com/vehk/mpdnotify
