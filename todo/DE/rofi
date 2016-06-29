@@ -40,3 +40,13 @@ rofi 没法用fcitx,ibus没有试.所以没法把web搜索引擎加入到rofi.
 
 Tue 14 Jun 2016 01:10:44 PM NZST
 其实rofi提供i3和dmenu接口,说明是有办法换一个ui整合rofi的.
+
+Wed 29 Jun 2016 08:45:51 PM NZST
+是否可以替代rofi呢?
+其实仔细想想,rofi提供的history以外的搜索是很有限的,基本上只是bash的PATH环境而已.
+对于常用软件来说没什么用处,有用处的场合是查找一些不常用的gnome xfce 的gui软件.
+rofi 不便利的一点是鼠标操作很不友好.
+
+不过简单的解决办法其实是把键盘鼠标的开始菜单分开设置.
+但是这样的就无法共享hist了.
+不过也没有问题,我们可以自己些一个鼠标的开始菜单,并且读取rofi的hist
