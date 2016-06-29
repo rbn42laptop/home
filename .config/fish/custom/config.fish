@@ -10,8 +10,15 @@ set LS_ARGUMENTS ' '
 alias l='ls -CF  --hide="*.pyc" --hide="__pycache__"'
 alias ll='ls -aF '
 alias lll='ls -alF'
+
+#覆盖一些危险的命令。
 alias rm='echo this is trash-cli;trash'
 alias rm='trash'
+#这两条命令的确弄丢过数据,但是很多时候似乎的确会依赖它们清理掉无用的文件.
+#不过其实除了大文件以外,多一份备份关系也不大,可以事务处理完毕后再清理的.
+alias mv="mv --backup=numbered "
+alias cp="cp --backup=numbered "
+
 alias e='exit'
 alias q='exit'
 alias v='vim'

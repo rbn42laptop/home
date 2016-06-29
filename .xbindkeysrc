@@ -7,14 +7,11 @@
 #
 #xbindkeys -k
 #xmodmap -pm
+
 #"bash ~/bin/rofi.sh"
 #  Mod4 + Return
 #"bash ~/bin/rofi.sh"
 #  Mod4 + d
-#"bash ~/bin/vol_dec.sh"
-#  Mod4 + Prior
-#"bash ~/bin/vol_dec.sh"
-#  Mod4 + Next 
 
 "mpc next"
   Mod4 + n
@@ -25,6 +22,11 @@
 
 "~/bin/vol_mute"
   Mod4 + m
+#"bash ~/bin/vol_dec.sh"
+#  Mod4 + Prior
+#"bash ~/bin/vol_dec.sh"
+#  Mod4 + Next 
+
 
 #"python ~/git/kd_tree_tile/main.py layout next"
 #  Mod4 + space
