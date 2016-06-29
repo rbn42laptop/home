@@ -1,9 +1,9 @@
 #!/bin/bash 
 export STATE=`mpc`
 echo $STATE
-if [[ "$STATE" == *paused* ]];
+if [[ "$STATE" == *playing* ]];
 then
-    mpc play
-else
     mpc pause
+else
+    mpc play
 fi

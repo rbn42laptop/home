@@ -1,7 +1,4 @@
 # For the benefit of emacs users: -*- shell-script -*-
-###########################
-# xbindkeys configuration #
-###########################
 #跨平臺很方便，但是儘量不要用它，因爲有focus變動問題，而且性能不怎麼樣
 #但是compiz0.8似乎和xbindkeys的性能差不多,最大的问题在于,这两者在按下键的同时,
 #会导致当前窗口失去focus,直到释放按键为止.
@@ -32,6 +29,15 @@
 #"python ~/bin/fcitx.py"  
 #  control + space
 
+#截屏
+"cd ~/show;scrot"
+  Print
+
+#刷壁纸
+"bash ~/Pictures/compiz/bin/compiz.sh"
+  Mod4 + w
+
+#mpd
 "mpc next"
   Mod4 + n
 "~/bin/mpd_pause"
@@ -39,6 +45,7 @@
 "bash ~/git/mpd-script/dislike.sh"
   Mod4 + shift + control + d
 
+#vol
 "~/bin/vol_mute"
   Mod4 + m
 #"bash ~/bin/vol_dec.sh"
@@ -46,7 +53,8 @@
 #"bash ~/bin/vol_dec.sh"
 #  Mod4 + Next 
 
-
+##############################################
+#tile
 "python ~/git/kd_tree_tile/main.py layout next"
   Mod4 + space
 #"python ~/git/kd_tree_tile/main.py layout prev"
@@ -84,38 +92,3 @@
 #  Mod4 + control + k 
 #"python ~/git/kd_tree_tile/main.py move right"
 #  Mod4 + control + l 
-## set directly keycode (here control + f with my keyboard)
-#
-## specify a mouse button
-#
-##"xterm -geom 50x20+20+20"
-##   Shift+Mod2+alt + s
-##
-## set directly keycode (here control+alt+mod2 + f with my keyboard)
-#"xterm"
-#  alt + c:0x29 + m:4 + mod2
-#
-## Control+Shift+a  release event starts rxvt
-#"rxvt"
-#  release+control+shift + a
-#
-## Control + mouse button 2 release event starts rxvt
-#"rxvt"
-#  Control + b:2 + Release
-
-##################################
-# End of xbindkeys configuration #
-##################################
-
-
-
-
-
-
-
-
-
-
-
-
-
