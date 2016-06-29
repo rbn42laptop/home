@@ -1,5 +1,8 @@
 #!/bin/bash
 
+#qt5,dolphin需要这个来加载合适的主题
+export XDG_CURRENT_DESKTOP=GNOME
+
 ########################
 #capswap
 ~/bin/keys.sh
