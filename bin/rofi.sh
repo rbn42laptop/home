@@ -11,15 +11,15 @@ python3 ~/bin/reset_rofi_history.py "$ROFI_HISTORY"
 rofi -show run \
     -font "SetoFont,WenQuanYi Micro Hei 15" \
     -bw "0" \
-    -opacity "60" \
-    -color-window "#ffffff,#0ff,#f0f" \
-    -color-normal "#ffffff,#000,#ffffff,#000,#ffffff" \
+    -color-window "argb:00ffffff,argb:00ffffff,#fff" \
+    -color-normal "argb:80ffffff,#000,argb:80ffffff,argb:ffffffff,#000" \
     -separator-style "none" \
     -hide-scrollbar \
     -padding 0 \
     -line-margin 0 \
     -scroll-method 1 \
 
+    #-opacity "60" \
     #-sidebar-mode \
     #-location 1 \
     #-opacity "90" \
