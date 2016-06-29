@@ -7,10 +7,6 @@ source ~/.config/fish/custom/fish_title.fish
 
 set LS_ARGUMENTS ' '
 
-alias l='ls -CF  --hide="*.pyc" --hide="__pycache__"'
-alias ll='ls -aF '
-alias lll='ls -alF'
-
 #覆盖一些危险的命令。
 alias rm='echo this is trash-cli;trash'
 alias rm='trash'
@@ -18,6 +14,12 @@ alias rm='trash'
 #不过其实除了大文件以外,多一份备份关系也不大,可以事务处理完毕后再清理的.
 alias mv="mv --backup=numbered "
 alias cp="cp --backup=numbered "
+
+
+alias l='ls -CF  --hide="*.pyc" --hide="__pycache__"'
+alias ll='ls -aF '
+alias lll='ls -alF'
+
 
 alias e='exit'
 alias q='exit'

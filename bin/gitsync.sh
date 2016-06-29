@@ -26,7 +26,7 @@ git add --all ~/.vimrc
 git add --all ~/.xinitrc
 #设定开机在tty1 startx
 git add --all ~/.bash_profile
-git add --all ~/.xbindkeysrc
+#git add --all ~/.xbindkeysrc
 
 git add --all ~/.tilerc
 git add --all ~/.qmltermrc

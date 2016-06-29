@@ -16,7 +16,7 @@ fcitx-autostart
 #不过xbindkey是提供了超出24以后的扩展余地.
 #实际上tile中除了focus以外的应该配合xbindkey使用也没有太大问题.
 #另一方面感觉compiz0.8的focus似乎和xbindkey也差不多,好像也有双闪烁.
-xbindkeys
+xbindkeys -f ~/config/rc/xbindkeysrc
 
 bash ~/bin/mpd.sh
 

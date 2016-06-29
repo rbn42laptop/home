@@ -3,15 +3,25 @@
 # xbindkeys configuration #
 ###########################
 #跨平臺很方便，但是儘量不要用它，因爲有focus變動問題，而且性能不怎麼樣
-# Version: 1.8.6
+#但是compiz0.8似乎和xbindkeys的性能差不多,最大的问题在于,这两者在按下键的同时,
+#会导致当前窗口失去focus,直到释放按键为止.
+#也就是这两者都会生成一个隐藏的窗体占据掉focus吧.
 #
+# Version: 1.8.6
+#找出特定按键.
 #xbindkeys -k
 #xmodmap -pm
 
-#"bash ~/bin/rofi.sh"
-#  Mod4 + Return
+"bash ~/bin/rofi.sh"
+  Mod4 + Return
+#分散开rofi的两个触发,所以如果一个不可用了,至少还有一个备用.
 #"bash ~/bin/rofi.sh"
 #  Mod4 + d
+
+#加入这里的原因是fcitx自身切换的时候似乎会影响到capswap,
+#但是现在(compiz0.8)似乎没有影响,所以禁用一段时间试试.
+#"python ~/bin/fcitx.py"  
+#  control + space
 
 "mpc next"
   Mod4 + n
@@ -28,8 +38,8 @@
 #  Mod4 + Next 
 
 
-#"python ~/git/kd_tree_tile/main.py layout next"
-#  Mod4 + space
+"python ~/git/kd_tree_tile/main.py layout next"
+  Mod4 + space
 #"python ~/git/kd_tree_tile/main.py layout prev"
 #  Mod4 + shift + space
 ##settings  set org.gnome.desktop.wm.keybindings minimize []
