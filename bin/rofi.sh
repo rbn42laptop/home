@@ -10,8 +10,8 @@ python3 ~/bin/reset_rofi_history.py "$ROFI_HISTORY"
 #rofi 1.01
 rofi -show run \
     -font "SetoFont,WenQuanYi Micro Hei 15" \
-    -bw "0" \
-    -color-window "argb:00ffffff,argb:00ffffff,#fff" \
+    -bw "20" \
+    -color-window "argb:00ffffff,argb:00ffffff,#ff0" \
     -color-normal "argb:80ffffff,#000,argb:80ffffff,argb:ffffffff,#000" \
     -separator-style "none" \
     -hide-scrollbar \
@@ -19,9 +19,9 @@ rofi -show run \
     -line-margin 0 \
     -scroll-method 1 \
 
+    #-location 2 \
     #-opacity "60" \
     #-sidebar-mode \
-    #-location 1 \
     #-opacity "90" \
     #-color-normal "#fff,#000,#eee,#000,#fff" \
     #-eh 2 \
