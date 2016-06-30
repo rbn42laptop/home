@@ -61,8 +61,8 @@ sudo /usr/bin/netctl start wifi &
 
 
 ########################
-udisksctl mount -b /dev/sdb2
-udisksctl mount -b /dev/sdc2 
+udisksctl mount -b /dev/disk/by-label/dmzj 
+udisksctl mount -b /dev/disk/by-label/4T
 
 
 ########################
