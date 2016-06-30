@@ -79,6 +79,7 @@ git add --all ~/.config/ranger/rc.conf
 git add --all ~/.config/fish/custom
 #以防万一 qmlterm出问题,最近一次出问题似乎是pacman升级后,opengl不工作,必须要reboot,依赖gl的qml就没法启动了
 git add --all ~/.config/sakura/
+git add --all ~/.ipython/profile_shell/ipython_config.py
 #git add --all ~/.tmux.config
 #git add --all ~/.config/tilda/
 #bash 原本就放了几个alias和cuda变量,所以扔掉也没关系,恢复默认配置吧.

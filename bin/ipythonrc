@@ -1,8 +1,0 @@
-#!/usr/bin/python
-#ipython中常用的库
-import shutil
-import os.path
-import sys
-import scipy.misc
-import numpy 
-import glob
