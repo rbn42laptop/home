@@ -604,6 +604,7 @@
 # starts.
 # c.StoreMagics.autorestore = False
 
+# l是常用的变量名,但是这里占据了也不会有影响,因为测试过如果l被赋值的话,变量名的l会覆盖掉作为alias的l
 aliases = """
 alias rm='trash'
 alias mv="mv --backup=numbered "
@@ -615,7 +616,6 @@ alias e='exit'
 alias q='quit'
 alias v='vim'
 alias vi='vim'
-alias vim='vim'
 alias screenfetch='screenfetch -o "USER=rbn42;HOSTNAME=home;"'
 """
 aliases = [s.strip() for s in aliases.split('\n')]
@@ -623,8 +623,13 @@ aliases = [s[5:].strip() for s in aliases if s.startswith('alias')]
 aliases = [(s[:s.find('=')], s[s.find('=') + 1:]) for s in aliases]
 aliases = [(n[0].strip(), eval(n[1])) for n in aliases]
 
+# ranger不可用,会打乱布局.但是vim似乎却没有问题.
+aliases2 = 'bash fish vim'
+aliases2 = aliases2.split()
+aliases2 = [(n, n) for n in aliases2]
+
 c.AliasManager.user_aliases = [
-] + aliases
+] + aliases + aliases2
 
 imports = """
 import scipy
