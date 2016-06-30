@@ -604,17 +604,27 @@
 # starts.
 # c.StoreMagics.autorestore = False
 
+aliases = """
+alias rm='trash'
+alias mv="mv --backup=numbered "
+alias cp="cp --backup=numbered "
+alias l='ls -CF  --hide="*.pyc" --hide="__pycache__"'
+alias ll='ls -aF '
+alias lll='ls -alF'
+alias e='exit'
+alias q='quit'
+alias v='vim'
+alias vi='vim'
+alias vim='vim'
+alias screenfetch='screenfetch -o "USER=rbn42;HOSTNAME=home;"'
+"""
+aliases = [s.strip() for s in aliases.split('\n')]
+aliases = [s[5:].strip() for s in aliases if s.startswith('alias')]
+aliases = [(s[:s.find('=')], s[s.find('=') + 1:]) for s in aliases]
+aliases = [(n[0].strip(), eval(n[1])) for n in aliases]
+
 c.AliasManager.user_aliases = [
-    ('l', 'ls -CF  --hide="*.pyc" --hide="__pycache__"'),
-    ('ll', 'ls -aF '),
-    ('lll', 'ls -alF'),
-    ('q', 'quit()'),
-    ('e', 'exit'),
-    ('rm', 'trash'),
-    ('mv', 'mv --backup=numbered'),
-    ('cp', 'cp --backup=numbered'),
-    ('screenfetch', 'screenfetch -o "USER=rbn42;HOSTNAME=home;"'),
-]
+] + aliases
 
 imports = """
 import scipy
