@@ -1,7 +1,14 @@
 #!/bin/bash
 
-#qt5,dolphin需要这个来加载合适的主题
+#qt5,dolphin需要这个来加载合适的icon主题
 export XDG_CURRENT_DESKTOP=GNOME
+
+#qtcurve 
+#大略记录下,
+#pacman -S qt5ct qtcurve qtconfig-qt4
+#在qt5ct和qtconfig-qt4中选择qtcurve
+export QT_QPA_PLATFORMTHEME=qt5ct
+export QT_STYLE_OVERRIDE=qtcurve
 
 ########################
 #capswap
