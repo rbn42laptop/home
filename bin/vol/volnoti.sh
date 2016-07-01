@@ -2,9 +2,12 @@
 export MUTE=`pamixer --get-mute`
 if [ "false" == $MUTE ];
 then
-    volnoti-show `pamixer --get-volume`
+    #volnoti-show `pamixer --get-volume`
+    #图太大了,位置不好,干扰性太强.
+    echo 1
 else
-    volnoti-show `pamixer --get-volume` -m
+    #volnoti-show `pamixer --get-volume` -m
+    echo 1
 fi
 
 
