@@ -13,3 +13,5 @@
 #fi
 
 pamixer -t
+
+bash ~/bin/vol/volnoti.sh

@@ -23,6 +23,9 @@ export QT_STYLE_OVERRIDE=qtcurve
 #capswap
 ~/bin/keys.sh
 
+#显示音量.
+volnoti
+
 
 ########################
 #0.8开机需要这个,因为路径放在了/dev/shm里面了
