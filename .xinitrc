@@ -9,6 +9,15 @@ export XDG_CURRENT_DESKTOP=GNOME
 #在qt5ct和qtconfig-qt4中选择qtcurve
 export QT_QPA_PLATFORMTHEME=qt5ct
 export QT_STYLE_OVERRIDE=qtcurve
+#qtcurve对比murrine的问题是,整个frame使用了同样的背景,而无法像arc theme那样根据区域划分背景.
+#按照osx的情形来看,blur比较适合的是用作区域的方块,而不是不定型的形状.qtcurve是把blur用作外围frame了.
+
+#murrine尝试
+#murrine在gnome3/compiz0.9中工作正常,但是在compiz0.8,我能想到的差别是dconf的支持度不同.
+#export GTK_MODULES=rgba
+#blacklist
+#export GTK_RGBA_APPS=allbut:firefox-bin:gnome-mplayer:totem:soffice:firefox
+#nohup /usr/lib/gnome-settings-daemon/gnome-settings-daemon > /dev/null
 
 ########################
 #capswap

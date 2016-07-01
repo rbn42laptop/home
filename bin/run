@@ -12,7 +12,7 @@ rofi -show run \
     -font "SetoFont,WenQuanYi Micro Hei 15" \
     -bw "20" \
     -color-window "argb:00ffffff,argb:00ffffff,#ff0" \
-    -color-normal "argb:80ffffff,#000,argb:80ffffff,argb:ffffffff,#000" \
+    -color-normal "argb:80ffffff,#000,argb:80ffffff,argb:ffffffff,#000303" \
     -separator-style "none" \
     -hide-scrollbar \
     -padding 0 \
