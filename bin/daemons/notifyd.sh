@@ -4,7 +4,7 @@
 #lxqt-notificationd
 #/usr/lib/notification-daemon-1.0/notification-daemon
 #xfce4-notifyd
-twmnd #这个相当不错,很精致,不过似乎不适合和图片一起用?
+twmnd& #这个相当不错,很精致,不过似乎不适合和图片一起用?
 
 """
 twmn 的布局不适合配合icon,比如歌曲art,

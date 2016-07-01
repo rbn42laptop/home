@@ -24,7 +24,7 @@ export QT_STYLE_OVERRIDE=qtcurve
 ~/bin/keys.sh
 
 #显示音量.
-volnoti
+#volnoti
 
 
 ########################

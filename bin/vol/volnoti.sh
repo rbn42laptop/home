@@ -1,13 +1,15 @@
 #!/bin/bash
 export MUTE=`pamixer --get-mute`
+export VOL=`pamixer --get-volume`
 if [ "false" == $MUTE ];
 then
-    #volnoti-show `pamixer --get-volume`
+    #volnoti-show $VOL
     #图太大了,位置不好,干扰性太强.
-    echo 1
+    #notify-send $VOL
+    echo $VOL
 else
-    #volnoti-show `pamixer --get-volume` -m
-    echo 1
+    #volnoti-show $VOL -m
+    echo $VOL
 fi
 
 
