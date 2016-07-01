@@ -433,3 +433,11 @@ git 使用的时候，好像有3个状态比较方便？
 Thu 23 Jun 2016 11:10:04 PM NZST
 似乎wmutils的热点很高,如果将来把底层转换到wmutils的话,或许可以同时支持wayland和x了.
 但是wayland还没有expo,所以支持wayland暂时对我没什么用处.
+
+Fri 01 Jul 2016 10:08:31 PM NZST
+i4 a window tiling script forks i3
+
+转移到wmutils的好处,
+1.因为是专注wm的,而不是测试的,所以性能提升?
+2.wayland迁移
+3.跨de兼容性,在unity7,要求窗体有一定margin才能保证没有overlap,在compiz0.8,给予的x,y的数值是正常数值的两倍.这些问题wmutils是否能帮忙处理掉呢?
