@@ -16,8 +16,8 @@ python -c "$TOUCH_FOLDER" "$2"
 #Generate key
 #openssl enc -aes-256-cbc -k secret -P -md sha1  | grep key > $KEYFILE
 
-#salt加密的问题是,即使没有更新文件,每次自动gitsync的时候依然会改变文件带来流量.
-#openssl enc -aes-256-cbc -salt -in "$1" -out "$2" -kfile $KEYFILE
+###salt加密的问题是,即使没有更新文件,每次自动gitsync的时候依然会改变文件带来流量.
+###openssl enc -aes-256-cbc -salt -in "$1" -out "$2" -kfile $KEYFILE
 #所以我们用nosalt
 openssl enc -aes-256-cbc -nosalt -in "$1" -out "$2" -kfile $KEYFILE
 
