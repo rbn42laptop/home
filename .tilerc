@@ -4,6 +4,7 @@
 WinBorder = 2
 LeftPadding = 1
 LeftPadding = 0
+LeftPadding = 20
 WinBorder = 0
 #有必要设成1,因为否则,第一次tile后,仍然会有窗口(term以外的,firefox之类的,估计和decro有关)重叠,第二次tile才会消除重叠.不知道原因,
 WinBorder = 1
@@ -38,6 +39,7 @@ MIN_WINDOW_HEIGHT = 50
 #compiz0.8 wmctrl -lG给出的x,y不准确,恰好是实际数值的两倍,不知道哪来的这个倍率,所以必须要修正
 COMPIZ0_8=True
 
+REGULARIZE_FULLSCREEN = True
 # NOFRAME_WMCLASS = ['Wine']
 
 # In i3-wm's window tree, only one child of a node is allowed to split.

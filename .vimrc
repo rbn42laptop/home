@@ -147,8 +147,9 @@ let NERDTreeChDirMode=2
 let NERDTreeIgnore=['\.vim$', '\~$', '\.pyc$', '\.swp$']
 let NERDTreeSortOrder=['^__\.py$', '\/$', '*', '\.swp$',  '\~$']
 let NERDTreeShowBookmarks=1
-"let NERDTreeQuitOnOpen=1
-let NERDTreeQuitOnOpen=0
+let NERDTreeQuitOnOpen=1
+"用了平铺还是不要开着占地方
+"let NERDTreeQuitOnOpen=0
 map <F3> :NERDTreeToggle<CR>
 
 noremap <F4> :Autoformat<CR><CR>
@@ -171,8 +172,9 @@ autocmd FileType cpp silent! !ctags -R -f .tags *.cpp
 " TagList Plugin Configuration
 let Tlist_Ctags_Cmd='ctags'
 let Tlist_GainFocus_On_ToggleOpen = 1
-"#let Tlist_Close_On_Select = 1
-let Tlist_Close_On_Select = 0
+let Tlist_Close_On_Select = 1
+"用了平铺还是不要开着占地方
+"let Tlist_Close_On_Select = 0
 let Tlist_Use_Right_Window = 1
 let Tlist_File_Fold_Auto_Close = 1
 map <F7> :TlistToggle<CR>
