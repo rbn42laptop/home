@@ -274,8 +274,10 @@ let g:EclimCompletionMethod = 'omnifunc'
 "autocmd InsertLeave * set iminsert=0
 "
 "insert date
-:nnoremap <F5> "=strftime("%c")<CR>P
-:inoremap <F5> <C-R>=strftime("%c")<CR>
+":nnoremap <F5> "=strftime("%c")<CR>P
+"#:inoremap <F5> <C-R>=strftime("%c")<CR>
+nnoremap <F5> "=strftime("%F %T %a %Z")<CR>P
+inoremap <F5> <C-R>=strftime("%F %T %a %Z")<CR>
 
 "
 "

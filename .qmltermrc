@@ -8,7 +8,9 @@ Item{
 
     property var display_ratio:1.4
 
+    //property var title_font:'Lucida Gr,WenQuanYi Micro Hei'
     property var title_font:'setofont,WenQuanYi Micro Hei'
+
     property var focused_color:'#8ff'
     property var unfocused_color:'#eee'
 
@@ -25,7 +27,7 @@ Item{
 
     property var maximized_state:'MAXIMIZED'
     property var background_color:'white' // 'transparent'
-    property var background_opacitiy: 0 // 0.3 // 0
+    property var background_opacitiy: 0.0 // 0.3 // 0
     property var border_shadow_active: 1
     property var border_shadow_deactive:5
     property var border_color_active:'#8ff' //'white' //0 // 1 // 1
