@@ -1,0 +1,17 @@
+[Desktop Entry]
+DefaultProfile=th.profile
+
+[Favorite Profiles]
+Favorites=th.profile
+
+[KonsoleWindow]
+ShowMenuBarByDefault=false
+
+[MainWindow]
+Height 1080=1054
+MenuBar=Disabled
+ToolBarsMovable=Disabled
+Width 1920=955
+
+[TabBar]
+TabBarVisibility=ShowTabBarWhenNeeded

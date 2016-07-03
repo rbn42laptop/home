@@ -13,7 +13,5 @@ else
 fi
 
 
-"""
-theme的图片在这个目录下,可以修改.
-/usr/share/pixmaps/volnoti
-"""
+#theme的图片在这个目录下,可以修改.
+#/usr/share/pixmaps/volnoti

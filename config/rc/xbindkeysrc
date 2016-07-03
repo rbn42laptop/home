@@ -11,9 +11,10 @@
 #xmodmap -pm
 
 #养成了不太好的依赖习惯,禁用一段时间.
-#"bash ~/bin/run"
-"echo 1"
+"bash ~/bin/run"
   Mod4 + d
+#"echo 1"
+
 #分散开rofi的两个触发,所以如果一个不可用了,至少还有一个备用.
 #"bash ~/bin/rofi.sh"
 #  Mod4 + Return
@@ -41,7 +42,7 @@
 #mpd
 "mpc next"
   Mod4 + n
-"~/bin/mpd_pause"
+"mpc toggle;#~/bin/mpd_pause"
   Mod4 + p
 "bash ~/git/mpd-script/dislike.sh"
   Mod4 + shift + control + d

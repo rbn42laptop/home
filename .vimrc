@@ -29,7 +29,6 @@ Plugin 'terryma/vim-multiple-cursors'   "Ctrl+N 多光标,很少用,绝大多数
 
 Plugin 'scrooloose/syntastic'
 Plugin 'rking/ag.vim'                   "好像是跨文件搜索用的  sudo apt install silversearcher-ag
-Plugin 'msanders/snipmate.vim'
 Plugin 'marijnh/tern_for_vim'           "好像是javascript相关的refactor
 Plugin 'scrooloose/nerdcommenter'       "代码注释,没怎么用过
 Plugin 'tpope/vim-fugitive'             "好像是git相关的
@@ -44,6 +43,19 @@ Plugin 'vim-airline/vim-airline-themes'
 "Plugin 'tpope/vim-pathogen'            "另一个包管理
 Plugin 'yuratomo/w3m.vim'              "w3m插件
 
+"snipmate相关4个plugin
+"似乎可以用来补全html tag,不兼容ycm.
+"不过我怎么都没能让它运作.
+"Plugin 'MarcWeber/vim-addon-mw-utils'
+"Plugin 'tomtom/tlib_vim'
+"Plugin 'garbas/vim-snipmate'
+"Optional:
+"Plugin 'honza/vim-snippets'
+
+"似乎很便利的快速html编辑,需要它的原因应该是html中冗余字符太多了.
+"需要安装独立的excutable.
+"https://github.com/rstacruz/sparkup
+"Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}           
 
 "Plugin 'glsl.vim'
 "Plugin 'dcbaker/vim-arb_assembly'
@@ -407,3 +419,7 @@ vnoremap <C-j> :MultipleCursorsFind <C-R>/<CR>
 "  let l:a = system("fcitx-remote -c")
 "endfunction
 "autocmd InsertLeave * call Fcitx2en()
+"
+
+"在html上关掉ycm
+"autocmd FileType html let b:ycm_largefile=1
