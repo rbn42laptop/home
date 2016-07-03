@@ -39,6 +39,7 @@
         <value type="string" value="empathy"/>
         <value type="string" value="indicator-multiload"/>
         <value type="string" value="volumeicon"/>
+        <value type="string" value="drkonqi"/>
         <value type="string" value="notification-daemon"/>
         <value type="string" value="sogou-qimpanel"/>
         <value type="string" value="nautilus"/>
