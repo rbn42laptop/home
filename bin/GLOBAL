@@ -3,3 +3,17 @@
 #rofi 1.01
 export ROFI_HISTORY=~/.cache/rofi-3.runcache
 export ROFI_LOCK=/dev/shm/.rofi_lock
+export REMOVE_USERNAME="""
+import sys,getpass
+username = getpass.getuser()
+s=sys.argv[1]
+s=(s.replace('/%s/' % username, '/\$USER/'))
+print(s)
+"""
+export ADD_USERNAME="""
+import sys,getpass
+username = getpass.getuser()
+s=sys.argv[1]
+s=(s.replace( '/\$USER/','/%s/' % username))
+print(s)
+"""

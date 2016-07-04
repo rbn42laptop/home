@@ -1,4 +1,7 @@
 #!/bin/bash
+source ~/bin/GLOBAL
+#记录到rofi
+python ~/bin/add2rofi.py "$ROFI_HISTORY" 1 ./bin/file "$@"
 #nautilus 
 
 if [ $# -eq 0 ]

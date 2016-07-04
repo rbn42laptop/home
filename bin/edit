@@ -1,3 +1,46 @@
-#!/bin/bash
-#gedit
-~/bin/term_blur -e "vim \"$@\""
+#!/usr/bin/python
+# -*- coding: UTF-8 -*-
+"""
+
+Usage:
+  edit <file> [--blur|-b] [--term|-t] [--test]
+
+Options:
+  -h --help     Show this screen.
+"""
+import os.path
+from docopt import docopt
+import getpass
+
+arguments = docopt(__doc__)
+blur = arguments['--blur'] or arguments['-b']
+term = arguments['--term'] or arguments['-t']
+
+file_path = arguments['<file>']
+file_path = os.path.abspath(file_path)
+username = getpass.getuser()
+file_path_rofi = file_path.replace('/%s/' % username, '/\\$USER/')
+file_path_rofi = file_path.replace('/$USER/' , '/\\$USER/')
+
+cmds = ['source ~/bin/GLOBAL']
+
+if blur:
+    cmd = 'echo 1 ./bin/edit -t -b \\"%s\\" >> "$ROFI_HISTORY"' % file_path_rofi
+else:
+    cmd = 'echo 1 ./bin/edit -t \\"%s\\" >> "$ROFI_HISTORY"' % file_path_rofi
+cmds.append(cmd)
+
+if not term:
+    cmd = 'vim "%s"' % file_path
+elif blur:
+    cmd = '~/bin/term_blur -e "vim \\"%s\\""' % file_path
+else:
+    cmd = '~/bin/term -e "vim \\"%s\\""' % file_path
+cmds.append(cmd)
+
+cmd = ';'.join(cmds)
+
+if arguments['--test']:
+    print(cmd)
+else:
+    os.system(cmd)
