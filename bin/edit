@@ -11,6 +11,7 @@ Options:
 import os.path
 from docopt import docopt
 import getpass
+import add2rofi
 
 arguments = docopt(__doc__)
 blur = arguments['--blur'] or arguments['-b']
@@ -18,16 +19,13 @@ term = arguments['--term'] or arguments['-t']
 
 file_path = arguments['<file>']
 file_path = os.path.abspath(file_path)
-username = getpass.getuser()
-file_path_rofi = file_path.replace('/%s/' % username, '/\\$USER/')
-file_path_rofi = file_path.replace('/$USER/' , '/\\$USER/')
 
 cmds = ['source ~/bin/GLOBAL']
 
 if blur:
-    cmd = 'echo 1 ./bin/edit -t -b \\"%s\\" >> "$ROFI_HISTORY"' % file_path_rofi
+    cmd = 'python ~/bin/add2rofi.py "$ROFI_HISTORY" 1 ./bin/edit -t -b "%s" ' % file_path
 else:
-    cmd = 'echo 1 ./bin/edit -t \\"%s\\" >> "$ROFI_HISTORY"' % file_path_rofi
+    cmd = 'python ~/bin/add2rofi.py "$ROFI_HISTORY" 1 ./bin/edit -t "%s" ' % file_path
 cmds.append(cmd)
 
 if not term:
