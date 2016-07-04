@@ -9,10 +9,8 @@ Options:
   -h --help     Show this screen.
 """
 import os.path
-from docopt import docopt
-import getpass
-import add2rofi
 
+from docopt import docopt
 arguments = docopt(__doc__)
 blur = arguments['--blur'] or arguments['-b']
 term = arguments['--term'] or arguments['-t']
