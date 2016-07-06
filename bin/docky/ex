@@ -1,0 +1,20 @@
+#!/bin/bash
+pkill docky
+
+export STATE1=`gconftool-2 --get "/apps/docky-2/Docky/Interface/DockPreferences/Dock1/Autohide"`
+export STATE2=`gconftool-2 --get "/apps/docky-2/Docky/Interface/DockPreferences/Dock2/Autohide"`
+export POSITION1=`gconftool-2 --get "/apps/docky-2/Docky/Interface/DockPreferences/Dock1/Position"`
+export POSITION2=`gconftool-2 --get "/apps/docky-2/Docky/Interface/DockPreferences/Dock2/Position"`
+
+echo $STATE1 $POSITION1
+echo $STATE2 $POSITION2
+
+export DOCK="Dock1"
+gconftool-2 --set "/apps/docky-2/Docky/Interface/DockPreferences/$DOCK/Autohide" --type string "$STATE2"
+gconftool-2 --set "/apps/docky-2/Docky/Interface/DockPreferences/$DOCK/Position" --type string "$POSITION2"
+
+export DOCK="Dock2"
+gconftool-2 --set "/apps/docky-2/Docky/Interface/DockPreferences/$DOCK/Autohide" --type string "$STATE1"
+gconftool-2 --set "/apps/docky-2/Docky/Interface/DockPreferences/$DOCK/Position" --type string "$POSITION1"
+
+docky&

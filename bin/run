@@ -1,6 +1,8 @@
 #!/bin/bash
 source ~/bin/GLOBAL
 
+bash ~/bin/keys.sh
+
 touch $ROFI_LOCK
 
 #1.在~/bin/play的时候, echo ./bin/play "$@" >> ~/.cache/rofi-3.runcache 留下记录
