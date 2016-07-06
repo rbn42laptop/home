@@ -34,3 +34,6 @@ yaourt -S terasology
 #Total Annihilation 
 pacman -S spring-1944
 #active
+
+sudo pacman -S flightgear
+yaourt -S vegastrike-svn

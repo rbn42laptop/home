@@ -6,8 +6,10 @@
 import sys
 import re
 path_rofi_history = sys.argv[1]
-s = open(path_rofi_history).read()
-l = re.findall('^(\d+)\s(.+)$', s, re.M)
+
+s_orig = open(path_rofi_history).read()
+l = re.findall('^(\d+)\s(.+)$', s_orig, re.M)
+
 m = {}
 for i, n in l:
     i0 = m.get(n, 0)
@@ -17,5 +19,9 @@ l = [(i, n) for n, i in m.items()]
 l.sort()
 l.reverse()
 l = ['%d %s\n' % i for i in l]
-s = ''.join(l)
-open(path_rofi_history, 'w').write(s)
+
+s_out = ''.join(l)
+if s_out == s_orig:
+    pass
+else:
+    open(path_rofi_history, 'w').write(s_out)
