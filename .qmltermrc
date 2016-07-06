@@ -6,7 +6,7 @@ Item{
     property var font_family:"monacobsemi,Droid Sans Mono for Powerline,everson mono,WenQuanYi Micro Hei,setofont"   // "Lucida Gr" 
     property var color_scheme:"Transparent" //cool-retro-term
 
-    property var display_ratio:1.4
+    property var display_ratio:1.2
 
     //property var title_font:'Lucida Gr,WenQuanYi Micro Hei'
     property var title_font:'setofont,WenQuanYi Micro Hei'
