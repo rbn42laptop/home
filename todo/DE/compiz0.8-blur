@@ -165,3 +165,87 @@ blur.c line 1056, srcFun很短,唯有的参数似乎只有一个0.25,虽然看�
 
 从质地上来说,带有alpha的效果接近于磨砂玻璃.
 完全消除alpha可以展现不一样的质地.
+
+2016-07-07 09:54:57 Thu NZST
+line 1332 分析
+
+//output是dst的原有,sum是blur计算? sum*dst.a + output
+//但是sum似乎没有blur效果.output也没有.两者独立都看不出效果.
+//output是dst,sum是blur计算,mask来自output.a和env
+//比较难以理解的是output.a
+//output的最终输出是窗口北京,所以output.a太低的话,就会无法掩盖真实背景
+//但是output.a不能乱设,无法单纯依赖它去改变透明度,会有异常效果.
+//似乎是这样的,mask提供了整体的alpha,然后分成output和sum两份,
+//在这里合并这两份,然后以mask的数值输出.
+//纯sum的结果是,依旧会被25限制,同时窗口前景变淡了.
+//也就是说,原本需要被mask掉不做blur的前景被牵扯了.
+//纯output的结果是25以上,可以消除透明,背景色(白)相当于乘以了alpha.
+//如此看来,25的问题或许不是这部分代码可以管理的?
+//和mask有关吗?调整output.a的话,可以超出mask限制,但是会打破界面其他部分的约束?
+似乎mask就是threshold.但是trheshhold似乎是int强转float,这种东西怎么可能作为alpha来用呢?
+
+抓取的xgetwindowproperty propdata是,
+_COMPIZ_WM_WINDOW_BLUR
+看不出来这是什么.但是看来threshhold是外界定下来的.
+0.25的限制可能是来自这里吗?感觉不太像.
+取[0]位作为threshold
+
+分析以下,纯output的结果.
+output.a=mask,
+dst.a=0
+output.rgb=output.rgb
+output.a=output.a=mask
+
+_SAT是clip(0,1)的意思,所以mask 是env和output.a的乘积,并且在0,1之间.
+当然,我们怀疑env把a收缩掉了.
+
+纯output的情况下,为什么背景色会被alpha降低?
+至少了解一点就是sum的确是blur,output则似乎是背景色,包括前景,包括alpha.
+sum会占据掉output输出alpha不足的部分.与其融合得到新的颜色.
+
+奇怪的地方是,如果alpha<0.25,不只是sum和output,原本的毕竟也会参与进来融合.
+
+根据这部分代码来看,sum需要乘以dst.a才能加入output,所以output本身其实已经乘以过output.a了.
+
+现在的问题是,当alpha很低的时候,当然output不会起作用,但是sum也不起效果.
+解决办法是,把alpha拉高到0.25作为起点.
+mask限定了总的alpha,然后output.a会在output和sum之间分配.
+现在要想办法,把其看做0.25为起点,重新分配.
+a2=a-0.25 / 0.75 
+ouput=ouput/a * a2=output * (a-0.25)/0.75 *a
+dst.a=mask -  (a-0.25)/0.75
+
+麻烦的一点是,arb代码不知道在哪里出错.
+
+总结一下,
+纯blur的情况下,照理是要消除output的,不过我们没这么干,所以出现了模糊的前景.
+纯output的情况下,blur被消除了,但是output自身需要重新调整恢复色彩.
+纯output的情况下,如果alpha降到0.25以下,会出现透明,这个现象还不确定.
+确认output.a可以直接设为1.0,掩盖掉其他东西.没有奇怪的颜色出现.
+确认可以将output和sum的组合设为1.0,那么alpha为0的时候,blur也就有效了.
+
+下面的问题是,如何给予特定部分的alpha为0?
+现在的组合为1.0,但是显然mask的情况并非如此.实际上我们需要的是,拉高mask的阀值,把更多mask拉到1.0,但是要保留最小的部分
+或许threshhold就是这么干的,alpha*4的话,那么0.25以上都会被拉高到1了.
+
+猜中了,
+所以threshold加到40的话,0,1,2以外的alpha都可以消除背景透明了.
+这个threshold的源头似乎是 xprop的_COMPIZ_WM_WINDOW_BLUR属性,但是网上没有找到doc解释,所以不清楚是否所有window可以共享同一个数值.但是暂且这么做似乎也没什么问题.
+
+2016-07-07 12:01:00 Thu NZST
+大体来说,0 alpha和白色磨砂是材质.
+不过0 allpha要求更大的blur半径,但是白色磨砂在大半径下的效果就不那么好了.
+所以两者混用的话,其实还是最好还是能够区分窗口分配filter.
+
+另外,单单一个材质的意义不大,组合分配材质的效果才会比较好,如果qtcurve能够像gtk一样区分布局分配材质就好了
+
+不过我们倒是做第三个terminal来产生组合效果.
+但是意义也不大,毕竟平时我几乎不会用blur的term.
+唯有像是osx一样用在dock上,但是这个也是平常用不到的.
+而rofi需要白色磨砂来提高对比度.
+
+用在docky上对应到偏黑背景的时候,效果还是很明显的.
+
+2016-07-07 12:17:02 Thu NZST
+由于降低threshold降低造成的一个问题,
+docky右键菜单有虚假阴影,被判别为blur了,不过提供全透明虚假阴影的软件也不多.
