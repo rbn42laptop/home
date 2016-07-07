@@ -1,0 +1,6 @@
+#!/bin/bash
+
+~/bin/rofi/run \
+    -color-normal "argb:08ffffff,#fff,argb:08ffffff,argb:08ffffff,#fff" \
+    -location 1 \
+    -lines 1  \
