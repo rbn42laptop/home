@@ -1,4 +1,4 @@
 #!/bin/bash
 #cd ~/.mspider/
 #export PATH=$1
-~/bin/term -e "vim $1 -c \"noremap p o<ESC>p\" -c \"map q <Esc>:wq<CR>\""
+~/bin/term_blur -e "vim $1 -c \"noremap p o<ESC>p\" -c \"map q <Esc>:wq<CR>\""
