@@ -1,0 +1,13 @@
+
+arc highlight
+#5294E2
+偏暗的颜色,作为选择色块.
+static switcher的边框很宽改不了,适合用暗色.
+
+qmlterm highlight
+#8ff
+偏亮的颜色,细线条高亮用
+
+ambiance flat teal
+#1CB39F
+偏暗,和arc比偏绿
