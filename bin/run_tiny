@@ -1,6 +1,13 @@
 #!/bin/bash
 
+export FONT_COLOR="#000000";
+
 ~/bin/rofi/run \
-    -color-normal "argb:08ffffff,#fff,argb:08ffffff,argb:08ffffff,#fff" \
+    -color-window "argb:08ffffff,argb:00ffffff,#ffff0f0f" \
+    -color-normal "argb:00ffffff,#000,argb:00ffffff,argb:00ffffff,#fff" \
+    -width "800px" \
+    -bw "0" \
     -location 1 \
     -lines 1  \
+
+    #-width "100%" \

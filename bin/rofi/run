@@ -12,7 +12,6 @@ python3 ~/bin/reset_rofi_history.py "$ROFI_HISTORY"
 #rofi 1.01
 rofi -show run \
     -font "SetoFont,WenQuanYi Micro Hei 15" \
-    -color-window "argb:00ffffff,argb:00ffffff,#ff0" \
     -separator-style "none" \
     -hide-scrollbar \
     -padding 0 \
