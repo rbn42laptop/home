@@ -1,5 +1,9 @@
 #!/bin/bash 
 pkill mpd
+pkill mpv
+pkill firefox
+pkill thunderbird
+pkill wine  
 pkill dolphin
 pkill kactivity
 pkill gam_serve
