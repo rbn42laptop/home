@@ -1,4 +1,5 @@
 #!/bin/bash
+
 #換到usb之後需要swap提升性能。
 #sudo swapon  /dev/disk/by-label/ssdswap 
 
