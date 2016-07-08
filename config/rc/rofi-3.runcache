@@ -1,164 +1,176 @@
-42612 ./bin/term
-10108 ./bin/mail
-10056 nautilus
-9088 ./bin/file
-8999 onboard
-7118 ./bin/rot.sh normal
-7114 ./bin/rot.sh right
-7001 ./bin/vol_inc.sh
-7000 ./bin/vol_dec.sh
-6259 ./bin/file ./chapters
-6206 ./bin/file ./Downloads
-4379 ./bin/medit  ~/.mspider/lst
-4221 ./bin/medit  ~/.mspider/taglst
-4069 ./bin/edit .cache/rofi-3.runcache
-1200 ccsm
-1073 ./bin/set_workspace.sh 1 1 
-1067 goldendict
-1025 sakura 
-1002 unity-tweak-tool
-1000 vlc
-159 ./bin/term_blur
+43942 ./bin/term
+10170 ./bin/mail
+9114 ./bin/file
+7153 ./bin/rot.sh right
+7147 ./bin/rot.sh normal
+1265 ccsm
+1136 ./bin/set_workspace.sh 1 1 
+1111 goldendict
+899 onboard
+701 ./bin/vol_inc.sh
+700 ./bin/vol_dec.sh
+248 ./bin/term_blur
 148 ./git/mpd-script/dislike.sh
-120 ./bin/set_workspace.sh 1 2
-104 ./bin/set_workspace.sh 1 3
-99 docky
-97 wesnoth
-82 ./bin/term_blur -e ~/bin/fixdns.sh
-77 ./bin/set_workspace.sh 5 5 
-76 sakura
-67 ./bin/term_blur -e ./bin/dns.sh
-67 ./bin/set_workspace.sh 3 3
-66 transmission-gtk
+134 ./bin/term_blur -e ~/bin/dns.sh
+129 ./bin/set_workspace.sh 1 2
+119 ./bin/set_workspace.sh 1 3
+117 ./bin/term_blur -e ~/bin/fixdns.sh
+108 ./bin/edit -t -b "/home/$USER/.cache/rofi-3.runcache"
+98 ./bin/set_workspace.sh 5 5 
+94 transmission-gtk
+90 chromium
+76 lxappearance
+76 ./bin/set_workspace.sh 3 3
+61 scrot
+60 emerald --replace
 55 projectM-pulseaudio
 55 mpc pause
-52 ./bin/edit titanx
-51 pkill docky
-47 chromium
+52 emerald-theme-manager
 44 ./bin/vol.sh 30
-40 lxappearance
-38 emerald-theme-manager
-36 ./bin/edit .config/ranger/rc.conf
+42 ./bin/term -e ncmpcpp
+41 gedit
+40 docky
+39 mpc play
+35 dolphin
 35 ./bin/vol.sh 40
-32 emerald --replace
-32 ./bin/term -e ncmpcpp
-28 ./bin/term -e htop
-25 sakura --config-file=white
+34 ./bin/term -e htop
+29 sakura
+26 ./bin/term -e ~/bin/ipython
+25 ./bin/set_workspace.sh 2 2
+24 pkill docky
 24 mpc next
 24 ./bin/vol.sh 25
-23 gedit
-23 ./bin/set_workspace.sh 1 4
+24 ./bin/set_workspace.sh 1 4
 21 xfce4-panel
 21 firefox
 21 fcitx-autostart
-20 ./bin/set_workspace.sh 4 4 
-19 ./bin/set_workspace.sh 2 2
-18 scrot -cd 2
+21 ./bin/set_workspace.sh 4 4 
+19 ./bin/manga
+18 pkill conky
 15 python ./apps/stiler swap
-15 ./bin/manga
 14 ./bin/file ./Pictures/compiz
-13 pkill conky
+13 qtconfig-qt4
+13 konsole
+12 qt5ct
+12 gconf-editor
 12 ./bin/vol.sh 35
-12 ./bin/edit .config/ranger/rifle.conf
+11 xfce4-terminal
 10 ./bin/set_workspace.sh 2 3
 10 ./bin/set_workspace.sh 1 5
 9 python ./apps/stiler simple
-8 xfce4-terminal
-8 scrot
-8 sakura --config-file=transparent
+9 pinta
+9 ./bin/set_workspace.sh 7 7
+8 xterm
+8 volnoti
 8 ./bin/vol.sh 45
 8 ./bin/getenv.sh
-7 sakura --config-file=black
-7 pinta
+8 ./bin/edit -t "/home/$USER/1"
+7 thunar
+7 baobab
+7 ./bin/term_blur2
+7 ./bin/term_blur -e htop
 7 ./bin/set_workspace.sh 6 6
-6 gconf-editor
+6 gtk-window-decorator --replace
+6 gimp
 6 emerald
+6 ./git/kd_tree_tile/main.py layout next
 6 ./bin/vol.sh 20
 6 ./bin/set_workspace.sh 3 4
-5 thunar
+6 ./bin/edit -t -b "/home/$USER/.config/ranger/rc.conf"
+5 qtcreator
 5 python ./bin/stiler.py swap
 5 python ./bin/stiler.py simple
 5 python ./bin/stiler.py cycle
 5 python ./apps/stiler vertical
 5 python ./apps/stiler next
 5 python ./apps/stiler cycle
-5 gimp
+5 dconf-editor
 5 ./bin/term -e ~/bin/mpd.sh
-4 xterm
+5 ./bin/edit -t -b .vimrc
+5 ./bin/edit -t -b .config/fish/custom/config.fish
 4 xfce4-settings-manager
 4 xfce4-display-settings
+4 thunderbird
 4 texstudio
 4 pioneer
-4 gnome-tweak-tool
-4 baobab
+4 okular
+4 mpc update
+4 gtk-chtheme
+4 ./bin/term -e ~/bin/ncmpy
 4 ./bin/rot.sh left
-4 ./bin/edit .vimrc
 3 xfce4-keyboard-settings
-3 wesnoth-1.12
+3 xbindkeys
 3 totem
-3 qtcreator
 3 python ./apps/stiler horizontal
-3 mpc update
 3 gparted
+3 gnome-terminal
+3 gnome-system-monitor
 3 amule
 3 ./bin/workspace_enable.sh
 3 ./bin/workspace_disable.sh
 3 ./bin/vlc_cmd.sh next
-3 ./bin/term2 -e htop
 3 ./bin/set_workspace.sh 2 4
+3 ./bin/edit -t "/home/$USER/bin/edit"
 2 xfce4-power-manager-settings
 2 tint2conf
-2 scrot 1.png -cd 3
-2 konsole
-2 ipython
-2 gnome-system-monitor
+2 systemsettings5
+2 slingscold
+2 pkill xbindkeys
+2 pkill volnoti
+2 gnome-character-map
+2 breeze-settings5
 2 /opt/eclipse/eclipse
-2 ./git/mspider/tag/down.sh
 2 ./bin/vol.sh 50
 2 ./bin/vol.sh 15
-2 ./bin/set_workspace.sh 7 7
 2 ./bin/set_workspace.sh 4 2
 2 ./bin/set_workspace.sh 2 1
-2 ./bin/edit
-1 xfwm4-workspace-settings
-1 xfwm4-tweaks-settings
 1 xfdesktop-settings
 1 xfce4-power-manager
-1 xbindkeys
-1 unity-control-center
+1 wesmage
 1 unclutter
+1 taglib-config
 1 sg_test_rwbuf
-1 scrot 1.png -cd 5
-1 scrot -s
-1 ranger
+1 scrot -cd 5
+1 rofi-sensible-terminal
+1 regedit
+1 qtconfig
 1 python ./apps/stiler prev
-1 python ./apps/indicator-rofi.py
 1 pkill emerald
-1 okular
+1 oxygen-settings5
+1 nl-neigh-add
+1 montage
 1 mate-panel
 1 mail\
+1 kmines
+1 kate
 1 jamo-normalize
-1 gtk-window-decorator --replace
 1 grub-reboot
-1 gnome-terminal
-1 gnome-character-map
+1 gnome-disk-image-mounter
+1 gnome-calculator
+1 gconf-merge-schema
+1 fgfs
 1 eog
+1 eclipse
 1 echo 1 > ~/1
-1 dolphin
-1 dconf-editor
+1 csslint-0.6
 1 compiz --replace
-1 cairo-dock
-1 breeze-settings5
+1 bundledoc
 1 bond2team
+1 ./bin/term -e fish
+1 ./bin/term -e bash
 1 ./bin/term -e "ping baidu.com"
 1 ./bin/set_workspace.sh 3 3 
+1 ./bin/search/google compiz drag workspace
 1 ./bin/search/baidu heisi
-1 ./bin/edit ./bin/gitsync.sh
+1 ./bin/file ".."
+1 ./bin/edit -t /home/$USER/bin/edit
+1 ./bin/edit -t -b ./bin/gitsync.sh
+1 ./bin/edit -t -b "/home/$USER/.vimrc"
+1 ./bin/edit -t -b "/home/$USER/.config/ranger/rifle.conf"
+1 ./bin/edit -t -b "/home/$USER/.config/fish/custom/config.fish"
 0 yelp
-0 thunderbird
 0 terasology
 0 sushi
-0 sakura --config-file=plaintext
 0 python ./bin/stiler.py term
 0 python ./bin/stiler.py swapfocus
 0 python ./bin/stiler.py horizontal
@@ -166,7 +178,6 @@
 0 python ./apps/stiler max_all
 0 pkill
 0 norm\
-0 nautilus-autorun-software
 0 kpackagelauncherqml
 0 hostid
 0 gparted-pkexec
@@ -186,6 +197,5 @@
 0 ./bin/term -e ~/bin/update.sh
 0 ./bin/term -e ping baidu.com
 0 ./bin/search/wikizh 
-0 ./bin/search/google compiz drag workspace
 0 ./bin/rot.sh inverted
 0 ./bin/rot.sh invert
