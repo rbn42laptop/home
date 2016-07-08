@@ -1,4 +1,6 @@
 #!/bin/bash
+#換到usb之後需要swap提升性能。
+sudo swapon  /dev/disk/by-label/ssdswap 
 
 #qt5,dolphin需要这个来加载合适的icon主题
 export XDG_CURRENT_DESKTOP=GNOME
@@ -54,6 +56,8 @@ sudo /usr/bin/netctl start wifi &
 ########################
 udisksctl mount -b /dev/disk/by-label/dmzj 
 udisksctl mount -b /dev/disk/by-label/4T
+
+
 
 
 ########################
