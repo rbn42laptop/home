@@ -35,8 +35,8 @@ Plugin 'tpope/vim-fugitive'             "好像是git相关的
 
 Plugin 'peterhoeg/vim-qml'
 
-Plugin 'vim-airline/vim-airline'
-Plugin 'vim-airline/vim-airline-themes'
+"Plugin 'vim-airline/vim-airline'
+"Plugin 'vim-airline/vim-airline-themes'
 
 "Plugin 'ivanov/vim-ipython'
 
@@ -274,8 +274,6 @@ let g:EclimCompletionMethod = 'omnifunc'
 "" Turn it off by default.
 "set iminsert=0
 "
-":highlight Cursor guifg=NONE guibg=Green
-":highlight lCursor guifg=NONE guibg=Cyan
 "
 "
 "" Execute 'lnoremap x X' and 'lnoremap X x' for each letter a-z.
@@ -440,4 +438,22 @@ vnoremap <C-a> ^
 "在顶部弹出会导致当前的窗口跳跃,所以很不好.
 set splitbelow
 
+"hi StatusLine ctermbg=None ctermfg=White
+"hi StatusLine guibg=Black guifg=White
+":highlight Cursor guifg=NONE guibg=Green
+":highlight lCursor guifg=NONE guibg=Cyan
+
+"hi statusline guibg=NONE 
+"hi statusLine ctermbg=None ctermfg=White
+
+"根据terminal配色不同这里的White不会改变,所以无法依赖.
+hi StatusLine ctermfg=Green ctermbg=None cterm=NONE
+hi StatusLineNC ctermfg=Blue ctermbg=None cterm=NONE
+hi VertSplit ctermfg=Blue ctermbg=None cterm=NONE
+"hi NonText ctermfg=blue cterm=None
+"vsplit分隔符
+"\ │┃━─
+"qt下│这个字符显示不对,不知道用了什么字体.
 set fillchars+=vert:\ 
+set fillchars+=stl:─
+set fillchars+=stlnc:─
