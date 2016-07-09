@@ -1,6 +1,10 @@
 set nocompatible              " be iMproved, required
 filetype off                  " required
 
+let enable_airline=0
+"无效,需要其他办法来按文件类型激活plugin
+"autocmd FileType python let enable_airline=1
+
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
@@ -13,7 +17,7 @@ Plugin 'gmarik/Vundle.vim'              "包管理
 Plugin 'scrooloose/nerdtree'            "F3 文件tree视图
 Plugin 'Chiel92/vim-autoformat'         "F4 格式化
 Plugin 'taglist.vim'                    "F7 ctags插件
-Plugin 'ctrlpvim/ctrlp.vim'                 " Ctrl+P 快速文件查找
+Plugin 'ctrlpvim/ctrlp.vim'             " Ctrl+P 快速文件查找
 
 "Plugin 'xolox/vim-misc'
 "Plugin 'easytags.vim'
@@ -33,7 +37,7 @@ Plugin 'rking/ag.vim'                   "好像是跨文件搜索用的  sudo ap
 Plugin 'marijnh/tern_for_vim'           "好像是javascript相关的refactor,ycm有集成它作为代码提示.
 Plugin 'scrooloose/nerdcommenter'       "代码注释,没怎么用过
 
-Plugin 'tpope/vim-fugitive'             "F2 好像是git相关的
+Plugin 'tpope/vim-fugitive'             "F9 好像是git相关的
 "Gedit Gsplit Gstatus,显示git status,并且提供快捷跳转.
 " Press - to add/reset a file's changes, or p to add/reset --patch. 
 " And guess what :Gcommit does!
@@ -48,8 +52,10 @@ Plugin 'tpope/vim-fugitive'             "F2 好像是git相关的
 
 Plugin 'peterhoeg/vim-qml'
 
-Plugin 'vim-airline/vim-airline'
-Plugin 'vim-airline/vim-airline-themes'
+if enable_airline
+    Plugin 'vim-airline/vim-airline'
+    Plugin 'vim-airline/vim-airline-themes'
+endif 
 
 Plugin 'mbbill/undotree'                "F6 不能和nerdtree共用,会打乱布局.
 
@@ -120,8 +126,6 @@ set nois
 set hls
 set incsearch
 set autoindent
-"#set ruler
-"set rulerformat=%55(%{strftime('%a\ %b\ %e\ %I:%M\ %p')}\ %5l,%-6(%c%V%)\ %P%)
 set showcmd
 set number
 
@@ -340,11 +344,6 @@ nnoremap S :w<CR>
 "inoremap <C-S-S> <ESC>:w<CR>
 
 "Wed 27 Apr 2016 15:51:45 NZST
-"#hi StatusLine ctermbg=Black ctermfg=None
-"hi StatuesLine None
-"hi clear Statusline
-"set statusline+=%{wordCount#WordCount()}
-"set laststatus=2
 
 "airline 
 "set laststatus=2
@@ -462,38 +461,65 @@ set splitbelow
 "白色透明方案,vim不允许NC窗口和当前窗口状态完全一样,所以会有^和=作为填充符.
 "hi StatusLine ctermbg=None cterm=None
 "hi StatusLineNC ctermbg=None cterm=None
-hi VertSplit ctermfg=Blue ctermbg=None cterm=NONE
-set fillchars+=vert:\ 
-let g:airline_theme='luna'
 
+"#set ruler
+autocmd FileType python set rulerformat=%25(%P\ %l,%c%V\ %{SyntasticStatuslineFlag()}\ %#warningmsg#%)
+
+if enable_airline
+    ""airline方案,airline暂且的用处是可以配合syntastic使用,显示encode格式
+    ""airline下制表符显示不正确.
+    let g:airline_theme='luna'
+    hi VertSplit ctermfg=Blue ctermbg=None cterm=NONE
+    set fillchars+=vert:\ 
+else
+    hi StatuesLine None
+    hi clear Statusline
+    "制表符方案比较好,能兼容tty
+    hi VertSplit ctermfg=Blue ctermbg=None cterm=NONE
+    set fillchars+=vert:\ 
+    hi StatusLine ctermfg=Green ctermbg=None cterm=None
+    hi StatusLineNC ctermfg=Blue ctermbg=None cterm=None
+    set fillchars+=stl:─
+    set fillchars+=stlnc:─
+endif 
+
+function! EnableStatusLine()
+    set fillchars+=stl:\ 
+    set fillchars+=stlnc:\ 
+    "syntastic
+    "下面的配置手动好像比较难处理,似乎和airline配合比较好用.
+    " start of default statusline
+    set statusline=%f\ %h%w%m%r\ 
+    " Syntastic statusline
+    set statusline+=%#warningmsg#
+    set statusline+=%{SyntasticStatuslineFlag()}
+    set statusline+=%*
+    " 应该就是这里导致airline无法使用box符号.
+    set statusline+=%=
+    " end of default statusline (with ruler)
+    set statusline+=%(%l,%c%V\ %=\ %P%)
+endfunction
+
+if enable_airline
+else
+    "autocmd FileType python call EnableStatusLine()
+    call EnableStatusLine()
+endif
 "underline方案
 "hi StatusLine ctermfg=Green ctermbg=None cterm=underline
 "hi StatusLineNC ctermfg=Blue ctermbg=None cterm=underline
 "set fillchars+=stl:\ 
 "set fillchars+=stlnc:\ 
 
-"制表符方案比较好,能兼容tty
-"hi StatusLine ctermfg=Green ctermbg=None cterm=None
-"hi StatusLineNC ctermfg=Blue ctermbg=None cterm=None
-"set fillchars+=stl:─
-"set fillchars+=stlnc:─
-"
-""airline方案,airline暂且的用处是可以配合syntastic使用,显示encode格式
-""airline下制表符显示不正确.
 "let g:airline_theme='th'
 "set fillchars+=stl:-
 "set fillchars+=stlnc:-
 "hi VertSplit ctermfg=None ctermbg=None cterm=NONE
 "set fillchars+=vert:\|
 
-"syntastic
-"下面的配置手动好像比较难处理,似乎和airline配合比较好用.
-"set statusline+=%#warningmsg#
-"set statusline+=%{SyntasticStatuslineFlag()}
-"set statusline+=%*
 
 nnoremap <F6> :UndotreeToggle<cr>
-nnoremap <F2> :Gstatus<cr>
+nnoremap <F9> :Gstatus<cr>
 
 "自动关闭nerdtree的脚本.不过平时实际上不会用到nerdtree,除了有的时候需要statusline的时候,会用nerdtree来冲窗口数目.
 function! NERDTreeQuit()
