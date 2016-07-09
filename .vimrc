@@ -335,6 +335,7 @@ nnoremap S :w<CR>
 "airline 
 "set laststatus=2
 let g:airline_powerline_fonts = 1
+"theme的颜色模式难以辨认,所以没法改动.
 "let g:airline_theme='th'
 let g:airline_theme='luna'
 
