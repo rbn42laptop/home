@@ -331,10 +331,13 @@ nnoremap S :w<CR>
 "hi clear Statusline
 "set statusline+=%{wordCount#WordCount()}
 "set laststatus=2
-"airline 
 
+"airline 
 "set laststatus=2
 let g:airline_powerline_fonts = 1
+"let g:airline_theme='th'
+let g:airline_theme='luna'
+
 set t_Co=256
 
 ""pip install powerline-status --user
@@ -429,3 +432,9 @@ nnoremap <C-e> $
 nnoremap <C-a> ^
 inoremap <C-e> <End>
 inoremap <C-a> <Home>
+
+"preview docstrings窗口的位置.
+"在顶部弹出会导致当前的窗口跳跃,所以很不好.
+set splitbelow
+
+set fillchars+=vert:\ 
