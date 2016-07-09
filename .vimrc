@@ -25,7 +25,8 @@ Plugin 'ctrlpvim/ctrlp.vim'             " Ctrl+P 快速文件查找
 Plugin 'easymotion/vim-easymotion'      "主要用法,在普通motion命令前加上 ,,
 Plugin 'Valloric/YouCompleteMe'         "代码补全
 Plugin 'VOoM'                           "tex tree视图
-Plugin 'terryma/vim-multiple-cursors'   "Ctrl+N 多光标,很少用,绝大多数批量编辑情况可以全局替换,更便利的是IDE的refactoring,少数情况需要python.夹在这两个极端中间的极少数情况可能可以用Ctrl+N,但是实在基本没用过
+Plugin 'terryma/vim-multiple-cursors'   
+"Ctrl+N 多光标,很少用,绝大多数批量编辑情况可以全局替换,更便利的是IDE的refactoring,少数情况需要python.夹在这两个极端中间的极少数情况可能可以用Ctrl+N,但是实在基本没用过
 "用法1，定位到關鍵詞，ctrl+n 匹配要修改的部分 i 切入
 "用法2，v選擇多行後，ctrl+n 然後 i 切入
 
@@ -517,11 +518,11 @@ endif
 "hi VertSplit ctermfg=None ctermbg=None cterm=NONE
 "set fillchars+=vert:\|
 
-
 nnoremap <F6> :UndotreeToggle<cr>
 nnoremap <F9> :Gstatus<cr>
 
 "自动关闭nerdtree的脚本.不过平时实际上不会用到nerdtree,除了有的时候需要statusline的时候,会用nerdtree来冲窗口数目.
+"似乎对nerd以外的buffer也有效.
 function! NERDTreeQuit()
   redir => buffersoutput
   silent buffers
@@ -544,4 +545,5 @@ function! NERDTreeQuit()
     quitall
   endif
 endfunction
+
 autocmd WinEnter * call NERDTreeQuit()
