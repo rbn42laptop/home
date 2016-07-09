@@ -447,13 +447,19 @@ set splitbelow
 "hi statusLine ctermbg=None ctermfg=White
 
 "根据terminal配色不同这里的White不会改变,所以无法依赖.
-hi StatusLine ctermfg=Green ctermbg=None cterm=NONE
-hi StatusLineNC ctermfg=Blue ctermbg=None cterm=NONE
-hi VertSplit ctermfg=Blue ctermbg=None cterm=NONE
 "hi NonText ctermfg=blue cterm=None
 "vsplit分隔符
 "\ │┃━─
 "qt下│这个字符显示不对,不知道用了什么字体.
 set fillchars+=vert:\ 
+hi VertSplit ctermfg=Blue ctermbg=None cterm=NONE
+
+hi StatusLine ctermfg=Green ctermbg=None cterm=underline
+hi StatusLineNC ctermfg=Blue ctermbg=None cterm=underline
+set fillchars+=stl:\ 
+set fillchars+=stlnc:\ 
+"制表符方案比较好,能兼容tty
+hi StatusLine ctermfg=Green ctermbg=None cterm=None
+hi StatusLineNC ctermfg=Blue ctermbg=None cterm=None
 set fillchars+=stl:─
 set fillchars+=stlnc:─
