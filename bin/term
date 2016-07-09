@@ -1,2 +1,1 @@
-#!/bin/bash
-bash ~/bin/term_opacity "$@"
+term_opacity

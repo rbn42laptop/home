@@ -423,3 +423,9 @@ vnoremap <C-j> :MultipleCursorsFind <C-R>/<CR>
 
 "在html上关掉ycm
 "autocmd FileType html let b:ycm_largefile=1
+
+"从rofi抄来的按键约定,挺顺手的.其他<C-h><C-m>,terminal可以自行识别.
+nnoremap <C-e> $
+nnoremap <C-a> ^
+inoremap <C-e> <End>
+inoremap <C-a> <Home>

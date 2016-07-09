@@ -1,0 +1,3 @@
+#!/bin/bash
+export QML2_IMPORT_PATH=~/git/QMLProcess/build:~/git/qmltermwidget/build
+~/tmp/qmlterm/build/qmlterm  -c ~/config/term/qmlterm/qmltermrc_blur_glass.ini  "$@"
