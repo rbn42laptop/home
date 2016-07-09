@@ -27,21 +27,36 @@ Plugin 'terryma/vim-multiple-cursors'   "Ctrl+N 多光标,很少用,绝大多数
 
 "用vim做查找/替换/refactor太麻烦了,还是交给gedit和IDE吧,反正命名问题一般是写完代码后期完善时候的事情,用vim的时候可以容忍下
 
-Plugin 'scrooloose/syntastic'
+
+Plugin 'scrooloose/syntastic'           "已知的用处是检查代码错误
 Plugin 'rking/ag.vim'                   "好像是跨文件搜索用的  sudo apt install silversearcher-ag
-Plugin 'marijnh/tern_for_vim'           "好像是javascript相关的refactor
+Plugin 'marijnh/tern_for_vim'           "好像是javascript相关的refactor,ycm有集成它作为代码提示.
 Plugin 'scrooloose/nerdcommenter'       "代码注释,没怎么用过
-Plugin 'tpope/vim-fugitive'             "好像是git相关的
+
+Plugin 'tpope/vim-fugitive'             "F2 好像是git相关的
+"Gedit Gsplit Gstatus,显示git status,并且提供快捷跳转.
+" Press - to add/reset a file's changes, or p to add/reset --patch. 
+" And guess what :Gcommit does!
+" - 号可以添加修改或者消除未commit的修改.消除我不怎么用到,添加比较常用.
+" commit还是命令行做比较好,但是reset功能很方便.
+" Gread 可以起到checkout的作用,读取未改动的原文件到buffer.
+" Gvdiff Gdiff 同Gread,读取diff进行对比.
+" Gbrowse 打开github上的文件. v模式下可以直接跳转到勾选部分页面.
+" 感觉都很有用,但是可以配置的按键也不多,所以暂且作为命令记在这里,以后根据使用频率再绑定按键.
+" Glog查看提交记录,Ggrep 同git grep,我不认识.Gblame 同git blame,不认识.
+" Gmove Gremove,还是命令行使用比较安心.
 
 Plugin 'peterhoeg/vim-qml'
 
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 
+Plugin 'mbbill/undotree'                "F6 不能和nerdtree共用,会打乱布局.
+
 "Plugin 'ivanov/vim-ipython'
 
 "Plugin 'tpope/vim-pathogen'            "另一个包管理
-Plugin 'yuratomo/w3m.vim'              "w3m插件
+"Plugin 'yuratomo/w3m.vim'              "w3m插件
 
 "snipmate相关4个plugin
 "似乎可以用来补全html tag,不兼容ycm.
@@ -60,6 +75,7 @@ Plugin 'yuratomo/w3m.vim'              "w3m插件
 "Plugin 'glsl.vim'
 "Plugin 'dcbaker/vim-arb_assembly'
 
+"ycm有整合jedi
 "Plugin 'davidhalter/jedi-vim'
 " The following are examples of different formats supported.
 " Keep Plugin commands between vundle#begin/end.
@@ -335,7 +351,6 @@ nnoremap S :w<CR>
 let g:airline_powerline_fonts = 1
 "theme的颜色模式难以辨认,所以没法改动.
 "let g:airline_theme='th'
-let g:airline_theme='th'
 
 set t_Co=256
 
@@ -438,36 +453,69 @@ vnoremap <C-a> ^
 "在顶部弹出会导致当前的窗口跳跃,所以很不好.
 set splitbelow
 
-"hi StatusLine ctermbg=None ctermfg=White
-"hi StatusLine guibg=Black guifg=White
-":highlight Cursor guifg=NONE guibg=Green
-":highlight lCursor guifg=NONE guibg=Cyan
-
-"hi statusline guibg=NONE 
-"hi statusLine ctermbg=None ctermfg=White
-
 "根据terminal配色不同这里的White不会改变,所以无法依赖.
 "hi NonText ctermfg=blue cterm=None
 "vsplit分隔符
-"\ │┃━─
+"\ |│┃-─━
 "qt下│这个字符显示不对,不知道用了什么字体.
-set fillchars+=vert:\ 
-hi VertSplit ctermfg=Blue ctermbg=None cterm=NONE
 
+"白色透明方案,vim不允许NC窗口和当前窗口状态完全一样,所以会有^和=作为填充符.
+"hi StatusLine ctermbg=None cterm=None
+"hi StatusLineNC ctermbg=None cterm=None
+hi VertSplit ctermfg=Blue ctermbg=None cterm=NONE
+set fillchars+=vert:\ 
+let g:airline_theme='luna'
+
+"underline方案
 "hi StatusLine ctermfg=Green ctermbg=None cterm=underline
 "hi StatusLineNC ctermfg=Blue ctermbg=None cterm=underline
 "set fillchars+=stl:\ 
 "set fillchars+=stlnc:\ 
+
 "制表符方案比较好,能兼容tty
-hi StatusLine ctermfg=Green ctermbg=None cterm=None
-hi StatusLineNC ctermfg=Blue ctermbg=None cterm=None
-"hi StatusLine ctermbg=None cterm=None
-"hi StatusLineNC ctermbg=None cterm=None
+"hi StatusLine ctermfg=Green ctermbg=None cterm=None
+"hi StatusLineNC ctermfg=Blue ctermbg=None cterm=None
 "set fillchars+=stl:─
 "set fillchars+=stlnc:─
+"
+""airline方案,airline暂且的用处是可以配合syntastic使用,显示encode格式
+""airline下制表符显示不正确.
+"let g:airline_theme='th'
+"set fillchars+=stl:-
+"set fillchars+=stlnc:-
+"hi VertSplit ctermfg=None ctermbg=None cterm=NONE
+"set fillchars+=vert:\|
 
 "syntastic
 "下面的配置手动好像比较难处理,似乎和airline配合比较好用.
 "set statusline+=%#warningmsg#
 "set statusline+=%{SyntasticStatuslineFlag()}
 "set statusline+=%*
+
+nnoremap <F6> :UndotreeToggle<cr>
+nnoremap <F2> :Gstatus<cr>
+
+"自动关闭nerdtree的脚本.不过平时实际上不会用到nerdtree,除了有的时候需要statusline的时候,会用nerdtree来冲窗口数目.
+function! NERDTreeQuit()
+  redir => buffersoutput
+  silent buffers
+  redir END
+"                     1BufNo  2Mods.     3File           4LineNo
+  let pattern = '^\s*\(\d\+\)\(.....\) "\(.*\)"\s\+line \(\d\+\)$'
+  let windowfound = 0
+
+  for bline in split(buffersoutput, "\n")
+    let m = matchlist(bline, pattern)
+
+    if (len(m) > 0)
+      if (m[2] =~ '..a..')
+        let windowfound = 1
+      endif
+    endif
+  endfor
+
+  if (!windowfound)
+    quitall
+  endif
+endfunction
+autocmd WinEnter * call NERDTreeQuit()
