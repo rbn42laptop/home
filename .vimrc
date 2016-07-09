@@ -35,8 +35,8 @@ Plugin 'tpope/vim-fugitive'             "好像是git相关的
 
 Plugin 'peterhoeg/vim-qml'
 
-"Plugin 'vim-airline/vim-airline'
-"Plugin 'vim-airline/vim-airline-themes'
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
 
 "Plugin 'ivanov/vim-ipython'
 
@@ -335,7 +335,7 @@ nnoremap S :w<CR>
 let g:airline_powerline_fonts = 1
 "theme的颜色模式难以辨认,所以没法改动.
 "let g:airline_theme='th'
-let g:airline_theme='luna'
+let g:airline_theme='th'
 
 set t_Co=256
 
@@ -454,12 +454,20 @@ set splitbelow
 set fillchars+=vert:\ 
 hi VertSplit ctermfg=Blue ctermbg=None cterm=NONE
 
-hi StatusLine ctermfg=Green ctermbg=None cterm=underline
-hi StatusLineNC ctermfg=Blue ctermbg=None cterm=underline
-set fillchars+=stl:\ 
-set fillchars+=stlnc:\ 
+"hi StatusLine ctermfg=Green ctermbg=None cterm=underline
+"hi StatusLineNC ctermfg=Blue ctermbg=None cterm=underline
+"set fillchars+=stl:\ 
+"set fillchars+=stlnc:\ 
 "制表符方案比较好,能兼容tty
 hi StatusLine ctermfg=Green ctermbg=None cterm=None
 hi StatusLineNC ctermfg=Blue ctermbg=None cterm=None
-set fillchars+=stl:─
-set fillchars+=stlnc:─
+"hi StatusLine ctermbg=None cterm=None
+"hi StatusLineNC ctermbg=None cterm=None
+"set fillchars+=stl:─
+"set fillchars+=stlnc:─
+
+"syntastic
+"下面的配置手动好像比较难处理,似乎和airline配合比较好用.
+"set statusline+=%#warningmsg#
+"set statusline+=%{SyntasticStatuslineFlag()}
+"set statusline+=%*
