@@ -433,6 +433,8 @@ nnoremap <C-e> $
 nnoremap <C-a> ^
 inoremap <C-e> <End>
 inoremap <C-a> <Home>
+vnoremap <C-e> $
+vnoremap <C-a> ^
 
 "preview docstrings窗口的位置.
 "在顶部弹出会导致当前的窗口跳跃,所以很不好.
