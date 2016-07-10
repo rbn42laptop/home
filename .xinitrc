@@ -27,7 +27,7 @@ export QT_STYLE_OVERRIDE=qtcurve
 ~/bin/keys.sh
 
 #显示音量.
-#volnoti
+volnoti
 
 
 ########################
@@ -51,8 +51,8 @@ unclutter &
 #wifi 很耗时，所以放这里开启
 sudo /usr/bin/netctl start wifi &
 
-#docky还是算了,图标放多了会分散注意力的
-#docky
+#图标放多了会分散注意力的
+docky
 
 ########################
 udisksctl mount -b /dev/disk/by-label/dmzj 
