@@ -458,6 +458,10 @@ set splitbelow
 "vsplit分隔符
 "\ |│┃-─━
 "qt下│这个字符显示不对,不知道用了什么字体.
+"确切说,出问题的是qmltermwidget,不知道是哪里的字体搞错了,上游要发现这个问题估计要很晚了.
+"检查过,monaco字体库是有这些字符的,显示不正确应该完全是qmltermwidget的问题了.
+"对于特殊字符,很多字体都是提供的,但是qmlterm中检查发现有固定的缺位.
+"这说明实际上加载了同一个隐藏字体.可能是为了等宽要求而加载了这个字体.
 
 "白色透明方案,vim不允许NC窗口和当前窗口状态完全一样,所以会有^和=作为填充符.
 "hi StatusLine ctermbg=None cterm=None
@@ -504,7 +508,7 @@ endfunction
 if enable_airline
 else
     "autocmd FileType python call EnableStatusLine()
-    call EnableStatusLine()
+    "call EnableStatusLine()
 endif
 "underline方案
 "hi StatusLine ctermfg=Green ctermbg=None cterm=underline
