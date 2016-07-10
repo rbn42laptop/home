@@ -442,12 +442,21 @@ vnoremap <C-j> :MultipleCursorsFind <C-R>/<CR>
 "autocmd FileType html let b:ycm_largefile=1
 
 "从rofi抄来的按键约定,挺顺手的.其他<C-h><C-m>,terminal可以自行识别.
-nnoremap <C-e> $
-nnoremap <C-a> ^
-inoremap <C-e> <End>
-inoremap <C-a> <Home>
-vnoremap <C-e> $
-vnoremap <C-a> ^
+"nnoremap <C-e> $
+"nnoremap <C-a> ^
+"vnoremap <C-e> $
+"vnoremap <C-a> ^
+noremap <C-e> <End>
+noremap <C-a> <Home>
+noremap! <C-e> <End>
+noremap! <C-a> <Home>
+"nmap - Display normal mode maps
+"imap - Display insert mode maps
+"vmap - Display visual and select mode maps
+"smap - Display select mode maps
+"xmap - Display visual mode maps
+"cmap - Display command-line mode maps
+"omap - Display operator pending mode maps
 
 "preview docstrings窗口的位置.
 "在顶部弹出会导致当前的窗口跳跃,所以很不好.

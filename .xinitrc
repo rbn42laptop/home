@@ -52,7 +52,7 @@ unclutter &
 sudo /usr/bin/netctl start wifi &
 
 #图标放多了会分散注意力的
-docky
+#docky
 
 ########################
 udisksctl mount -b /dev/disk/by-label/dmzj 
