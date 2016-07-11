@@ -466,11 +466,6 @@ set splitbelow
 "hi NonText ctermfg=blue cterm=None
 "vsplit分隔符
 "\ |│┃-─━
-"qt下│这个字符显示不对,不知道用了什么字体.
-"确切说,出问题的是qmltermwidget,不知道是哪里的字体搞错了,上游要发现这个问题估计要很晚了.
-"检查过,monaco字体库是有这些字符的,显示不正确应该完全是qmltermwidget的问题了.
-"对于特殊字符,很多字体都是提供的,但是qmlterm中检查发现有固定的缺位.
-"这说明实际上加载了同一个隐藏字体.可能是为了等宽要求而加载了这个字体.
 
 "白色透明方案,vim不允许NC窗口和当前窗口状态完全一样,所以会有^和=作为填充符.
 "hi StatusLine ctermbg=None cterm=None
@@ -490,7 +485,7 @@ else
     hi clear Statusline
     "制表符方案比较好,能兼容tty
     hi VertSplit ctermfg=Blue ctermbg=None cterm=NONE
-    set fillchars+=vert:\ 
+    set fillchars+=vert:\|
     hi StatusLine ctermfg=Green ctermbg=None cterm=None
     hi StatusLineNC ctermfg=Blue ctermbg=None cterm=None
     set fillchars+=stl:─
@@ -569,3 +564,6 @@ noremap <C-T> :tabnew<cr>:NERDTreeToggle<CR>
 :hi TabLineFill ctermbg=None cterm=underline
 :hi TabLine ctermbg=None cterm=underline
 :hi TabLineSel ctermbg=None cterm=underline,bold
+
+"对taglist左侧tree标记有效.
+hi foldcolumn ctermbg=None

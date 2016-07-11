@@ -1,0 +1,23 @@
+
+"\ |│┃-─━
+"qt下│这个字符显示不对,不知道用了什么字体.
+"确切说,出问题的是qmltermwidget,不知道是哪里的字体搞错了,上游要发现这个问题估计要很晚了.
+"检查过,monaco字体库是有这些字符的,显示不正确应该完全是qmltermwidget的问题了.
+"对于特殊字符,很多字体都是提供的,但是qmlterm中检查发现有固定的缺位.
+"这说明实际上加载了同一个隐藏字体.可能是为了等宽要求而加载了这个字体.
+"但是,直接尝试使用qterminal之后,发现并没有这样的问题.
+"因此,这个问题对于aur的qterminal和qtermwidget并不存在,
+"但是对于qmltermwidget的test是存在的.
+"我们需要对aur和github的qtermwidget分别做test测试,才能知道问题出在哪里.
+"pacman存在qmltermwidget的0.1.2版本,test同样是有问题
+"测试直接cpp使用qtermwidget没有问题.
+"暂且测试编译是和widget一起进行的,所以没法测试不同源的widget,qterm用了cmake,而qmlterm用了qmake,需要转换
+
+不过,已经算是知道qterm是没有问题的了,而qterm最新的我也已经merge过了.
+那么下面,想要做的区分是,
+是否qmlterm同样作为cpp widget也不会有问题呢?
+
+尝试把test.cpp融入qmlterm要注意一点,qmlterm中把qtermwidget的编译停掉了.
+或许差别就是这么产生的?
+
+没办法,果然是没法编译的.
