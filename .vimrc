@@ -495,6 +495,7 @@ else
     hi StatusLineNC ctermfg=Blue ctermbg=None cterm=None
     set fillchars+=stl:─
     set fillchars+=stlnc:─
+
 endif 
 
 function! EnableStatusLine()
@@ -560,3 +561,11 @@ function! NERDTreeQuit()
 endfunction
 
 autocmd WinEnter * call NERDTreeQuit()
+
+"新建tab,打开nerdtree.还是打开ctrlp更好?
+noremap <C-T> :tabnew<cr>:NERDTreeToggle<CR>
+"tabbar 基本上和statusline的配置差不多
+"airline似乎不会干涉这部分.
+:hi TabLineFill ctermbg=None cterm=underline
+:hi TabLine ctermbg=None cterm=underline
+:hi TabLineSel ctermbg=None cterm=underline,bold
