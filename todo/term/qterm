@@ -21,3 +21,92 @@
 或许差别就是这么产生的?
 
 没办法,果然是没法编译的.
+
+qmlterm直接只用了TerminalDisplay.cpp作为QMLTermWidgt,但是qtermwidget是在这之上多包装了600行代码.
+设置默认字体似乎也是qtermwidget干的.
+
+默认字体成功改变.但是似乎还不是这里的原因.
+
+terminaldisplay setfont变动代码有两处.一处是if判断删掉了,不删掉会导致如法进入这部分代码,导致屏幕上无字显示.
+第二处是QWidget.setfont消除掉了,似乎因为terminaldisplay没有绑定父类对象,所以无法调用.
+确切说父类从qwidget变成了 QQuickItem,但是后者没有setfont
+
+大体来说qtermwidget.cpp所做的似乎时绑定ui事件到terminaldisplay
+
+字体绘制是通过QPainter做到得
+不过我直接用qpainter绘制,不设font的时候,没有感觉到问题.
+即使不设定font,似乎对qmltermwidget也无效.不过看来问题可能在于painter
+
+出问题的代码是
+void TerminalDisplay::drawLineCharString(    QPainter& painter, int x, int y, const QString& str, 
+一致消去后就不会绘制boxline了.
+
+line 760
+    if ( isLineCharString(text) )
+        drawLineCharString(painter,rect.x(),rect.y(),text,style);
+
+static inline bool isLineChar(quint16 c) { return ((c & 0xFF80) == 0x2500);}
+消除760行的判断,就可以解决问题了.
+不过为什么qtermwidget没有触发这个问题呢?
+对比看不出qtermwidget没有出现这个问题的原因.不知道为什么.不过反正问题解决了.
+
+2016-07-12 02:37:15 Tue NZST
+剩下的问题是,这个方法似乎本意是为了消除不同字体之间的符号差异?
+现在我们用的字体似乎不能提供准确的符号.似乎还有跳跃性的问题.
+
+已有的字体中,wyq能准确显示
+
+2016-07-12 02:57:34 Tue NZST
+  //  if (toDraw & Int32)
+ //       paint.drawPoint(cx, cy+1);
+ 情况似乎是,画点的时候,明明该是一个像素,但是变成了两个像素.
+ 理由当然搞不懂.
+ 看来是没法解决的,我们还是用字体画比较好.
+
+ 其实有问题的就是一个字符,或许改font更省事.
+ sudo pacman -S fontforge
+ 找到monacobsemi 非bold的字符2502  
+"qt \ |-││││─━━━━━━━━────────────
+不需要改动,只要删除它,应该就会读取后续组合的font了.
+
+主要问题是,qterm的字体排布非常不规矩,必须要求等宽.
+由于其按行排列字符,字符宽度的微小差异会积累下来.
+
+https://forum.qt.io/topic/27211/trying-to-collapse-per-character-qpainter-drawtext-qt-commands-into-a-single-string-drawtext-monospacing-format-is-not-being-preserved/8
+这里有提到这个问题,截止至今,没有办法处理.
+其实用mono字体的时候基本感觉不到问题.实际上那个drawpoint方法也能精确的画出直线,虽然有点怪异.
+但是尝试用mono字体画出直线的时候,就出问题了.
+此外.focus特殊字符的时候,会出现跳跃,原因应该是一样的,原本后续的字符依靠focus字符定位,但是focus的时候,就变成了依靠类似drawpoint的精确定位方式了,后者是等宽的,但是前者似乎并不是.
+因此,为了避开等宽问题,似乎只能靠drawpoint来画竖线了.
+其实,因为我们需要用到的只是2502一个字符,所以可以仅仅针对它修正?
+2016-07-12 04:28:58 Tue NZST
+所以解决了.
+
+结果这个办法还是不行,其计算等宽的结果,在wqy参与进来后就算错了,布局完全乱了.很奇怪之前没注意到这一点.大概是因为没有怎么尝试过中文吧.
+但是qterminal中布局完全无误.
+
+测试结果是等宽计算问题在qtermwidget中就存在了.并不是qmltermwidget没有即时更新的原因.
+也就是说虽然qterminal是调用了qtermwidget,但是在其中有对等宽的特殊处理办法.
+
+qterminal中存在一个继承子类termwidget.cpp,也就是说可能存在覆盖重写了.
+github上的qterminal编译存在lxqt依赖,不过幸而有aur版本,我们还是可以做编译测试的. 
+但是似乎qterminal使用qt4编译的.明明lxqt是qt5的.
+测试代码,从qtermwidget中获取,然后修剪的代码,缩到很小了.
+#include <QApplication>
+#include <QMainWindow>
+#include "qtermwidget.h"
+int main(int argc, char *argv[])
+{
+    QApplication app(argc, argv);
+    QMainWindow *mainWindow = new QMainWindow();
+    QTermWidget *console = new QTermWidget();
+    mainWindow->setCentralWidget(console);
+    QObject::connect(console, SIGNAL(finished()), mainWindow, SLOT(close()));
+    mainWindow->show();
+    return app.exec();
+}
+测试结果,qtermwidget中编译,位宽计算错误,在qterminal环境中编译就显示正常了.
+进一步的我们应该测试aur的qtermwidget
+结果是qt4版本的位宽计算正确.qt5的位宽计算依旧正确.
+最后,qmltermwidget也没有位宽问题.
+因此,这个错误应该是qtermwidget最近升级的时候导入的.我们需要回滚到qmltermwidget的版本.

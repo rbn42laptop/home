@@ -13,6 +13,7 @@ pkill conky
 pkill docky
 pkill xfce4-panel
 
+sleep 1
 udisksctl unmount -b /dev/disk/by-label/dmzj 
 udisksctl unmount -b /dev/disk/by-label/4T
 

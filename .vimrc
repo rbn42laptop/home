@@ -1,7 +1,7 @@
 set nocompatible              " be iMproved, required
 filetype off                  " required
 
-let enable_airline=0
+let enable_airline=1
 "无效,需要其他办法来按文件类型激活plugin
 "autocmd FileType python let enable_airline=1
 
@@ -346,11 +346,6 @@ nnoremap S :w<CR>
 
 "Wed 27 Apr 2016 15:51:45 NZST
 
-"airline 
-"set laststatus=2
-let g:airline_powerline_fonts = 1
-"theme的颜色模式难以辨认,所以没法改动.
-"let g:airline_theme='th'
 
 set t_Co=256
 
@@ -465,7 +460,7 @@ set splitbelow
 "根据terminal配色不同这里的White不会改变,所以无法依赖.
 "hi NonText ctermfg=blue cterm=None
 "vsplit分隔符
-"\ |│┃-─━
+"\ |-││││─━━━━━━━━────────────
 
 "白色透明方案,vim不允许NC窗口和当前窗口状态完全一样,所以会有^和=作为填充符.
 "hi StatusLine ctermbg=None cterm=None
@@ -475,17 +470,33 @@ set splitbelow
 autocmd FileType python set rulerformat=%25(%P\ %l,%c%V\ %{SyntasticStatuslineFlag()}\ %#warningmsg#%)
 
 if enable_airline
+
+    "airline 
+    "set laststatus=2
+    "开启powerline
+    let g:airline_powerline_fonts = 0
+    "theme的颜色模式难以辨认,所以没法改动.
+    let g:airline_theme='th'
+    let g:airline_left_sep=' ' "'>'
+    let g:airline_right_sep=' ' "'<'
+    "let g:airline_skip_empty_sections = 1
+    "
     ""airline方案,airline暂且的用处是可以配合syntastic使用,显示encode格式
     ""airline下制表符显示不正确.
-    let g:airline_theme='luna'
-    hi VertSplit ctermfg=Blue ctermbg=None cterm=NONE
-    set fillchars+=vert:\ 
+    "let g:airline_theme='luna'
+    hi VertSplit ctermbg=None cterm=NONE
+    set fillchars+=vert:\│
+    "#|
+    "┃
+    "│qterm下用不了,
+    hi StatusLine ctermfg=Cyan ctermbg=None cterm=underline
+    hi StatusLineNC ctermbg=None cterm=underline
 else
     hi StatuesLine None
     hi clear Statusline
     "制表符方案比较好,能兼容tty
     hi VertSplit ctermfg=Blue ctermbg=None cterm=NONE
-    set fillchars+=vert:\|
+    set fillchars+=vert:\│
     hi StatusLine ctermfg=Green ctermbg=None cterm=None
     hi StatusLineNC ctermfg=Blue ctermbg=None cterm=None
     set fillchars+=stl:─
@@ -563,7 +574,7 @@ noremap <C-T> :tabnew<cr>:NERDTreeToggle<CR>
 "airline似乎不会干涉这部分.
 :hi TabLineFill ctermbg=None cterm=underline
 :hi TabLine ctermbg=None cterm=underline
-:hi TabLineSel ctermbg=None cterm=underline,bold
+:hi TabLineSel ctermbg=None cterm=bold
 
 "对taglist左侧tree标记有效.
 hi foldcolumn ctermbg=None
