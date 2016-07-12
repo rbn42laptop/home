@@ -341,6 +341,7 @@ endfun
 " the numerous Cursor events cause great slowness 
 " (https://github.com/kristijanhusak/vim-multiple-cursors/issues/4)
 "multiple cursors相关
+function Multiple_cursors_before()                         
   let s:old_ycm_whitelist = g:ycm_filetype_whitelist   
   let g:ycm_filetype_whitelist = {}
 endfunction                      
