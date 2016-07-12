@@ -26,7 +26,10 @@ alias q='exit'
 alias v='vim'
 alias vi='vim'
 alias screenfetch='screenfetch -o "USER=rbn42;HOSTNAME=home;"'
-alias comment='bash ~/bin/git_commit_push.sh '
+alias commit="bash ~/bin/git_commit_push.sh"
+
+
+
 #alias screenfetch='screenfetch -o "USER=rbn42;HOSTNAME=home;" -A "Mac OS X"' # -D "Mac OS X" '
 #alias screenfetch='screenfetch -o "USER=rbn42;HOSTNAME=home;" -A "Windows"' # -D "Mac OS X" '
 
