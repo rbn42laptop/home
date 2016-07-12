@@ -15,7 +15,12 @@ call vundle#begin()
 " Useful ones
 Plugin 'gmarik/Vundle.vim'              "包管理
 Plugin 'scrooloose/nerdtree'            "F3 文件tree视图
+"平时实际上不会用到nerdtree,很多时候ctrlp更方便.
+"除了有的时候需要statusline的时候,会用nerdtree来冲窗口数目.
+"但是ctrlp似乎无法支持中文.
+
 Plugin 'Chiel92/vim-autoformat'         "F4 格式化
+"包括python c c++ js html css,github上有说明需要额外安装多少软件.
 Plugin 'taglist.vim'                    "F7 ctags插件
 Plugin 'ctrlpvim/ctrlp.vim'             " Ctrl+P 快速文件查找
 
@@ -38,7 +43,7 @@ Plugin 'rking/ag.vim'                   "好像是跨文件搜索用的  sudo ap
 Plugin 'marijnh/tern_for_vim'           "好像是javascript相关的refactor,ycm有集成它作为代码提示.
 Plugin 'scrooloose/nerdcommenter'       "代码注释,没怎么用过
 
-Plugin 'tpope/vim-fugitive'             "F9 好像是git相关的
+Plugin 'tpope/vim-fugitive'             "F9 git相关
 "Gedit Gsplit Gstatus,显示git status,并且提供快捷跳转.
 " Press - to add/reset a file's changes, or p to add/reset --patch. 
 " And guess what :Gcommit does!
@@ -51,7 +56,7 @@ Plugin 'tpope/vim-fugitive'             "F9 好像是git相关的
 " Glog查看提交记录,Ggrep 同git grep,我不认识.Gblame 同git blame,不认识.
 " Gmove Gremove,还是命令行使用比较安心.
 
-Plugin 'peterhoeg/vim-qml'
+Plugin 'peterhoeg/vim-qml' "qml高亮
 
 if enable_airline
     Plugin 'vim-airline/vim-airline'
@@ -79,8 +84,8 @@ Plugin 'mbbill/undotree'                "F6 不能和nerdtree共用,会打乱布
 "https://github.com/rstacruz/sparkup
 "Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}           
 
-"Plugin 'glsl.vim'
-"Plugin 'dcbaker/vim-arb_assembly'
+"Plugin 'glsl.vim' "glsl高亮
+"Plugin 'dcbaker/vim-arb_assembly' "arb高亮?
 
 "ycm有整合jedi
 "Plugin 'davidhalter/jedi-vim'
@@ -89,26 +94,16 @@ Plugin 'mbbill/undotree'                "F6 不能和nerdtree共用,会打乱布
 " plugin on GitHub repo
 "Plugin 'klen/python-mode'
 "Plugin 'python-rope/ropevim'
-"Plugin 'ctrlp.vim'
 "Plugin 'LaTeX-Box-Team/LaTeX-Box'
 "Plugin 'ChesleyTan/wordCount.vim'
 
 
 "Plugin 'JuliaLang/julia-vim'
 "Plugin 'mattn/emmet-vim'
-"#Plugin 'Valloric/YouCompleteMe'
-" plugin from http://vim-scripts.org/vim/scripts.html
 "Plugin 'L9'
 " Git plugin not hosted on GitHub
 "Plugin 'git://git.wincent.com/command-t.git'
 " git repos on your local machine (i.e. when working on your own plugin)
-"Plugin 'file:///home/gmarik/path/to/plugin'
-" The sparkup vim script is in a subdirectory of this repo called vim.
-" Pass the path to set the runtimepath properly.
-"#Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
-" Avoid a name conflict with L9
-"Plugin 'user/L9', {'name': 'newL9'}
-
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -161,21 +156,25 @@ autocmd FileType tex set nonu  spell spelllang=en_us
 au BufNewFile,BufRead *.frag,*.vert,*.fp,*.vp,*.glsl setf glsl 
 inoremap <Nul> <C-x><C-o>
 
-if has("vms")
-  set nobackup
-else
-  set backup
-endif
+"if has("vms")
+"  set nobackup
+"else
+"  set backup
+"endif
 
+"生成一次改动的backup,会有用处吗?
+"不过凭空多一个文件也很麻烦,ls可以规避掉,但是改其他人的git的时候又会多出一种需要ignore的文件了.
 set nobackup
 
 "#minibuf
-
+"不记得这是什么东西了.
   let g:miniBufExplMapWindowNavVim = 1
   let g:miniBufExplMapWindowNavArrows = 1
   let g:miniBufExplMapCTabSwitchBufs = 1
   let g:miniBufExplModSelTarget = 1 
+
 " NERD_tree config
+" nerdtree的配置还挺复杂的.
 let NERDTreeChDirMode=2
 let NERDTreeIgnore=['\.vim$', '\~$', '\.pyc$', '\.swp$']
 let NERDTreeSortOrder=['^__\.py$', '\/$', '*', '\.swp$',  '\~$']
@@ -227,56 +226,20 @@ let Tlist_Inc_Winwidth=0
 
 "latex
 map <F8> :Voom latex<CR>
-"
-"
-"
-"" IMPORTANT: win32 users will need to have 'shellslash' set so that latex
-"" can be called correctly.
-"set shellslash
-"
-"" IMPORTANT: grep will sometimes skip displaying the file name if you
-"" search in a singe file. This will confuse Latex-Suite. Set your grep
-"" program to always generate a file-name.
-"set grepprg=grep\ -nH\ $*
-"
-"
-"" OPTIONAL: Starting with Vim 7, the filetype of empty .tex files defaults to
-"" 'plaintex' instead of 'tex', which results in vim-latex not being loaded.
-"" The following changes the default filetype back to 'tex':
-"let g:tex_flavor='latex'
-"
-"let g:Tex_DefaultTargetFormat = 'pdf'
-"let g:Tex_CompileRule_dvi = 'latex --interaction=nonstopmode $*'
-"let g:Tex_CompileRule_pdf = 'ps2pdf $*.ps'
-"let g:Tex_CompileRule_ps = 'dvips -Ppdf -o $*.ps $*.dvi'
-"let g:Tex_FormatDependency_pdf = 'dvi,ps,pdf'
-"let g:Tex_ViewRule_pdf='xpdf' 
-""let g:Tex_ViewRule_pdf='evince' 
-"
+"这个插件似乎配置很复杂.不过我好像只需要高亮.
+
 ""W3m
-"
-"let g:w3m#external_browser = 'firefox'
-"let g:w3m#homepage = "http://www.google.com"
-"let g:w3m#hit_a_hint_key = 'f'
-"let g:w3m#lang = 'en_US'
+"似乎同样配置很复杂
+
 ""Rpdf
-":command! -complete=file -nargs=1 Rpdf :r !pdftotext -nopgbrk <q-args> -
-":command! -complete=file -nargs=1 Rpdf :r !pdftotext -nopgbrk <q-args> - |fmt -csw78
-""BEGIN_DEVASSISTANT_1
-""Setting value devassistant to 0 will use your existing .vimrc file
-""Setting value devassistant to 1 will use the vimrc defined by the devassistant feature
-"
-"let devassistant=0
-"if devassistant==1
-" :source 
-"endif
-"END_DEVASSISTANT_1
+"pdf转换阅读的相关命令,没什么用处.
 
-
+"vim和系统clipboard互动,需要编译支持,所以要安装gvim
 "set clipboard=unnamed
 "auto to clipboard under x11
 "apt install vim-gnome#vim with clipboard feature
 set clipboard=unnamedplus
+
 let g:multi_cursor_exit_from_insert_mode = 0
 
 "word count
@@ -286,34 +249,12 @@ let g:jedi#completions_enabled = 0
 let mapleader=","
 let g:EclimCompletionMethod = 'omnifunc'
 
-"
-"" Insert and command-line mode Caps Lock.
-"" Lock search keymap to be the same as insert mode.
-"set imsearch=-1
-"" Load the keymap that acts like capslock.
-"set keymap=insert-only_capslock
-"" Turn it off by default.
-"set iminsert=0
-"
-"
-"
-"" Execute 'lnoremap x X' and 'lnoremap X x' for each letter a-z.
-"for c in range(char2nr('A'), char2nr('Z'))
-"  execute 'lnoremap ' . nr2char(c+32) . ' ' . nr2char(c)
-"  execute 'lnoremap ' . nr2char(c) . ' ' . nr2char(c+32)
-"endfor
-"
-"" Kill the capslock when leaving insert mode.
-"autocmd InsertLeave * set iminsert=0
-"
+"vim有一些怎么在normal模式下应对caplock的方案,但是处理似乎相当麻烦,还不如一开始就不要开启caplock
+
 "insert date
-":nnoremap <F5> "=strftime("%c")<CR>P
-"#:inoremap <F5> <C-R>=strftime("%c")<CR>
 nnoremap <F5> "=strftime("%F %T %a %Z")<CR>P
 inoremap <F5> <C-R>=strftime("%F %T %a %Z")<CR>
 
-"
-"
 "Fri 08 Apr 2016 07:41:43 NZST
 autocmd BufEnter * if &filetype == "" | setlocal ft=text | endif
 autocmd FileType text set nonu  
@@ -323,32 +264,21 @@ map l <space>
 map j gj
 map k gk
 
-"使用caps Lock代替ESC，如果是输入大量的大写时，可以先输入小写，然后选中用U改变 
-"在终端中输入
-"xmodmap -e 'clear Lock' -e 'keycode 0x42 = Escape'
-
-
-
 set mouse=a
 "会连带影响鼠标点选进入visual模式
 map <ScrollWheelUp> kkk
 map <ScrollWheelDown> jjj
 
 "save and quit
+"映射s而不是ctrl s,因为后者是命令行分配作为kill指令的按键.
 map q :quit<CR>
 nnoremap s :w<CR>
 nnoremap S :w<CR>
-"nnoremap <C-S> :w<CR>
-"inoremap <C-S> <ESC>:w<CR>
-"map <C-S> 
-"nnoremap <C-S-S> :w<CR>
-"inoremap <C-S-S> <ESC>:w<CR>
 
 "Wed 27 Apr 2016 15:51:45 NZST
-
-
 set t_Co=256
 
+"没觉得powerline比airline有什么优势.
 ""pip install powerline-status --user
 "set rtp+=~/.local/lib/python2.7/site-packages/powerline/bindings/vim/
 "set laststatus=2
@@ -402,25 +332,24 @@ fun! CallInterpreter()
     endif
 endfun
 
-autocmd FileType python nnoremap <buffer> <F2> :call CallInterpreter()<CR>
+"还是关掉比较好,因为一般来说,输出结果是需要和代码做对比的,所以需要一个独立窗口来放置输出.这样这个键就很少用到,因此会忘掉它的功能,所以平时按到反而都是无意的误触.
+"autocmd FileType python nnoremap <buffer> <F2> :call CallInterpreter()<CR>
 "autocmd FileType bash nnoremap <buffer> <F2> :call CallInterpreter()<CR>
-"
+
 "ycm与multiple cursor的兼容问题
 " Experimentally integrate YouCompleteMe with vim-multiple-cursors, otherwise    
-" the numerous Cursor events cause great slowness                                
+" the numerous Cursor events cause great slowness 
 " (https://github.com/kristijanhusak/vim-multiple-cursors/issues/4)
-
 "multiple cursors相关
-function Multiple_cursors_before()                                               
-  let s:old_ycm_whitelist = g:ycm_filetype_whitelist                           
-  let g:ycm_filetype_whitelist = {}                                            
-endfunction                                                                      
-                                                                                 
-function Multiple_cursors_after()                                                
-  let g:ycm_filetype_whitelist = s:old_ycm_whitelist                           
-endfunction       
+  let s:old_ycm_whitelist = g:ycm_filetype_whitelist   
+  let g:ycm_filetype_whitelist = {}
+endfunction                      
+                                
+function Multiple_cursors_after()
+  let g:ycm_filetype_whitelist = s:old_ycm_whitelist
+endfunction      
 
-"默认的<C-n>一次之选择一个,不过感觉一般都是需要一次全部选中,
+"默认的<C-n>一次之选择一个,不过感觉一般都是需要一次全部选中
 "需要先按*截取关键词
 nnoremap <C-j> :MultipleCursorsFind <C-R>/<CR>
 vnoremap <C-j> :MultipleCursorsFind <C-R>/<CR>
@@ -470,7 +399,6 @@ set splitbelow
 "autocmd FileType python set rulerformat=%25(%P\ %l,%c%V\ %{SyntasticStatuslineFlag()}\ %#warningmsg#%)
 
 if enable_airline
-
     "airline 
     "set laststatus=2
     "开启powerline
@@ -541,8 +469,8 @@ endif
 nnoremap <F6> :UndotreeToggle<cr>
 nnoremap <F9> :Gstatus<cr>
 
-"自动关闭nerdtree的脚本.不过平时实际上不会用到nerdtree,除了有的时候需要statusline的时候,会用nerdtree来冲窗口数目.
-"似乎对nerd以外的buffer也有效.
+"自动关闭nerdtree的脚本.不过
+""似乎对nerd以外的buffer也有效.
 function! NERDTreeQuit()
   redir => buffersoutput
   silent buffers
