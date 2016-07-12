@@ -4,7 +4,10 @@ Item{
     property var shell:"fish" 
     property var font_size:12
 
-    property var font_family:"monacobsemi,Droid Sans Mono for Powerline,everson mono,WenQuanYi Micro Hei,setofont"   
+    //property var font_family:"monospace"   
+    //property var font_family:"ubuntu mono,WenQuanYi Micro Hei Mono"   
+    //property var font_family:"WenQuanYi Micro Hei Mono"   
+    property var font_family:"monacobsemi,Droid Sans Mono for Powerline,everson mono,WenQuanYi Micro Hei mono,setofont"   
     //setofont 日文,但是wqy已经支持了.  
     //everson可以显示等宽特殊字符.
     //powerline用不到.

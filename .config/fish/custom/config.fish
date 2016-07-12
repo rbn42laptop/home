@@ -52,6 +52,11 @@ set fish_color_operator 66F1FF
 #新命令复制的颜色
 set fish_color_normal FFFFFF
 
+#做不到直接赋值COLORFGBG,所以放这里了.
+if [ $MY_COLOR ]
+    set COLORFGBG $MY_COLOR
+end
+
 #.xprofile .xsessionrc裏面放了都沒效果,只好放這裏了
 #不過好像還是有間歇性的問題,恩,在切換rime輸入法的時候,會出現問題
 #setxkbmap -option "caps:swapescape"
