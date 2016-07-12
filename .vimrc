@@ -467,7 +467,7 @@ set splitbelow
 "hi StatusLineNC ctermbg=None cterm=None
 
 "#set ruler
-autocmd FileType python set rulerformat=%25(%P\ %l,%c%V\ %{SyntasticStatuslineFlag()}\ %#warningmsg#%)
+"autocmd FileType python set rulerformat=%25(%P\ %l,%c%V\ %{SyntasticStatuslineFlag()}\ %#warningmsg#%)
 
 if enable_airline
 
@@ -569,7 +569,9 @@ endfunction
 autocmd WinEnter * call NERDTreeQuit()
 
 "新建tab,打开nerdtree.还是打开ctrlp更好?
-noremap <C-T> :tabnew<cr>:NERDTreeToggle<CR>
+noremap <C-T> :tabnew<cr>
+":NERDTreeToggle<CR>
+
 "tabbar 基本上和statusline的配置差不多
 "airline似乎不会干涉这部分.
 :hi TabLineFill ctermbg=None cterm=underline

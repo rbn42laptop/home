@@ -3,21 +3,21 @@ import QtQuick 2.2
 Item{
     property var shell:"fish" 
     property var font_size:12
-    //property var font_family:"monacobsemi"   
-    //property var font_family:"monospace"   
-    //property var font_family:"ubuntu mono"   
+
     property var font_family:"monacobsemi,Droid Sans Mono for Powerline,everson mono,WenQuanYi Micro Hei,setofont"   
-    //"monacobsemi,WenQuanYi Micro Hei,setofont"  setofont 日文,但是wqy已经支持了.  
-    //"monacobsemi,everson mono,WenQuanYi Micro Hei,setofont"    everson可以显示等宽特殊字符.
-    //"monacobsemi,Droid Sans Mono for Powerline,everson mono,WenQuanYi Micro Hei,setofont"   //   powerline用不到.
-    // "Lucida Gr" 
+    //setofont 日文,但是wqy已经支持了.  
+    //everson可以显示等宽特殊字符.
+    //powerline用不到.
+    //"Lucida Gr" 
+
     property var color_scheme:"Transparent" //cool-retro-term
 
-    property var display_ratio:1.2
+    property var display_ratio:1.4
 
-    //property var title_font:'Lucida Gr,WenQuanYi Micro Hei'
+    //一般字体似乎和glow效果不配,反而comic类型的字体表现效果比较好.
     property var title_font:'setofont,WenQuanYi Micro Hei'
 
+    //这两个好像没在用了.
     property var focused_color:'#8ff'
     property var unfocused_color:'#eee'
 
