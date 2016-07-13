@@ -35,6 +35,8 @@ Item{
 
     property var shadow_spread:0.4
     property var title_shadow_spread:0.6
+    property var title_shadow_color_active:'white'
+    property var title_shadow_color_deactive:'white'
 
     property var maximized_state:'MAXIMIZED'
     property var background_color:'white' // 'transparent'
