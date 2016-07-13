@@ -4,10 +4,14 @@ source ~/bin/GLOBAL
 python ~/bin/add2rofi.py "$ROFI_HISTORY" 1 ./bin/file "$@"
 #nautilus 
 
+export QML2_IMPORT_PATH=~/git/QMLProcess/build:~/git/qmltermwidget/build
+
 if [ $# -eq 0 ]
   then
     ~/bin/term -e "ranger "
+    #~/tmp/qmlterm/build/noblur -c ~/config/term/qmlterm/shadow_font_black.ini -e "ranger"
   else
     ~/bin/term -e "ranger \"$@\""
+    #~/tmp/qmlterm/build/noblur -c ~/config/term/qmlterm/shadow_font_black.ini -e "ranger \"$@\""
 fi
 

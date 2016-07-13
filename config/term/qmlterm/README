@@ -1,0 +1,8 @@
+2016-07-14 09:39:16 Thu NZST
+要注意的一点是blur不宜大范围使用,效果并不好,审美疲劳什么的.
+而如果不加blur的话,那么shadow font是必须的
+所以blur应该要和shadow font混搭.
+
+shadow font适合全屏,配合背景,blur适合强调局部.
+
+所以,虽然我们可以给多个blur窗口设定active背景,但是blur窗口依旧不宜多用.
