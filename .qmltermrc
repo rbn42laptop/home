@@ -21,8 +21,8 @@ Item{
     property var title_font:'setofont,WenQuanYi Micro Hei'
 
     //这两个好像没在用了.
-    property var focused_color:'#8ff'
-    property var unfocused_color:'#eee'
+//    property var focused_color:'#8ff'
+ //   property var unfocused_color:'#eee'
 
     property var window_width:860
     property var window_height:440
@@ -30,7 +30,8 @@ Item{
     property var shadow_offset:1
     property var animation_duration:300
 
-    property var frame_border: 1 //0.3
+//    property var frame_border: 8 //0.3
+    property var enable_border: true //false//0.3
 
     property var shadow_spread:0.4
     property var title_shadow_spread:0.6
