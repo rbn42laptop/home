@@ -31,7 +31,7 @@ git add --all ~/.bash_profile
 #git add --all ~/.xbindkeysrc
 
 git add --all ~/.tilerc
-git add --all ~/.qmltermrc
+#git add --all ~/.qmltermrc
 #compiz0.9,内容是空的,主要是确认把配置转移到dconf
 #git add --all ~/.config/compiz-1/compizconfig/config
 #compiz0.8
