@@ -1,8 +1,23 @@
 #!/bin/bash
+#export INFINALITY_FT="ultimate5"
 
+########################################
+#DPI
+#对gedit,firefox有效.奇怪必须要是整数
+export GDK_SCALE=1
+#似乎只改字体
+export GDK_DPI_SCALE=1.0
+#dolphin有效,但是似乎字体无效.
+export QT_SCREEN_SCALE_FACTORS=1
+#这个就字体有效了.但是会导致qterm模糊化.
+#这参数或许改加入到dolphin启动之类的地方.
+export QT_SCALE_FACTOR=1.0
+
+###########################################
 #換到usb之後需要swap提升性能。
 #sudo swapon  /dev/disk/by-label/ssdswap 
 
+########################################3
 #qt5,dolphin需要这个来加载合适的icon主题
 export XDG_CURRENT_DESKTOP=GNOME
 
