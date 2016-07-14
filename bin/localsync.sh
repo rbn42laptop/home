@@ -1,15 +1,22 @@
 #!/bin/bash
-rsync -a $HOME/laosao               /media/$USER/dmzj/sync
-rsync -a $HOME/Pictures/compiz/raw  /media/$USER/dmzj/sync
-rsync -a $HOME/.mozilla /media/$USER/dmzj/sync
-rsync -a $HOME/.thunderbird /media/$USER/dmzj/sync
-rsync -a $HOME/pw /media/$USER/dmzj/sync
+export TARGET="/media/$USER/dmzj/sync"
+rsync -a $HOME/laosao               $TARGET
+rsync -a $HOME/Pictures/compiz/raw  $TARGET
+rsync -a $HOME/.mozilla             $TARGET
+rsync -a $HOME/.thunderbird         $TARGET
+rsync -a $HOME/pw                   $TARGET
+rsync -a $HOME/.ssh                 $TARGET
+
+rsync -a $HOME/.github_sync_aes_key $TARGET
+
 #加入删除选项是比较危险的,可能误删除源文件的时候连同目标文件一起删除了,随意最好两种备份都要做.
-rsync -a --delete-excluded $HOME/laosao                 /media/$USER/dmzj/sync_del
-rsync -a --delete-excluded $HOME/Pictures/compiz/raw    /media/$USER/dmzj/sync_del
-rsync -a --delete-excluded $HOME/.mozilla                 /media/$USER/dmzj/sync_del
-rsync -a --delete-excluded $HOME/.thunderbird           /media/$USER/dmzj/sync_del
-rsync -a --delete-excluded $HOME/pw /media/$USER/dmzj/sync_del
+export TARGET="/media/$USER/dmzj/sync_del"
+rsync -a --delete-excluded $HOME/laosao                     $TARGET
+rsync -a --delete-excluded $HOME/Pictures/compiz/raw        $TARGET
+rsync -a --delete-excluded $HOME/.mozilla                   $TARGET
+rsync -a --delete-excluded $HOME/.thunderbird               $TARGET
+rsync -a --delete-excluded $HOME/pw                         $TARGET
+rsync -a --delete-excluded $HOME/.ssh                       $TARGET
 
 #auto rsync arch linux wiki 
 #https://wiki.archlinux.org/index.php/Syncthing
