@@ -1,3 +1,3 @@
 #!/bin/bash
-~/bin/gitsync.sh
-~/bin/localsync.sh
+bash ~/bin/gitsync.sh
+bash ~/bin/localsync.sh
