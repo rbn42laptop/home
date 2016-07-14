@@ -4,9 +4,9 @@ rsync -a $HOME/laosao               $TARGET
 rsync -a $HOME/Pictures/compiz/raw  $TARGET
 rsync -a $HOME/.mozilla             $TARGET
 rsync -a $HOME/.thunderbird         $TARGET
-rsync -a $HOME/pw                   $TARGET
-rsync -a $HOME/.ssh                 $TARGET
 rsync -a $HOME/.aMule                 $TARGET
+rsync -a $HOME/.ssh                 $TARGET
+rsync -a $HOME/pw                   $TARGET
 
 rsync -a $HOME/.github_sync_aes_key $TARGET
 
@@ -16,9 +16,9 @@ rsync -a --delete-excluded $HOME/laosao                     $TARGET
 rsync -a --delete-excluded $HOME/Pictures/compiz/raw        $TARGET
 rsync -a --delete-excluded $HOME/.mozilla                   $TARGET
 rsync -a --delete-excluded $HOME/.thunderbird               $TARGET
-rsync -a --delete-excluded $HOME/pw                         $TARGET
-rsync -a --delete-excluded $HOME/.ssh                       $TARGET
 rsync -a --delete-excluded $HOME/.aMule                       $TARGET
+rsync -a --delete-excluded $HOME/.ssh                       $TARGET
+rsync -a --delete-excluded $HOME/pw                         $TARGET
 
 #auto rsync arch linux wiki 
 #https://wiki.archlinux.org/index.php/Syncthing
