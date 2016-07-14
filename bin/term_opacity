@@ -9,4 +9,4 @@ export QML2_IMPORT_PATH=~/git/QMLProcess/build:~/git/qmltermwidget/build
 #区分开wm_class,方便compiz筛选.
 
 cp -n ~/git/qmlterm/build/qmlterm  ~/git/qmlterm/build/noblur
-#~/git/qmlterm/build/noblur -c ~/config/term/qmlterm/shadow_font.ini "$@"
+~/git/qmlterm/build/noblur -c ~/config/term/qmlterm/shadow_font.ini "$@"
