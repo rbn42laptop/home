@@ -22,7 +22,7 @@ git clone https://github.com/rbn42/mspider.git
 #git clone https://github.com/rbn42/ranger.git
 
 cd ~/git/qmlterm
-git checkout frameless-qt
+git checkout development
 
 cd ~/git/kd_tree_tile
 git checkout development
