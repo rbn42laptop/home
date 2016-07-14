@@ -111,6 +111,8 @@ git add --all ~/.theanorc
 #下载的paper之类的
 git add --all ~/Documents
 #git add --all ~/apps/
+#杂物
+git add --all ~/extra
 
 
 #git add --all ~/.fonts/*.sh
