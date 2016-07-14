@@ -515,3 +515,6 @@ hi TabLineSel ctermbg=None cterm=bold
 
 "对taglist左侧tree标记有效.
 hi foldcolumn ctermbg=None
+
+"noremap <C-PageUp> gt
+"noremap <C-PageDown> gt
