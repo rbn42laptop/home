@@ -31,7 +31,7 @@ alias commit="bash ~/bin/git_commit_push.sh"
 alias bash="python ~/bin/bash_filter.py"
 
 #alias screenfetch='screenfetch -o "USER=rbn42;HOSTNAME=home;" -A "Mac OS X"' # -D "Mac OS X" '
-#alias screenfetch='screenfetch -o "USER=rbn42;HOSTNAME=home;" -A "Windows"' # -D "Mac OS X" '
+alias screenfetch='screenfetch -o "USER=rbn42;HOSTNAME=home;" -A "Windows"' # -D "Mac OS X" '
 
 #set EDITOR vim
 
@@ -58,6 +58,4 @@ if [ $MY_COLOR ]
 end
 
 #.xprofile .xsessionrc裏面放了都沒效果,只好放這裏了
-#不過好像還是有間歇性的問題,恩,在切換rime輸入法的時候,會出現問題
-#setxkbmap -option "caps:swapescape"
-~/bin/keys.sh
+bash ~/bin/keys.sh
