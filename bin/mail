@@ -10,5 +10,5 @@
 
 ###################################
 export GTK2_RC_FILES=~/.gtkrc-2.0.mine:/usr/share/themes/Radiance-Flat-Teal/gtk-2.0/gtkrc:
-#thunderbird
-~/bin/term_blur -e mutt --size=800x400
+thunderbird
+#~/bin/term_blur -e mutt --size=800x400
