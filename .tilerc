@@ -22,7 +22,10 @@ LockFile = "/tmp/kd_tree_tile_lock"
 EXCLUDE_APPLICATIONS = ['<unknown>', 'x-nautilus-desktop', 'unity-launcher',
                         'unity-panel', 'Hud', 'unity-dash', 'Desktop',
                         'Docky', 'conky', 'Conky'
-                        'screenkey', 'XdndCollectionWindowImp']
+                        'screenkey', 'XdndCollectionWindowImp',
+                        "Unigine Heaven Benchmark 4.0 Basic (OpenGL)",
+                        "Unigine Valley Benchmark 1.0 Basic (OpenGL)",
+                        ]
 # An alternative method to exclude applications.
 EXCLUDE_WM_CLASS = [ 'conky', 'Conky','tint2','xfce4-panel',
         'projectM-pulseaudio',
