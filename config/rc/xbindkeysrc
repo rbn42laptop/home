@@ -17,7 +17,10 @@
   Mod4 + 1
 "bash ~/bin/web"
   Mod4 + 2
-#"echo 1"
+"pkill conky;conky -c ~/config/rc/conky_panel"
+  Mod4 + 3
+"pkill conky"
+  Mod4 + 4
 
 #分散开rofi的两个触发,所以如果一个不可用了,至少还有一个备用.
 #"bash ~/bin/rofi.sh"
