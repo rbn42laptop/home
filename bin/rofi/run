@@ -10,7 +10,7 @@ touch $ROFI_LOCK
 python3 ~/bin/reset_rofi_history.py "$ROFI_HISTORY"
 
 #rofi 1.01
-rofi -show run \
+srofi -show run \
     -font "SetoFont,WenQuanYi Micro Hei 15" \
     -separator-style "none" \
     -hide-scrollbar \
