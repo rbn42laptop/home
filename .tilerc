@@ -29,7 +29,8 @@ EXCLUDE_APPLICATIONS = ['<unknown>', 'x-nautilus-desktop', 'unity-launcher',
 # An alternative method to exclude applications.
 EXCLUDE_WM_CLASS = [ 'conky', 'Conky','tint2','xfce4-panel',
         'projectM-pulseaudio',
-        #,'wesnoth-1.12','vlc',
+        'wesnoth-1.12','vlc',
+        'wesnoth',
         'mpv',]
 
 UNRESIZABLE_APPLICATIONS = ['Screenkey']
