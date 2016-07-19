@@ -24,6 +24,7 @@ mpv \
     --save-position-on-quit \
     $MPV_ROTATION \
     "$FILE_PATH" \
+#    &
 
     #--save-position-on-quit \  这个选项据说在 SIGTERM的情况下是有效的.
     #--write-filename-in-watch-later-config  \

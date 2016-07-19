@@ -25,11 +25,13 @@ alias e='exit'
 alias q='exit'
 alias v='vim'
 alias vi='vim'
-alias screenfetch='screenfetch -o "USER=rbn42;HOSTNAME=home;"'
 alias commit="bash ~/bin/git_commit_push.sh"
 
 alias bash="python ~/bin/bash_filter.py"
 
+alias ipython="bash ~/bin/ipython"
+
+alias screenfetch='screenfetch -o "USER=rbn42;HOSTNAME=home;"'
 #alias screenfetch='screenfetch -o "USER=rbn42;HOSTNAME=home;" -A "Mac OS X"' # -D "Mac OS X" '
 #alias screenfetch='screenfetch -o "USER=rbn42;HOSTNAME=home;" -A "Windows"' # -D "Mac OS X" '
 
