@@ -1,0 +1,7 @@
+#!/bin/bash
+export GTK_THEME=Radiance-Flat-Teal
+export GTK_THEME=Arc
+#两种主题都无法区分tab focus的颜色,radiance会打乱布局,所以只能用arc
+#export GTK2_RC_FILES=~/.gtkrc-2.0.mine:/usr/share/themes/Radiance-Flat-Teal/gtk-2.0/gtkrc:
+transmission-gtk
+#thunderbird
