@@ -8,7 +8,7 @@ source ~/.config/fish/custom/fish_title.fish
 set LS_ARGUMENTS ' '
 
 #覆盖一些危险的命令。
-alias rm='echo this is trash-cli;trash'
+#alias rm='echo this is trash-cli;trash'
 alias rm='trash'
 #这两条命令的确弄丢过数据,但是很多时候似乎的确会依赖它们清理掉无用的文件.
 #不过其实除了大文件以外,多一份备份关系也不大,可以事务处理完毕后再清理的.
@@ -21,16 +21,13 @@ alias ll='ls -aF '
 alias lll='ls -alF'
 
 
-alias e='exit'
+#alias e='exit'
 alias q='exit'
-alias v='vim'
-alias vi='vim'
+#alias v='vim'
+#alias vi='vim'
 alias commit="bash ~/bin/git_commit_push.sh"
-
 alias bash="python ~/bin/bash_filter.py"
-
-alias ipython="bash ~/bin/ipython"
-
+alias ipython="bash ~/bin/ipython.sh"
 alias screenfetch='screenfetch -o "USER=rbn42;HOSTNAME=home;"'
 #alias screenfetch='screenfetch -o "USER=rbn42;HOSTNAME=home;" -A "Mac OS X"' # -D "Mac OS X" '
 #alias screenfetch='screenfetch -o "USER=rbn42;HOSTNAME=home;" -A "Windows"' # -D "Mac OS X" '
