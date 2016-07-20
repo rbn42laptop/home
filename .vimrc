@@ -184,7 +184,8 @@ let NERDTreeShowBookmarks=1
 let NERDTreeQuitOnOpen=1
 "用了平铺还是不要开着占地方
 "let NERDTreeQuitOnOpen=0
-map <F3> :NERDTreeToggle<CR>
+map <F3> :UndotreeHide<cr>:NERDTreeToggle<CR>
+
 
 noremap <F4> :Autoformat<CR><CR>
 "暂时关掉，改其他人的项目的时候，开着不方便
@@ -474,7 +475,7 @@ endif
 "hi VertSplit ctermfg=None ctermbg=None cterm=NONE
 "set fillchars+=vert:\|
 
-nnoremap <F6> :UndotreeToggle<cr>
+nnoremap <F6> :NERDTreeClose<CR>:UndotreeToggle<cr>
 nnoremap <F9> :Gstatus<cr>
 
 "自动关闭nerdtree的脚本.不过
