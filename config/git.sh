@@ -38,6 +38,8 @@ cd ~/git/python-mpd2/
 git checkout development
 cd ~/git/ncmpy
 git checkout development
+cd ~/git/mpd-script
+git submodule update --init
 
 cd ~/git/mspider
 git checkout development
