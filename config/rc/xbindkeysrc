@@ -17,7 +17,7 @@
   Mod4 + 1
 "bash ~/bin/web"
   Mod4 + 2
-"pkill conky;conky -c ~/config/rc/conky_panel"
+"pkill conky;bash ~/bin/daemons/conky.sh"
   Mod4 + 3
 "pkill conky"
   Mod4 + 4
@@ -64,7 +64,8 @@
 
 ##############################################
 #tile
-"python ~/git/kd_tree_tile/main.py layout next"
+#"python ~/git/kd_tree_tile/main.py layout next"
+"python ~/git/kd_tree_tile/main.py layout regularize"
   Mod4 + space
 #"python ~/git/kd_tree_tile/main.py layout prev"
 #  Mod4 + shift + space

@@ -526,3 +526,6 @@ hi foldcolumn ctermbg=None
 
 "noremap <C-PageUp> gt
 "noremap <C-PageDown> gt
+
+"查找选中的部分
+vnoremap / y/<C-R>"<CR>
