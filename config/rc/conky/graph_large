@@ -42,16 +42,16 @@ use_xft=true,
 conky.text = [[\
 ${color #002222}\
 ${voffset    -6}\
-${cpugraph                     60,200  FFFFFF AF000F -t }\
-${memgraph                     60,200  FFFFFF AF000F -t }\
+${cpugraph                     60,200  444444 4F000F -t }\
+${memgraph                     60,200  444444 4F000F -t }\
 
 ${voffset   -15}\
-${downspeedgraph wlp0s20u9     60,200  FFFFFF 0FAFAF -t }\
-${upspeedgraph wlp0s20u9       60,200  FFFFFF AFAF0F -t }\
+${downspeedgraph wlp0s20u9     60,200  444444 0F4F4F -t }\
+${upspeedgraph wlp0s20u9       60,200  444444 4F4F0F -t }\
 
 ${voffset   -15}\
-${diskiograph_read             60,200  FFFFFF 0FAFAF -t }\
-${diskiograph_write            60,200  FFFFFF AFAF0F -t }\
+${diskiograph_read             60,200  444444 0F4F4F -t }\
+${diskiograph_write            60,200  444444 4F4F0F -t }\
 
 ${voffset -61} \
 ]]
