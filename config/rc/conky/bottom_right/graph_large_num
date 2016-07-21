@@ -1,0 +1,75 @@
+conky.config = {
+-------------------------------------
+--  Generic Settings
+-------------------------------------
+double_buffer=true,
+draw_borders=false,
+draw_shades=true,
+default_shade_color="000000",
+default_outline_color="000000",
+draw_outline=true,
+-------------------------------------
+--  Window Specifications
+-------------------------------------
+alignment="bottom_right",
+gap_x=40,
+gap_y=57,
+own_window=true,
+own_window_type="normal",
+own_window_hints="undecorated,below,sticky,skip_taskbar,skip_pager",
+own_window_transparent=true,
+own_window_argb_visual=true,
+-------------------------------------
+--  Text Settings
+-------------------------------------
+use_xft=true,
+xftalpha=1,
+font="monospace:size=15",
+text_buffer_size=256,
+
+short_units=true,
+short_units=true,
+pad_percents=2,
+top_name_width=7,
+
+-------------------------------------
+--  Color Scheme
+-------------------------------------
+template9=""
+}
+
+---------------------------------------------------
+---------------------------------------------------
+
+conky.text = [[\
+${alignr 207}\
+${color #ffffff}\
+${cpu}%\
+
+${voffset  -20  } \
+${alignr 7}\
+${color #ffffff}\
+${mem} / ${memmax}\
+
+${voffset 39} \
+${alignr 207}\
+${color #ffffff}\
+${downspeed wlp0s20u9}\
+
+${voffset  -20  } \
+${alignr 7}\
+${color #ffffff}\
+${upspeed wlp0s20u9}\
+
+${voffset 39} \
+${alignr 207}\
+${color #ffffff}\
+${diskio_read}\
+
+${voffset  -20  } \
+${alignr 7}\
+${color #ffffff}\
+${diskio_write}\
+
+                                                                                               
+]]

@@ -4,7 +4,8 @@
 #conky -c ~/config/rc/conky
 pkill conky
 #conky -c ~/config/rc/conky/conky_panel &
-conky -c ~/config/rc/conky/graph_large &
+
+conky -c ~/config/rc/conky/top_right/graph_large_top &
 sleep 1
-conky -c ~/config/rc/conky/graph_large_num &
+conky -c ~/config/rc/conky/top_right/graph_large_top_num &
 
