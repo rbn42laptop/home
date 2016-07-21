@@ -3,7 +3,7 @@ conky.config = {
 --  Generic Settings
 -------------------------------------
 
-update_interval=1,
+update_interval=2,
 imlib_cache_size=10,
 
 --background=false,
