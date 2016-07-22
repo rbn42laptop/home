@@ -1,9 +1,12 @@
+#c家族
+sudo pacman -S clang
+
 export ROOT=~/del/ycm_build
 mkdir $ROOT -p
 cd $ROOT
 
 #config
-cmake -G "Unix Makefiles" . ~/.vim/bundle/YouCompleteMe/third_party/ycmd/cpp
+cmake -G "Unix Makefiles" . ~/.vim/bundle/YouCompleteMe/third_party/ycmd/cpp -DUSE_SYSTEM_LIBCLANG=ON
 #compile
 cmake --build . --target ycm_core #--config Release
 #javascript
@@ -14,3 +17,4 @@ npm install --production
 #js相关的配置参看tern-config
 
 #ycm可以整合eclim
+
