@@ -1,6 +1,6 @@
 #!/bin/bash
 mpd
-mpc volume 20
+mpc volume 20 #mpv设定了40,mpd为20的时候,mpv的音量还是偏低,
 mpc repeat on
 mpc random on
 mpc single off

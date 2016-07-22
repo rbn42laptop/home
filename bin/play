@@ -13,6 +13,8 @@ else
     export MPV_ROTATION="--video-rotate=0"
 fi
 
+#音量:大体来说mpv 60和mpd 20的效果接近.
+
 #################################mpv
 pkill mpv
 mpv \
@@ -20,7 +22,7 @@ mpv \
     --no-border \
     --slang=chi,chn,zh,eng,en \
     --alang=jpn,jp,eng,en \
-    --volume=40 \
+    --volume=60 \
     --save-position-on-quit \
     $MPV_ROTATION \
     "$FILE_PATH" \
