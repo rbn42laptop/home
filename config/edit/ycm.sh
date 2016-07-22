@@ -10,3 +10,6 @@ cmake --build . --target ycm_core #--config Release
 cd ~/.vim/bundle/YouCompleteMe/third_party/ycmd/third_party/tern_runtime
 npm install --production
 #js可用命令 RefactorRename 不可用
+#js相关的配置参看tern-config
+
+#ycm可以整合eclim
