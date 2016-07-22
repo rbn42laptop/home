@@ -6,6 +6,7 @@ autocmd BufWritePre *.py :Autoformat
 "python以外的代码很多情况下都是别人写的,所以不适合开启.
 "c家族需要clang
 "autocmd BufWritePre *.cpp :Autoformat
+"autocmd BufWritePre *.cxx :Autoformat
 "autocmd BufWritePre *.c :Autoformat
 "yaourt -S js-beautify #包含css和html
 "autocmd BufWritePre *.js :Autoformat
