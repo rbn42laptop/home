@@ -9,3 +9,12 @@ conky -c ~/config/rc/conky/top_right/graph_large_top &
 sleep 1
 conky -c ~/config/rc/conky/top_right/graph_large_top_num &
 
+
+#conky -c ~/config/rc/conky/bottom_right/graph_large &
+#sleep 1
+#conky -c ~/config/rc/conky/bottom_right/graph_large_num &
+
+#conky -c ~/config/rc/conky/dock/graph_large &
+#sleep 1
+#conky -c ~/config/rc/conky/dock/graph_large_num &
+
