@@ -4,8 +4,6 @@
 nnoremap <F5> "=strftime("%F %T %a %Z")<CR>P
 inoremap <F5> <C-R>=strftime("%F %T %a %Z")<CR>
 
-
-
 map h <BS>
 map l <space>
 map j gj
@@ -15,12 +13,6 @@ set mouse=a
 "会连带影响鼠标点选进入visual模式
 map <ScrollWheelUp> kkk
 map <ScrollWheelDown> jjj
-
-"save and quit
-"映射s而不是ctrl s,因为后者是命令行分配作为kill指令的按键.
-map q :quit<CR>
-nnoremap s :w<CR>
-nnoremap S :w<CR>
 
 "Thu 26 May 2016 05:05:53 AM NZST
 "vim fold

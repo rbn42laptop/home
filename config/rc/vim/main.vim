@@ -47,6 +47,7 @@ endif
 
 Plugin 'mbbill/undotree'                "F6 
 
+"直接用的时候调用的是python2,不知如何改到python3
 "Plugin 'ivanov/vim-ipython'
 
 "Plugin 'tpope/vim-pathogen'            "另一个包管理
