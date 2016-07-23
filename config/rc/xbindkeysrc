@@ -39,7 +39,7 @@
 #  control + space
 
 #截屏
-"cd ~/show;scrot"
+"mkdir ~/show;cd ~/show;scrot"
   Print
 
 #刷壁纸

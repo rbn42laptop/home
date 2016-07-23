@@ -1,3 +1,5 @@
+#!/usr/bin/python
+# -*- coding: UTF-8 -*-
 # This file is NOT licensed under the GPLv3, which is the license for the rest
 # of YouCompleteMe.
 #
@@ -89,6 +91,8 @@ flags = [
     './tests/gmock',
     '-isystem',
     './tests/gmock/include',
+    '-I',
+    '/usr/include/qt',
 ]
 # arch下的qt5
 import glob
