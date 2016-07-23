@@ -1,12 +1,14 @@
 
 
+"纯粹的ctags.由于ycm有goto功能了,所以ctags可能用不到了,暂且关了试试.
 "CTAGS
-set tags=.tags,~/.vim/tags
-autocmd FileType python silent! !ctags -R -f .tags *.py 
-autocmd FileType c silent! !ctags -R -f .tags *.c  
-autocmd FileType h silent! !ctags -R -f .tags *.h  
-autocmd FileType cpp silent! !ctags -R -f .tags *.cpp  
+"set tags=.tags,~/.vim/tags
+"autocmd FileType python silent! !ctags -R -f .tags *.py 
+"autocmd FileType c silent! !ctags -R -f .tags *.c  
+"autocmd FileType h silent! !ctags -R -f .tags *.h  
+"autocmd FileType cpp silent! !ctags -R -f .tags *.cpp  
 "auto run ctags"
+
 "au BufWritePost *.c,*.cpp,*.h,*.py silent! !ctags *.py *.c *.cpp *.h *.java -R &
 "ctags -R -o ~/.vim/tags  /usr/include /usr/local/include 
 " TagList Plugin Configuration

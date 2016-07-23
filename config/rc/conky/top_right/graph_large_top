@@ -5,6 +5,7 @@ conky.config = {
 
 --总计200像素,200周期,1秒间隔对应3分钟.60秒间隔对应3小时.10秒对应半小时
 --update_interval=10,
+update_interval=1,
 imlib_cache_size=10,
 
 --background=false,

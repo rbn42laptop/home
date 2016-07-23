@@ -3,6 +3,7 @@ conky.config = {
 --  Generic Settings
 -------------------------------------
 --update_interval=10,
+update_interval=1,
 double_buffer=true,
 draw_borders=false,
 draw_shades=true,
