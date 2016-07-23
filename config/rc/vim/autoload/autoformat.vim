@@ -1,3 +1,4 @@
+"包括python c c++ js html css,github上有说明需要额外安装多少软件.
 noremap <F4> :Autoformat<CR><CR>
 
 "下面用autocmd bufwritepre的办法,不过由于我们主要通过s保存,所以可以把autoformat放在键映射那里.不过如此的话,我不确定该如何区分文件,autocmd filetype是否有效.

@@ -1,5 +1,3 @@
-
-
 "纯粹的ctags.由于ycm有goto功能了,所以ctags可能用不到了,暂且关了试试.
 "CTAGS
 "set tags=.tags,~/.vim/tags
