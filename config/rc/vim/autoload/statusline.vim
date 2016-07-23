@@ -1,4 +1,5 @@
-
+"这里包括airline statusline ruler
+"现在用的主要是airline,statusline的配置没有用到.
 
 "Wed 27 Apr 2016 15:51:45 NZST
 set t_Co=256
