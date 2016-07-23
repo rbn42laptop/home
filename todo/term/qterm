@@ -169,3 +169,11 @@ update 2,2导致了这个问题,update 2,1可以同时修正blink和背景,希�
 关于输入法,除了qtermwidget以外,qml的输入框都可以在正确位置给出输入框提示.
 qtermwidget大概是没有实现对应的一些方法,
 单纯的是接口问题,因为毕竟qtermwidget已经是有光标位置了.
+
+2016-07-23 09:58:45 Sat NZST
+据说qterminal可以支持w3m image那么qmltermwidget应该也可以.
+网上流传说是可以的,但是我测试不行.
+arch下的测试方法是xterm w3m google搜索图片,会显示图片.
+
+2016-07-23 10:24:06 Sat NZST
+不过,检查下qterm的源码可以知道vt后端似乎是沿袭自konsole的,因此除非独立实现,否则qterminal可以显示图片的话,konsole也该可以的.

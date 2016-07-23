@@ -28,10 +28,8 @@ alias q='exit'
 alias commit="bash ~/bin/git_commit_push.sh"
 alias bash="python ~/bin/bash_filter.py"
 alias ipython="bash ~/bin/ipython.sh"
-alias screenfetch='screenfetch -o "USER=rbn42;HOSTNAME=home;"'
-#alias screenfetch='screenfetch -o "USER=rbn42;HOSTNAME=home;" -A "Mac OS X"' # -D "Mac OS X" '
-#alias screenfetch='screenfetch -o "USER=rbn42;HOSTNAME=home;" -A "Windows"' # -D "Mac OS X" '
-
+#alias screenfetch="bash ~/bin/shot/screenfetch.sh"
+#alias neofetch="bash ~/bin/shot/neofetch.sh"
 #set EDITOR vim
 
 #set PATH /usr/local/cuda-7.5/bin $PATH

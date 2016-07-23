@@ -9,3 +9,8 @@ setxkbmap -option "caps:swapescape"
 
 #不過好像還是有間歇性的問題,恩,在切換rime輸入法的時候,會出現問題
 #setxkbmap -option "caps:swapescape"
+
+
+#mouse key
+#shift numlock激活,用numpad控制
+setxkbmap -option keypad:pointerkeys

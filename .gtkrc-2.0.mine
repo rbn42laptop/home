@@ -15,3 +15,5 @@ style "panel"
 widget_class "*Panel*"      style "panel"
 widget "*Panel*"            style "panel"
 class "*Panel*"             style "panel"
+
+#gtk-modules = "canberra-gtk-module:topmenu-gtk-module"

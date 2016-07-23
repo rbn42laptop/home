@@ -11,6 +11,8 @@ git add --all .gitconfig
 #####################
 #editor
 git add --all ~/.vimrc
+git add --all ~/.ycm_extra_conf.py
+git add --all ~/.tern-config
 #git add --all ~/.nanorc
 
 #####################

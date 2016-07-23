@@ -1,3 +1,4 @@
 #!/bin/bash
-export QML2_IMPORT_PATH=~/git/QMLProcess/build:~/git/qmltermwidget/build
+#export QML2_IMPORT_PATH=~/git/QMLProcess/build:~/git/qmltermwidget/build
 ~/git/qmlterm/build/qmlterm  -c ~/config/term/qmlterm/qmltermrc_blur_white.ini  "$@"
+#qmlterm  -c ~/config/term/qmlterm/qmltermrc_blur_white.ini  "$@"
