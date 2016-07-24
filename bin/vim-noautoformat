@@ -2,3 +2,5 @@
 #关掉自动format,改其他人的项目的时候不便用autoformat
 vim "$@"  \
     "+nnoremap s :noautocmd w<CR>"
+
+#现在在vim中加入了关闭autoformat的机制,所以这个或许用不到了.

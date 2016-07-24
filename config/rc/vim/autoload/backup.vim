@@ -19,6 +19,7 @@ fun! InitBex()
     let myvar = strftime("%y%m%d_%H%M%S")
     let myvar = "set backupext=_".myvar
     execute myvar
-    echo myvar
+    "echo myvar
 endfun
-inoremap <Esc> <Esc>:call InitBex()<CR>
+inoremap <silent> <Esc> <Esc>:call InitBex()<CR>
+silent call InitBex()
