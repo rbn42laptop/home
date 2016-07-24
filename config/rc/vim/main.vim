@@ -6,7 +6,9 @@ let enable_airline=1
 "autocmd FileType python let enable_airline=1
 
 "插件
-source ~/config/rc/vim/vundle.vim
+source ~/config/rc/vim/plugins.vim
+
+source ~/config/rc/vim/basic.vim
 
 "已知仅有motion用到了这个键
 let mapleader=","
@@ -17,5 +19,10 @@ set splitbelow
 
 "自动加载
 for f in split(glob('~/config/rc/vim/autoload/*.vim'), '\n')
+    exe 'source' f
+endfor
+
+"按照文件类型的特殊设定,需要后置.
+for f in split(glob('~/config/rc/vim/filetype/*.vim'), '\n')
     exe 'source' f
 endfor

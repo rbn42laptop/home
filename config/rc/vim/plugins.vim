@@ -31,7 +31,8 @@ if enable_airline
 endif 
 Plugin 'mbbill/undotree'                "F6 
 "orgmode
-Plugin 'vim-orgmode'
+Plugin 'jceb/vim-orgmode'
+"Plugin 'vim-orgmode'
 Plugin 'speeddating.vim'
 Plugin 'utl.vim'
 Plugin 'Tagbar'

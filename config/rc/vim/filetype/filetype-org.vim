@@ -5,6 +5,8 @@
 "最初会想要用到的功能可能是TODO,虽然我还不熟悉.
 "表格是个特殊的功能,不过不一定会用到,变换列表模式也不是必须的.
 "此外缺乏autoformat也是个问题,但是我想还是先用熟了基本功能再说.
+"
+"对外输出转换格式的命令:OrgExportTo
 let g:org_heading_shade_leading_stars = 1
 
 
@@ -45,3 +47,4 @@ autocmd FileType org set nonu
 
 "autocmd FileType org hi NonText ctermfg=bg
 
+set noautoindent
