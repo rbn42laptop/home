@@ -180,6 +180,14 @@ arch下的测试方法是xterm w3m google搜索图片,会显示图片.
 
 2016-07-25 06:43:09 Mon NZST
 一个大问题,<m-s-left>的按键,无法捕捉到
-已知的包括<m-s-方向键> <c-s-方向键>
+已知的包括<m-s-方向键> <c-s-方向键> <meta-l> 
 虽然qterm来自konsole,不过居然有这样的问题.
 不过qterminal还在发展,未来可能会修复的吧?
+不过,眼下,或许我们应该暂时换一个terminal编辑org
+
+2016-07-25 07:27:05 Mon NZST
+似乎不只是qterm的问题,sakura的按键也不全.xterm是最标准,当然没问题.
+xfce4,比上面的全,但是没有<meta-l>
+确切的说,从cat中看,xfce4和xterm映射的<meta-l>是不同的,xterm中出现的是<meta-l>是一些奇怪的西文.
+不过这些东西应该是从tty中继承过来的历史遗留物.
+比起期待terminal实现这些功能,或许把按键改成vim风格的会比较好,emacs的这种组合键看来对兼容性要求太强了.
