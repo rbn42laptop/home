@@ -1,4 +1,6 @@
 "一些独立的按键映射
+"
+":map 找出现有的映射
 
 "insert date
 nnoremap <F5> "=strftime("%F %T %a %Z")<CR>P
