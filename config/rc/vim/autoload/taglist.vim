@@ -17,7 +17,8 @@ let Tlist_Close_On_Select = 1
 "let Tlist_Close_On_Select = 0
 let Tlist_Use_Right_Window = 1
 let Tlist_File_Fold_Auto_Close = 1
-map <F7> :TlistToggle<CR>
+"map <F7> :TlistToggle<CR>
+map <F7> :TagbarToggle<CR>
 fun! Opentaglist() "有时候需要taglist开着不关.
     exec("TlistOpen")
     exec("map <F7> :TlistOpen<CR>") 

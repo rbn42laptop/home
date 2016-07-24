@@ -15,11 +15,12 @@ set backupdir=~/del
 
 "增量备份,每次ESC退出insert模式的时候设定备份的timestamp
 "ESC这个时间点选的并不足够好,以后想到好的可以改.
-fun! InitBex()
-    let myvar = strftime("%y%m%d_%H%M%S")
-    let myvar = "set backupext=_".myvar
-    execute myvar
-    "echo myvar
-endfun
-inoremap <silent> <Esc> <Esc>:call InitBex()<CR>
-silent call InitBex()
+"这东西有问题,会把上下键映射成A,B
+"fun! InitBex()
+"    let myvar = strftime("%y%m%d_%H%M%S")
+"    let myvar = "set backupext=_".myvar
+"    execute myvar
+"    "echo myvar
+"endfun
+"inoremap <silent> <Esc> <Esc>:call InitBex()<CR>
+"silent call InitBex()

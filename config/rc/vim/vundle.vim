@@ -30,6 +30,11 @@ if enable_airline
     Plugin 'vim-airline/vim-airline-themes'
 endif 
 Plugin 'mbbill/undotree'                "F6 
+"orgmode
+Plugin 'vim-orgmode'
+Plugin 'speeddating.vim'
+Plugin 'utl.vim'
+Plugin 'Tagbar'
 
 "直接用的时候调用的是python2,不知如何改到python3
 "Plugin 'ivanov/vim-ipython'
