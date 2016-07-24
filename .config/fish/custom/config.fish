@@ -31,6 +31,7 @@ alias ipython="bash ~/bin/ipython.sh"
 #alias screenfetch="bash ~/bin/shot/screenfetch.sh"
 #alias neofetch="bash ~/bin/shot/neofetch.sh"
 #set EDITOR vim
+alias emacs="emacs -nw"
 
 #set PATH /usr/local/cuda-7.5/bin $PATH
 set PATH /opt/cuda/bin $PATH
