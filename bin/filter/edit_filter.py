@@ -13,7 +13,7 @@ if len(commands) > 0 and commands[0].strip().endswith('.org'):
 commands = ['vim'] + ['"%s"' % s for s in commands]
 commands = ' '.join(commands)
 
-if python:
+if emacs:
     print(commands)
 else:
     os.system(commands)

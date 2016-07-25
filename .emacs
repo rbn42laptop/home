@@ -63,6 +63,7 @@
        (insert (format-time-string current-date-time-format (current-time)))
        )
 (define-key evil-normal-state-map (kbd "<f5>") 'insert-current-date-time)
+(define-key evil-insert-state-map (kbd "<f5>") 'insert-current-date-time)
 
 ;(global-set-key (kbd "M-S-<f5>") 'org-promote-subtree)
 ;不知为何下面的按键无效
