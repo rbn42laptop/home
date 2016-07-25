@@ -14,6 +14,6 @@ if len(commands) > 0 and commands[0].strip().endswith('.org'):
     emacs = True
 
 if emacs:
-    print(commands)
+    print('vim ' + ' '.join(commands))
 else:
     subprocess.call(['vim'] + commands)

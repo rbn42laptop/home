@@ -11,6 +11,6 @@ if len(commands) > 0 and commands[0].strip().endswith('.py'):
     python = True
 
 if python:
-    print(commands)
+    print('bash ' + ' '.join(commands))
 else:
     subprocess.call(['bash'] + commands)
