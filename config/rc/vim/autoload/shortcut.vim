@@ -38,4 +38,9 @@ noremap! <C-a> <Home>
 "omap - Display operator pending mode maps
 "noremap <C-PageUp> gt
 "noremap <C-PageDown> gt
-
+"
+"不清楚功能的键,为了避免误触.
+noremap H hhh
+noremap L lll
+noremap J jjj
+noremap K kkk
