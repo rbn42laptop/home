@@ -41,6 +41,8 @@
 #截屏
 "mkdir ~/show;cd ~/show;scrot"
   Print
+"mkdir ~/show;cd ~/show;scrot -u"
+  alt + Print
 
 #刷壁纸
 "bash ~/Pictures/compiz/bin/compiz.sh"

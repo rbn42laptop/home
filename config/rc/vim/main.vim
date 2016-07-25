@@ -10,9 +10,6 @@ source ~/config/rc/vim/plugins.vim
 
 source ~/config/rc/vim/basic.vim
 
-"已知仅有motion用到了这个键
-let mapleader=","
-
 "preview docstrings窗口的位置.会用到plugin可能包括git和ycm
 "在顶部弹出会导致当前的窗口跳跃,所以很不好.
 set splitbelow
