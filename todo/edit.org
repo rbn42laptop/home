@@ -60,6 +60,12 @@ html,md,tex,git?
 emacs的话,界面还未调整,还有文件备份没有处理过,还有timestamp
 
 ** 一般操作
+** lisp
+   2016-07-26 06:45:56 Tue NZST
+   emacs和vim的对比感觉.
+一些vim中的插件,或者api,
+在emacs中似乎都是以lisp代码串的形式存在的.
+所以给人感觉似乎lisp的确很万能.
 ** 保存退出
 *** 期望
 期望是可以和vim一样,按q退出一个buffer,如果没有其他buffer了,就完全退出.
