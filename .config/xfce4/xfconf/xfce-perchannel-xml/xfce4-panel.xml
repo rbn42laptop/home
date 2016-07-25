@@ -51,14 +51,12 @@
     </property>
     <property name="plugin-1" type="string" value="launcher">
       <property name="items" type="array">
-        <value type="string" value="14655592341.desktop"/>
       </property>
       <property name="disable-tooltips" type="bool" value="false"/>
       <property name="show-label" type="bool" value="true"/>
     </property>
     <property name="plugin-3" type="string" value="launcher">
       <property name="items" type="array">
-        <value type="string" value="14655733941.desktop"/>
       </property>
       <property name="show-label" type="bool" value="true"/>
     </property>
@@ -70,7 +68,6 @@
     </property>
     <property name="plugin-5" type="string" value="launcher">
       <property name="items" type="array">
-        <value type="string" value="14657926991.desktop"/>
       </property>
       <property name="show-label" type="bool" value="true"/>
     </property>

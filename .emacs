@@ -32,13 +32,28 @@
 (setq evil-want-C-i-jump nil)
 (require 'evil)
 (evil-mode 1)
+
+;隐藏menu
+(menu-bar-mode -1)
+;背景色,好像找不到透明modeline的方案,看来比vim还难搞.vim是通过设定为None实现透明的,看来emacs做不到.
+;(set-face-background 'modeline "Blue")
+;  I use the following with TERM=xterm-256color
+;(set-face-foreground 'mode-line nil)
+;(set-frame-parameter (selected-frame) 'alpha '(85 . 50))
+; (add-to-list 'default-frame-alist '(alpha . (85 . 50)))
+
+;(set-face-background 'mode-line "#000000")
+;(set-face-foreground 'mode-line-inactive "#606060")
+;(set-face-background 'mode-line-inactive "#202020")
+
 ;<c-z>切换回到emacs
 ;vimrc
 ;修改过的文件会出提示,最好是没有提示.之后再改.
 ;(define-key evil-normal-state-map "q" 'kill-this-buffer)
 ;(define-key evil-normal-state-map "q" 
 ;            (concat ":q" (kbd "RET") "gv=gv")
-(define-key evil-normal-state-map "q" 'kill-emacs)
+;(define-key evil-normal-state-map "q" 'kill-emacs)
+(define-key evil-normal-state-map "q" 'save-buffers-kill-terminal)
 (define-key evil-normal-state-map "s" 'save-buffer)
 
 ;时间
@@ -48,6 +63,7 @@
        (insert (format-time-string current-date-time-format (current-time)))
        )
 (define-key evil-normal-state-map (kbd "<f5>") 'insert-current-date-time)
+
 ;(global-set-key (kbd "M-S-<f5>") 'org-promote-subtree)
 ;不知为何下面的按键无效
 ;(global-set-key (kbd "M-S-<left>") 'org-promote-subtree)
