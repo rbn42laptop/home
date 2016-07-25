@@ -54,12 +54,19 @@
 
 
 ;自定vim风格org按键
+;这些按键原本应该仅仅用于org模式.不过我不知道emacs如何模仿vim中的autocmd filetype命令.
+;由于暂且仅仅用emacs编辑org,所以配置到全局暂时也不是问题.
 ;(global-set-key (kbd "H") ')
 (define-key evil-normal-state-map "L" 'org-do-demote)
 (define-key evil-normal-state-map "H" 'org-do-promote)
 ;下面两个按键实际上绑定到了C-l上,没有用到shift
 ;(define-key evil-normal-state-map "\C-L" 'org-demote-subtree)
 ;(define-key evil-normal-state-map "\C-H" 'org-promote-subtree)
+
+;orgmode下老是误触这个排版键,不过orgmode用的到它的场合很少,所以就废弃掉吧.
+;或者我们可以用它做org排版,虽然和vim不太匹配
+(define-key evil-normal-state-map ">" 'org-demote-subtree)
+(define-key evil-normal-state-map "<" 'org-promote-subtree)
 
 (define-key evil-normal-state-map "J" 'outline-next-visible-heading)
 (define-key evil-normal-state-map "K" 'outline-previous-visible-heading)
