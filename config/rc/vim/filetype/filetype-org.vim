@@ -7,6 +7,15 @@
 "此外缺乏autoformat也是个问题,但是我想还是先用熟了基本功能再说.
 "
 "对外输出转换格式的命令:OrgExportTo
+"
+"2016-07-25 09:25:15 Mon NZST
+"果然还是需要用emacs,因为似乎vim中的格式排版很乱?
+"但是,emacs中按键特性实在不熟,所以很难改成我要的形式,而且退出的时候,会有提示阻碍,我也不知道怎么关掉
+"而且由于多了一层evil,所以事情就变得更复杂了
+"不过emacs的键function绑定感觉比vim更规整,毕竟是lisp血统吧.
+"
+"还是要用emacs,虽然emacs缺少了vim的特性,
+"但是vim org的实现似乎是有缺陷的,细节部分的behaviour似乎很奇怪
 let g:org_heading_shade_leading_stars = 1
 
 
