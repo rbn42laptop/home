@@ -17,6 +17,8 @@ Plugin 'ctrlpvim/ctrlp.vim'             " Ctrl+P 快速文件查找
 "Plugin 'easytags.vim'
 Plugin 'easymotion/vim-easymotion'      "主要用法,在普通motion命令前加上 ,,
 Plugin 'Valloric/YouCompleteMe'         "代码补全
+"ycm有整合jedi
+"Plugin 'davidhalter/jedi-vim'
 Plugin 'VOoM'                           "tex tree视图
 Plugin 'terryma/vim-multiple-cursors'   
 Plugin 'scrooloose/syntastic'           "已知的用处是检查代码错误
@@ -60,8 +62,6 @@ Plugin 'Tagbar'
 "Plugin 'glsl.vim' "glsl高亮
 "Plugin 'dcbaker/vim-arb_assembly' "arb高亮?
 
-"ycm有整合jedi
-"Plugin 'davidhalter/jedi-vim'
 " The following are examples of different formats supported.
 " Keep Plugin commands between vundle#begin/end.
 " plugin on GitHub repo
