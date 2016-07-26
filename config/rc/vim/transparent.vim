@@ -19,11 +19,13 @@ for f in split(glob('~/config/rc/vim/autoload/*.vim'), '\n')
     exe 'source' f
 endfor
 
+"自动加载
+for f in split(glob('~/config/rc/vim/transparent/*.vim'), '\n')
+    exe 'source' f
+endfor
+
 "按照文件类型的特殊设定,需要后置.
 for f in split(glob('~/config/rc/vim/filetype/*.vim'), '\n')
     exe 'source' f
 endfor
 
-
-"自定义的按键要放在最后,放在前面不知道会被什么东西覆盖掉.
-"source ~/config/rc/vim/shortcut.vim

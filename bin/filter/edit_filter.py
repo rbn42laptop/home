@@ -10,8 +10,9 @@ import sys
 import subprocess
 commands = sys.argv[1:]
 emacs = False
-if len(commands) > 0 and commands[0].strip().endswith('.org'):
-    emacs = True
+for c in commands:
+    if c.strip().endswith('.org'):
+        emacs = True
 
 if emacs:
     print('vim ' + ' '.join(commands))

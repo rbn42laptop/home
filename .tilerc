@@ -2,12 +2,12 @@
 #这是compiz0.8的配置, 
 #compiz0.9 standalone应该也没有问题下,在unity下面外围padding要设到5以上才能正常运作.具体我不记得了,是8,10,还是15来着
 WinBorder = 2
-LeftPadding = 1
-LeftPadding = 0
+Padding = 2
 WinBorder = 0
 #有必要设成1,因为否则,第一次tile后,仍然会有窗口(term以外的,firefox之类的,估计和decro有关)重叠,第二次tile才会消除重叠.不知道原因,
 WinBorder = 1
-BottomPadding = LeftPadding 
+LeftPadding = Padding
+BottomPadding = Padding 
 TopPadding = BottomPadding
 RightPadding = BottomPadding
 NavigateAcrossWorkspaces = False #True  # availabe in viewports desktops
