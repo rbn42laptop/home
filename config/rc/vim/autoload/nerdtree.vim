@@ -12,9 +12,21 @@ let NERDTreeShowBookmarks=1
 let NERDTreeQuitOnOpen=1
 "用了平铺还是不要开着占地方
 "let NERDTreeQuitOnOpen=0
+
+
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""
 map <F3> :UndotreeHide<cr>:NERDTreeToggle<CR>
 
+fun! Opennerdtree() "有时候需要开着不关.
+    exec("NERDTreeFocus")
+    exec("map <F3> :NERDTreeFocus<CR>") 
+endfun
+map <C-F3> :let NERDTreeQuitOnOpen=0<CR>:call Opennerdtree()<CR>
 
+
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""
 "自动关闭nerdtree的脚本.不过
 ""似乎对nerd以外的buffer也有效.
 function! NERDTreeQuit()

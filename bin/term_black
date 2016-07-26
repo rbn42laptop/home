@@ -1,0 +1,5 @@
+#!/bin/bash
+#export QML2_IMPORT_PATH=~/git/QMLProcess/build:~/git/qmltermwidget/build
+~/git/qmlterm/build/qmlterm  -c ~/config/term/qmlterm/fullblack.ini "$@"
+#虽然已经可以把qmlterm安装到/usr/bin了,但是copy-to-vim脚本还没有一并带过去.
+#qmlterm  -c ~/config/term/qmlterm/qmltermrc_blur_white.ini  "$@"

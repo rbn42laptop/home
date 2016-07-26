@@ -23,3 +23,7 @@ endfor
 for f in split(glob('~/config/rc/vim/filetype/*.vim'), '\n')
     exe 'source' f
 endfor
+
+
+"自定义的按键要放在最后,放在前面不知道会被什么东西覆盖掉.
+"source ~/config/rc/vim/shortcut.vim
