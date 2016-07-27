@@ -67,7 +67,9 @@
 ##############################################
 #tile
 #"python ~/git/kd_tree_tile/main.py layout next"
-"python ~/git/kd_tree_tile/main.py layout regularize"
+#"python ~/git/kd_tree_tile/main.py layout regularize"
+#映象中凡是按到regularize键的时候,应该是要铺满全屏的,没有用过局部分屏.所以一次触发两下,直接全屏.
+"python ~/git/kd_tree_tile/main.py layout regularize;python ~/git/kd_tree_tile/main.py layout regularize"
   Mod4 + space
 #"python ~/git/kd_tree_tile/main.py layout prev"
 #  Mod4 + shift + space

@@ -8,6 +8,7 @@ let enable_airline=1
 "插件
 source ~/config/rc/vim/plugins.vim
 
+
 source ~/config/rc/vim/basic.vim
 
 "preview docstrings窗口的位置.会用到plugin可能包括git和ycm
