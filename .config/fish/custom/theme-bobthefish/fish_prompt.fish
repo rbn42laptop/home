@@ -388,6 +388,8 @@ function __bobthefish_prompt_hg -S -a current_dir -d 'Display the actual hg stat
 end
 
 function __bobthefish_prompt_git -S -a current_dir -d 'Display the actual git state'
+
+
   set -l dirty   (command git diff --no-ext-diff --quiet --exit-code; or echo -n '*')
   set -l staged  (command git diff --cached --no-ext-diff --quiet --exit-code; or echo -n '~')
   set -l stashed (command git rev-parse --verify --quiet refs/stash >/dev/null; and echo -n '$')
@@ -1210,7 +1212,10 @@ function fish_prompt -d 'bobthefish, a fish theme optimized for awesome'
   set -l git_root (__bobthefish_git_project_dir)
   set -l hg_root  (__bobthefish_hg_project_dir)
 
-  if [ "$git_root" -a "$hg_root" ]
+  if [ "$HOME" = "$git_root" ] 
+    __bobthefish_prompt_dir
+    #以上是新加的,过滤home
+  else if [ "$git_root" -a "$hg_root" ]
     # only show the closest parent
     switch $git_root
       case $hg_root\*

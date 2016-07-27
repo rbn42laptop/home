@@ -6,15 +6,17 @@ else
 end
 
 if [ 'black' = $QMLTERM_THEME ]
-    source ~/.config/fish/custom/shellder/fish_prompt.fish
     export MYVIMRC=~/config/rc/vim/black.vim
+
+    source ~/.config/fish/custom/theme-bobthefish/fish_prompt.fish
+  #  source ~/.config/fish/custom/shellder/fish_prompt.fish
   #  source ~/.config/fish/custom/theme-bobthefish/fish_greeting.fish
   #  source ~/.config/fish/custom/theme-bobthefish/fish_title.fish
-  #  source ~/.config/fish/custom/theme-bobthefish/fish_prompt.fish
   #  这东西不能用,连按回车的时候就会感觉到很耗性能.
    # source ~/.config/fish/custom/theme-bobthefish/fish_right_prompt.fish
 else if [ 'transparent' = $QMLTERM_THEME ]
     export MYVIMRC=~/config/rc/vim/transparent.vim
+
     source ~/.config/fish/custom/prompt_git.fish
     source ~/.config/fish/custom/prompt_pwd.fish
     source ~/.config/fish/custom/fish_prompt.fish
