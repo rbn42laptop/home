@@ -10,6 +10,12 @@ if [ 'black' = $QMLTERM_THEME ]
     #这个脚本写的是有问题的,但是至少用它一段时间,靠它提示的话,应该可以一定程度的修正操作习惯.
     alias vim="export MYVIMRC=~/config/rc/vim/black.vim;python ~/bin/filter/edit_filter.py "
 
+#    source ~/.config/fish/custom/theme-cbjohnson/fish_prompt.fish
+#    source ~/.config/fish/custom/theme-budspencer/fish_greeting.fish
+#    source ~/.config/fish/custom/theme-budspencer/fish_prompt.fish
+#    source ~/.config/fish/custom/theme-budspencer/fish_mode_prompt.fish
+#    source ~/.config/fish/custom/theme-budspencer/fish_right_prompt.fish
+#    source ~/.config/fish/custom/theme-budspencer/fish_prompt.fish
     source ~/.config/fish/custom/theme-bobthefish/fish_prompt.fish
   #  source ~/.config/fish/custom/shellder/fish_prompt.fish
   #  source ~/.config/fish/custom/theme-bobthefish/fish_greeting.fish
