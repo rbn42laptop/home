@@ -37,7 +37,7 @@ Plugin 'mbbill/undotree'                "F6
 Plugin 'jceb/vim-orgmode'
 "Plugin 'vim-orgmode'
 "这东西会覆盖<C-a>按键
-Plugin 'speeddating.vim'
+"Plugin 'speeddating.vim'
 "Plugin 'utl.vim'
 Plugin 'Tagbar'
 
