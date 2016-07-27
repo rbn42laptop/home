@@ -1,1 +1,1 @@
-source ~/config/rc/vim/main.vim
+source ~/config/rc/vim/transparent.vim

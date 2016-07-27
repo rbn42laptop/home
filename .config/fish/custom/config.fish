@@ -54,6 +54,8 @@ alias emacs="emacs -nw"
 #这个脚本写的是有问题的,但是至少用它一段时间,靠它提示的话,应该可以一定程度的修正操作习惯.
 alias vim="python ~/bin/filter/edit_filter.py -u $MYVIMRC"
 
+alias dc='echo dc'
+
 #set PATH /usr/local/cuda-7.5/bin $PATH
 set PATH /opt/cuda/bin $PATH
 #set LD_LIBRARY_PATH /usr/local/cuda-7.5/lib64 $LD_LIBRARY_PATH
