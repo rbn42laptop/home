@@ -644,3 +644,8 @@ c.InteractiveShellApp.exec_lines = [
     'import numpy',
     'import scipy',
 ] + imports.split('\n')
+
+# ipython5不支持,不过github已经修复.
+# c.InteractiveShellApp.extensions = [
+#    'powerline.bindings.ipython.post_0_11'
+#]

@@ -91,3 +91,41 @@ endif
 "hi VertSplit ctermfg=None ctermbg=None cterm=NONE
 "set fillchars+=vert:\|
 
+
+
+
+"这里改了一小行,覆盖掉原本的提示色背景.
+function! airline#themes#patch(palette)
+  for mode in keys(a:palette)
+    if !has_key(a:palette[mode], 'airline_warning')
+      "let a:palette[mode]['airline_warning'] = [ '#000000', '#df5f00', 232, 166 ]
+    endif
+    if !has_key(a:palette[mode], 'airline_error')
+      let a:palette[mode]['airline_error'] = [ '#000000', '#990000', 232, 160 ]
+    endif
+  endfor
+
+  let a:palette.accents = get(a:palette, 'accents', {})
+  let a:palette.accents.bold = [ '', '', '', '', 'bold' ]
+  let a:palette.accents.italic = [ '', '', '', '', 'italic' ]
+
+  if !has_key(a:palette.accents, 'red')
+    let a:palette.accents.red = [ '#ff0000' , '' , 160 , '' ]
+  endif
+  if !has_key(a:palette.accents, 'green')
+    let a:palette.accents.green = [ '#008700' , '' , 22  , '' ]
+  endif
+  if !has_key(a:palette.accents, 'blue')
+    let a:palette.accents.blue = [ '#005fff' , '' , 27  , '' ]
+  endif
+  if !has_key(a:palette.accents, 'yellow')
+    let a:palette.accents.yellow = [ '#dfff00' , '' , 190 , '' ]
+  endif
+  if !has_key(a:palette.accents, 'orange')
+    let a:palette.accents.orange = [ '#df5f00' , '' , 166 , '' ]
+  endif
+  if !has_key(a:palette.accents, 'purple')
+    let a:palette.accents.purple = [ '#af00df' , '' , 128 , '' ]
+  endif
+endfunction
+
