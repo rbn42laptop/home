@@ -1,0 +1,7 @@
+* reddit
+录制一份 term random,包含rofi,focus
+附带screenfetch pipe, ncmpcpp,color blocks?
+vim file
+需要找下arch下的录制和按键软件.
+** 不可
+   不可用htop top,会泄露用户名
