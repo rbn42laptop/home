@@ -42,6 +42,7 @@ alias rm='trash'
 alias mv="mv --backup=numbered "
 alias cp="cp --backup=numbered "
 
+alias dc='echo dc'
 
 alias l='ls -CF  --hide="*.pyc" --hide="__pycache__"'
 alias ll='ls -aF '
@@ -55,12 +56,9 @@ alias q='exit'
 alias commit="bash ~/bin/git_commit_push.sh"
 alias bash="python ~/bin/filter/bash_filter.py"
 alias ipython="bash ~/bin/ipython.sh"
-alias screenfetch="bash ~/bin/shot/screenfetch.sh"
-#alias neofetch="bash ~/bin/shot/neofetch.sh"
 #set EDITOR vim
 alias emacs="emacs -nw"
 
-alias dc='echo dc'
 
 #set PATH /usr/local/cuda-7.5/bin $PATH
 set PATH /opt/cuda/bin $PATH
@@ -86,3 +84,7 @@ end
 
 #.xprofile .xsessionrc裏面放了都沒效果,只好放這裏了
 bash ~/bin/keys.sh
+
+#alias screenfetch="bash ~/bin/shot/screenfetch.sh"
+alias screenfetch="screenfetch -o \"USER=rbn42;HOSTNAME=home;\" "
+#alias neofetch="bash ~/bin/shot/neofetch.sh"

@@ -54,5 +54,5 @@ REGULARIZE_FULLSCREEN = True
 
 # In i3-wm's window tree, only one child of a node is allowed to split.
 # MAX_KD_TREE_BRANCH = 1
-MAX_KD_TREE_BRANCH = 2
+MAX_KD_TREE_BRANCH = 3
 
