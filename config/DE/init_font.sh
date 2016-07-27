@@ -42,5 +42,10 @@ unzip ./evermono.zip
 #wget http://ftp.vector.co.jp/51/30/3249/onryou.zip
 #unzip ./onryou.zip
 
+#wget http://downloads.sourceforge.net/wqy/wqy-unibit-bdf-1.1.0-1.tar.gz
+#tar xf wqy-unibit-bdf-1.1.0-1.tar.gz 
+#wget ftp://195.220.108.108/linux/fedora/linux/releases/24/Everything/x86_64/os/Packages/w/wqy-unibit-fonts-1.1.0-17.fc24.noarch.rpm
+#rpm2cpio wqy-unibit-fonts-1.1.0-17.fc24.noarch.rpm | cpio -idmv
 
+                 
 fc-cache
