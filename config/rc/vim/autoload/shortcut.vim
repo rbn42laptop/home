@@ -6,15 +6,15 @@
 nnoremap <F5> "=strftime("%F %T %a %Z")<CR>P
 inoremap <F5> <C-R>=strftime("%F %T %a %Z")<CR>
 
-map h <BS>
-map l <space>
-map j gj
-map k gk
+noremap h <BS>
+noremap l <space>
+noremap j gj
+noremap k gk
 
 set mouse=a
 "会连带影响鼠标点选进入visual模式
-map <ScrollWheelUp> kkk
-map <ScrollWheelDown> jjj
+noremap <ScrollWheelUp> kkk
+noremap <ScrollWheelDown> jjj
 
 "Thu 26 May 2016 05:05:53 AM NZST
 "vim fold
