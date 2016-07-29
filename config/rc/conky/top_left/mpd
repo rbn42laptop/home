@@ -1,0 +1,58 @@
+conky.config = {
+-------------------------------------
+--  Generic Settings
+-------------------------------------
+update_interval=1,
+double_buffer=true,
+draw_borders=false,
+draw_shades=false,
+default_shade_color="000000",
+default_outline_color="000000",
+--draw_outline=true,
+-------------------------------------
+--  Window Specifications
+-------------------------------------
+alignment="top_left",
+gap_x=0,
+gap_y=0,
+own_window=true,
+background=false,
+own_window_colour="#888888",
+own_window_type="normal",
+own_window_hints="undecorated,below,sticky,skip_taskbar,skip_pager",
+own_window_transparent=false,
+own_window_argb_visual=true,
+own_window_argb_value=0,
+--maximum_width=390,
+--minimum_width=390,
+border_inner_margin=0,
+border_outer_margin=0,
+-------------------------------------
+--  Text Settings
+-------------------------------------
+use_xft=true,
+xftalpha=1,
+font="setofont:size=15",
+text_buffer_size=256,
+
+short_units=true,
+short_units=true,
+pad_percents=2,
+top_name_width=7,
+
+-------------------------------------
+--  Color Scheme
+-------------------------------------
+template9=""
+}
+
+---------------------------------------------------
+---------------------------------------------------
+
+conky.text = [[\
+${color black}\
+[${mpd_status}] ${mpd_title} / ${mpd_album}
+]]
+--[${mpd_status}] ${mpd_title}
+-- / ${mpd_album}
+--${mpd_bar}

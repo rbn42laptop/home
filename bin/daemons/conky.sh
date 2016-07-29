@@ -3,7 +3,11 @@
 #虽然没有multiload好用,有总比没有好
 #conky -c ~/config/rc/conky
 pkill conky
+sleep 1
 #conky -c ~/config/rc/conky/conky_panel &
+#--conky -c ~/config/rc/conky/top_right/mpd &
+#conky -c ~/config/rc/conky/top_left/mpd &
+#conky -c ~/config/rc/conky/bottom_left/mpd &
 
 conky -c ~/config/rc/conky/top_right/graph_large_top &
 sleep 1

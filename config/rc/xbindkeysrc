@@ -51,7 +51,9 @@
 #mpd
 "mpc next"
   Mod4 + n
-"mpc toggle;#~/bin/mpd_pause"
+#原本似乎mpd事件可以被notify-send体系监听的,但是对我来说,只有toggle有必要显示,
+#所以这里独立用一个mpd toggle脚本发送notify-send的消息,而mpd整体就不坚挺了.
+"bash ~/git/mpd-script/toggle.sh #mpd-sc mpc toggle;#~/bin/mpd_pause"
   Mod4 + p
 "bash ~/git/mpd-script/dislike.sh"
   Mod4 + shift + control + d
