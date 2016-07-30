@@ -5,7 +5,7 @@
 pkill conky
 sleep 1
 export CORNER=top_right
-export CORNER=bottom_right
+#export CORNER=bottom_right
 #conky -c ~/config/rc/conky/conky_panel &
 #--conky -c ~/config/rc/conky/top_right/mpd &
 #conky -c ~/config/rc/conky/top_left/mpd &

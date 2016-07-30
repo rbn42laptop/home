@@ -3,9 +3,12 @@
 #暂且只有这里用了,所以可以直接kill
 #pkill notile
 pkill ncmpcpp
+
 #区分开wm_class,用tile筛选.
 cp -n ~/git/qmlterm/build/qmlterm  ~/git/qmlterm/build/notile_visual
 
+export ROOT=~/config/media/mpd-visual
+
 ~/git/qmlterm/build/notile_visual \
-    -c ~/config/media/mpd-visual/term.ini \
-    -e "ncmpcpp -s visualizer -c ~/config/media/mpd-visual/ncmpcpp"
+    -c $ROOT/term.ini \
+    -e "ncmpcpp -s visualizer -c $ROOT/ncmpcpp"
