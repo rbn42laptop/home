@@ -37,3 +37,5 @@ export QT_STYLE_OVERRIDE=qtcurve
 #export GTK_RGBA_APPS=allbut:firefox-bin:gnome-mplayer:totem:soffice:firefox
 #nohup /usr/lib/gnome-settings-daemon/gnome-settings-daemon > /dev/null
 
+
+export TERM=~/bin/term
