@@ -53,6 +53,7 @@ git add --all ~/.config/fontconfig/fonts.conf
 git add --all ~/.config/xfce4/xfconf/xfce-perchannel-xml/xfce4-panel.xml
 
 #文件名主要都是konachan编号,方便恢复.
+#假设有一天konachan不在了,从网络档案馆应该也能通过编号找回作者信息.
 ls ~/Pictures/compiz/raw > ~/config/wallpapers
 
 #git add --all ~/.i3

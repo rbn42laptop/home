@@ -40,6 +40,7 @@ EXCLUDE_WM_CLASS = [ 'conky', 'Conky','tint2','xfce4-panel',
         'vlc',
         'wesnoth',
         'mpv',
+        'notile_visual',
         ]
 
 UNRESIZABLE_APPLICATIONS = ['Screenkey']

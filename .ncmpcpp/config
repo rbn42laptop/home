@@ -1,3 +1,6 @@
+#!/bin/bash
+#配置文件改加什么标记才方便vim给出颜色提示?
+
 playlist_display_mode = "columns" (classic/columns)
 browser_display_mode = "columns" (classic/columns)
 search_engine_display_mode = "columns" (classic/columns)
@@ -9,6 +12,15 @@ display_bitrate = "yes"
 
 startup_screen = "playlist"
 
+#visualizer_fifo_path = "/dev/shm/mpd.fifo"
+#visualizer_output_name = "my_fifo"
+#visualizer_sync_interval = "30" 
+#visualizer_in_stereo = "yes"
+#visualizer_type = "wave" (spectrum/wave)
+##visualizer_type = "spectrum" (spectrum/wave)
+#visualizer_look = "+|"
+##visualizer_look = "+·"
+#
 ##### music visualizer #####
 ##
 ## Note: In order to make music visualizer work you'll
