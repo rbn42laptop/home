@@ -22,9 +22,10 @@ visualizer_sync_interval = "30"
 #visualizer_type = "wave" 
 visualizer_type = "spectrum" 
 #默认的字符位宽不对,所以要改掉
-visualizer_look = "••"
+#visualizer_look = "••"
 #visualizer_look = ".."
 #visualizer_look = "oo"
+visualizer_look = ".."
 
 #mpd_port=123
 #progressbar_look = "  "

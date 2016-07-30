@@ -16,3 +16,7 @@ mpc consume off
 
 #export XDG_MUSIC_DIR=~/Music
 #systemctl --user start mpd-notification
+
+#visual
+#~/bin/visual/mpd/visual &
+~/bin/visual/mpd/large &

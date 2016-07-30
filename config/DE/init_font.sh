@@ -46,6 +46,9 @@ unzip ./evermono.zip
 #tar xf wqy-unibit-bdf-1.1.0-1.tar.gz 
 #wget ftp://195.220.108.108/linux/fedora/linux/releases/24/Everything/x86_64/os/Packages/w/wqy-unibit-fonts-1.1.0-17.fc24.noarch.rpm
 #rpm2cpio wqy-unibit-fonts-1.1.0-17.fc24.noarch.rpm | cpio -idmv
-
+#正方形字体,ncmpcpp波形可以用.
+wget http://strlen.com/files/square.ttf
                  
 fc-cache
+
+
