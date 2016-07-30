@@ -2,8 +2,6 @@ conky.config = {
 -------------------------------------
 --  Generic Settings
 -------------------------------------
---update_interval=10,
-update_interval=1,
 double_buffer=true,
 draw_borders=false,
 draw_shades=true,
@@ -15,7 +13,7 @@ draw_outline=true,
 -------------------------------------
 alignment="bottom_right",
 gap_x=40,
-gap_y=58,
+gap_y=57,
 own_window=true,
 own_window_type="normal",
 own_window_hints="undecorated,below,sticky,skip_taskbar,skip_pager",
@@ -25,8 +23,14 @@ own_window_argb_visual=true,
 --  Text Settings
 -------------------------------------
 use_xft=true,
+xftalpha=1,
 font="monospace:size=15",
 text_buffer_size=256,
+
+short_units=true,
+short_units=true,
+pad_percents=2,
+top_name_width=7,
 
 -------------------------------------
 --  Color Scheme
@@ -38,34 +42,33 @@ template9=""
 ---------------------------------------------------
 
 conky.text = [[\
-${voffset  4}\
 ${alignr 207}\
-${color #FFcccc}\
+${color #ffffff}\
 ${cpu}%\
 
-${voffset  -20}\
+${voffset  -20  } \
 ${alignr 7}\
-${color #FFcccc}\
+${color #ffffff}\
 ${mem} / ${memmax}\
 
-${voffset 39}\
+${voffset 39} \
 ${alignr 207}\
-${color #ccffff}\
+${color #ffffff}\
 ${downspeed wlp0s20u9}\
 
-${voffset  -20}\
+${voffset  -20  } \
 ${alignr 7}\
-${color #ffffcc}\
+${color #ffffff}\
 ${upspeed wlp0s20u9}\
 
-${voffset 39}\
+${voffset 39} \
 ${alignr 207}\
-${color #ccffff}\
+${color #ffffff}\
 ${diskio_read}\
 
-${voffset  -20  }\
+${voffset  -20  } \
 ${alignr 7}\
-${color #ffffcc}\
+${color #ffffff}\
 ${diskio_write}\
 
                                                                                                
