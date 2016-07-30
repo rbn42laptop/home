@@ -1,4 +1,5 @@
 #!/bin/bash
 export ROOT=$(dirname "$0")
 bash $ROOT/mpd/visual &
-bash $ROOT/matrix/visual &
+#bash $ROOT/matrix/visual &
+#bash $ROOT/htop/visual &

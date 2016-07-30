@@ -5,13 +5,13 @@
 pkill cmatrix
 
 #区分开wm_class,用tile筛选.
-cp -n ~/git/qmlterm/build/qmlterm  ~/git/qmlterm/build/notile_visual
+cp -n ~/git/qmlterm/build/qmlterm  ~/git/qmlterm/build/noblur_notile_visual
 
 export ROOT=~/config/media/mpd-visual
 export ROOT=~/bin/visual/matrix
 export ROOT=$(dirname "$0")
 
-~/git/qmlterm/build/notile_visual \
+~/git/qmlterm/build/noblur_notile_visual \
     -c $ROOT/term.ini \
-    -e "cmatrix -C white"
-#"ncmpcpp -s visualizer -c $ROOT/ncmpcpp"
+    -e "cmatrix -C white  "
+    #-e cmatrix 
