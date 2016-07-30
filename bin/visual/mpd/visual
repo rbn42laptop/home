@@ -8,6 +8,8 @@ pkill ncmpcpp
 cp -n ~/git/qmlterm/build/qmlterm  ~/git/qmlterm/build/notile_visual
 
 export ROOT=~/config/media/mpd-visual
+export ROOT=~/bin/visual/mpd
+export ROOT=$(dirname "$0")
 
 ~/git/qmlterm/build/notile_visual \
     -c $ROOT/term.ini \
