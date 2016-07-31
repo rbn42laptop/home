@@ -13,7 +13,7 @@ rsync -a $HOME/.github_sync_aes_key $TARGET
 #加入删除选项是比较危险的,可能误删除源文件的时候连同目标文件一起删除了,随意最好两种备份都要做.
 export TARGET="/media/$USER/dmzj/sync_del"
 rsync -a --delete-excluded $HOME/laosao                     $TARGET
-rsync -a --delete-excluded $HOME/Pictures/compiz/raw        $TARGET
+rsync -a --delete-excluded $HOME/Pictures/acg/raw        $TARGET
 rsync -a --delete-excluded $HOME/.mozilla                   $TARGET
 rsync -a --delete-excluded $HOME/.thunderbird               $TARGET
 rsync -a --delete-excluded $HOME/.aMule                       $TARGET
