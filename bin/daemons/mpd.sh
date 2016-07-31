@@ -20,4 +20,4 @@ mpc consume off
 
 #visual
 #~/bin/visual/mpd/visual &
-~/bin/visual/mpd/large &
+#~/bin/visual/mpd/large &

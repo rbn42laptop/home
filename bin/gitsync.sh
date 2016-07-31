@@ -52,6 +52,7 @@ git add --all ~/.config/fontconfig/fonts.conf
 #启动rofi,启动expo,重置compiz focus(0.8在firefox崩溃的时候会用到),音量,输入法
 git add --all ~/.config/xfce4/xfconf/xfce-perchannel-xml/xfce4-panel.xml
 
+git add ~/.wallpaperrc
 #文件名主要都是konachan编号,方便恢复.
 #假设有一天konachan不在了,从网络档案馆应该也能通过编号找回作者信息.
 ls ~/Pictures/acg/raw > ~/config/wallpapers

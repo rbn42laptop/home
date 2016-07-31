@@ -1,2 +1,3 @@
 #!/bin/bash 
-export ROOT=~/Pictures/others
+export ROOT=~/Pictures/acg
+#export ROOT=~/Pictures/others
