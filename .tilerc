@@ -45,8 +45,8 @@ EXCLUDE_WM_CLASS = [ 'conky', 'Conky','tint2','xfce4-panel',
         ]
 
 UNRESIZABLE_APPLICATIONS = ['Screenkey']
-RESIZE_STEP = 48 #设为8的整数倍匹配qmlterm 精准点阵模式中一个字符的大小
-MOVE_STEP = 48
+RESIZE_STEP = 48*3 #设为8的整数倍匹配qmlterm 精准点阵模式中一个字符的大小
+MOVE_STEP = 48*3
 MIN_WINDOW_WIDTH = 50
 MIN_WINDOW_HEIGHT = 50
 

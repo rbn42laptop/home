@@ -1,6 +1,7 @@
 #!/bin/bash
 mpd
 mpc volume 20 #mpv设定了40,mpd为20的时候,mpv的音量还是偏低,
+#改动这里对httpd stream无效 
 mpc repeat on
 mpc random on
 mpc single off

@@ -45,7 +45,7 @@
   alt + Print
 
 #刷壁纸
-"bash ~/Pictures/compiz/bin/compiz.sh"
+"bash ~/git/compiz_wallpaper_manager/compiz.sh"
   Mod4 + w
 
 #mpd
