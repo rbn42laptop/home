@@ -47,6 +47,11 @@ Plugin 'Tagbar'
 "Plugin 'tpope/vim-pathogen'            "另一个包管理
 "Plugin 'yuratomo/w3m.vim'              "w3m插件
 
+
+
+"4 使用 Ultisnip 优雅的增强补全。 这个插件可以扩展YCM 的提示，
+"而且可以自定义代码生成。简直神器。
+"
 "snipmate相关4个plugin
 "似乎可以用来补全html tag,不兼容ycm.
 "不过我怎么都没能让它运作.
