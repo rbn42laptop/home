@@ -1,7 +1,7 @@
 #!/bin/bash
 export TARGET="/media/$USER/dmzj/sync"
 rsync -a $HOME/laosao               $TARGET
-rsync -a $HOME/Pictures/compiz/raw  $TARGET
+rsync -a $HOME/Pictures/acg/raw  $TARGET
 rsync -a $HOME/.mozilla             $TARGET
 rsync -a $HOME/.thunderbird         $TARGET
 rsync -a $HOME/.aMule                 $TARGET
