@@ -30,6 +30,8 @@ Plugin 'tpope/vim-fugitive'             "F9 git
 if enable_airline
     Plugin 'vim-airline/vim-airline'
     Plugin 'vim-airline/vim-airline-themes'
+    "自定义的透明主题
+    Plugin 'rbn42/vim-airline-theme-custom'
 endif 
 Plugin 'mbbill/undotree'                "F6 
 "orgmode
