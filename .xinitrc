@@ -17,7 +17,9 @@ volnoti
 
 ########################
 #0.8开机需要这个,因为路径放在了/dev/shm里面了
-bash ~/git/compiz_wallpaper_manager/compiz.sh #Pictures/compiz/bin/compiz.sh
+#bash ~/git/compiz_wallpaper_manager/compiz.sh #Pictures/compiz/bin/compiz.sh
+source ~/.wallpaperrc
+bash $WALLPAPER_SCRIPT
 
 
 ########################

@@ -22,9 +22,11 @@ dconf write /org/compiz/profiles/Default/plugins/wall/preview-scale $WALL_SIZE;
 #blur需要重编译,调整屏幕高宽.
 ~/git/compiz_config/main.py ~/.config/compiz/compizconfig/Default.ini  set blur s0_saturation $BLUR_OC;
 #compiz0.8 需要这个步骤submit
-export IMG_ROOT=~/Pictures/acg
+source ~/.wallpaperrc
+export IMG_ROOT=$WALLPAPER_ROOT #~/Pictures/acg
 rm $IMG_ROOT/mark_rotate_*
 touch $IMG_ROOT/mark_rotate_$1
-~/git/compiz_wallpaper_manager/compiz.sh
+bash $WALLPAPER_SCRIPT
+#~/git/compiz_wallpaper_manager/compiz.sh
 
 
