@@ -58,6 +58,9 @@ udisksctl mount -b /dev/disk/by-label/4T
 #或许设定为hide比较好.
 xfce4-panel &
 
+
+#~/bin/term_blur &
+
 ###################
 #反正开机了总要打开rofi的
 #bash ~/bin/run_tiny &

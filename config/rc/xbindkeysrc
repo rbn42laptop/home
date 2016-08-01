@@ -41,7 +41,8 @@
 #截屏
 "mkdir ~/show;cd ~/show;scrot"
   Print
-"mkdir ~/show;cd ~/show;scrot -ub"
+#"mkdir ~/show;cd ~/show;scrot -ub"
+"mkdir ~/show;cd ~/show;gnome-screenshot -b -w"
   alt + Print
 
 #刷壁纸
