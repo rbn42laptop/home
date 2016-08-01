@@ -8,10 +8,10 @@ export QML2_IMPORT_PATH=~/git/QMLProcess/build:~/git/qmltermwidget/build
 
 if [ $# -eq 0 ]
   then
-    ~/bin/term_blur -e "ranger "
+    ~/bin/term -e "ranger "
     #~/tmp/qmlterm/build/noblur -c ~/config/term/qmlterm/shadow_font_black.ini -e "ranger"
   else
-    ~/bin/term_blur -e "ranger \"$@\""
+    ~/bin/term -e "ranger \"$@\""
     #~/tmp/qmlterm/build/noblur -c ~/config/term/qmlterm/shadow_font_black.ini -e "ranger \"$@\""
 fi
 
