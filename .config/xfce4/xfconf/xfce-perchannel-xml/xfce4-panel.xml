@@ -34,6 +34,7 @@
     <property name="plugin-2" type="string" value="systray">
       <property name="names-visible" type="array">
         <value type="string" value="vlc"/>
+        <value type="string" value="cinnamon-settings-daemon"/>
         <value type="string" value="docky"/>
         <value type="string" value="indicator-window-cycle.py"/>
         <value type="string" value="empathy"/>
