@@ -35,6 +35,9 @@
 
 ;隐藏menu
 (menu-bar-mode -1)
+;隐藏modeline
+(setq-default mode-line-format nil) 
+
 ;背景色,好像找不到透明modeline的方案,看来比vim还难搞.vim是通过设定为None实现透明的,看来emacs做不到.
 ;(set-face-background 'modeline "Blue")
 ;  I use the following with TERM=xterm-256color

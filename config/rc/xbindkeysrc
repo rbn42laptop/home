@@ -41,7 +41,7 @@
 #截屏
 "mkdir ~/show;cd ~/show;scrot"
   Print
-"mkdir ~/show;cd ~/show;scrot -u"
+"mkdir ~/show;cd ~/show;scrot -ub"
   alt + Print
 
 #刷壁纸
