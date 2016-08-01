@@ -61,7 +61,8 @@
   <path
      d="M 4096,4096 C 4096,2730.6669 4096,1365.3334 4096,2e-5 L 0,2e-5 0,4096"
      id="rect2396"
-     style="opacity:0.9;fill:#ffffff;fill-opacity:1.0;stroke-width:0"
+     style="opacity:0.8;fill:#ffffff;fill-opacity:1.0;stroke-width:0"
      sodipodi:nodetypes="cccc"
      inkscape:connector-curvature="0" />
+<!--opacity0.8比较恰当,因为0.9的时候blur容易出现白色色块.-->
 </svg>
