@@ -12,6 +12,7 @@ display_bitrate = "yes"
 
 startup_screen = "playlist"
 
+colors_enabled = "no"
 #visualizer_fifo_path = "/dev/shm/mpd.fifo"
 #visualizer_output_name = "my_fifo"
 #visualizer_sync_interval = "30" 

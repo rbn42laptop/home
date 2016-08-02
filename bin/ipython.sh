@@ -1,2 +1,2 @@
 #!/bin/bash
-ipython --profile=shell
+ipython --profile=shell "$@"
