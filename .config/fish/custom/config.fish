@@ -62,6 +62,8 @@ alias ipython="bash ~/bin/ipython.sh"
 #set EDITOR vim
 alias emacs="emacs -nw"
 
+alias qmlterm="~/git/qmlterm/build/qmlterm"
+
 
 #set PATH /usr/local/cuda-7.5/bin $PATH
 set PATH /opt/cuda/bin $PATH
