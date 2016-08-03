@@ -1,9 +1,18 @@
 #!/bin/bash
 #export GTK_THEME=Adapta
 export GTK_THEME=Arc
+#我基本上也不用gtk3,因为原生gnome3似乎没怎么设计键盘快捷键.
+#但是firefox也是gtk3,
+#另外thunderbird是gtk2
+
+#最新GTK3下,旧有的theme基本都废了,基本上来说都是不能用的.
+#export GTK_THEME=Aero-Basic
+#export GTK_THEME=Aero
+#export GTK_THEME="Win2-7(Pixmap)"
+#export GTK_THEME="Win2-7" #(Pixmap)"
 #export GTK2_RC_FILES=/usr/share/themes/Arc/gtk-2.0/gtkrc
 #firefox "$@" 
-chromium "$@" 
+firefox "$@" 
 
 #简单关掉
 #chromium-browser "$@" 
