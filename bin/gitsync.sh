@@ -44,7 +44,7 @@ git add --all ~/.config/compiz/compizconfig/Default.ini
 git add --all ~/.gtkrc-2.0.mine
 git add --all ~/.config/gtk-3.0/settings.ini
 git add --all ~/.emerald/settings.ini
-git add --all ~/.emerald/themes/th
+#git add --all ~/.emerald/themes/th
 #字体,主要是确保各种软件会加载wqy
 git add --all ~/.config/fontconfig/fonts.conf
 
