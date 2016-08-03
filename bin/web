@@ -2,7 +2,8 @@
 #export GTK_THEME=Adapta
 export GTK_THEME=Arc
 #export GTK2_RC_FILES=/usr/share/themes/Arc/gtk-2.0/gtkrc
-firefox "$@" 
+#firefox "$@" 
+chromium "$@" 
 
 #简单关掉
 #chromium-browser "$@" 

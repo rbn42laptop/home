@@ -24,7 +24,8 @@ if [ 'black' = $QMLTERM_THEME ]
    # source ~/.config/fish/custom/theme-bobthefish/fish_right_prompt.fish
 else if [ 'light' = $QMLTERM_THEME ]
     alias vim="export MYVIMRC=~/config/rc/vim/light.vim;python ~/bin/filter/edit_filter.py "
-    source ~/.config/fish/custom/theme-bobthefish/fish_prompt.fish
+else if [ 'white_level' = $QMLTERM_THEME ]
+    alias vim="export MYVIMRC=~/config/rc/vim/white_level.vim;python ~/bin/filter/edit_filter.py "
 else if [ 'transparent' = $QMLTERM_THEME ]
     alias vim="export MYVIMRC=~/config/rc/vim/transparent.vim;python ~/bin/filter/edit_filter.py "
 
