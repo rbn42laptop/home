@@ -49,6 +49,7 @@ unzip ./evermono.zip
 #正方形字体,ncmpcpp波形可以用.
 wget http://strlen.com/files/square.ttf
                  
+wget http://fontawesome.io/assets/font-awesome-4.6.3.zip
+unzip font-awesome-4.6.3.zip 
+
 fc-cache
-
-

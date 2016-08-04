@@ -149,3 +149,7 @@ qml,这个比较偏门,应该很难指望,不过用到的场合也不多.
 或许org可以直接用来写论文,转换成latex?
 不过如果可以的话网上应该有介绍的.
 至少org只有组织功能,没有排版功能,特别是要混合图片的话.
+
+是否可以用orgmode替代latex?
+http://emacs-fu.blogspot.co.nz/2011/04/nice-looking-pdfs-with-org-mode-and.html
+
