@@ -153,3 +153,107 @@ qml,这个比较偏门,应该很难指望,不过用到的场合也不多.
 是否可以用orgmode替代latex?
 http://emacs-fu.blogspot.co.nz/2011/04/nice-looking-pdfs-with-org-mode-and.html
 
+* emacs_org操作纪录
+orgmode和evilmode的混用方案
+记录下org中大体的感觉需要记下来的几个快捷键.
+** evil normal
+*** <ret>
+    普通的回车 就和normal模式中的回车一样
+*** <m-ret>
+    新条目,不过注意会把光标后的内容带着换行
+    在无条目航首,会把当前行添加为条目
+    所以为了避免触发上面的问题,可以按o开新行后再加条目
+*** alt+ up / down
+    移动条目
+*** m-h
+*** alt + left/right
+    给条目升降级别
+    标记条目,连按标记兄弟条目
+*** cut copy
+    vim的dd就够了,所以不记这个应该没关系
+** evil visual
+*** alt + left/right
+    给选中的条目批量升降级别
+    注意似乎选中的第一行无效
+** evil insert
+*** <ret>
+    普通的回车 就和normal模式中的回车一样
+*** <m-ret>
+    新条目
+*** alt+ up / down
+    移动条目
+*** alt + left/right
+    给条目升降级别
+** global?
+*** C-c /
+    显示特定的比如说todo标记
+*** C-c / r
+    和上面的类似的功能.
+*** m-g n / m-g m-n
+** table
+   不过一般数据表格其实不可能手写,都是程序格式输出的.
+   此外我自己做笔记的话,应该不会用到表格.
+*** create table
+    c-c |
+*** format table
+    c-c c-c
+*** clear grid
+    c-c space
+*** move to grod
+    tab / shift tab
+*** m-a m-e
+    grid头部或者尾部
+*** move raw/column
+    M-up/down/left/right
+*** kill/insert row/column
+    M-S-up/down/left/right
+    M-S快捷键依旧无效
+*** c-c ret
+    添加横线
+
+** plain list
+   
+*** 记号
+    用的记号包括 - + *  1) 1. ::
+*** 例子
+**** Lord of the Rings
+     My favorite scenes are (in this order)
+     1. The attack of the Rohirrim
+     2. Eowyn's fight with the witch king
++ this was already my favorite scene in the book
++ I really like Miranda Otto.
+3. Peter Jackson being shot by Legolas
+- on DVD only
+He makes a really funny face when it happens.
+But in the end, no individual scenes matter but the film as a whole.
+Important actors in this film are:
+- Elijah Wood :: He plays Frodo
+- Sean Astin :: He plays Sam, Frodo's friend.  I still remember
+him very well from his role as Mikey Walsh in The Goonies.
+
+
+** 打开url
+M-x browse-url
+
+** 输出html
+C-c C-e h h
+M-x org-html-export-to-html
+* vim_org操作纪录
+vim orgmode的按键和emacs是不同.
+** 开启新条目
+   -   ret
+   -   m-ret
+** 移动
+   -   { / } 移动到上下条目
+   - ]] [[移动到上下同级条目
+         - g{ g} 移动到上级条目
+** 改动
+*** 升降级
+    -   >> <<  条目 
+    -   >]] <[[ 条目及子条目 
+*** 上下移动
+    -    m{ m} 条目
+    -    m]] m[[ 条目及子条目
+** 复制,剪切
+    折叠的情况下普通的dd yy就可以了.
+

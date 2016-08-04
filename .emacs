@@ -209,3 +209,16 @@
   (setq interprogram-cut-function 'xsel-cut-function)
   (setq interprogram-paste-function 'xsel-paste-function)
  
+;为了在org转换html后用firefox打开
+;(setq browse-url-generic-program
+;      (cond
+;       ((eq window-system 'mac) "open") ; mac
+;       ((or (eq system-type 'gnu/linux) (eq system-type 'linux)) ; linux
+;        (executable-find "firefox"))
+;       ))
+
+(setq browse-url-generic-program
+      (executable-find "firefox"))
+(setq browse-url-browser-function 'browse-url-generic
+      browse-url-generic-program "firefox")
+
