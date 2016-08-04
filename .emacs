@@ -37,7 +37,6 @@
 (menu-bar-mode -1)
 ;隐藏modeline
 (setq-default mode-line-format nil) 
-
 ;背景色,好像找不到透明modeline的方案,看来比vim还难搞.vim是通过设定为None实现透明的,看来emacs做不到.
 ;(set-face-background 'modeline "Blue")
 ;  I use the following with TERM=xterm-256color
@@ -58,6 +57,13 @@
 ;(define-key evil-normal-state-map "q" 'kill-emacs)
 (define-key evil-normal-state-map "q" 'save-buffers-kill-terminal)
 (define-key evil-normal-state-map "s" 'save-buffer)
+
+;macro基本上感觉和vim用起来差不多,没发现异常的地方.
+(define-key evil-normal-state-map (kbd "C-q") 'evil-record-macro)
+
+(define-key evil-normal-state-map (kbd "C-e") 'evil-end-of-line)
+;C-a不用改,默认已经是类似Home键的操作了
+;(define-key evil-normal-state-map (kbd "C-a") 'evil-first-non-blank)
 
 ;时间
 (defvar current-date-time-format "%F %T %a %Z" )
@@ -95,6 +101,10 @@
 
 (define-key evil-normal-state-map "gu" 'outline-up-heading)
 
+;plain list的切换 现在是C-c -
+;这个功能实际上并不常用,但是给人以orgmode的确在管理list的实感.
+;更重要的其实是确保orgmode会管理list格式,做条目的上下调整什么的.
+
 ;换行
  (setq org-startup-truncated nil)
 
@@ -103,11 +113,6 @@
           `((".*" . ,temporary-file-directory)))
     (setq auto-save-file-name-transforms
           `((".*" ,temporary-file-directory t)))
-
-
-
-
-
 
 ;TODO
 ;找一个类似vundle的包管理.evil给的方案是手动安装的,

@@ -32,6 +32,8 @@ Wed 25 May 2016 02:29:54 PM NZST
 ** idea
 2016-07-03 23:57:33 Sun NZST
 vim 插件,用一个类似vimfx一样的按键帮助提示?
+** 帮助
+- :map :: 找出keybind
 ** eclim
 Wed 25 May 2016 02:25:22 PM NZST
 
@@ -99,9 +101,16 @@ qml,这个比较偏门,应该很难指望,不过用到的场合也不多.
 文件查找这种基本功能,估计emacs应该会提供吧?
 *** silversearch
 这个同样是外部功能,应该会提供整合吧.
-** 优势
+** 比较vim 
    emacs似乎是有总的后台进程的,所以多个emacs打开同一个文件的时候,后台进程会协调同步.
-对比来说,vim只能允许单一进程打开一个文件
+   对比来说,vim只能允许单一进程打开一个文件
+   
+   但是emacs的确比较重,在这台firefox会经常性崩溃,编译,python经常 seg error的电脑上,vim有时候会在退出的时候提示错误,但是运行中没有出过问题,不过刚才emacs在运行中就报bug退出了.
+   
+** evil mode
+evilmode的优势.
+由于emacs的自动化程度比vim高,所以emacs下需要的键映射或许也比vim多.
+而vim的normal mode提供了一个很大的键映射空间,一些不常用的键映射都可以改掉.
 * orgmode
 ** 熟悉阶段的一些规则.
 *** 禁止文本内部复制黏贴
@@ -155,7 +164,8 @@ qml,这个比较偏门,应该很难指望,不过用到的场合也不多.
 
 是否可以用orgmode替代latex?
 http://emacs-fu.blogspot.co.nz/2011/04/nice-looking-pdfs-with-org-mode-and.html
-
+** 帮助
+   - C-h/F1 k :: 找出特定的按键
 * emacs_org操作纪录
 orgmode和evilmode的混用方案
 记录下org中大体的感觉需要记下来的几个快捷键.
@@ -234,15 +244,12 @@ Important actors in this film are:
 - Sean Astin :: He plays Sam, Frodo's friend.  I still remember
 him very well from his role as Mikey Walsh in The Goonies.
 *** 操作
-    * M-<RET> :: (org-inser-heading)
-    * <TAB> :: (org-cycle) 用处很多,包括调整一个条目的级别,也包括展开,收缩条目 
-    * M-up/down :: 交换顺序
-    * C-c - :: 改变list记号,现在用的这种带有标题的似乎换不成数字,但是上面那种就没问题. 几种list记号似乎html下看是一样的,可能export的参数需要调整.
-    * C-c * :: 把list换成headline
-    * C-c ^ :: 排序
-
-    
-
+    - <TAB> :: (org-cycle) 用处很多,包括调整一个条目的级别,也包括展开,收缩条目 
+    - C-c * :: 把list换成headline
+    - C-c - :: 改变list记号,现在用的这种带有标题的似乎换不成数字,但是上面那种就没问题. 几种list记号似乎html下看是一样的,可能export的参数需要调整.
+    - C-c ^ :: 排序
+    - M-<RET> :: (org-inser-heading)
+    - M-up/down :: 交换顺序
 ** 打开url
 M-x browse-url
 
