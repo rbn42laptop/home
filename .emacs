@@ -217,8 +217,8 @@
 ;        (executable-find "firefox"))
 ;       ))
 
-(setq browse-url-generic-program
-      (executable-find "firefox"))
-(setq browse-url-browser-function 'browse-url-generic
-      browse-url-generic-program "firefox")
+;(setq browse-url-generic-program
+;      (executable-find "firefox"))
+;(setq browse-url-browser-function 'browse-url-generic
+;      browse-url-generic-program "firefox")
 

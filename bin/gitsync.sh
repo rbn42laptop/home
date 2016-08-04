@@ -15,6 +15,8 @@ git add --all ~/.ycm_extra_conf.py
 git add --all ~/.tern-config
 #git add --all ~/.nanorc
 git add --all ~/.emacs
+#spacemacs的配置文件,但我现在并没有用.
+git add --all ~/.spacemacs
 
 #####################
 #theme

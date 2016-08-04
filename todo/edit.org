@@ -99,6 +99,9 @@ qml,这个比较偏门,应该很难指望,不过用到的场合也不多.
 文件查找这种基本功能,估计emacs应该会提供吧?
 *** silversearch
 这个同样是外部功能,应该会提供整合吧.
+** 优势
+   emacs似乎是有总的后台进程的,所以多个emacs打开同一个文件的时候,后台进程会协调同步.
+对比来说,vim只能允许单一进程打开一个文件
 * orgmode
 ** 熟悉阶段的一些规则.
 *** 禁止文本内部复制黏贴
@@ -220,17 +223,25 @@ orgmode和evilmode的混用方案
      My favorite scenes are (in this order)
      1. The attack of the Rohirrim
      2. Eowyn's fight with the witch king
-+ this was already my favorite scene in the book
-+ I really like Miranda Otto.
-3. Peter Jackson being shot by Legolas
-- on DVD only
+     3. this was already my favorite scene in the book
+     4. I really like Miranda Otto.
+     5. Peter Jackson being shot by Legolas
+     6. on DVD only
 He makes a really funny face when it happens.
 But in the end, no individual scenes matter but the film as a whole.
 Important actors in this film are:
 - Elijah Wood :: He plays Frodo
 - Sean Astin :: He plays Sam, Frodo's friend.  I still remember
 him very well from his role as Mikey Walsh in The Goonies.
+*** 操作
+    * M-<RET> :: (org-inser-heading)
+    * <TAB> :: (org-cycle) 用处很多,包括调整一个条目的级别,也包括展开,收缩条目 
+    * M-up/down :: 交换顺序
+    * C-c - :: 改变list记号,现在用的这种带有标题的似乎换不成数字,但是上面那种就没问题. 几种list记号似乎html下看是一样的,可能export的参数需要调整.
+    * C-c * :: 把list换成headline
+    * C-c ^ :: 排序
 
+    
 
 ** 打开url
 M-x browse-url
@@ -257,3 +268,8 @@ vim orgmode的按键和emacs是不同.
 ** 复制,剪切
     折叠的情况下普通的dd yy就可以了.
 
+* spacemacs 
+  尝试了一下,也没法处理export到firefox的问题.
+  其他方面并不知道它提供了什么功能.
+不过和vim比 emacs真是高度的自动化,能给出这么大量的提示跳转信息
+但是我无法想象这些功能是否是必要的.
