@@ -1,0 +1,479 @@
+% Created 2016-08-05 Fri 16:46
+
+\documentclass[12pt,a4paper]{article}
+\usepackage[margin=2cm]{geometry}
+\usepackage{fontspec}
+\setromanfont{cwTeXMing}
+
+\usepackage{etoolbox}  % Quote 部份的字型設定
+\newfontfamily\quotefont{cwTeXFangSong}
+\AtBeginEnvironment{quote}{\quotefont\small}
+
+\setmonofont[Scale=0.9]{Courier} % 等寬字型 [FIXME] Courier 中文會爛掉！
+\font\cwSong=''cwTeXFangSong'' at 10pt
+%\font\cwHei=''cwTeXHeiBold'' at 10p %不知為何這套字型一用就爆掉...
+\font\cwYen=''cwTeXYen'' at 10pt
+\font\cwKai=''cwTeXKai'' at 10pt
+\font\cwMing=''cwTeXMing'' at 10pt
+\font\wqyHei=''文泉驛正黑'' at 10pt
+\font\wqyHeiMono=''文泉驛等寬正黑'' at 10pt
+\font\wqyHeiMicro=''文泉驛微米黑'' at 10pt
+\XeTeXlinebreaklocale ``zh''
+\XeTeXlinebreakskip = 0pt plus 1pt
+\linespread{1.36}
+
+% [FIXME] ox-latex 的設計不良導致 hypersetup 必須在這裡插入
+\usepackage{hyperref}
+\hypersetup{
+  colorlinks=true, %把紅框框移掉改用字體顏色不同來顯示連結
+  linkcolor=[rgb]{0,0.37,0.53},
+  citecolor=[rgb]{0,0.47,0.68},
+  filecolor=[rgb]{0,0.37,0.53},
+  urlcolor=[rgb]{0,0.37,0.53},
+  pagebackref=true,
+  linktoc=all,}
+
+\usepackage{hyperref}
+\usepackage[utf8]{inputenc}
+\usepackage{fixltx2e}
+\usepackage{graphicx}
+\usepackage{longtable}
+\usepackage{float}
+\usepackage{wrapfig}
+\usepackage{rotating}
+\usepackage[normalem]{ulem}
+\usepackage{amsmath}
+\usepackage{textcomp}
+\usepackage{marvosym}
+\usepackage{wasysym}
+\usepackage{multicol}
+\usepackage{amssymb}
+\tolerance=1000
+\date{\today}
+\title{}
+\hypersetup{
+ pdfauthor={},
+ pdftitle={},
+ pdfkeywords={},
+ pdfsubject={},
+ pdfcreator={Emacs 24.5.1 (Org mode 8.3.5)}, 
+ pdflang={English}}
+\begin{document}
+
+\tableofcontents
+
+\section{root}
+\label{sec:orgheadline1}
+2016-07-25 13:21:42 Mon NZST
+  想到什么的时候再往这里添加.
+主要是罗列各种问题,有些问题可以暂且容忍,
+但是由于问题存在,所以有些事情就不能用emacs处理.
+在将来如果把更多事务交给emacs处理,或许会在整合性上带来好处.
+\section{keyboard}
+\label{sec:orgheadline3}
+\subsection{swapesc}
+\label{sec:orgheadline2}
+按键习惯真是可怕，要改变起来还真难
+强制把大拇指藏在键盘下。够不到esc的话，习惯就慢慢改了吧
+\section{vim}
+\label{sec:orgheadline9}
+\subsection{menu}
+\label{sec:orgheadline4}
+Wed 25 May 2016 02:15:59 PM NZST
+给vim做一个菜单栏.
+很多插件都有提供很多命令可用,但是必须要查看其文档.
+
+做这么一个功能,按下快捷键,打开一个菜单栏,其中用属性结构放置各种插件的命令模板,可以对树进行查询.
+然后选择命令模板之后,直接执行,或者编辑后执行.
+
+这有点像是rofi之于dmenu的增强改动. 
+
+eclim就是有很多命令使用方式.
+
+Wed 25 May 2016 02:29:54 PM NZST
+不过比起学新插件的时候查文档,写插件费事多了.
+主要是eclim的 project create,这样的命令让人觉得很怪异,不可能背下来的吧?
+但是代码跳转,格式化什么的,只要看一次就够了,之后就是写入vimrc映射shortcut了
+不过重命名还是有点怪异的,好像上次用过不怎么好用.就好象vim的replace,我从来没记住过,先在基本简单的replace主要依赖multicursor来处理的吧,复杂的就用gedit了
+这个操作平时也不多,所以放eclipse处理也够了,代码跳转倒是更重要
+\subsection{{\bfseries\sffamily TODO} }
+\label{sec:orgheadline5}
+学一下宏的用法.
+\subsection{idea}
+\label{sec:orgheadline6}
+2016-07-03 23:57:33 Sun NZST
+vim 插件,用一个类似vimfx一样的按键帮助提示?
+\subsection{帮助}
+\label{sec:orgheadline7}
+\begin{description}
+\item[{:map}] 找出keybind
+\end{description}
+\subsection{eclim}
+\label{sec:orgheadline8}
+Wed 25 May 2016 02:25:22 PM NZST
+
+\url{http://eclim.org/cheatsheet.html}
+我们需要哪些功能?
+refactor rename,已有
+view implement 已有
+暂时想到也就这些
+\section{emacs}
+\label{sec:orgheadline27}
+\subsection{root}
+\label{sec:orgheadline10}
+2016-07-24 12:10:00 Sun NZST
+evil mode
+org mode
+
+vim的相对弱项,
+java?eclim怎么样?
+html,md,tex,git?
+这些非常用,所以如果想要转emacs的话,应该是要编写这些这些东西的时候.
+
+2016-07-24 22:52:25 Sun NZST
+暂且来看,vim中不会有相对完整的orgmode功能
+不过我也不需要那么完整的,实际上,除了折叠headline以外的功能我都不知道能不能用上.
+不过TODO倒是似乎会有用.
+那么到底是用vim-orgmode还是用emacs-evil呢?
+
+emacs的话,界面还未调整,还有文件备份没有处理过,还有timestamp
+
+\subsection{一般操作}
+\label{sec:orgheadline11}
+\subsection{lisp}
+\label{sec:orgheadline12}
+   2016-07-26 06:45:56 Tue NZST
+   emacs和vim的对比感觉.
+一些vim中的插件,或者api,
+在emacs中似乎都是以lisp代码串的形式存在的.
+所以给人感觉似乎lisp的确很万能.
+\subsection{保存退出}
+\label{sec:orgheadline16}
+\subsubsection{期望}
+\label{sec:orgheadline13}
+期望是可以和vim一样,按q退出一个buffer,如果没有其他buffer了,就完全退出.
+\subsubsection{现状}
+\label{sec:orgheadline14}
+现在的map是,完全退出emacs,并且不询问是否保存.
+\subsubsection{分析}
+\label{sec:orgheadline15}
+由于无法选择退出单一buffer,所以现在不能用emacs处理多文件,
+不过处理多文件并不是那么常见,嗯,至少处理单一脚本的时候,就用不到这样的功能.
+至于保存询问,一般来说,在vim模式下,改完之后都会顺手按s保存,所以,退出的时候不做询问,勉强不算问题.
+\subsection{主题}
+\label{sec:orgheadline17}
+主要是改下背景色,还有制表符,下划线.
+这大概必须要进一步的熟悉emacs后才方便做.
+\subsection{autoformat}
+\label{sec:orgheadline19}
+格式化,vim的格式化是很局限的.
+不过vim的python支持的确很好,整合了pep8,所以至少python的格式化并不是问题.
+\subsubsection{期望}
+\label{sec:orgheadline18}
+    期望能够格式化的类型
+python有pep8,所以应该肯定能做到的.
+c有clang,估计也不是问题,
+js,html,css等web文件
+应该也和vim一样有专业的外部文件引入可以处理
+然后是org,不过至少编辑阶段格式就不会太乱了.
+bash,这个不算偏门,但是似乎没有独立工具能格式化bash
+qml,这个比较偏门,应该很难指望,不过用到的场合也不多.
+\subsection{vim特有的功能}
+\label{sec:orgheadline24}
+\subsubsection{multicursor}
+\label{sec:orgheadline20}
+\subsubsection{motion}
+\label{sec:orgheadline21}
+基础的motion evil是提供了,但是vim plugin中还有更高级的motion,
+虽然我用的也不多,但是有的时候还是很方便的.
+\subsubsection{ctrl p}
+\label{sec:orgheadline22}
+文件查找这种基本功能,估计emacs应该会提供吧?
+\subsubsection{silversearch}
+\label{sec:orgheadline23}
+这个同样是外部功能,应该会提供整合吧.
+\subsection{比较vim}
+\label{sec:orgheadline25}
+emacs似乎是有总的后台进程的,所以多个emacs打开同一个文件的时候,后台进程会协调同步.
+对比来说,vim只能允许单一进程打开一个文件
+
+但是emacs的确比较重,在这台firefox会经常性崩溃,编译,python经常 seg error的电脑上,vim有时候会在退出的时候提示错误,但是运行中没有出过问题,不过刚才emacs在运行中就报bug退出了.
+
+\subsection{evil mode}
+\label{sec:orgheadline26}
+evilmode的优势.
+由于emacs的自动化程度比vim高,所以emacs下需要的键映射或许也比vim多.
+而vim的normal mode提供了一个很大的键映射空间,一些不常用的键映射都可以改掉.
+\section{orgmode}
+\label{sec:orgheadline43}
+\subsection{熟悉阶段的一些规则.}
+\label{sec:orgheadline31}
+\subsubsection{禁止文本内部复制黏贴}
+\label{sec:orgheadline28}
+尽量用org的方式来调整文本结构.
+毕竟复制粘贴的方式调整文本结构实在是太熟练了,而且可以处理任何问题.
+但是显然相比org约束性不够,存在打乱文本结构的问题.
+\subsubsection{不要打"*"星号}
+\label{sec:orgheadline29}
+为了熟悉org增加条目,和修改条目级别的方式.
+\subsubsection{减少vim导航键的使用}
+\label{sec:orgheadline30}
+尤其是gg和G,还有jk,尽量用org的条目行走方式
+\subsection{看法}
+\label{sec:orgheadline35}
+\subsubsection{横屏编辑}
+\label{sec:orgheadline32}
+    org似乎很适合横屏编辑,因为的确需要有足够的屏高,来展示tree.
+主要原因应该在于,由于org是tree结构而不是线性结构,所以带来了上下翻滚的可能性
+实际上原本做线性编辑的话,之前写下的东西过后可能是不再翻看了,而是完全靠大脑回忆.
+所以就没有上下翻阅的必要了.
+\subsubsection{文件分割}
+\label{sec:orgheadline33}
+使用org的话,基本上就是把原本分散的文件都集合在一起了.
+集合在一起,并且通过org的树结构导航.
+这个文件树相比的优势是什么呢?
+直观的来说是,这个树的确比文件树容易操作.树结构和文件内容混搭在了一起.
+但有一个问题是文件安全性降低了,因为所有的东西都在一起被emacs访问了,一个误操作会影响到全局.
+更大的问题是,文件变复杂了,甚至于出现误操作,你都不一定马上会意识到.
+但是,如果有通过github做版本控制的话,这个安全问题可以一定程度弥补回来.
+总体来说,就是这不plain text的功能性更强,但是随之而来的是文件复杂性,会要求大脑付出更多注意力来控制.
+不过org的设计还有树结构以外的其他功能
+\subsubsection{线形和树形编辑对比}
+\label{sec:orgheadline34}
+嗯,我不觉的线形编辑是劣于树形编辑的,因为前者把必要的信息维持在了脑中,而后者则更多的依赖外物.
+我认为信息维持在脑中有些情形下是很必要的,这会增大思维活跃性,而把自己的思维绑定在一个作为
+外物的tree上的时候,活跃性是会减弱的,人是会被约束的.
+\subsection{想要学的功能}
+\label{sec:orgheadline40}
+\subsubsection{切换到星号以外的树结构标记}
+\label{sec:orgheadline36}
+之前在youtube看过,确认有这个功能,
+不过即使切换,依旧还是树结构,所以其实对于结构没有影响,
+影响到的仅仅是外观.
+由于在文本结构固定后,什么时候切换都是可以的,所以这个功能以后学也没有问题.
+不过,总觉的有些条目的罗列性质强于另一些,所以多少会想要把这些条目的星号换成数字.
+\subsubsection{表格}
+\label{sec:orgheadline37}
+其实基本的很容易就学会了.主要是似乎没什么用到的场合.
+\subsubsection{排序}
+\label{sec:orgheadline38}
+有些条目的序列性不强,所以坐下字符串排序方便查找?
+还是说最好我们能加强树的纵深,减小branch宽度.
+\subsubsection{文件链接}
+\label{sec:orgheadline39}
+这个似乎很有必要学下,这样就可以用org整合管理其他文件了.
+不过emacs一向有保罗万象的传统,但我还是比较希望用vim或者其他程序来打开链接的文件.
+\subsection{论文}
+\label{sec:orgheadline41}
+有表格,还有一个org-ref.
+或许org可以直接用来写论文,转换成latex?
+不过如果可以的话网上应该有介绍的.
+至少org只有组织功能,没有排版功能,特别是要混合图片的话.
+
+是否可以用orgmode替代latex?
+\url{http://emacs-fu.blogspot.co.nz/2011/04/nice-looking-pdfs-with-org-mode-and.html}
+\subsection{帮助}
+\label{sec:orgheadline42}
+\begin{description}
+\item[{C-h/F1 k}] 找出特定的按键
+\end{description}
+\section{emacs\(_{\text{org操作纪录}}\)}
+\label{sec:orgheadline78}
+orgmode和evilmode的混用方案
+记录下org中大体的感觉需要记下来的几个快捷键.
+\subsection{evil normal}
+\label{sec:orgheadline50}
+\subsubsection{<ret>}
+\label{sec:orgheadline44}
+普通的回车 就和normal模式中的回车一样
+\subsubsection{<m-ret>}
+\label{sec:orgheadline45}
+新条目,不过注意会把光标后的内容带着换行
+在无条目航首,会把当前行添加为条目
+所以为了避免触发上面的问题,可以按o开新行后再加条目
+\subsubsection{alt+ up / down}
+\label{sec:orgheadline46}
+移动条目
+\subsubsection{m-h}
+\label{sec:orgheadline47}
+\subsubsection{alt + left/right}
+\label{sec:orgheadline48}
+给条目升降级别
+标记条目,连按标记兄弟条目
+\subsubsection{cut copy}
+\label{sec:orgheadline49}
+vim的dd就够了,所以不记这个应该没关系
+\subsection{evil visual}
+\label{sec:orgheadline52}
+\subsubsection{alt + left/right}
+\label{sec:orgheadline51}
+给选中的条目批量升降级别
+注意似乎选中的第一行无效
+\subsection{evil insert}
+\label{sec:orgheadline57}
+\subsubsection{<ret>}
+\label{sec:orgheadline53}
+普通的回车 就和normal模式中的回车一样
+\subsubsection{<m-ret>}
+\label{sec:orgheadline54}
+新条目
+\subsubsection{alt+ up / down}
+\label{sec:orgheadline55}
+移动条目
+\subsubsection{alt + left/right}
+\label{sec:orgheadline56}
+给条目升降级别
+\subsection{global?}
+\label{sec:orgheadline61}
+\subsubsection{C-c /}
+\label{sec:orgheadline58}
+显示特定的比如说todo标记
+\subsubsection{C-c / r}
+\label{sec:orgheadline59}
+和上面的类似的功能.
+\subsubsection{m-g n / m-g m-n}
+\label{sec:orgheadline60}
+\subsection{table}
+\label{sec:orgheadline70}
+不过一般数据表格其实不可能手写,都是程序格式输出的.
+此外我自己做笔记的话,应该不会用到表格.
+\subsubsection{create table}
+\label{sec:orgheadline62}
+c-c |
+\subsubsection{format table}
+\label{sec:orgheadline63}
+c-c c-c
+\subsubsection{clear grid}
+\label{sec:orgheadline64}
+c-c space
+\subsubsection{move to grod}
+\label{sec:orgheadline65}
+tab / shift tab
+\subsubsection{m-a m-e}
+\label{sec:orgheadline66}
+grid头部或者尾部
+\subsubsection{move raw/column}
+\label{sec:orgheadline67}
+M-up/down/left/right
+\subsubsection{kill/insert row/column}
+\label{sec:orgheadline68}
+M-S-up/down/left/right
+M-S快捷键依旧无效
+\subsubsection{c-c ret}
+\label{sec:orgheadline69}
+添加横线
+
+\subsection{plain list}
+\label{sec:orgheadline75}
+
+\subsubsection{记号}
+\label{sec:orgheadline71}
+用的记号包括 - + *  1) 1. ::
+\subsubsection{例子}
+\label{sec:orgheadline73}
+\begin{enumerate}
+\item Lord of the Rings
+\label{sec:orgheadline72}
+My favorite scenes are (in this order)
+\begin{enumerate}
+\item The attack of the Rohirrim
+\item Eowyn's fight with the witch king
+\item this was already my favorite scene in the book
+\item I really like Miranda Otto.
+\item Peter Jackson being shot by Legolas
+\item on DVD only
+\end{enumerate}
+He makes a really funny face when it happens.
+But in the end, no individual scenes matter but the film as a whole.
+Important actors in this film are:
+\begin{description}
+\item[{Elijah Wood}] He plays Frodo
+\item[{Sean Astin}] He plays Sam, Frodo's friend.  I still remember
+\end{description}
+him very well from his role as Mikey Walsh in The Goonies.
+\end{enumerate}
+\subsubsection{操作}
+\label{sec:orgheadline74}
+\begin{description}
+\item[{<TAB>}] (org-cycle) 用处很多,包括调整一个条目的级别,也包括展开,收缩条目
+\item[{C-c *}] 把list换成headline
+\item[{C-c -}] 改变list记号,现在用的这种带有标题的似乎换不成数字,但是上面那种就没问题. 几种list记号似乎html下看是一样的,可能export的参数需要调整.
+\item[{C-c \^{}}] 排序
+\item[{M-<RET>}] (org-inser-heading)
+\item[{M-up/down}] 交换顺序
+\end{description}
+\subsection{打开url}
+\label{sec:orgheadline76}
+M-x browse-url
+
+\subsection{输出html}
+\label{sec:orgheadline77}
+C-c C-e h h
+M-x org-html-export-to-html
+\section{vim\(_{\text{org操作纪录}}\)}
+\label{sec:orgheadline85}
+vim orgmode的按键和emacs是不同.
+\subsection{开启新条目}
+\label{sec:orgheadline79}
+\begin{itemize}
+\item ret
+\item m-ret
+\end{itemize}
+\subsection{移动}
+\label{sec:orgheadline80}
+\begin{itemize}
+\item \{ / \} 移动到上下条目
+\item ]] [[移动到上下同级条目
+\begin{itemize}
+\item g\{ g\} 移动到上级条目
+\end{itemize}
+\end{itemize}
+\subsection{改动}
+\label{sec:orgheadline83}
+\subsubsection{升降级}
+\label{sec:orgheadline81}
+\begin{itemize}
+\item >> <<  条目
+\item >]] <[[ 条目及子条目
+\end{itemize}
+\subsubsection{上下移动}
+\label{sec:orgheadline82}
+\begin{itemize}
+\item m\{ m\} 条目
+\item m]] m[[ 条目及子条目
+\end{itemize}
+\subsection{复制,剪切}
+\label{sec:orgheadline84}
+折叠的情况下普通的dd yy就可以了.
+\section{spacemacs}
+\label{sec:orgheadline86}
+  尝试了一下,也没法处理export到firefox的问题.
+  其他方面并不知道它提供了什么功能.
+不过和vim比 emacs真是高度的自动化,能给出这么大量的提示跳转信息
+但是我无法想象这些功能是否是必要的.
+
+\section{快捷键原则}
+\label{sec:orgheadline91}
+我用s/q绑定了保存/退出.因为没有听说别人这么做,所以大概很少人这么干?
+\subsection{树形}
+\label{sec:orgheadline88}
+这应该是最普遍的原则,按照功能结构,按层级分配快捷键
+尤其emacs的keybind就是这么干的,而lisp本身就是一棵树.
+\subsubsection{优势}
+\label{sec:orgheadline87}
+\begin{itemize}
+\item 项目的演化,甚至迁移.
+\item 结构化,便于引导新人.
+\end{itemize}
+\subsection{压缩字典}
+\label{sec:orgheadline89}
+压缩字典的原则是,把给最高频的操作映射到最短的快捷键上.
+任何一份高度自定义的配置文件应该都会比较接近这种形式吧.
+保存和退出就是如此高频的操作.
+\subsection{vim的组合模式}
+\label{sec:orgheadline90}
+我找不到什么合适的比喻,
+vim的默认快捷键都是相对简单的功能,
+但是组合在一起的时候却能演化出很多情形.
+为了便于组合,当然这些基础的简单功能都必须要给予最短的快捷键.
+\end{document}

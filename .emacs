@@ -83,8 +83,10 @@
 ;这些按键原本应该仅仅用于org模式.不过我不知道emacs如何模仿vim中的autocmd filetype命令.
 ;由于暂且仅仅用emacs编辑org,所以配置到全局暂时也不是问题.
 ;(global-set-key (kbd "H") ')
-(define-key evil-normal-state-map "L" 'org-do-demote)
-(define-key evil-normal-state-map "H" 'org-do-promote)
+;(define-key evil-normal-state-map "L" 'org-do-demote)
+;(define-key evil-normal-state-map "H" 'org-do-promote)
+(define-key evil-normal-state-map "L" 'org-metaright)
+(define-key evil-normal-state-map "H" 'org-metaleft)
 ;下面两个按键实际上绑定到了C-l上,没有用到shift
 ;(define-key evil-normal-state-map "\C-L" 'org-demote-subtree)
 ;(define-key evil-normal-state-map "\C-H" 'org-promote-subtree)
@@ -94,8 +96,11 @@
 (define-key evil-normal-state-map ">" 'org-demote-subtree)
 (define-key evil-normal-state-map "<" 'org-promote-subtree)
 
-(define-key evil-normal-state-map "J" 'outline-next-visible-heading)
-(define-key evil-normal-state-map "K" 'outline-previous-visible-heading)
+;(define-key evil-normal-state-map "J" 'outline-next-visible-heading)
+;(define-key evil-normal-state-map "K" 'outline-previous-visible-heading)
+(define-key evil-normal-state-map "J" 'org-metadown)
+(define-key evil-normal-state-map "K" 'org-metaup)
+;上面的JK需要在不同情形映射到不同的org function,下面的暂且还不知道会不会需要,所以先不改.
 (define-key evil-normal-state-map "\C-J" 'org-move-subtree-down)
 (define-key evil-normal-state-map "\C-K" 'org-move-subtree-up)
 
@@ -227,3 +232,57 @@
 ;(setq browse-url-browser-function 'browse-url-generic
 ;      browse-url-generic-program "firefox")
 
+;https://kuanyui.github.io/2014/05/10/emacs-org-mode-xelatex-output-chinese-pdf/
+;org2pdf中文
+(setq org-latex-classes
+      '(("zh-article"
+         "
+\\documentclass[nofonts]{ctexart}
+\\setCJKmainfont[ItalicFont={AR PL UKai CN}]{AR PL UMing CN} 
+\\setCJKsansfont{WenQuanYi Zen Hei} 
+\\setCJKmonofont{WenQuanYi Zen Hei Mono} 
+"
+         ("\\section{%s}" . "\\section*{%s}")
+         ("\\subsection{%s}" . "\\subsection*{%s}")
+         ("\\subsubsection{%s}" . "\\subsubsection*{%s}")
+         ("\\paragraph{%s}" . "\\paragraph*{%s}")
+         ("\\subparagraph{%s}" . "\\subparagraph*{%s}"))
+        ))
+;; [FIXME]
+;; 原本是不要讓 org 插入 hypersetup（因為 org-mode 這部份設計成沒辦法自訂，或許可以去 report 一下？）
+;; 改成自行插入，但這樣 pdfcreator 沒辦法根據 Emacs 版本插入，pdfkeyword 也會無效...幹。
+(setq org-latex-with-hyperref t)
+
+;; 把預設的 fontenc 拿掉
+;; 經過測試 XeLaTeX 輸出 PDF 時有 fontenc[T1]的話中文會無法顯示。
+;; hyperref 也拿掉，改從 classes 處就插入，原因見上面 org-latex-with-hyperref 的說明。
+(setq org-latex-default-packages-alist
+      '(("" "hyperref" nil)
+        ("AUTO" "inputenc" t)
+        ("" "fixltx2e" nil)
+        ("" "graphicx" t)
+        ("" "longtable" nil)
+        ("" "float" nil)
+        ("" "wrapfig" nil)
+        ("" "rotating" nil)
+        ("normalem" "ulem" t)
+        ("" "amsmath" t)
+        ("" "textcomp" t)
+        ("" "marvosym" t)
+        ("" "wasysym" t)
+        ("" "multicol" t)  ; 這是我另外加的，因為常需要多欄位文件版面。
+        ("" "amssymb" t)
+        "\\tolerance=1000"))
+
+;; Use XeLaTeX to export PDF in Org-mode
+(setq org-latex-pdf-process
+      '("xelatex -interaction nonstopmode -output-directory %o %f"
+        "xelatex -interaction nonstopmode -output-directory %o %f"
+        "xelatex -interaction nonstopmode -output-directory %o %f"))
+
+;; 指定你要用什麼外部 app 來開 pdf 之類的檔案。我是偷懶所以直接用 kde-open，你也可以指定其他的。
+(setq org-file-apps '((auto-mode . emacs)
+                      ("\\.mm\\'" . default)
+                      ("\\.x?html?\\'" . "xdg-open %s")
+                      ("\\.pdf\\'" . "kde-open %s")
+                      ("\\.jpg\\'" . "kde-open %s")))
