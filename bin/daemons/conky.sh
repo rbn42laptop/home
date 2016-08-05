@@ -3,6 +3,8 @@
 #虽然没有multiload好用,有总比没有好
 #conky -c ~/config/rc/conky
 pkill conky
+pkill yabar
+
 sleep 1
 export CORNER=top_right
 #export CORNER=bottom_right
@@ -26,3 +28,6 @@ conky -c ~/config/rc/conky/$CORNER/graph_large_num &
 #sleep 1
 #conky -c ~/config/rc/conky/dock/graph_large_num &
 
+#yabar配置也放在这里,因为yabar和conky一样是显示状态的
+#sleep 1
+#yabar -c ~/config/rc/yabar/main.conf &
