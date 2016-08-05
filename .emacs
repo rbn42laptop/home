@@ -96,13 +96,12 @@
 (define-key evil-normal-state-map ">" 'org-demote-subtree)
 (define-key evil-normal-state-map "<" 'org-promote-subtree)
 
-;(define-key evil-normal-state-map "J" 'outline-next-visible-heading)
-;(define-key evil-normal-state-map "K" 'outline-previous-visible-heading)
-(define-key evil-normal-state-map "J" 'org-metadown)
-(define-key evil-normal-state-map "K" 'org-metaup)
-;上面的JK需要在不同情形映射到不同的org function,下面的暂且还不知道会不会需要,所以先不改.
-(define-key evil-normal-state-map "\C-J" 'org-move-subtree-down)
-(define-key evil-normal-state-map "\C-K" 'org-move-subtree-up)
+(define-key evil-normal-state-map "J" 'outline-next-visible-heading)
+(define-key evil-normal-state-map "K" 'outline-previous-visible-heading)
+;(define-key evil-normal-state-map "\C-J" 'org-move-subtree-down)
+;(define-key evil-normal-state-map "\C-K" 'org-move-subtree-up)
+(define-key evil-normal-state-map "\C-J" 'org-metadown)
+(define-key evil-normal-state-map "\C-K" 'org-metaup)
 
 (define-key evil-normal-state-map "gu" 'outline-up-heading)
 

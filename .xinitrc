@@ -56,7 +56,10 @@ udisksctl mount -b /dev/disk/by-label/4T
 #比如tint2就很轻量,但是launcher部分的配置依旧很麻烦,很难保留配置.
 #但是仔细想想的话,除了削减panel中不必要的部分外,也没什么其他需要.平时panel放太多组件也是不必要的占据注意力,
 #或许设定为hide比较好.
-#xfce4-panel &
+
+#虽然概率很低,但是还是会出现focus丢失问题,主要似乎是在firefox作为单一窗口崩溃的时候.
+#所以这个保险不能丢掉.
+xfce4-panel &
 
 
 #~/bin/term_blur &

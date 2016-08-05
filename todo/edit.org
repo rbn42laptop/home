@@ -111,7 +111,7 @@ qml,这个比较偏门,应该很难指望,不过用到的场合也不多.
 evilmode的优势.
 由于emacs的自动化程度比vim高,所以emacs下需要的键映射或许也比vim多.
 而vim的normal mode提供了一个很大的键映射空间,一些不常用的键映射都可以改掉.
-* orgmode
+* orgmode 这里是我的一些想法,不是manual记录
 ** 熟悉阶段的一些规则.
 *** 禁止文本内部复制黏贴
 尽量用org的方式来调整文本结构.
@@ -164,6 +164,14 @@ evilmode的优势.
 
 是否可以用orgmode替代latex?
 http://emacs-fu.blogspot.co.nz/2011/04/nice-looking-pdfs-with-org-mode-and.html
+这里有介绍如何插入citation
+http://www.clarkdonley.com/blog/2014-10-26-org-mode-and-writing-papers-some-tips.html
+*** 缺陷 
+    1. 还不知道怎么处理ref
+    2. 图片可以引入,但是怎么做label?
+    3. 很明显,org不是用来排版的,所以图片应该不能左右划分布局
+
+
 ** 帮助
    - C-h/F1 k :: 找出特定的按键
 ** export
@@ -174,7 +182,7 @@ http://emacs-fu.blogspot.co.nz/2011/04/nice-looking-pdfs-with-org-mode-and.html
 1. 编译pdf时间长,不是针对改动编译的.
 2. 需要手动export,而不是改动后直接export,当然这个emacs应该是可以配置的.
 不过编辑的同时查看改动,只有在对格式排版的时候才需要.还有公式编辑.
-* emacs_org操作纪录
+* emacs_org操作纪录,记录下manual中对我来说有用的部分
 orgmode和evilmode的混用方案
 记录下org中大体的感觉需要记下来的几个快捷键.
 ** evil normal
@@ -264,6 +272,18 @@ M-x browse-url
 ** 输出html
 C-c C-e h h
 M-x org-html-export-to-html
+
+ 用法说明
+ 在emacs中按<C-c><C-e> 即可选择输出形式.
+ 暂且来说,html的转换可以直接使用,不需要调整,所以很方便.
+*** html
+  <C-c><C-e>hh输出到html
+  和emacs比,pandoc的输出结果很差,latex公式也无法转换.
+  同样的,github也无法处理那些latex公式.
+*** pdf
+    pdf的正确输出还需要调整.具体看上面.
+    然后中文化也有问题.
+
 * vim_org操作纪录
 vim orgmode的按键和emacs是不同.
 ** 开启新条目
