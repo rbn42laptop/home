@@ -1,0 +1,44 @@
+%%原文http://blog.sina.com.cn/s/blog_77f5a65c0101betb.html
+\ProvidesPackage{zhfontcfg}
+\usepackage[cm-default]{fontspec} %[cm-default]选项主要用来解决使用数学环境时数学符号不能正常显示的问题
+\usepackage[BoldFont,SlantFont,CJKchecksingle]{xeCJK}
+\usepackage{xunicode,xltxtra}
+\defaultfontfeatures{Mapping=tex-text} %如果没有它，会有一些 tex 特殊字符无法正常使用，比如连字符。
+% 中文断行
+\XeTeXlinebreaklocale "zh"
+\XeTeXlinebreakskip = 0pt plus 1pt minus 0.1pt
+
+\setCJKmainfont[BoldFont={WenQuanYi Zen Hei},ItalicFont={WenQuanYi Zen Hei}]{WenQuanYi Zen Hei}
+\setCJKsansfont{SimHei}
+\setCJKmonofont{[FangSong_GB2312]}
+\setmainfont{WenQuanYi Zen Hei}
+
+% Finally, we'll use \endinput to indicate that LaTeX can stop reading this file. LaTeX will ignore anything after this line.
+\endinput
+
+%%原文http://blog.sina.com.cn/s/blog_77f5a65c0101betb.html
+%往下部分有错,不过似乎用不到
+\setCJKfamilyfont{zhsong}{WenQuanYi Zen Hei}
+\setCJKfamilyfont{zhhei}{WenQuanYi Zen Hei}
+\setCJKfamilyfont{zhkai}{WenQuanYi Zen Hei}
+\setCJKfamilyfont{zhfs}{WenQuanYi Zen Hei}
+\newcommand*{\songti}{\CJKfamily{zhsong}} % 宋体
+\newcommand*{\heiti}{\CJKfamily{zhhei}}   % 黑体
+\newcommand*{\kaishu}{\CJKfamily{zhkai}}  % 楷书
+\newcommand*{\fangsong}{\CJKfamily{zhfs}} % 仿宋
+\newcommand*{\lishu}{\CJKfamily{zhli}}    % 隶书
+\newcommand*{\youyuan}{\CJKfamily{zhyou}} % 幼圆
+ 
+
+使用样例
+%原文http://blog.sina.com.cn/s/blog_77f5a65c0101betb.html
+\documentclass{article}
+\usepackage{zhfontcfg}
+\begin{document}
+\title{中文}
+\author{}
+\date{}
+\maketitle
+\section{中文}
+ 中文
+ \end{document}

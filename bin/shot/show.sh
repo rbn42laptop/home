@@ -26,6 +26,11 @@
 #不过对我来说,其实没有放置panel的理由,桌面的不必要元素应该是越少越好.
 #单单右上角一个conky差不多感觉正好,再多就显得杂乱了.
 
+
+#2016-08-06 13:47:17 Sat NZST
+#不过,虽然和win7不配,但是如果窗口主题也换成扁平的话,就协调了
+#比如~/config/term/qmlterm/white.ini的样式
+
 pkill conky
 pkill yabar
 pkill docky
