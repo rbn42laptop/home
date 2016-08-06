@@ -8,13 +8,26 @@
 \XeTeXlinebreaklocale "zh"
 \XeTeXlinebreakskip = 0pt plus 1pt minus 0.1pt
 
-\setCJKmainfont[BoldFont={WenQuanYi Zen Hei},ItalicFont={WenQuanYi Zen Hei}]{WenQuanYi Zen Hei}
-\setCJKsansfont{SimHei}
-\setCJKmonofont{[FangSong_GB2312]}
-\setmainfont{WenQuanYi Zen Hei}
+%虽然主字体用了wqy,这里还是需要设定,否则会缺失
+%\setCJKmainfont[BoldFont={WenQuanYi Zen Hei},ItalicFont={WenQuanYi Zen Hei}]{WenQuanYi Zen Hei}
+\setCJKmainfont[BoldFont={WenQuanYi Zen Hei},ItalicFont={WenQuanYi Zen Hei}]{AR PL UMing CN}
+%\setCJKsansfont{SimHei}
+%\setCJKmonofont{[FangSong_GB2312]}
 
-% Finally, we'll use \endinput to indicate that LaTeX can stop reading this file. LaTeX will ignore anything after this line.
+%不加这条的话,标题部分中英文混合的情况下中文会丢失
+%除了wqy找不到其他字体
+%\setmainfont{WenQuanYi Zen Hei} 
+%$\setmainfont{WenQuanYi Bitmap Song} 
+%\setmainfont{AR PL UKai CN} 
+\setmainfont{AR PL UMing CN} 
+
+% Finally, we'll use \endinput to indicatethat LaTeX can stop reading this file. LaTeX will ignore anything after this line.
 \endinput
+
+异常:
+注意一点,section标题可以用纯英文或者纯中文,
+但是混合的话,在使用tableofcontent的情况下xelatex会报出异常
+不顾生成结果没问题
 
 %%原文http://blog.sina.com.cn/s/blog_77f5a65c0101betb.html
 %往下部分有错,不过似乎用不到

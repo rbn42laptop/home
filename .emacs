@@ -260,6 +260,7 @@
       '(("" "hyperref" nil)
         ("AUTO" "inputenc" t)
         ("" "fixltx2e" nil)
+        ("" "zhfontcfg" nil)
         ("" "graphicx" t)
         ("" "longtable" nil)
         ("" "float" nil)
