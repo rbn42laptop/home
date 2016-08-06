@@ -1,0 +1,49 @@
+
+! define S_base02        #eee8d5
+*color0:                  S_base02
+
+define S_red           #dc322f
+*color1:                  S_red
+
+ S_green         #859900
+*color2:                  S_green
+
+ S_yellow        #b58900
+*color3:                  S_yellow
+
+ S_blue          #268bd2
+*color4:                  S_blue
+
+ S_magenta       #d33682
+*color5:                  S_magenta
+
+ S_cyan          #2aa198
+*color6:                  S_cyan
+
+!  S_base2         #073642
+*color7:                  S_base2
+
+ S_orange        #cb4b16
+*color8:                  S_base03
+
+!  S_base01        #93a1a1
+*color9:                  S_orange
+
+!  S_base03        #fdf6e3
+*color10:                 S_base01
+
+!  S_base00        #839496
+*color11:                 S_base00
+
+!  S_base0         #657b83
+*color12:                 S_base0
+
+ S_violet        #6c71c4
+*color13:                 S_violet
+
+!  S_base1         #586e75
+*color14:                 S_base1
+
+!  S_base3         #002b36
+*color15:                 S_base3
+

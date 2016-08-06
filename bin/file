@@ -6,12 +6,15 @@ python ~/bin/add2rofi.py "$ROFI_HISTORY" 1 ./bin/file "$@"
 
 export QML2_IMPORT_PATH=~/git/QMLProcess/build:~/git/qmltermwidget/build
 
+export TERM=~/bin/term
+export TERM=~/bin/term_blur
+
 if [ $# -eq 0 ]
   then
-    ~/bin/term -e "ranger "
+    $TERM -e "ranger "
     #~/tmp/qmlterm/build/noblur -c ~/config/term/qmlterm/shadow_font_black.ini -e "ranger"
   else
-    ~/bin/term -e "ranger \"$@\""
+    $TERM -e "ranger \"$@\""
     #~/tmp/qmlterm/build/noblur -c ~/config/term/qmlterm/shadow_font_black.ini -e "ranger \"$@\""
 fi
 

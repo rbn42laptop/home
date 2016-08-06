@@ -1,0 +1,20 @@
+https://github.com/paulfryzel/github-terminal-theme
+名字就叫github
+
+Normal Black:   #000000
+Normal Red:     #BF2B3D
+Normal Green:   #28696A
+Normal Yellow:  #FEF09C
+Normal Blue:    #344473
+Normal Magenta: #791813
+Normal Cyan:    #3691A0
+Normal White:   #878675
+
+Bright Black:   #878675
+Bright Red:     #BF2B3D
+Bright Green:   #28696A
+Bright Yellow:  #FEF09C
+Bright Blue:    #344473
+Bright Magenta: #793C8B
+Bright Cyan:    #3691A0
+Bright White:   #EFEFEF

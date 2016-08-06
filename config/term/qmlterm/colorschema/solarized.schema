@@ -1,0 +1,32 @@
+title solarized light
+##   slot    transparent bold
+##      |              | |
+##      V V--color--V  V V
+#color  0   0   0   0  0 0  # regular   foreground color (Black)
+#color  1   1   2   3  1 0  # transparent
+
+color  0   0   0   0  0 0  # regular   foreground color (Black)
+color  1   1   2   3  1 0  # transparent
+# intensive colors
+# instead of changing the colors, we've flaged the text to become bold
+color 10   0   0   0  0 1  # intensive foreground color
+color 11 255 255 255  1 0  # intensive background color
+
+#下面的部分是convert.py的输出
+color  2 238 232 213  0 0
+color  3 220  50  47  0 0
+color  4 133 153   0  0 0
+color  5 181 137   0  0 0
+color  6  38 139 210  0 0
+color  7 211  54 130  0 0
+color  8  42 161 152  0 0
+color  9   7  54  66  0 0
+color 12 203  75  22  0 0
+color 13 147 161 161  0 0
+color 14 253 246 227  0 0
+color 15 131 148 150  0 0
+color 16 101 123 131  0 0
+color 17 108 113 196  0 0
+color 18  88 110 117  0 0
+color 19   0  43  54  0 0
+ 
