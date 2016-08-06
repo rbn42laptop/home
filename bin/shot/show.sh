@@ -20,6 +20,12 @@
 #所以混在一起是否显得突兀呢?尤其是我们连阴影都没有,所以扁平元素就更没立体感了.
 #因为是透明主题,所以不带有主题色,少掉了一个把各个组件绑定一起的因素
 
+#panel bar阴影的作用是,让人感觉到那里有一个作为整体的东西在那里,
+#扁平透明的panel会让人觉得很模糊.没有充实.
+
+#不过对我来说,其实没有放置panel的理由,桌面的不必要元素应该是越少越好.
+#单单右上角一个conky差不多感觉正好,再多就显得杂乱了.
+
 pkill conky
 pkill yabar
 pkill docky
@@ -30,6 +36,9 @@ conky -c ~/config/rc/conky/$CORNER/graph_large &
 sleep 1
 conky -c ~/config/rc/conky/$CORNER/graph_large_num &
 
+#ybar还没有完善,偶发性的会有各种问题
+#有一个问题时候,有的时候会占据掉不应该占据的空间吧.
+#导致的结果是,最大化的其他窗口,会在右侧留白.
 sleep 1
 yabar -c ~/config/rc/yabar/main.conf &
 
