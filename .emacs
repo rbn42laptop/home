@@ -12,7 +12,7 @@
 
 (defvar my-packages
   '(
-    org org-plus-contrib
+    org org-plus-contrib 
     evil evil-tabs
 ;    auto-complete auctex color-theme-sanityinc-tomorrow company dash
 ;    expand-region htmlize ido-ubiquitous ido-vertical-mode iy-go-to-char jedi
@@ -248,6 +248,61 @@
 ;         ("\\paragraph{%s}" . "\\paragraph*{%s}")
 ;         ("\\subparagraph{%s}" . "\\subparagraph*{%s}"))
 ;        ))
+;添加层级
+;(require 'org-latex)
+;(require 'ox-latex)
+
+(unless (boundp 'org-latex-classes)
+  (setq org-latex-classes nil))
+(add-to-list 'org-latex-classes
+             '("article"
+               "\\documentclass{article}"
+               ("\\section{%s}" . "\\section*{%s}")))  
+
+(add-to-list 'org-latex-classes
+             '("article"
+               "\\documentclass{article}"
+               ("\\section{%s}" . "\\section*{%s}")
+               ("\\subsection{%s}" . "\\subsection*{%s}")
+               ("\\subsubsection{%s}" . "\\subsubsection*{%s}")
+               ("\\paragraph{%s}" . "\\paragraph*{%s}")
+               ("\\subparagraph{%s}" . "\\subparagraph*{%s}")))
+
+(add-to-list 'org-latex-classes
+             `("book"
+               "\\documentclass{book}"
+               ("\\part{%s}" . "\\part*{%s}")
+               ("\\chapter{%s}" . "\\chapter*{%s}")
+               ("\\section{%s}" . "\\section*{%s}")
+               ("\\subsection{%s}" . "\\subsection*{%s}")
+               ("\\subsubsection{%s}" . "\\subsubsection*{%s}"))
+             )
+
+(add-to-list 'org-latex-classes
+             `("thesiszh"
+               "
+\\documentclass{book}
+\\usepackage{zhfontcfg}
+               "
+               ("\\part{%s}" . "\\part*{%s}")
+               ("\\chapter{%s}" . "\\chapter*{%s}")
+               ("\\section{%s}" . "\\section*{%s}")
+               ("\\subsection{%s}" . "\\subsection*{%s}")
+               ("\\subsubsection{%s}" . "\\subsubsection*{%s}")
+               ("\\paragraph{%s}" . "\\paragraph*{%s}")
+               ("\\subparagraph{%s}" . "\\subparagraph*{%s}")))
+
+;这个模板排版紧凑,那么就不便于凑页数了.
+;有特殊的字体要求
+(add-to-list 'org-latex-classes
+          '("koma-article"
+             "\\documentclass{scrartcl}"
+             ("\\section{%s}" . "\\section*{%s}")
+             ("\\subsection{%s}" . "\\subsection*{%s}")
+             ("\\subsubsection{%s}" . "\\subsubsection*{%s}")
+             ("\\paragraph{%s}" . "\\paragraph*{%s}")
+             ("\\subparagraph{%s}" . "\\subparagraph*{%s}")))
+
 ;; [FIXME]
 ;; 原本是不要讓 org 插入 hypersetup（因為 org-mode 這部份設計成沒辦法自訂，或許可以去 report 一下？）
 ;; 改成自行插入，但這樣 pdfcreator 沒辦法根據 Emacs 版本插入，pdfkeyword 也會無效...幹。
@@ -260,7 +315,6 @@
       '(("" "hyperref" nil)
         ("AUTO" "inputenc" t)
         ("" "fixltx2e" nil)
-        ("" "zhfontcfg" nil)
         ("" "graphicx" t)
         ("" "longtable" nil)
         ("" "float" nil)
