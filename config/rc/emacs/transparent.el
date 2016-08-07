@@ -3,6 +3,26 @@
 ;隐藏modeline
 (setq-default mode-line-format nil) 
 
+;抽取出来默认8色主题
+;虽然可以抽取颜色,但是orgmode的face set的时候报invalid,原因未知.
+;(load-file "~/config/rc/emacs/transparent/8color/theme.el")
+;;export TERM=xterm-256color
+
+;(set-face-foreground 'mode-line "brightwhite")
+;;当前qmlterm中的透明色是241
+;(set-face-background 'mode-line "color-241") 
+;(set-face-underline 'mode-line t) 
+
+;(set-face-foreground 'mode-line-inactive "white")
+;(set-face-underline 'mode-line-inactive t) 
+;(set-face-background 'mode-line-inactive "color-241") 
+
+;(set-face-foreground 'menu "color-241")
+;(set-face-background 'menu "brightwhite") 
+;(set-face-underline 'menu t) 
+
+;(set-face-foreground 'vertical-border "brightwhite") 
+
 ;2016-08-07 20:46:09 Sun NZST
 ;情况是这样的,透明色是存在于256color中的,色域大了才方便找出空余做自定义.
 ;而默认似乎是8色
@@ -13,8 +33,8 @@
 ;查看有效颜色的命令 list-color <TAB>
 ;查看组件颜色的命令 list-face <TAB>
 ;设置颜色为nil既是默认,8色主题中部分默认背景为透明
-(set-face-foreground 'mode-line "color-241")
-(set-face-background 'mode-line "color-241") 
+;(set-face-foreground 'mode-line "color-241")
+;(set-face-background 'mode-line "color-241") 
 ;需要256色域支持
 ;(set-face-foreground 'button "blue")
 
@@ -25,14 +45,6 @@
 ;(load-theme 'solarized-light t)
 
 ;(load-file "~/config/rc/emacs/transparent/solarized-definitions.el")
-
-;;export TERM=xterm-256color
-;(set-face-foreground 'mode-line "white")
-;;当前qmlterm中的透明色是241
-;(set-face-background 'mode-line "color-241") 
-;
-;(set-face-foreground 'menu "color-241")
-;(set-face-background 'menu "white") 
 ;
 ;(set-face-foreground 'button "blue")
 ;(set-face-foreground 'error "orange")
