@@ -61,7 +61,7 @@ alias commit="bash ~/bin/git_commit_push.sh"
 alias bash="python ~/bin/filter/bash_filter.py"
 alias ipython="bash ~/bin/ipython.sh"
 #set EDITOR vim
-alias emacs="emacs -nw"
+alias emacs="bash ~/bin/custom/emacs"
 
 alias qmlterm="~/git/qmlterm/build/qmlterm"
 

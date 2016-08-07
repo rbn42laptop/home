@@ -33,20 +33,8 @@
 (require 'evil)
 (evil-mode 1)
 
-;隐藏menu
-(menu-bar-mode -1)
-;隐藏modeline
-(setq-default mode-line-format nil) 
-;背景色,好像找不到透明modeline的方案,看来比vim还难搞.vim是通过设定为None实现透明的,看来emacs做不到.
-;(set-face-background 'modeline "Blue")
-;  I use the following with TERM=xterm-256color
-;(set-face-foreground 'mode-line nil)
-;(set-frame-parameter (selected-frame) 'alpha '(85 . 50))
-; (add-to-list 'default-frame-alist '(alpha . (85 . 50)))
-
-;(set-face-background 'mode-line "#000000")
-;(set-face-foreground 'mode-line-inactive "#606060")
-;(set-face-background 'mode-line-inactive "#202020")
+(when (string= "transparent" (getenv "QMLTERM_THEME"))
+    (load-file "~/config/rc/emacs/transparent.el"))
 
 ;<c-z>切换回到emacs
 ;vimrc
@@ -284,7 +272,7 @@
 \\documentclass{book}
 \\usepackage{zhfontcfg}
                "
-               ("\\part{%s}" . "\\part*{%s}")
+              ; ("\\part{%s}" . "\\part*{%s}")
                ("\\chapter{%s}" . "\\chapter*{%s}")
                ("\\section{%s}" . "\\section*{%s}")
                ("\\subsection{%s}" . "\\subsection*{%s}")
