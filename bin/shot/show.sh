@@ -47,8 +47,9 @@ conky -c ~/config/rc/conky/$CORNER/graph_large_num &
 sleep 1
 yabar -c ~/config/rc/yabar/main.conf &
 
+#yabr 放到底部
 sleep 1
-docky &
+#docky &
 
 #追加terminal
-~/git/qmlterm/build/qmlterm -c ~/config/term/qmlterm/window.ini &
+#~/git/qmlterm/build/qmlterm -c ~/config/term/qmlterm/window.ini &
