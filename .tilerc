@@ -33,6 +33,7 @@ EXCLUDE_APPLICATIONS = ['<unknown>', 'x-nautilus-desktop', 'unity-launcher',
                         "Unigine Heaven Benchmark 4.0 Basic (OpenGL)",
                         "Unigine Valley Benchmark 1.0 Basic (OpenGL)",
                         "yabar",
+                        "Pokemon Revolution",
                         ]
 # An alternative method to exclude applications.
 EXCLUDE_WM_CLASS = [ 'conky', 'Conky','tint2','xfce4-panel',

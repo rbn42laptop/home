@@ -8,13 +8,15 @@ export QML2_IMPORT_PATH=~/git/QMLProcess/build:~/git/qmltermwidget/build
 
 export TERM=~/bin/term
 export TERM=~/bin/term_blur
+export TERM=~/git/qmlterm/build/qmlterm
+export CONFIG=~/config/term/qmlterm/white_notitle.ini
+export CONFIG=~/config/term/qmlterm/white.ini
 
 if [ $# -eq 0 ]
   then
-    $TERM -e "ranger "
+    $TERM -c $CONFIG -e "ranger"
     #~/tmp/qmlterm/build/noblur -c ~/config/term/qmlterm/shadow_font_black.ini -e "ranger"
   else
-    $TERM -e "ranger \"$@\""
+    $TERM -c $CONFIG -e "ranger \"$@\""
     #~/tmp/qmlterm/build/noblur -c ~/config/term/qmlterm/shadow_font_black.ini -e "ranger \"$@\""
 fi
-

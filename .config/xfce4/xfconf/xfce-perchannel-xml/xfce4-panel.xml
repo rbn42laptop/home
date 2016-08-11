@@ -11,7 +11,7 @@
         <value type="int" value="5"/>
         <value type="int" value="1"/>
         <value type="int" value="4"/>
-        <value type="int" value="2"/>
+        <value type="int" value="12"/>
       </property>
       <property name="autohide-behavior" type="uint" value="2"/>
       <property name="size" type="uint" value="21"/>
@@ -31,25 +31,6 @@
     </property>
   </property>
   <property name="plugins" type="empty">
-    <property name="plugin-2" type="string" value="systray">
-      <property name="names-visible" type="array">
-        <value type="string" value="vlc"/>
-        <value type="string" value="cinnamon-settings-daemon"/>
-        <value type="string" value="docky"/>
-        <value type="string" value="indicator-window-cycle.py"/>
-        <value type="string" value="empathy"/>
-        <value type="string" value="indicator-multiload"/>
-        <value type="string" value="volumeicon"/>
-        <value type="string" value="onboard"/>
-        <value type="string" value="drkonqi"/>
-        <value type="string" value="notification-daemon"/>
-        <value type="string" value="sogou-qimpanel"/>
-        <value type="string" value="nautilus"/>
-        <value type="string" value="volwheel"/>
-      </property>
-      <property name="show-frame" type="bool" value="false"/>
-      <property name="size-max" type="uint" value="64"/>
-    </property>
     <property name="plugin-1" type="string" value="launcher">
       <property name="items" type="array">
       </property>
@@ -72,6 +53,12 @@
       <property name="items" type="array">
       </property>
       <property name="show-label" type="bool" value="true"/>
+    </property>
+    <property name="plugin-12" type="string" value="systray">
+      <property name="names-visible" type="array">
+        <value type="string" value="sogou-qimpanel"/>
+      </property>
+      <property name="show-frame" type="bool" value="false"/>
     </property>
   </property>
 </channel>
