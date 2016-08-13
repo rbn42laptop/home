@@ -17,8 +17,10 @@ rofi -show run \
     -padding 0 \
     -line-margin 0 \
     -scroll-method 1 \
+    -bw "0" \
     "$@"
 
+#有阴影的时候透明的bw也必须要设为0
     #-bw "0" \
     #-opacity "60" \
     #-sidebar-mode \

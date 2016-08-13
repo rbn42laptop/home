@@ -56,6 +56,7 @@
     </property>
     <property name="plugin-12" type="string" value="systray">
       <property name="names-visible" type="array">
+        <value type="string" value="docky"/>
         <value type="string" value="sogou-qimpanel"/>
       </property>
       <property name="show-frame" type="bool" value="false"/>

@@ -59,197 +59,209 @@ Tue 17 May 2016 03:02:09 AM NZST
 关闭抗锯齿的时候,wqy zen hei 的小字体更准确.
 
 * qterm
+** root
+ "\ |│┃-─━
+ "qt下│这个字符显示不对,不知道用了什么字体.
+ "确切说,出问题的是qmltermwidget,不知道是哪里的字体搞错了,上游要发现这个问题估计要很晚了.
+ "检查过,monaco字体库是有这些字符的,显示不正确应该完全是qmltermwidget的问题了.
+ "对于特殊字符,很多字体都是提供的,但是qmlterm中检查发现有固定的缺位.
+ "这说明实际上加载了同一个隐藏字体.可能是为了等宽要求而加载了这个字体.
+ "但是,直接尝试使用qterminal之后,发现并没有这样的问题.
+ "因此,这个问题对于aur的qterminal和qtermwidget并不存在,
+ "但是对于qmltermwidget的test是存在的.
+ "我们需要对aur和github的qtermwidget分别做test测试,才能知道问题出在哪里.
+ "pacman存在qmltermwidget的0.1.2版本,test同样是有问题
+ "测试直接cpp使用qtermwidget没有问题.
+ "暂且测试编译是和widget一起进行的,所以没法测试不同源的widget,qterm用了cmake,而qmlterm用了qmake,需要转换
 
-"\ |│┃-─━
-"qt下│这个字符显示不对,不知道用了什么字体.
-"确切说,出问题的是qmltermwidget,不知道是哪里的字体搞错了,上游要发现这个问题估计要很晚了.
-"检查过,monaco字体库是有这些字符的,显示不正确应该完全是qmltermwidget的问题了.
-"对于特殊字符,很多字体都是提供的,但是qmlterm中检查发现有固定的缺位.
-"这说明实际上加载了同一个隐藏字体.可能是为了等宽要求而加载了这个字体.
-"但是,直接尝试使用qterminal之后,发现并没有这样的问题.
-"因此,这个问题对于aur的qterminal和qtermwidget并不存在,
-"但是对于qmltermwidget的test是存在的.
-"我们需要对aur和github的qtermwidget分别做test测试,才能知道问题出在哪里.
-"pacman存在qmltermwidget的0.1.2版本,test同样是有问题
-"测试直接cpp使用qtermwidget没有问题.
-"暂且测试编译是和widget一起进行的,所以没法测试不同源的widget,qterm用了cmake,而qmlterm用了qmake,需要转换
+ 不过,已经算是知道qterm是没有问题的了,而qterm最新的我也已经merge过了.
+ 那么下面,想要做的区分是,
+ 是否qmlterm同样作为cpp widget也不会有问题呢?
 
-不过,已经算是知道qterm是没有问题的了,而qterm最新的我也已经merge过了.
-那么下面,想要做的区分是,
-是否qmlterm同样作为cpp widget也不会有问题呢?
+ 尝试把test.cpp融入qmlterm要注意一点,qmlterm中把qtermwidget的编译停掉了.
+ 或许差别就是这么产生的?
 
-尝试把test.cpp融入qmlterm要注意一点,qmlterm中把qtermwidget的编译停掉了.
-或许差别就是这么产生的?
+ 没办法,果然是没法编译的.
 
-没办法,果然是没法编译的.
+ qmlterm直接只用了TerminalDisplay.cpp作为QMLTermWidgt,但是qtermwidget是在这之上多包装了600行代码.
+ 设置默认字体似乎也是qtermwidget干的.
 
-qmlterm直接只用了TerminalDisplay.cpp作为QMLTermWidgt,但是qtermwidget是在这之上多包装了600行代码.
-设置默认字体似乎也是qtermwidget干的.
+ 默认字体成功改变.但是似乎还不是这里的原因.
 
-默认字体成功改变.但是似乎还不是这里的原因.
+ terminaldisplay setfont变动代码有两处.一处是if判断删掉了,不删掉会导致如法进入这部分代码,导致屏幕上无字显示.
+ 第二处是QWidget.setfont消除掉了,似乎因为terminaldisplay没有绑定父类对象,所以无法调用.
+ 确切说父类从qwidget变成了 QQuickItem,但是后者没有setfont
 
-terminaldisplay setfont变动代码有两处.一处是if判断删掉了,不删掉会导致如法进入这部分代码,导致屏幕上无字显示.
-第二处是QWidget.setfont消除掉了,似乎因为terminaldisplay没有绑定父类对象,所以无法调用.
-确切说父类从qwidget变成了 QQuickItem,但是后者没有setfont
+ 大体来说qtermwidget.cpp所做的似乎时绑定ui事件到terminaldisplay
 
-大体来说qtermwidget.cpp所做的似乎时绑定ui事件到terminaldisplay
+ 字体绘制是通过QPainter做到得
+ 不过我直接用qpainter绘制,不设font的时候,没有感觉到问题.
+ 即使不设定font,似乎对qmltermwidget也无效.不过看来问题可能在于painter
 
-字体绘制是通过QPainter做到得
-不过我直接用qpainter绘制,不设font的时候,没有感觉到问题.
-即使不设定font,似乎对qmltermwidget也无效.不过看来问题可能在于painter
+ 出问题的代码是
+ void TerminalDisplay::drawLineCharString(    QPainter& painter, int x, int y, const QString& str, 
+ 一致消去后就不会绘制boxline了.
 
-出问题的代码是
-void TerminalDisplay::drawLineCharString(    QPainter& painter, int x, int y, const QString& str, 
-一致消去后就不会绘制boxline了.
+ line 760
+     if ( isLineCharString(text) )
+         drawLineCharString(painter,rect.x(),rect.y(),text,style);
 
-line 760
-    if ( isLineCharString(text) )
-        drawLineCharString(painter,rect.x(),rect.y(),text,style);
+ static inline bool isLineChar(quint16 c) { return ((c & 0xFF80) == 0x2500);}
+ 消除760行的判断,就可以解决问题了.
+ 不过为什么qtermwidget没有触发这个问题呢?
+ 对比看不出qtermwidget没有出现这个问题的原因.不知道为什么.不过反正问题解决了.
 
-static inline bool isLineChar(quint16 c) { return ((c & 0xFF80) == 0x2500);}
-消除760行的判断,就可以解决问题了.
-不过为什么qtermwidget没有触发这个问题呢?
-对比看不出qtermwidget没有出现这个问题的原因.不知道为什么.不过反正问题解决了.
+ 2016-07-12 02:37:15 Tue NZST
+ 剩下的问题是,这个方法似乎本意是为了消除不同字体之间的符号差异?
+ 现在我们用的字体似乎不能提供准确的符号.似乎还有跳跃性的问题.
 
-2016-07-12 02:37:15 Tue NZST
-剩下的问题是,这个方法似乎本意是为了消除不同字体之间的符号差异?
-现在我们用的字体似乎不能提供准确的符号.似乎还有跳跃性的问题.
+ 已有的字体中,wyq能准确显示
 
-已有的字体中,wyq能准确显示
+ 2016-07-12 02:57:34 Tue NZST
+   //  if (toDraw & Int32)
+  //       paint.drawPoint(cx, cy+1);
+  情况似乎是,画点的时候,明明该是一个像素,但是变成了两个像素.
+  理由当然搞不懂.
+  看来是没法解决的,我们还是用字体画比较好.
 
-2016-07-12 02:57:34 Tue NZST
-  //  if (toDraw & Int32)
- //       paint.drawPoint(cx, cy+1);
- 情况似乎是,画点的时候,明明该是一个像素,但是变成了两个像素.
- 理由当然搞不懂.
- 看来是没法解决的,我们还是用字体画比较好.
+  其实有问题的就是一个字符,或许改font更省事.
+  sudo pacman -S fontforge
+  找到monacobsemi 非bold的字符2502  
+ "qt \ |-││││─━━━━━━━━────────────
+ 不需要改动,只要删除它,应该就会读取后续组合的font了.
 
- 其实有问题的就是一个字符,或许改font更省事.
- sudo pacman -S fontforge
- 找到monacobsemi 非bold的字符2502  
-"qt \ |-││││─━━━━━━━━────────────
-不需要改动,只要删除它,应该就会读取后续组合的font了.
+ 主要问题是,qterm的字体排布非常不规矩,必须要求等宽.
+ 由于其按行排列字符,字符宽度的微小差异会积累下来.
 
-主要问题是,qterm的字体排布非常不规矩,必须要求等宽.
-由于其按行排列字符,字符宽度的微小差异会积累下来.
+ https://forum.qt.io/topic/27211/trying-to-collapse-per-character-qpainter-drawtext-qt-commands-into-a-single-string-drawtext-monospacing-format-is-not-being-preserved/8
+ 这里有提到这个问题,截止至今,没有办法处理.
+ 其实用mono字体的时候基本感觉不到问题.实际上那个drawpoint方法也能精确的画出直线,虽然有点怪异.
+ 但是尝试用mono字体画出直线的时候,就出问题了.
+ 此外.focus特殊字符的时候,会出现跳跃,原因应该是一样的,原本后续的字符依靠focus字符定位,但是focus的时候,就变成了依靠类似drawpoint的精确定位方式了,后者是等宽的,但是前者似乎并不是.
+ 因此,为了避开等宽问题,似乎只能靠drawpoint来画竖线了.
+ 其实,因为我们需要用到的只是2502一个字符,所以可以仅仅针对它修正?
+ 2016-07-12 04:28:58 Tue NZST
+ 所以解决了.
 
-https://forum.qt.io/topic/27211/trying-to-collapse-per-character-qpainter-drawtext-qt-commands-into-a-single-string-drawtext-monospacing-format-is-not-being-preserved/8
-这里有提到这个问题,截止至今,没有办法处理.
-其实用mono字体的时候基本感觉不到问题.实际上那个drawpoint方法也能精确的画出直线,虽然有点怪异.
-但是尝试用mono字体画出直线的时候,就出问题了.
-此外.focus特殊字符的时候,会出现跳跃,原因应该是一样的,原本后续的字符依靠focus字符定位,但是focus的时候,就变成了依靠类似drawpoint的精确定位方式了,后者是等宽的,但是前者似乎并不是.
-因此,为了避开等宽问题,似乎只能靠drawpoint来画竖线了.
-其实,因为我们需要用到的只是2502一个字符,所以可以仅仅针对它修正?
-2016-07-12 04:28:58 Tue NZST
-所以解决了.
+ 结果这个办法还是不行,其计算等宽的结果,在wqy参与进来后就算错了,布局完全乱了.很奇怪之前没注意到这一点.大概是因为没有怎么尝试过中文吧.
+ 但是qterminal中布局完全无误.
 
-结果这个办法还是不行,其计算等宽的结果,在wqy参与进来后就算错了,布局完全乱了.很奇怪之前没注意到这一点.大概是因为没有怎么尝试过中文吧.
-但是qterminal中布局完全无误.
+ 测试结果是等宽计算问题在qtermwidget中就存在了.并不是qmltermwidget没有即时更新的原因.
+ 也就是说虽然qterminal是调用了qtermwidget,但是在其中有对等宽的特殊处理办法.
 
-测试结果是等宽计算问题在qtermwidget中就存在了.并不是qmltermwidget没有即时更新的原因.
-也就是说虽然qterminal是调用了qtermwidget,但是在其中有对等宽的特殊处理办法.
+ qterminal中存在一个继承子类termwidget.cpp,也就是说可能存在覆盖重写了.
+ github上的qterminal编译存在lxqt依赖,不过幸而有aur版本,我们还是可以做编译测试的. 
+ 但是似乎qterminal使用qt4编译的.明明lxqt是qt5的.
+ 测试代码,从qtermwidget中获取,然后修剪的代码,缩到很小了.
+ #include <QApplication>
+ #include <QMainWindow>
+ #include "qtermwidget.h"
+ int main(int argc, char *argv[])
+ {
+     QApplication app(argc, argv);
+     QMainWindow *mainWindow = new QMainWindow();
+     QTermWidget *console = new QTermWidget();
+     mainWindow->setCentralWidget(console);
+     QObject::connect(console, SIGNAL(finished()), mainWindow, SLOT(close()));
+     mainWindow->show();
+     return app.exec();
+ }
+ 测试结果,qtermwidget中编译,位宽计算错误,在qterminal环境中编译就显示正常了.
+ 进一步的我们应该测试aur的qtermwidget
+ 结果是qt4版本的位宽计算正确.qt5的位宽计算依旧正确.
+ 最后,qmltermwidget也没有位宽问题.
+ 因此,这个错误应该是qtermwidget最近升级的时候导入的.我们需要回滚到qmltermwidget的版本.
 
-qterminal中存在一个继承子类termwidget.cpp,也就是说可能存在覆盖重写了.
-github上的qterminal编译存在lxqt依赖,不过幸而有aur版本,我们还是可以做编译测试的. 
-但是似乎qterminal使用qt4编译的.明明lxqt是qt5的.
-测试代码,从qtermwidget中获取,然后修剪的代码,缩到很小了.
-#include <QApplication>
-#include <QMainWindow>
-#include "qtermwidget.h"
-int main(int argc, char *argv[])
-{
-    QApplication app(argc, argv);
-    QMainWindow *mainWindow = new QMainWindow();
-    QTermWidget *console = new QTermWidget();
-    mainWindow->setCentralWidget(console);
-    QObject::connect(console, SIGNAL(finished()), mainWindow, SLOT(close()));
-    mainWindow->show();
-    return app.exec();
-}
-测试结果,qtermwidget中编译,位宽计算错误,在qterminal环境中编译就显示正常了.
-进一步的我们应该测试aur的qtermwidget
-结果是qt4版本的位宽计算正确.qt5的位宽计算依旧正确.
-最后,qmltermwidget也没有位宽问题.
-因此,这个错误应该是qtermwidget最近升级的时候导入的.我们需要回滚到qmltermwidget的版本.
+ 2016-07-13 05:14:14 Wed NZST
+ 字体处理看来是很麻烦的,很多字体的表现应该是在程序不限定等宽的前提下设定的.
+ 现在从underline问题上可以明显看出这一点.
+ 在一整条underline字符中,中文的部分会出现underline断缺,也就是说原本的字体宽度不及程序要求的宽度.
+ 如果程序要在要求固定宽度的前提下使用这些字体的话,那么显然要从很多细节上去考虑如何匹配宽度了.
 
-2016-07-13 05:14:14 Wed NZST
-字体处理看来是很麻烦的,很多字体的表现应该是在程序不限定等宽的前提下设定的.
-现在从underline问题上可以明显看出这一点.
-在一整条underline字符中,中文的部分会出现underline断缺,也就是说原本的字体宽度不及程序要求的宽度.
-如果程序要在要求固定宽度的前提下使用这些字体的话,那么显然要从很多细节上去考虑如何匹配宽度了.
+ wqy看来似乎并不是等宽字体?其中的英文是非等宽的,是因为字体自身如此还是因为没有提供英文呢?
+ 而中文,由于本身就是等宽的,所以设计成近似等宽或许比较容易.
+ 嗯,wqy还有个mono版本,另外xfce下非mono版本的underline也是没有断开的.
+ 但是mono似乎是针对英文的,中文的情况没变.
+ 不过,其实underline这种东西不一定是字体自己提供的,因为重复性实在太大了,所以可能是terminal自己画出来的.
+ 所以,有可能是因为qterm没有画好双位字符的underline导致残缺的.
 
-wqy看来似乎并不是等宽字体?其中的英文是非等宽的,是因为字体自身如此还是因为没有提供英文呢?
-而中文,由于本身就是等宽的,所以设计成近似等宽或许比较容易.
-嗯,wqy还有个mono版本,另外xfce下非mono版本的underline也是没有断开的.
-但是mono似乎是针对英文的,中文的情况没变.
-不过,其实underline这种东西不一定是字体自己提供的,因为重复性实在太大了,所以可能是terminal自己画出来的.
-所以,有可能是因为qterm没有画好双位字符的underline导致残缺的.
+ 检查结果是,underline的确是font自己的,或者说至少是qt提供的机制,而不是terminal自己画的.
 
-检查结果是,underline的确是font自己的,或者说至少是qt提供的机制,而不是terminal自己画的.
+ 这个painter问题我们也没有办法找个独立的pyqt什么的测试下,
+ 因为测试的时候画出一整条string的话,underline自然是连接在一起的.
+ 这里terminal的问题是,字符并不是一整条string,而是每个字符都是独立定位的,以为了确保等宽,结果就是给予的宽度超出了字符的underline宽度.
+ 唯有可以测试的是,画两条线,然后对比双位字符和单位字符的长度.
+ 测试结果是wqy可以做到数字和字母等宽,但是空格和汉字并不是等宽.
+ monospace连数字字母等宽都做不到.
+ ubuntu mono可以做到汉字数字字母等宽,空格的情况略怪,宽度是一样的但是计算起始重点不太准.
+ 确切说是ubuntu mono的宽度可以和wqy配合,
+ 而monaco的宽度就无法和wqy配合
+ 但是这两个字体配合无法解决qterm的问题,我想原因在于qterm的字体宽度是以monaco而不是ubuntu mono为准的,除非我们能找到一个比wqy更宽的可以配合monaco的字体.
 
-这个painter问题我们也没有办法找个独立的pyqt什么的测试下,
-因为测试的时候画出一整条string的话,underline自然是连接在一起的.
-这里terminal的问题是,字符并不是一整条string,而是每个字符都是独立定位的,以为了确保等宽,结果就是给予的宽度超出了字符的underline宽度.
-唯有可以测试的是,画两条线,然后对比双位字符和单位字符的长度.
-测试结果是wqy可以做到数字和字母等宽,但是空格和汉字并不是等宽.
-monospace连数字字母等宽都做不到.
-ubuntu mono可以做到汉字数字字母等宽,空格的情况略怪,宽度是一样的但是计算起始重点不太准.
-确切说是ubuntu mono的宽度可以和wqy配合,
-而monaco的宽度就无法和wqy配合
-但是这两个字体配合无法解决qterm的问题,我想原因在于qterm的字体宽度是以monaco而不是ubuntu mono为准的,除非我们能找到一个比wqy更宽的可以配合monaco的字体.
+ 似乎找到了一点原因
+ 在vim中,搜索查找一片中文的话,其背景色是不相连的,也就是说,在画rect的时候,terminal给出的位置就是错误的,所以才会造成错误的背景色.
 
-似乎找到了一点原因
-在vim中,搜索查找一片中文的话,其背景色是不相连的,也就是说,在画rect的时候,terminal给出的位置就是错误的,所以才会造成错误的背景色.
+ 找出可能解决的办法是,编译aur的qterminal和qtermwidget,
+ 因为这是大家在用的,所以出问题的可能性会比较小,所以说不定把这个问题解决了?
 
-找出可能解决的办法是,编译aur的qterminal和qtermwidget,
-因为这是大家在用的,所以出问题的可能性会比较小,所以说不定把这个问题解决了?
+ 但是中文编辑很少用到多么复杂的功能,所以不管underline还是背景色问题,平时遇到的可能性太小了,所以实在没动力去改.
 
-但是中文编辑很少用到多么复杂的功能,所以不管underline还是背景色问题,平时遇到的可能性太小了,所以实在没动力去改.
+ 2016-07-13 08:16:27 Wed NZST
+ 这个宽度问题会影响到ranger中的中文,所以如果以前出现过的话,我应该早就注意到了.
 
-2016-07-13 08:16:27 Wed NZST
-这个宽度问题会影响到ranger中的中文,所以如果以前出现过的话,我应该早就注意到了.
+ 测试发现下滑线和背景是两个问题,因为在transparent background branch中,有下划线问题,但是没有背景问题背景问题是新入的.
+ 确认这个问题是处理blink的时候引入的.
+ update 2,2导致了这个问题,update 2,1可以同时修正blink和背景,希望不会再有其他问题了.
+ 说起来,真不理解blink会影响到宽体背景色.
 
-测试发现下滑线和背景是两个问题,因为在transparent background branch中,有下划线问题,但是没有背景问题背景问题是新入的.
-确认这个问题是处理blink的时候引入的.
-update 2,2导致了这个问题,update 2,1可以同时修正blink和背景,希望不会再有其他问题了.
-说起来,真不理解blink会影响到宽体背景色.
+ 2016-07-14 10:39:00 Thu NZST
+ 下划线问题,测试qterminal也同样存在,所以至少不存在已经被人发现过的解决方案.
+ 虽然本质上来说是应该宽度计算出错了,比如依据ubuntu mono的标准的话,或许就可以计算对了. 
 
-2016-07-14 10:39:00 Thu NZST
-下划线问题,测试qterminal也同样存在,所以至少不存在已经被人发现过的解决方案.
-虽然本质上来说是应该宽度计算出错了,比如依据ubuntu mono的标准的话,或许就可以计算对了. 
+ 2016-07-14 15:18:38 Thu NZST
+ 开着的时候,会占掉30m显存,和compiz相当,是x的一半.
+ 如果合并多个term为一个进程或许可以降低消耗?
+ 也就是说,2G现存的话,只能开50个左右,就会占据相当的资源了.
 
-2016-07-14 15:18:38 Thu NZST
-开着的时候,会占掉30m显存,和compiz相当,是x的一半.
-如果合并多个term为一个进程或许可以降低消耗?
-也就是说,2G现存的话,只能开50个左右,就会占据相当的资源了.
+ 但是能用显卡计算,至少说明它的效率还是很高的,
+ 我估计是字体阴影的处理,是大并行计算,所以交给了显卡.
 
-但是能用显卡计算,至少说明它的效率还是很高的,
-我估计是字体阴影的处理,是大并行计算,所以交给了显卡.
+ 2016-07-18 01:13:18 Mon NZST
+ 关于输入法,除了qtermwidget以外,qml的输入框都可以在正确位置给出输入框提示.
+ qtermwidget大概是没有实现对应的一些方法,
+ 单纯的是接口问题,因为毕竟qtermwidget已经是有光标位置了.
 
-2016-07-18 01:13:18 Mon NZST
-关于输入法,除了qtermwidget以外,qml的输入框都可以在正确位置给出输入框提示.
-qtermwidget大概是没有实现对应的一些方法,
-单纯的是接口问题,因为毕竟qtermwidget已经是有光标位置了.
+ 2016-07-23 09:58:45 Sat NZST
+ 据说qterminal可以支持w3m image那么qmltermwidget应该也可以.
+ 网上流传说是可以的,但是我测试不行.
+ arch下的测试方法是xterm w3m google搜索图片,会显示图片.
 
-2016-07-23 09:58:45 Sat NZST
-据说qterminal可以支持w3m image那么qmltermwidget应该也可以.
-网上流传说是可以的,但是我测试不行.
-arch下的测试方法是xterm w3m google搜索图片,会显示图片.
+ 2016-07-23 10:24:06 Sat NZST
+ 不过,检查下qterm的源码可以知道vt后端似乎是沿袭自konsole的,因此除非独立实现,否则qterminal可以显示图片的话,konsole也该可以的.
 
-2016-07-23 10:24:06 Sat NZST
-不过,检查下qterm的源码可以知道vt后端似乎是沿袭自konsole的,因此除非独立实现,否则qterminal可以显示图片的话,konsole也该可以的.
+ 2016-07-25 06:43:09 Mon NZST
+ 一个大问题,<m-s-left>的按键,无法捕捉到
+ 已知的包括<m-s-方向键> <c-s-方向键> <meta-l> 
+ 虽然qterm来自konsole,不过居然有这样的问题.
+ 不过qterminal还在发展,未来可能会修复的吧?
+ 不过,眼下,或许我们应该暂时换一个terminal编辑org
 
-2016-07-25 06:43:09 Mon NZST
-一个大问题,<m-s-left>的按键,无法捕捉到
-已知的包括<m-s-方向键> <c-s-方向键> <meta-l> 
-虽然qterm来自konsole,不过居然有这样的问题.
-不过qterminal还在发展,未来可能会修复的吧?
-不过,眼下,或许我们应该暂时换一个terminal编辑org
+ 2016-07-25 07:27:05 Mon NZST
+ 似乎不只是qterm的问题,sakura的按键也不全.xterm是最标准,当然没问题.
+ xfce4,比上面的全,但是没有<meta-l>
+ 确切的说,从cat中看,xfce4和xterm映射的<meta-l>是不同的,xterm中出现的是<meta-l>是一些奇怪的西文.
+ 不过这些东西应该是从tty中继承过来的历史遗留物.
+ 比起期待terminal实现这些功能,或许把按键改成vim风格的会比较好,emacs的这种组合键看来对兼容性要求太强了.
 
-2016-07-25 07:27:05 Mon NZST
-似乎不只是qterm的问题,sakura的按键也不全.xterm是最标准,当然没问题.
-xfce4,比上面的全,但是没有<meta-l>
-确切的说,从cat中看,xfce4和xterm映射的<meta-l>是不同的,xterm中出现的是<meta-l>是一些奇怪的西文.
-不过这些东西应该是从tty中继承过来的历史遗留物.
-比起期待terminal实现这些功能,或许把按键改成vim风格的会比较好,emacs的这种组合键看来对兼容性要求太强了.
+** 阴影
+   2016-08-13 13:14:41 Sat NZST
+虽然部分是qt的问题,但是最终解决是通过处理compiz的问题
+compiz的window decoration 中可以设定deora 和shadow的过滤.
+默认都是any
+但是效果上来说,默认情况,没有decro的就没有shadow.
+可是如果修改shadow的值,逻辑上对等any 也就是 any or xxx 之后,没有decro的就会有shadow了.
+不只是qmlterm,rofi也是如此,还有输入法,右键菜单
 
+但是总体来说,这个逻辑串表现很怪异,似乎没有正常运作.
+已知似乎有办法如上设定any或者设定特定class,
+但是没找到黑名单的方法.
