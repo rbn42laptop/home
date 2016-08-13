@@ -12,6 +12,7 @@ color  1   1   2   3  1 0  # transparent
 color 10   0   0   0  0 1  # intensive foreground color
 color 11 255 255 255  1 0  # intensive background color
 
+#调整过亮的色
 #下面的部分是convert.py的输出
 color  2 238 232 213  0 0
 color  3 220  50  47  0 0
