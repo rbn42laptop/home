@@ -26,6 +26,7 @@ bash $WALLPAPER_SCRIPT
 source ~/bin/daemons/fcitx.sh
 bash ~/bin/daemons/keys.sh
 bash ~/bin/daemons/mpd.sh
+#消息频繁的时候,这个东西似乎会带来消耗?
 bash ~/bin/daemons/notifyd.sh
 
 
