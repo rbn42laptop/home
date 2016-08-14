@@ -33,7 +33,7 @@
 (require 'evil)
 (evil-mode 1)
 
-(when (string= "transparent" (getenv "QMLTERM_THEME"))
+(when (string= "transparent" (getenv "THEME_EMACS"))
     (load-file "~/config/rc/emacs/transparent.el"))
 
 ;<c-z>切换回到emacs

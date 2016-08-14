@@ -647,19 +647,19 @@ c.InteractiveShellApp.exec_lines = [
 
 
 import os
-if os.environ.get('QMLTERM_THEME') in ('black', 'dark'):
+theme = os.environ.get('THEME_IPYTHON')
+if theme in ('dark',):
     # ipython5不支持,不过github已经修复.
     c.InteractiveShellApp.extensions = [
         'powerline.bindings.ipython.post_0_11'
     ]
 
-elif os.environ.get('QMLTERM_THEME') in ('transparent',):
+elif theme in ('plain',):
     # c.InteractiveShell.colors = 'nocolor'  # 'lightbg neutral linux nocolor
     # 'colorful'  # 'friendly'  # 'tango'
     # 'xcode'
     #c.TerminalInteractiveShell.highlighting_style = 'bw'  #
     c.TerminalInteractiveShell.highlighting_style = 'algol'  #
     pass
-elif os.environ.get('QMLTERM_THEME') in ('white', 'light'):
-
+elif theme in ('light',):
     c.InteractiveShell.colors = 'lightbg'  # 'lightbg neutral linux nocolor

@@ -6,10 +6,6 @@ else
 end
 
 if [ 'black' = $QMLTERM_THEME ]
-    #vim -u 的表现奇怪,用了之后backspace就不能删除上一行了
-    #这个脚本写的是有问题的,但是至少用它一段时间,靠它提示的话,应该可以一定程度的修正操作习惯.
-    alias vim="export MYVIMRC=~/config/rc/vim/black.vim;python ~/bin/filter/edit_filter.py "
-
 #    source ~/.config/fish/custom/theme-cbjohnson/fish_prompt.fish
 #    source ~/.config/fish/custom/theme-budspencer/fish_greeting.fish
 #    source ~/.config/fish/custom/theme-budspencer/fish_prompt.fish
@@ -22,16 +18,12 @@ if [ 'black' = $QMLTERM_THEME ]
   #  source ~/.config/fish/custom/theme-bobthefish/fish_title.fish
   #  这东西不能用,连按回车的时候就会感觉到很耗性能.
    # source ~/.config/fish/custom/theme-bobthefish/fish_right_prompt.fish
-else if [ 'light' = $QMLTERM_THEME ]
-    alias vim="export MYVIMRC=~/config/rc/vim/light.vim;python ~/bin/filter/edit_filter.py "
-else if [ 'white_level' = $QMLTERM_THEME ]
-    alias vim="export MYVIMRC=~/config/rc/vim/white_level.vim;python ~/bin/filter/edit_filter.py "
 else if [ 'transparent' = $QMLTERM_THEME ]
-    alias vim="export MYVIMRC=~/config/rc/vim/transparent.vim;python ~/bin/filter/edit_filter.py "
     source ~/.config/fish/custom/prompt_git.fish
     source ~/.config/fish/custom/prompt_pwd.fish
     source ~/.config/fish/custom/fish_prompt.fish
 end
+
 
 source ~/.config/fish/custom/fish_title.fish
 
@@ -56,6 +48,10 @@ alias lll='ls -alF'
 alias q='exit'
 #alias v='vim'
 #alias vi='vim'
+    #vim -u 的表现奇怪,用了之后backspace就不能删除上一行了
+    #这个脚本写的是有问题的,但是至少用它一段时间,靠它提示的话,应该可以一定程度的修正操作习惯.
+alias vim="python ~/bin/filter/edit_filter.py "
+
 alias commit="bash ~/bin/git_commit_push.sh"
 alias bash="python ~/bin/filter/bash_filter.py"
 alias ipython="bash ~/bin/ipython.sh"
