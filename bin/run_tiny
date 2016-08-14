@@ -1,6 +1,4 @@
 #!/bin/bash
 
-export FONT_COLOR="#000000";
-
 ~/bin/rofi/run \
     -config ~/config/rc/rofi/tiny.conf
