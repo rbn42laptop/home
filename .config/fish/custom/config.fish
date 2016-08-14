@@ -28,7 +28,6 @@ else if [ 'white_level' = $QMLTERM_THEME ]
     alias vim="export MYVIMRC=~/config/rc/vim/white_level.vim;python ~/bin/filter/edit_filter.py "
 else if [ 'transparent' = $QMLTERM_THEME ]
     alias vim="export MYVIMRC=~/config/rc/vim/transparent.vim;python ~/bin/filter/edit_filter.py "
-
     source ~/.config/fish/custom/prompt_git.fish
     source ~/.config/fish/custom/prompt_pwd.fish
     source ~/.config/fish/custom/fish_prompt.fish
