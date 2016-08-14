@@ -6,11 +6,13 @@
 #WinBorder = 0
 #有必要设成1,因为否则,第一次tile后,仍然会有窗口(term以外的,firefox之类的,估计和decro有关)重叠,第二次tile才会消除重叠.不知道原因,
 #qmlterm点阵模式下可以用0,精确分配像素.
-WinBorder = 0
-Padding = 0
-#一般情况
 #WinBorder = 1
 #Padding = 2
+#WinBorder = 0
+#Padding = 0
+WinBorder = 5
+WinBorder = 0
+Padding = WinBorder*2
 
 LeftPadding = Padding
 BottomPadding = Padding 

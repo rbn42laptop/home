@@ -961,6 +961,20 @@ qmlterm,全透明
 docky,窗型怪异
 Sogou-qimpanel,窗型是png画的
 conky,窗型怪异,难于调整.
+**** 配置
+***** 默认 
+      情况很复杂.很多窗口不设定就有效.
+****** 有效
+       qmlterm的右键,firefox的右键
+****** 无效
+       - fcitx
+       - goldendict dolphin的右键
+       - rofi yabar qmlterm
+***** 黑名单
+((!( class=noblur)) &(!( class=Docky)) &(!( class=Xfce4-panel)) &(!( class=Sogou-qimpanel)) & (!(class=conky)))|(any)
+***** 白名单
+class=dolphin|class=qmlterm|title=yabar|class=GoldenDict|any
+class=dolphin|class=qmlterm|title=yabar|title=rofi|any
 * theme
 ** gtk
    2016-07-08 04:41:15 Fri NZST

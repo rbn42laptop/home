@@ -1,8 +1,4 @@
 #!/bin/bash
 
 ~/bin/rofi/run \
-    -color-window "argb:00ffffff,argb:00ffffff,#ff0" \
-    -color-normal "argb:a0ffffff,#000,argb:a0ffffff,argb:ffffffff,#000303" \
-    -width "900px" \
-#    -location 1 \
-#    -lines 1  \
+    -config ~/config/rc/rofi/main.conf
