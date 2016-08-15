@@ -6,6 +6,7 @@ git clone https://github.com/rbn42/kd_tree_tile.git
 git clone https://github.com/rbn42/compiz_wallpaper_manager.git
 git clone https://github.com/rbn42/compiz_config.git
 git clone https://github.com/rbn42/ranger.git
+git clone https://github.com/rbn42/rofi.git
 
 #rofi安装见~/config/rofi
 #git clone https://github.com/rbn42/rofi.git
@@ -48,5 +49,8 @@ cd ~/git/ranger
 git checkout hide-username
 #ranger似乎有办法默认显示mtime,但是还不清楚具体怎么弄,只好暂时这么处理了
 #git checkout mtime-in-column
+
+cd ~/git/rofi
+git checkout customize
 
 #git clone https://github.com/NVIDIA/nvidia-docker.git
