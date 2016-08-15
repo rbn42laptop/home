@@ -1,0 +1,10 @@
+#!/bin/bash 
+export DISPLAY_OUTPUT="DVI-I-1"
+#export ROOT=~/Pictures/others
+
+export WALLPAPER_ROOT=~/Pictures/acg
+#export WALLPAPER_ROOT=~/Pictures/others
+#export WALLPAPER_ROOT=~/Pictures/temp
+export WALLPAPER_SCRIPT=~/git/compiz_wallpaper_manager/compiz.sh
+
+export DISPLAY_ROTATION_MARK="$WALLPAPER_ROOT/mark_rotate_"

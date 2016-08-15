@@ -15,7 +15,7 @@ dconf write /org/compiz/profiles/Default/plugins/core/vsize $2
 ~/git/compiz_config/main.py ~/.config/compiz/compizconfig/Default.ini set core s0_vsize $2
 #~/git/compiz_config/main.py ~/.config/compiz/compizconfig/Default.ini submit
 
-source ~/.wallpaperrc
+source ~/config/rc/displayrc
 bash $WALLPAPER_SCRIPT
 #bash ~/git/compiz_wallpaper_manager/compiz.sh
 #bash ~/Pictures/compiz/bin/compiz.sh

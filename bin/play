@@ -7,7 +7,7 @@ python ~/bin/add2rofi.py "$ROFI_HISTORY" 1 ./bin/play "$@"
 
 export FILE_PATH=`python -c "$ADD_USERNAME" "$1"`
 
-source ~/.wallpaperrc
+source ~/config/rc/displayrc
 
 if [ ! -f $WALLPAPER_ROOT/mark_rotate_normal ]; then
     export MPV_ROTATION="--video-rotate=270"

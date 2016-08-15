@@ -63,6 +63,9 @@ udisksctl mount -b /dev/disk/by-label/4T
 xfce4-panel &
 
 
+#屏幕旋转
+bash ~/bin/orientation.sh
+
 #~/bin/term_blur &
 
 ###################
