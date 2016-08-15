@@ -47,6 +47,9 @@
 
 #刷壁纸
 "bash ~/git/compiz_wallpaper_manager/compiz.sh"
+  Mod4 + Shift + w
+#switcher
+"rofi -config ~/config/rc/rofi/main.conf -show window"
   Mod4 + w
 
 #mpd

@@ -1,0 +1,17 @@
+2016-08-16 04:46:33 Tue NZST
+记录改动
+* rofi cache数目
+** source/history.c
+ #define HISTORY_MAX_ENTRIES    2048
+* resize
+** source view.c
+*** 
+ CacheState.width-=1;
+ 已知的插入修改点是rofi_view_update
+***  resize window
+    uint16_t mask   = XCB_CONFIG_WINDOW_X | XCB_CONFIG_WINDOW_Y | XCB_CONFIG_WINDOW_WIDTH | XCB_CONFIG_WINDOW_HEIGHT;
+    uint32_t vals[] = { CacheState.x, CacheState.y, CacheState.width, CacheState.height };
+    // Display it.
+    xcb_configure_window ( xcb->connection, CacheState.main_window, mask, vals );
+
+
