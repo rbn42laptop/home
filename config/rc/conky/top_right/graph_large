@@ -25,6 +25,7 @@ alignment="top_right",
 gap_x=40,
 gap_y=40,
 own_window=true,
+own_window_class="conky_graph",
 own_window_type="normal",
 own_window_hints="undecorated,below,sticky,skip_taskbar,skip_pager",
 border_inner_margin=0,
@@ -42,7 +43,7 @@ use_xft=true,
 ---------------------------------------------------
 
 conky.text = [[\
-${color #002222}\
+${color #000000}\
 ${voffset    -6}\
 ${cpugraph                     60,200  444444 4F000F -t }\
 ${memgraph                     60,200  444444 4F000F -t }\

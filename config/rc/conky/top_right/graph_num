@@ -2,59 +2,33 @@ conky.config = {
 -------------------------------------
 --  Generic Settings
 -------------------------------------
-lua_load="~/config/rc/conky/conky_lua_scripts.lua",
-
+--update_interval=10,
 update_interval=1,
-imlib_cache_size=10,
-
---background=false,
-draw_borders=false,
-
 double_buffer=true,
-no_buffers=false,
-
-draw_shades=false,
-draw_shades=false, 
+draw_borders=false,
+draw_shades=true,
 default_shade_color="000000",
-
 default_outline_color="000000",
 draw_outline=true,
-
---show_graph_scale=false,
---show_graph_range=false,
---draw_graph_borders=true, 
-
 -------------------------------------
 --  Window Specifications
 -------------------------------------
 alignment="top_right",
-gap_x=190,
-gap_y=0,
+gap_x=53,
+gap_y=39,
 own_window=true,
 own_window_type="normal",
 own_window_hints="undecorated,below,sticky,skip_taskbar,skip_pager",
+own_window_transparent=true,
+own_window_argb_visual=true,
 border_inner_margin=0,
 border_outer_margin=0,
---own_window_transparent=true,
---own_window_colour="000000",
-own_window_argb_visual=true,
-own_window_argb_value=0,
-
-
 -------------------------------------
 --  Text Settings
 -------------------------------------
 use_xft=true,
-xftalpha=1,
-font="monospace:size=13",
+font="monospace:size=15",
 text_buffer_size=256,
-override_utf8_locale=true,
-
-short_units=true,
-short_units=true,
-pad_percents=2,
-top_name_width=7,
-
 
 -------------------------------------
 --  Color Scheme
@@ -62,40 +36,36 @@ top_name_width=7,
 template9=""
 }
 
-
 ---------------------------------------------------
 ---------------------------------------------------
-
 
 conky.text = [[\
-                                                                                           
-${voffset   6 } \
-${alignr 225}\
-${color #ffffff}\
-${lua_parse pad ${cpu}}%\
+${voffset  4}\
+${color #FFcccc}\
+${cpu}%\
 
-${voffset -16} \
-${alignr 180}\
-${color #ffffff}\
-${lua_parse pad ${memperc}}%\
+${voffset  -20}\
+${offset 200}\
+${color #FFcccc}\
+${mem}\
 
-${voffset -16} \
-${alignr 135}\
-${color #ffffff}\
+${voffset 4}\
+${color #ccffff}\
 ${downspeed wlp0s20u9}\
 
-${voffset -16          } \
-${alignr 90}\
-${color #ffffff}\
+${voffset  -20}\
+${offset 200}\
+${color #ffffcc}\
 ${upspeed wlp0s20u9}\
 
-${voffset -16} \
-${alignr 45}\
-${color #ffffff}\
+${voffset 4}\
+${color #ccffff}\
 ${diskio_read}\
 
-${voffset -16} \
-${alignr}\
-${color #ffffff}\
+${voffset  -20  }\
+${offset 200}\
+${color #ffffcc}\
 ${diskio_write}\
+
+                                                                                               
 ]]

@@ -2,4 +2,6 @@
 #export ROOT=~/Pictures/others
 
 export WALLPAPER_ROOT=~/Pictures/acg
+#export WALLPAPER_ROOT=~/Pictures/others
+#export WALLPAPER_ROOT=~/Pictures/temp
 export WALLPAPER_SCRIPT=~/git/compiz_wallpaper_manager/compiz.sh
