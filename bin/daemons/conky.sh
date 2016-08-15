@@ -3,7 +3,7 @@
 #虽然没有multiload好用,有总比没有好
 #conky -c ~/config/rc/conky
 pkill conky
-pkill yabar
+#pkill yabar
 
 sleep 1
 export CORNER=top_right
