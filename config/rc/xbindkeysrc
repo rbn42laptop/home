@@ -13,16 +13,16 @@
 #养成了不太好的依赖习惯,禁用一段时间.
 "bash ~/bin/run"
   Mod4 + d
-"bash ~/bin/term"
-  Mod4 + 1
-"bash ~/bin/web"
-  Mod4 + 2
-"pkill conky;bash ~/bin/daemons/conky.sh"
-  Mod4 + 3
-"pkill yabar;yabar -c ~/config/rc/yabar/main.conf"
-  Mod4 + 4
-"pkill conky;pkill yabar"
-  Mod4 + 5
+#"bash ~/bin/term"
+#  Mod4 + 1
+#"bash ~/bin/web"
+#  Mod4 + 2
+##"pkill conky;bash ~/bin/daemons/conky.sh"
+##  Mod4 + 3
+##"pkill yabar;yabar -c ~/config/rc/yabar/main.conf"
+##  Mod4 + 4
+#"pkill conky;pkill yabar"
+#  Mod4 + 5
 
 #分散开rofi的两个触发,所以如果一个不可用了,至少还有一个备用.
 #"bash ~/bin/rofi.sh"

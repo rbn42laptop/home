@@ -1,1 +1,3 @@
-term_opacity
+#!/bin/bash
+~/bin/term_white "$@"
+#~/bin/term_shadow "$@"

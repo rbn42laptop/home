@@ -6,26 +6,26 @@ else
 end
 
 if [ 'black' = $QMLTERM_THEME ]
-#    source ~/.config/fish/custom/theme-cbjohnson/fish_prompt.fish
-#    source ~/.config/fish/custom/theme-budspencer/fish_greeting.fish
-#    source ~/.config/fish/custom/theme-budspencer/fish_prompt.fish
-#    source ~/.config/fish/custom/theme-budspencer/fish_mode_prompt.fish
-#    source ~/.config/fish/custom/theme-budspencer/fish_right_prompt.fish
-#    source ~/.config/fish/custom/theme-budspencer/fish_prompt.fish
-    source ~/.config/fish/custom/theme-bobthefish/fish_prompt.fish
-  #  source ~/.config/fish/custom/shellder/fish_prompt.fish
-  #  source ~/.config/fish/custom/theme-bobthefish/fish_greeting.fish
-  #  source ~/.config/fish/custom/theme-bobthefish/fish_title.fish
+#    source ~/config/rc/fish/theme-cbjohnson/fish_prompt.fish
+#    source ~/config/rc/fish/theme-budspencer/fish_greeting.fish
+#    source ~/config/rc/fish/theme-budspencer/fish_prompt.fish
+#    source ~/config/rc/fish/theme-budspencer/fish_mode_prompt.fish
+#    source ~/config/rc/fish/theme-budspencer/fish_right_prompt.fish
+#    source ~/config/rc/fish/theme-budspencer/fish_prompt.fish
+    source ~/config/rc/fish/theme-bobthefish/fish_prompt.fish
+  #  source ~/config/rc/fish/shellder/fish_prompt.fish
+  #  source ~/config/rc/fish/theme-bobthefish/fish_greeting.fish
+  #  source ~/config/rc/fish/theme-bobthefish/fish_title.fish
   #  这东西不能用,连按回车的时候就会感觉到很耗性能.
-   # source ~/.config/fish/custom/theme-bobthefish/fish_right_prompt.fish
+   # source ~/config/rc/fish/theme-bobthefish/fish_right_prompt.fish
 else if [ 'transparent' = $QMLTERM_THEME ]
-    source ~/.config/fish/custom/prompt_git.fish
-    source ~/.config/fish/custom/prompt_pwd.fish
-    source ~/.config/fish/custom/fish_prompt.fish
+    source ~/config/rc/fish/prompt_git.fish
+    source ~/config/rc/fish/prompt_pwd.fish
+    source ~/config/rc/fish/fish_prompt.fish
 end
 
 
-source ~/.config/fish/custom/fish_title.fish
+source ~/config/rc/fish/fish_title.fish
 
 set LS_ARGUMENTS ' '
 

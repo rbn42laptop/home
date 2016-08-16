@@ -88,7 +88,7 @@ git add --all ~/.config/ranger/rc.conf
 ########################
 #Shell
 #fish配置,放在独立文件夹,防止被奇怪的软件改掉
-git add --all ~/.config/fish/custom
+#git add --all ~/.config/fish/custom
 #以防万一 qmlterm出问题,最近一次出问题似乎是pacman升级后,opengl不工作,必须要reboot,依赖gl的qml就没法启动了
 git add --all ~/.config/sakura/
 git add --all ~/.ipython/profile_shell/ipython_config.py
@@ -147,4 +147,4 @@ git add --all ~/extra
 #git add --all ~/.icons/MBuntu-OS-Y
 #git add --all ~/.icons/MBuntu-OS-Y-2
 git commit -m "auto commit"
-git push
+#git push
