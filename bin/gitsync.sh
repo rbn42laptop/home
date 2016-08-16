@@ -147,4 +147,4 @@ git add --all ~/extra
 #git add --all ~/.icons/MBuntu-OS-Y
 #git add --all ~/.icons/MBuntu-OS-Y-2
 git commit -m "auto commit"
-#git push
+git push
