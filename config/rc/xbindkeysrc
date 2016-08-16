@@ -53,6 +53,7 @@
 #  Mod4 + Shift + w
 #switcher
 #"rofi -config ~/config/rc/rofi/main.conf -show window"
+#  Mod4 + Shift + w
 #  Mod4 + w
 
 #mpd

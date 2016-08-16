@@ -15,7 +15,7 @@
  标题栏都被消除了.
  但是gimp的标题栏还在那里,看来不属于gnome核心
 * tile
-** root
+** 原本的想法记录
 
       OldWinList已知的作用是保留原有的window顺序
       这个一维数组变量最主要在change_layout的时候起作用,旧有的窗口layout信息不再起效,而是以这个变量为准重排窗口.如果把这个变量改成tree的话,大概就可以做到和i3相近的事情了.
@@ -560,6 +560,23 @@ rofi 不便利的一点是鼠标操作很不友好.
 不过简单的解决办法其实是把键盘鼠标的开始菜单分开设置.
 但是这样的就无法共享hist了.
 不过也没有问题,我们可以自己些一个鼠标的开始菜单,并且读取rofi的hist
+** rofi改动
+ 2016-08-16 04:46:33 Tue NZST
+ 记录改动
+*** rofi cache数目
+**** source/history.c
+   #define HISTORY_MAX_ENTRIES    2048
+*** resize
+**** source view.c
+***** 
+   CacheState.width-=1;
+   已知的插入修改点是rofi_view_update
+*****  resize window
+      uint16_t mask   = XCB_CONFIG_WINDOW_X | XCB_CONFIG_WINDOW_Y | XCB_CONFIG_WINDOW_WIDTH | XCB_CONFIG_WINDOW_HEIGHT;
+      uint32_t vals[] = { CacheState.x, CacheState.y, CacheState.width, CacheState.height };
+      // Display it.
+      xcb_configure_window ( xcb->connection, CacheState.main_window, mask, vals );
+
 ** 搜索
 Thu 09 Jun 2016 03:00:49 PM NZST
 大概是这样的功能:
@@ -581,6 +598,18 @@ Thu 09 Jun 2016 03:07:56 PM NZST
 Thu 09 Jun 2016 03:10:14 PM NZST
 顺便,浏览器,和pdf,键盘操作不便的一点就是勾选关键词了,没有类似vim的方案.
 firefox倒是有的,vimperator,但是平时用vimfx比它顺手,而且感觉前者bug多,但是触及太底层了吧.
+** 功能预想
+   - 带有图标
+   - 树级的rofi
+     第一级是程序和搜索引擎混搭
+     选择搜索引擎回车后,进入第二级,输入关键词
+     搜索引擎和搜索关键词的搭配组合的历史记录要放在第一级供选择.
+     搜索引擎包括 
+     - 字典
+     - 网络搜索
+     - 文件搜索
+     - 直接的网络url
+     - 直接的文件url
 * compiz
 ** 0.8
 *** 性能
