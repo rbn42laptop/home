@@ -4,27 +4,7 @@
 python color.py > theme.el
 """
 import scipy.misc
-# 截图样例
-img = scipy.misc.imread('./sample3.png')
-# 对应的列表
-lst = [s.strip() for s in open('./list')]
-# 单字高10
-# 起始1348,52
-colorlst = []
-# 抽前景色,背景色暂且不管了.
-for i in range(len(lst)):
-    x, y = 1492, 33 + i * 10
-    color = img[y, x]
-    colorlst.append(str([i for i in color]))
-colorset = set(colorlst)
-# 加上orgmode的颜色
-lst2 = [s.strip() for s in open('./list_org')]
-img = scipy.misc.imread('./sample_org.png')
-for i in range(len(lst2)):
-    x, y = 504, 14 + i * 10
-    color = img[y, x]
-    colorlst.append(str([i for i in color]))
-lst += lst2
+
 
 dic = {
     str([0, 0, 0]): 'Black',
@@ -32,19 +12,59 @@ dic = {
     str([255, 43, 43]): 'Red',
     str([28, 172, 120]): 'Green',
     str([248, 213, 104]): 'Yellow',
-    str([56, 141, 255]): 'Blue',
+    str([56, 141, 255]): 'BrightBlue',
     str([255, 29, 206]): 'Magenta',
-    str([24, 167, 181]): 'Cyan',
-    str([179, 179, 179]): 'White',
+    str([24, 167, 181]): 'BrightCyan',
+    str([179, 179, 179]): 'BrightWhite',
     str([106, 106, 106]): 'BrightBlack',
     str([253, 94, 83]): 'BrightRed',
     str([168, 228, 160]): 'BrightGreen',
     str([254, 254, 34]): 'BrightYellow',
-    str([154, 206, 235]): 'BrightBlue',
+    str([154, 206, 235]): 'Blue',
     str([252, 116, 253]): 'BrightMagenta',
-    str([236, 234, 190]): 'BrightCyan',
-    str([255, 255, 255]): 'BrightWhite',
+    str([236, 234, 190]): 'Cyan',
+    str([255, 255, 255]): 'White',
 }
-for c, n in zip(colorlst, lst):
-    c = dic[c]
-    print('(set-face-foreground \'%s "%s")' % (n, c))
+
+
+def output(img, lst, cpoint, bpoint, background, anti=False):
+    img = scipy.misc.imread(img)
+    # 对应的列表
+    lst = [s.strip() for s in open(lst)]
+    # 单字高10
+    # 起始1348,52
+    colorlst = []
+    boldlst = []
+    # 抽前景色,背景色暂且不管了.
+    for i in range(len(lst)):
+        x, y = cpoint
+        x, y = x, y + i * 10
+        color = img[y, x]
+        colorlst.append(str([i for i in color]))
+        x, y = bpoint
+        x, y = x, y + i * 10
+        color = img[y, x]
+        boldlst.append(str([i for i in color]))
+    for c, n, b in zip(colorlst, lst, boldlst):
+        c = dic[c]
+        # print('(set-face-foreground \'%s "%s")' % (n, c))
+        bold = b in background
+        if anti:
+            bold = not bold
+        bold = ' :weight bold' if bold else ''
+        if n in ('default',):
+            continue
+        print(' \'(%s ((t (:foreground "%s" %s ))))' % (n, c, bold))
+
+print('(custom-set-faces')
+# 加上orgmode的颜色
+background = {
+    str([24, 2, 126]),
+}
+output('./sample_org.png', './list_org',
+       (504, 14), (251, 16), background, anti=True)
+background = {
+    str([40, 2, 126]),
+}
+output('./sample3.png', './list', (1492, 33), (1223, 36), background)
+print(')')
