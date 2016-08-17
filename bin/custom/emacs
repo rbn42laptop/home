@@ -1,5 +1,5 @@
 #!/bin/bash
-if [ "$THEME_EMACS" == "transparent" ]; then
-    export TERM=xterm-256color;
-fi
+#if [ "$THEME_EMACS" == "transparent" ]; then
+#    export TERM=xterm-256color;
+#fi
 emacs -nw "$@"

@@ -1004,6 +1004,32 @@ conky,窗型怪异,难于调整.
 ***** 白名单
 class=dolphin|class=qmlterm|title=yabar|class=GoldenDict|any
 class=dolphin|class=qmlterm|title=yabar|title=rofi|any
+*** wallpaper插件位移
+    2016-08-17 22:26:16 Wed NZST
+    记得从0.9到0.8,wallpaper插件在切换桌面的时候替换wallpaper的方式都不是位移.
+    不过最新的在笔记本上编译的compiz0.8似乎换成位移了.
+    但是台式机上重新编译后,还不是.或许问题和nvidia有关?
+
+    - 最后测试结果是当前aur的compiz-core是位移效果,但是compiz-core-git却不是.
+      这个版本是0.8.12.3
+    - 确认影响的因素超出了程序编译和配置之外.
+      在一个全新编译,零配置的环境中,原本使没有位移的,但是关闭wall插件然后打开之后,
+      就会有位移效果了.
+      也就是说和wall的启动顺序有关.
+    - 然后确认,在运行中的环境中,清空compiz配置后,也可以实现位移.
+    - 最后确认,除了plugins列表以外,其他配置没有造成影响.
+      列表的问题是如此的
+      - imgjpeg;是问题最大的,不过幸好用不上.
+      - ;expo;switcher;animation;dbus;regex;commands;
+	这部分插件存在的话,需要wall重启
+      - core;ccp;move;resize;place;decoration;png;wallpaper;blur;staticswitcher;
+	这部分插件基本事没有问题的.
+      - wall自身,
+	似乎无法在一开始就开启,而需要之后手动从ccsm中开启.
+      因此方案是,关掉imgjpeg,然后想办法用程序自动重启wall插件. 
+      基本可以确定,重置起效后一次session内不会再犯这个问题.
+*** compiz-core-git不稳定
+    这个版本不稳定,比如和emerald联用就会出sig错误.
 * theme
 ** gtk
    2016-07-08 04:41:15 Fri NZST

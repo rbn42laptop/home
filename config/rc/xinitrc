@@ -67,6 +67,8 @@ xfce4-panel &
 bash ~/bin/orientation.sh
 
 #~/bin/term_blur &
+#延迟修正compiz 的缺陷
+bash ~/bin/daemons/fix_compiz.sh
 
 ###################
 #反正开机了总要打开rofi的

@@ -1,6 +1,6 @@
 
 ;隐藏menu
-;(menu-bar-mode -1)
+(menu-bar-mode -1)
 ;隐藏modeline
 ;(setq-default mode-line-format nil) 
 
