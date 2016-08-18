@@ -1,0 +1,8 @@
+#!/bin/bash
+#根据compiz viewports的背景选择相适合的term
+#有个问题是,这台电脑上开机时间长,python就容易崩溃,
+#所以开机时间长可能会导致term用不了.
+T=`python ~/bin/term_auto.py`
+bash $T "$@"
+#~/bin/term_white "$@"
+#~/bin/term_shadow "$@"
