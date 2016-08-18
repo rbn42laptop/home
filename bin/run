@@ -1,4 +1,11 @@
 #!/bin/bash
 
+#color=`python ~/bin/compiz/get_wall_color.py`
+#if [ "$color" == "white" ];then
+#else
+#    config=~/config/rc/rofi/main_white.conf
+#fi
+
+config=~/config/rc/rofi/main.conf
 ~/bin/rofi/run \
-    -config ~/config/rc/rofi/main.conf
+    -config $config

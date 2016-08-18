@@ -1,4 +1,10 @@
 #!/bin/bash
 
+#color=`python ~/bin/compiz/get_wall_color.py`
+#if [ "$color" == "white" ];then
+#else
+#    config=~/config/rc/rofi/tiny_white.conf
+#fi
+config=~/config/rc/rofi/tiny.conf
 ~/bin/rofi/run \
-    -config ~/config/rc/rofi/tiny.conf
+    -config $config

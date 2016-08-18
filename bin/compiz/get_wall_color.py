@@ -28,7 +28,7 @@ img = scipy.misc.imread(path)
 img = img[:, :, :3]
 mean = np.mean(img) / 256.0
 if mean > 0.5:
-    term = ('~/bin/term_white')
+    color = 'white'
 else:
-    term = ('~/bin/term_shadow')
-print(os.path.expanduser(term))
+    color = 'black'
+print(color)
