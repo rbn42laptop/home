@@ -106,7 +106,7 @@ git add --all ~/.mspider/config.sh
 
 ########################
 #Encrypt
-bash ~/bin/gitencrypt.sh
+bash ~/bin/git/gitencrypt.sh
 
 git add --all ~/bin
 git add --all ~/config

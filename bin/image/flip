@@ -1,0 +1,3 @@
+#!/bin/bash
+#左右互换,上下互换是flip
+convert -flop "$1" "$1_flip.png"

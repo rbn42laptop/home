@@ -52,7 +52,7 @@ alias q='exit'
     #这个脚本写的是有问题的,但是至少用它一段时间,靠它提示的话,应该可以一定程度的修正操作习惯.
 alias vim="python ~/bin/filter/edit_filter.py "
 
-alias commit="bash ~/bin/git_commit_push.sh"
+alias commit="bash ~/bin/git/git_commit_push.sh"
 alias bash="python ~/bin/filter/bash_filter.py"
 alias ipython="bash ~/bin/ipython.sh"
 #set EDITOR vim
