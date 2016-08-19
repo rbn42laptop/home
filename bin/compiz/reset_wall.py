@@ -1,4 +1,6 @@
 #!/usr/bin/python
+# 延迟修正compiz 的缺陷
+# 注意jpeg plugin不能用了,所以 壁纸必须转成png
 import time
 import os.path
 import sys
