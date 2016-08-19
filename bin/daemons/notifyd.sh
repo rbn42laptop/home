@@ -1,7 +1,6 @@
 ########################
 pkill dunst
 
-
 #显示通知,可以接收notify-send,不过好像接收不到wesnoth
 #dunst -config ~/config/rc/dunst -print >> /dev/shm/notification_log &
 
