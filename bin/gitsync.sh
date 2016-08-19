@@ -112,6 +112,7 @@ git add --all ~/bin
 git add --all ~/config
 #随记用
 git add --all ~/todo
+git add --all ~/log
 #测试用小代码
 #git add --all ~/codebase
 git add --all ~/.theanorc

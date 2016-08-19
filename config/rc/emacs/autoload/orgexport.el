@@ -73,7 +73,7 @@
                ("\\subparagraph{%s}" . "\\subparagraph*{%s}")))
 
 ;这个模板排版紧凑,那么就不便于凑页数了.
-;有特殊的字体要求
+;有特殊的字体要求,所以暂时不可用中文.
 (add-to-list 'org-latex-classes
           '("koma-article"
              "\\documentclass{scrartcl}"
