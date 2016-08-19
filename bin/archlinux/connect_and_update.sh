@@ -5,11 +5,12 @@
 #在/dev/shm中留下标记,确保这里仅仅执行一次
 #sudo netctl start wifi
 #sudo pacman -Syyu --noconfirm
+LOCK_FILE=/dev/shm/archlinux_updated
 if [ -f /dev/shm/archlinux_updated ];then
-    touch /dev/shm/archlinux_updated
+    touch $LOCK_FILE
     echo updated
 else
-    touch /dev/shm/archlinux_updated
-    sudo netctl start wifi
-    sudo pacman -Syyu --noconfirm
+    touch $LOCK_FILE
+    sudo netctl start wifi >> $LOCK_FILE
+    sudo pacman -Syyu --noconfirm >> $LOCK_FILE
 fi
