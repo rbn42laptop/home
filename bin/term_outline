@@ -1,0 +1,2 @@
+#!/bin/bash
+~/git/qmlterm/build/noblur -c ~/config/term/qmlterm/outline.ini "$@"
