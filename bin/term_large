@@ -1,0 +1,12 @@
+#!/bin/bash
+#gnome-terminal
+#tilda -f "SetoFont 23" -b white  -a -t 10 
+#bash ~/git/qmlterm/run.sh "$@"
+
+#export QML2_IMPORT_PATH=~/git/QMLProcess/build:~/git/qmltermwidget/build
+
+#~/git/qmlterm/build/qmlterm -c ~/config/term/qmlterm/shadow_font.ini -name noblur "$@"
+
+#区分开wm_class,方便compiz筛选.
+cp -n ~/git/qmlterm/build/qmlterm  ~/git/qmlterm/build/notile
+~/git/qmlterm/build/notile -c ~/config/term/qmlterm/large.ini "$@"

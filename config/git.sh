@@ -24,6 +24,7 @@ git checkout development
 
 cd ~/git/compiz_wallpaper_manager
 git checkout development
+git checkout compiz0.8
 #ln -s ../../git/compiz_wallpaper_manager ../Pictures/compiz/bin #有问题,之后修改
 
 #cd ~/git/rofi
