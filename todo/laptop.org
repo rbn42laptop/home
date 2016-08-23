@@ -1,0 +1,19 @@
+* 问题
+  2016-08-23 21:26:24 Tue NZST
+** intel 显卡
+   需要添加glxinfo | grep 权限
+   sudo gpasswd -a $USER video
+* 配置
+** 多显示器
+   https://wiki.archlinux.org/index.php/multihead
+   已知的方案xrandr 是在更大的平面上设定坐标,分配显示器显示不同的部分.
+   这个暂且和原壁纸不相容,需要修改壁纸尺寸.
+   应该还有很多不同的办法.
+   挺复杂的.所以应该是需要用到再去了解的东西.
+
+
+   xrandr --output HDMI1 --auto --output eDP1 --auto --right-of HDMI1 
+   xrandr --output HDMI1 --auto --output eDP1 --auto --above HDMI1 
+   xrandr --output eDP1 --auto --output HDMI1 --auto --pos 0x0
+   #xrandr --output eDP1 --mode 1024x768 --pos 1920x0 --output HDMI1 --mode 1920x1080 --pos 0x0
+
