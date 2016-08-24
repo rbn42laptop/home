@@ -31,4 +31,20 @@
    xrandr --output HDMI1 --auto --output eDP1 --auto --above HDMI1 
    xrandr --output eDP1 --auto --output HDMI1 --auto --pos 0x0
    #xrandr --output eDP1 --mode 1024x768 --pos 1920x0 --output HDMI1 --mode 1920x1080 --pos 0x0
+* 支持linux 的硬件
+  archlinux 下
+  通过下面的命令检测,能够通过linux直接管理bios升级
+  flashrom --programmer internal
+  可以做到的应该对linux 的支持度都会比较高.
+  其网站是https://www.flashrom.org/Flashrom
+  支持的硬件列表https://www.flashrom.org/Supported_hardware
+  支持laptop的办法https://www.flashrom.org/Laptops
+** linux 笔记本
+   或者买dell的linux 笔记本
+   不过选择范围还是太小了.
+   还是选一般笔记本再找办法适配linux 大概更好.
+   比如alienware 这样的,网上多少应该有一些办法可以处理的.
+   神舟如果是蓝天磨具,或许也有办法处理.
+
+
 
