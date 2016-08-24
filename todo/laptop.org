@@ -18,6 +18,9 @@
        glxinfo | grep direct
      推测这同样是一个硬件带来的问题,
      没有解决办法吧.
+   至少runtime 没什么问题,比如内存错误程序崩溃什么的.
+   出问题的是开机初始化,和关机的时候.
+   所以电脑开着就别关了.
 * 配置
 ** 多显示器
    https://wiki.archlinux.org/index.php/multihead
