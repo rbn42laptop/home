@@ -3,6 +3,21 @@
 ** intel 显卡
    需要添加glxinfo | grep 权限
    sudo gpasswd -a $USER video
+** 神舟
+   - reboot 的时候有什么东西关不掉．
+     问题很有可能和bios有关.
+     archlinux提供flashrom 包可以帮助升级bios,但是不支持神舟.
+     神舟网站上很难找到bios
+     所以这个问题可能是解决不了的
+   - glib权限问题
+     开机的时候,概率性的出现.
+     虽然已经加入video 用户组了.
+     开机后,如果没有权限,进入x后用一段时间,
+     会发现权限又出现了.
+     - 权限测试
+       glxinfo | grep direct
+     推测这同样是一个硬件带来的问题,
+     没有解决办法吧.
 * 配置
 ** 多显示器
    https://wiki.archlinux.org/index.php/multihead
