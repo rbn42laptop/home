@@ -1,8 +1,12 @@
 * 问题
   2016-08-23 21:26:24 Tue NZST
+  glxinfo permission fail
 ** intel 显卡
    需要添加glxinfo | grep 权限
    sudo gpasswd -a $USER video
+*** 临时解决 
+    sudo chmod 777 /dev/dri/card0
+    因为这个问题是权限问题,所以修改显卡的权限可以解决.
 ** 神舟
    - reboot 的时候有什么东西关不掉．
      问题很有可能和bios有关.
