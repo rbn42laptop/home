@@ -23,6 +23,7 @@ index = int(index + 1)
 path = '/dev/shm/w1/'
 if not os.path.exists(path):
     path = '/dev/shm/w2/'
+index = index % len(os.listdir(path))
 path = path + '%04d.png' % index
 img = scipy.misc.imread(path)
 img = img[:, :, :3]
