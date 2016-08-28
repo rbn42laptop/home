@@ -22,6 +22,12 @@ if [ -f /dev/shm/archlinux_updated ];then
     echo updated
 else
     touch $LOCK_FILE
+
     sudo netctl start wifi >> $LOCK_FILE
+
+    sudo sh -c 'echo nameserver 127.0.0.1 > /etc/resolv.conf'
+    sudo sh -c 'echo nameserver 8.8.8.8 >> /etc/resolv.conf'
+    sudo sh -c 'echo search home >> /etc/resolv.conf'
+
     sudo pacman -Syyu --noconfirm >> $LOCK_FILE
 fi
