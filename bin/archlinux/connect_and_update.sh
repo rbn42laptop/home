@@ -16,6 +16,10 @@
 #等到mpd的这个问题被解决后就关掉这里的更新吧.
 #不过这个bug是报在mpd网站的,所以也是mpd自身没有测试好就把软件发布了的责任.
 
+#2016-08-29 17:42:16 Mon NZST
+#自动更新很不安全.
+#上面有mpd的问题,(已修复)
+#这次则是wifi在更新后出了问题.
 LOCK_FILE=/dev/shm/archlinux_updated
 if [ -f /dev/shm/archlinux_updated ];then
     touch $LOCK_FILE
@@ -25,9 +29,9 @@ else
 
     sudo netctl start wifi >> $LOCK_FILE
 
-    sudo sh -c 'echo nameserver 127.0.0.1 > /etc/resolv.conf'
-    sudo sh -c 'echo nameserver 8.8.8.8 >> /etc/resolv.conf'
-    sudo sh -c 'echo search home >> /etc/resolv.conf'
-
-    sudo pacman -Syyu --noconfirm >> $LOCK_FILE
+#    sudo sh -c 'echo nameserver 127.0.0.1 > /etc/resolv.conf'
+#    sudo sh -c 'echo nameserver 8.8.8.8 >> /etc/resolv.conf'
+#    sudo sh -c 'echo search home >> /etc/resolv.conf'
+#
+##    sudo pacman -Syyu --noconfirm >> $LOCK_FILE
 fi

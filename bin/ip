@@ -1,3 +1,4 @@
 #!/bin/bash
 #ifconfig 在 net-tools 包中
+#但是安装后似乎会弄坏wifi
 ip addr 

@@ -40,10 +40,10 @@ unclutter &
 
 ########################
 #wifi 很耗时，所以放这里开启.需要加入sudo nopasswd
-#sudo /usr/bin/netctl start wifi &
+sudo /usr/bin/netctl start wifi &
 #连接网络并且自动升级
 #开机时候,系统稳定,是最适合升级的.
-bash ~/bin/archlinux/connect_and_update.sh &
+#bash ~/bin/archlinux/connect_and_update.sh &
 #或许比起xinitrc,存在其他更适合执行这个脚本的地方?
 #条件是,和开机对应而不是和startx对应,并且最好有root权限.
 
