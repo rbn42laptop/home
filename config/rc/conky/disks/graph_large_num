@@ -60,6 +60,7 @@ ${upspeed wlp0s20u9}\
 
 ${voffset 39}\
 ${color #ccffff}\
+sda\
 ${alignr 207}\
 ${diskio_read /dev/sda}\
 
@@ -67,6 +68,30 @@ ${voffset  -20  }\
 ${alignr 7}\
 ${color #ffffcc}\
 ${diskio_write /dev/sda}\
+
+${voffset 39}\
+${color #ccffff}\
+sdb\
+${alignr 207}\
+${diskio_read /dev/sdb}\
+
+${voffset  -20  }\
+${alignr 7}\
+${color #ffffcc}\
+${diskio_write /dev/sdb}\
+
+${voffset 39}\
+${color #ccffff}\
+sdc\
+${alignr 207}\
+${diskio_read /dev/sdc}\
+
+${voffset  -20  }\
+${alignr 7}\
+${color #ffffcc}\
+${diskio_write /dev/sdc}\
+
+
 
                                                                                                
 ]]

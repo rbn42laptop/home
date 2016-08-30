@@ -40,13 +40,18 @@ unclutter &
 
 ########################
 #wifi 很耗时，所以放这里开启.需要加入sudo nopasswd
-#sudo /usr/bin/netctl start wifi &
+sudo /usr/bin/netctl start wifi &
 #连接网络并且自动升级
 #开机时候,系统稳定,是最适合升级的.
-bash ~/bin/archlinux/connect_and_update.sh &
+#bash ~/bin/archlinux/connect_and_update.sh &
 #或许比起xinitrc,存在其他更适合执行这个脚本的地方?
 #条件是,和开机对应而不是和startx对应,并且最好有root权限.
 
+
+###############################
+#conky还是很有用的.
+#不过最好别开blur,对性能影响很大,
+#bash ~/bin/daemons/conky.sh &
 
 #图标放多了会分散注意力的
 #docky
@@ -68,8 +73,7 @@ udisksctl mount -b /dev/disk/by-label/4T
 #所以这个保险不能丢掉.
 xfce4-panel &
 
-
-#屏幕旋转
+#恢复到关机时候的屏幕旋转角度
 bash ~/bin/orientation.sh
 
 #~/bin/term_blur &

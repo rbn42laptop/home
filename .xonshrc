@@ -1,0 +1,13 @@
+#!/usr/bin/python
+#问题:
+#现在的color theme受不了.
+#fish当时则是恰好就有一个很顺眼的theme了
+#还有是这里的配置最好能有办法通过source之类的分离出去
+#最后我不知道xonsh相对fish/ipython来说,对我有什么用处.
+#不过至少我们有了一个选项.
+
+#或许可以用来写脚本,bash相比python更简单,但是功能少,python想要调用其他进程的时候则显得很复杂.
+#python和shell脚本混杂的情形还是有的.
+aliases['l']='ls -CF  --hide="*.pyc" --hide="__pycache__"'
+aliases['ll']='ls -aF '
+aliases['lll']='ls -alF'

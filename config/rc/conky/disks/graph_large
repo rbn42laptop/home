@@ -1,0 +1,68 @@
+conky.config = {
+-------------------------------------
+--  Generic Settings
+-------------------------------------
+
+--总计200像素,200周期,1秒间隔对应3分钟.60秒间隔对应3小时.10秒对应半小时
+--update_interval=10,
+update_interval=1,
+imlib_cache_size=10,
+
+--background=false,
+draw_borders=false,
+
+double_buffer=true,
+no_buffers=false,
+
+show_graph_scale=false,
+show_graph_range=false,
+draw_graph_borders=true, 
+
+-------------------------------------
+--  Window Specifications
+-------------------------------------
+alignment="top_right",
+gap_x=40,
+gap_y=40,
+own_window=true,
+--own_window_class="conky_graph",
+own_window_type="normal",
+own_window_hints="undecorated,below,sticky,skip_taskbar,skip_pager",
+border_inner_margin=0,
+border_outer_margin=0,
+--own_window_transparent=true,
+--own_window_colour="000000",
+own_window_argb_visual=true,
+own_window_argb_value=0,
+--own_window_argb_value=0,
+
+use_xft=true,
+}
+
+---------------------------------------------------
+---------------------------------------------------
+
+conky.text = [[\
+${color #000000}\
+${voffset    -6}\
+${cpugraph                     60,200  444444 4F000F -t }\
+${memgraph                     60,200  444444 4F000F -t }\
+
+${voffset   -15}\
+${downspeedgraph wlp0s20u9     60,200  444444 0F4F4F -t }\
+${upspeedgraph wlp0s20u9       60,200  444444 4F4F0F -t }\
+
+${voffset   -15}\
+${diskiograph_read      /dev/sda       60,200  444444 0F4F4F -t }\
+${diskiograph_write     /dev/sda       60,200  444444 4F4F0F -t }\
+
+${voffset   -15}\
+${diskiograph_read      /dev/sdb       60,200  444444 0F4F4F -t }\
+${diskiograph_write     /dev/sdb       60,200  444444 4F4F0F -t }\
+
+${voffset   -15}\
+${diskiograph_read      /dev/sdc       60,200  444444 0F4F4F -t }\
+${diskiograph_write     /dev/sdc       60,200  444444 4F4F0F -t }\
+
+${voffset -61} \
+]]

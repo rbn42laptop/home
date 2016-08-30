@@ -6,7 +6,7 @@ pkill conky
 #pkill yabar
 
 sleep 1
-export CORNER=top_right
+CORNER=top_right
 #export CORNER=bottom_right
 #conky -c ~/config/rc/conky/conky_panel &
 #--conky -c ~/config/rc/conky/top_right/mpd &

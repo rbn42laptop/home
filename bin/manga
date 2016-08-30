@@ -9,3 +9,6 @@ LC_ALL=zh_CN.UTF-8
 LANG=zh_CN.UTF-8
 export winepath=`winepath -w "$1"`
 wine ~/win7/HAP_MangaMeeya740/MangaMeeya.exe "$winepath" 
+
+
+#mcomix "$1"
