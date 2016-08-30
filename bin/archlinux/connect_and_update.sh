@@ -20,6 +20,10 @@
 #自动更新很不安全.
 #上面有mpd的问题,(已修复)
 #这次则是wifi在更新后出了问题.
+
+#2016-08-30 17:37:31 Tue NZST
+#但是更新或许还是必要的,不过非安全性需求的系统,应该可以暂缓更新
+#如果更新出问题的话,到https://wiki.archlinux.org/index.php/System_maintenance 找下回滚包的办法吧.
 LOCK_FILE=/dev/shm/archlinux_updated
 if [ -f /dev/shm/archlinux_updated ];then
     touch $LOCK_FILE

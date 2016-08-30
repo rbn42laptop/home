@@ -148,3 +148,32 @@
     17日有人报了.
     https://bugs.musicpd.org/print_bug_page.php?bug_id=4568
     过段时间应该会解决的吧.
+*** 进一步跟踪
+https://bugs.musicpd.org/print_bug_page.php?bug_id=4564
+问题在08/08已经上报
+原因被认为是ffmpeg 的错误
+https://trac.ffmpeg.org/ticket/5781
+最后结果似乎是ffmpeg 文档不全,导致mpd 错误使用api 
+最后修复是在08/23
+http://git.musicpd.org/cgit/master/mpd.git/plain/NEWS?h=v0.19.19
+
+根据arch 的记录,这个bug 释出是从 08/06 开始
+https://git.archlinux.org/svntogit/packages.git/log/trunk?h=packages/mpd
+*** 更新策略
+    撇开安全性不谈,
+    这个bug影响了两周时间,一年两次的话,也就占据十分之一的时间了.
+    我觉得更新策略应该设定为半年.
+    如此一个系统安装完使用正常的话,就可以正常用半年了.
+    半年后更新,撞上bug的几率应该不会那么大,
+    不过如果撞上了,那只能等修复了.
+
+    至少如此的话,撞上bug的几率就比频繁更新小很多了.
+
+    实际上因为我们的使用环境还不稳定,一个系统不一定能用上半年.
+    所以系统安装完成后,即使不做更新大概也没问题.过段时间可能就重装了.
+    
+    但是,
+    有一个问题,就是系统使用中,如果需要安装新软件的话,
+    如果不做更新的话,似乎安装不了,
+    因为旧有的记录的软件地址,archlinux 似乎不做维护,就被扔掉了?
+    如果这样的话,在你需要安装新软件的时候,就不得不更新了.

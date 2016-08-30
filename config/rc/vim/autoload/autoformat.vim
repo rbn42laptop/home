@@ -14,6 +14,7 @@ autocmd BufWritePre *.cxx :Autoformat
 autocmd BufWritePre *.c :Autoformat
 "yaourt -S js-beautify #包含css和html
 autocmd BufWritePre *.js :Autoformat
+autocmd BufWritePre *.json :Autoformat
 autocmd BufWritePre *.html :Autoformat
 autocmd BufWritePre *.css :Autoformat
 
