@@ -52,6 +52,34 @@
    还是选一般笔记本再找办法适配linux 大概更好.
    比如alienware 这样的,网上多少应该有一些办法可以处理的.
    神舟如果是蓝天磨具,或许也有办法处理.
+* 学校wifi
+  原文
+https://www.reddit.com/r/archlinux/comments/2f8ip9/how_to_connect_to_wpa_username_and_password/
+If you have wpa_supplicant you are all set to connect.
 
+Create a config file in your Home (Or anywhere else) and put this in:
 
+ctrl_interface=/var/run/wpa_supplicant
+ap_scan=1
+network {
+    ssid="eduroam"
+    proto=RSN
+    pairwise=CCMP
+    eap=PEAP
+    identity="<your university email>"
+    password="<password>"
+    key_mgmt=WPA-EAP
+}
+
+You then run (as root) wpa_supplicant -c/path/to/file -i wlp1s1 -D nl80211 (replace wlp1s1 by your wifi interface)
+
+It will tell you what it does and if it worked you can CTRL-C and run it again with the -B flag to send it to the background. If you run into any errors do tell please as this setup works perfectly for me.
+
+    permalinkembed
+
+[–]TheNeikos 3 points 1 year ago 
+
+Don't forget to run dhcpcd wlp1s1 once you are connected to get an IP.
+
+    permalinkembedparent
 
