@@ -136,3 +136,16 @@
 ;                      ("\\.x?html?\\'" . "xdg-open %s")
 ;                      ("\\.pdf\\'" . "kde-open %s")
 ;                      ("\\.jpg\\'" . "kde-open %s")))
+
+
+;加载python code block支持
+;http://orgmode.org/worg/org-contrib/babel/languages/ob-doc-python.html
+;这里有些很复杂的用法,比如用matplot画图
+(org-babel-do-load-languages
+ 'org-babel-load-languages
+ '((python . t)))
+;code block高亮?需要htmlize.el支持
+(setq org-src-fontify-natively t)
+;pdf的高亮或许可以通过minted包处理,但是彩色的pdf可能不适合
+;http://stackoverflow.com/questions/21005885/export-org-mode-code-block-and-result-with-different-styles
+

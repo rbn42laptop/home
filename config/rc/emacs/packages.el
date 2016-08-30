@@ -14,7 +14,7 @@
 (defvar my-packages
   '(
     org org-plus-contrib 
-    evil evil-tabs
+    evil evil-tabs htmlize
 ;    auto-complete auctex color-theme-sanityinc-tomorrow company dash
 ;    expand-region htmlize ido-ubiquitous ido-vertical-mode iy-go-to-char jedi
 ;    magit main-line markdown-mode multiple-cursors org-plus-contrib org-journal
