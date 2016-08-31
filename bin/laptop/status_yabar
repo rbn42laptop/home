@@ -1,0 +1,3 @@
+#!/bin/bash
+pkill yabar -x;
+yabar -c ~/config/rc/yabar/laptop.conf
